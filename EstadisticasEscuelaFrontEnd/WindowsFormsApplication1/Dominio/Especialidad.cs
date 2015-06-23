@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EstadisticasEscuelaFrontEnd
+namespace EstadisticasEscuelaFrontEnd.Dominio
 {
-    class Especialidad
+    class Especialidad : Objeto
     {
         private int IdEspecialidad { get; set; }
         private string nombreEspecialidad { get; set; }

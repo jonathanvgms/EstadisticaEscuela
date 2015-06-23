@@ -71,6 +71,7 @@
     <Compile Include="Dominio\Materia.cs" />
     <Compile Include="Dominio\MateriaCurso.cs" />
     <Compile Include="Dominio\Nota.cs" />
+    <Compile Include="Dominio\Objeto.cs" />
     <Compile Include="Dominio\Turno.cs" />
     <Compile Include="Escritorio.cs">
       <SubType>Form</SubType>

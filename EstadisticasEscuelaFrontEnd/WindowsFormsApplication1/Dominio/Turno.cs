@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EstadisticasEscuelaFrontEnd
+namespace EstadisticasEscuelaFrontEnd.Dominio
 {
-    class Turno
+    class Turno : Objeto
     {
         private int IdTurno { get; set; }
         private string turno { get; set; }
