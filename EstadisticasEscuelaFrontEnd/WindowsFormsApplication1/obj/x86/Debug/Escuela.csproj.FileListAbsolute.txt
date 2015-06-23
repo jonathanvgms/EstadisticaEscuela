@@ -1,0 +1,39 @@
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Escuela.csproj.GenerateResource.Cache
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Escuela.Escritorio.resources
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Escuela.Properties.Resources.resources
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Escritorio.resources
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Login.FormLogin.resources
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Properties.Resources.resources
+C:\Users\Jonathan\Desktop\Proyectos\et 12\c#\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\Escuela.csproj.GenerateResource.Cache
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Escritorio.resources
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Login.FormLogin.resources
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Properties.Resources.resources
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Alumnos.frmAlumnoNuevo.resources
+F:\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Alumnos.BuscarAlumno.resources
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Alumnos.frmAlumnoNuevo.resources
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Alumnos.BuscarAlumno.resources
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Escritorio.resources
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Login.FormLogin.resources
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Properties.Resources.resources
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
