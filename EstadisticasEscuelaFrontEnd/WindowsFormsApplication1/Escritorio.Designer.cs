@@ -73,7 +73,7 @@
             // adsaToolStripMenuItem
             // 
             this.adsaToolStripMenuItem.Name = "adsaToolStripMenuItem";
-            this.adsaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.adsaToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.adsaToolStripMenuItem.Text = "SALIR";
             this.adsaToolStripMenuItem.Click += new System.EventHandler(this.adsaToolStripMenuItem_Click);
             // 
@@ -89,14 +89,14 @@
             // adasToolStripMenuItem
             // 
             this.adasToolStripMenuItem.Name = "adasToolStripMenuItem";
-            this.adasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.adasToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.adasToolStripMenuItem.Text = "NUEVO";
             this.adasToolStripMenuItem.Click += new System.EventHandler(this.adasToolStripMenuItem_Click);
             // 
             // dasdasdToolStripMenuItem
             // 
             this.dasdasdToolStripMenuItem.Name = "dasdasdToolStripMenuItem";
-            this.dasdasdToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dasdasdToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.dasdasdToolStripMenuItem.Text = "BUSCAR";
             // 
             // dasdToolStripMenuItem1
@@ -113,6 +113,7 @@
             this.dasToolStripMenuItem.Name = "dasToolStripMenuItem";
             this.dasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dasToolStripMenuItem.Text = "NUEVO";
+            this.dasToolStripMenuItem.Click += new System.EventHandler(this.dasToolStripMenuItem_Click);
             // 
             // adasToolStripMenuItem1
             // 
@@ -134,25 +135,25 @@
             // dasToolStripMenuItem1
             // 
             this.dasToolStripMenuItem1.Name = "dasToolStripMenuItem1";
-            this.dasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.dasToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.dasToolStripMenuItem1.Text = "ESTADISTICA1";
             // 
             // dasToolStripMenuItem2
             // 
             this.dasToolStripMenuItem2.Name = "dasToolStripMenuItem2";
-            this.dasToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.dasToolStripMenuItem2.Size = new System.Drawing.Size(150, 22);
             this.dasToolStripMenuItem2.Text = "ESTADISTICA2";
             // 
             // eSTADISTICA3ToolStripMenuItem
             // 
             this.eSTADISTICA3ToolStripMenuItem.Name = "eSTADISTICA3ToolStripMenuItem";
-            this.eSTADISTICA3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eSTADISTICA3ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.eSTADISTICA3ToolStripMenuItem.Text = "ESTADISTICA3";
             // 
             // eSTADISTICA4ToolStripMenuItem
             // 
             this.eSTADISTICA4ToolStripMenuItem.Name = "eSTADISTICA4ToolStripMenuItem";
-            this.eSTADISTICA4ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eSTADISTICA4ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.eSTADISTICA4ToolStripMenuItem.Text = "ESTADISTICA4";
             // 
             // uSUARIOSToolStripMenuItem
@@ -167,14 +168,14 @@
             // nUEVOToolStripMenuItem
             // 
             this.nUEVOToolStripMenuItem.Name = "nUEVOToolStripMenuItem";
-            this.nUEVOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nUEVOToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.nUEVOToolStripMenuItem.Text = "NUEVO";
             this.nUEVOToolStripMenuItem.Click += new System.EventHandler(this.nUEVOToolStripMenuItem_Click);
             // 
             // bUSCARToolStripMenuItem
             // 
             this.bUSCARToolStripMenuItem.Name = "bUSCARToolStripMenuItem";
-            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.bUSCARToolStripMenuItem.Text = "BUSCAR";
             // 
             // Escritorio

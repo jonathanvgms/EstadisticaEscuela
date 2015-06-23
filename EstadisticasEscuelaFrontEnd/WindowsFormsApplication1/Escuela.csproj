@@ -58,6 +58,12 @@
     <Compile Include="Alumnos\BuscarAlumno.Designer.cs">
       <DependentUpon>BuscarAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cursos\frmCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\frmCurso.Designer.cs">
+      <DependentUpon>frmCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dominio\Alumno.cs" />
     <Compile Include="Dominio\Asistencia.cs" />
     <Compile Include="Dominio\Curso.cs" />
@@ -93,6 +99,9 @@
     <EmbeddedResource Include="Alumnos\BuscarAlumno.resx">
       <DependentUpon>BuscarAlumno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cursos\frmCurso.resx">
+      <DependentUpon>frmCurso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Escritorio.resx">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,7 +132,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Cursos\" />
     <Folder Include="Estadisticas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
