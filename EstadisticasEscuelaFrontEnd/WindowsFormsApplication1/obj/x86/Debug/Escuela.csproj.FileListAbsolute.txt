@@ -37,3 +37,4 @@ D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplicat
 D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Properties.Resources.resources
 D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Debug\EstadisticasEscuelaFrontEnd.Usuarios.frmUsuario.resources

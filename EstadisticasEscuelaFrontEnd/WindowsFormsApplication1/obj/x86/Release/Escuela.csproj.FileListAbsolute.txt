@@ -21,3 +21,4 @@ D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplicat
 D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.pdb
 D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe
 D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.pdb
+D:\6 7\EstadisticaEscuela\trunk\EstadisticasEscuelaFrontEnd\WindowsFormsApplication1\obj\x86\Release\EstadisticasEscuelaFrontEnd.Usuarios.frmUsuario.resources

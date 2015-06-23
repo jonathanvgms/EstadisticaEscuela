@@ -79,6 +79,7 @@
             this.btnBuscarAlumnoSalir.TabIndex = 4;
             this.btnBuscarAlumnoSalir.Text = "Salir";
             this.btnBuscarAlumnoSalir.UseVisualStyleBackColor = true;
+            this.btnBuscarAlumnoSalir.Click += new System.EventHandler(this.btnBuscarAlumnoSalir_Click);
             // 
             // btnBuscarAlumnoBuscar
             // 
@@ -106,6 +107,7 @@
             this.btnBuscarAlumnoLimpiar.TabIndex = 7;
             this.btnBuscarAlumnoLimpiar.Text = "Limpiar";
             this.btnBuscarAlumnoLimpiar.UseVisualStyleBackColor = true;
+            this.btnBuscarAlumnoLimpiar.Click += new System.EventHandler(this.btnBuscarAlumnoLimpiar_Click);
             // 
             // BuscarAlumno
             // 
@@ -122,7 +124,7 @@
             this.Controls.Add(this.lblBuscarAlumnoNombre);
             this.Name = "BuscarAlumno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BuscarAlumno";
+            this.Text = "Buscar Alumno";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarAlumnoInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

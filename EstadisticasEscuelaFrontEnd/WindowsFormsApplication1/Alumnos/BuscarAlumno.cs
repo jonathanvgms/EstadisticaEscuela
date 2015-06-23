@@ -50,5 +50,16 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                 MessageBox.Show(cadena);
             }
         }
+
+        private void btnBuscarAlumnoSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnBuscarAlumnoLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBuscarAlumnoNombre.Clear();
+            txtBuscarAlumnoApellido.Clear();
+        }
     }
 }

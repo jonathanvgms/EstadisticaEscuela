@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd.Login;
 using EstadisticasEscuelaFrontEnd.Alumnos;
+using EstadisticasEscuelaFrontEnd.Usuarios;
 
 namespace EstadisticasEscuelaFrontEnd
 {
@@ -32,6 +33,12 @@ namespace EstadisticasEscuelaFrontEnd
         {
             frmAlumnoNuevo unfrmAlumnoNuevo=new frmAlumnoNuevo();
             unfrmAlumnoNuevo.ShowDialog(this);
+        }
+
+        private void nUEVOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuario unfrmUsuario = new frmUsuario();
+            unfrmUsuario.ShowDialog(this);
         }
     }
 }
