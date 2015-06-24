@@ -23,6 +23,8 @@ namespace EstadisticasEscuelaFrontEnd
             
             login.ShowDialog(this);
 
+            
+
         }
 
         private void adsaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,5 +49,25 @@ namespace EstadisticasEscuelaFrontEnd
             frmCurso unfrmCurso= new frmCurso();
             unfrmCurso.ShowDialog(this);
         }
+
+        private void dasdasdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuscarAlumno buscarAlumno = new BuscarAlumno();
+            buscarAlumno.ShowDialog(this);
+        }
+
+        private void adasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BuscarCurso buscarCurso = new BuscarCurso();
+            buscarCurso.ShowDialog(this);
+        }
+
+        private void bUSCARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmrBuscarUsuario buscarUsuario = new fmrBuscarUsuario();
+            buscarUsuario.ShowDialog(this);
+        }
+
+       
     }
 }

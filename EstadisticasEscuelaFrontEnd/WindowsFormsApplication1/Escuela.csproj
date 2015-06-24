@@ -58,6 +58,12 @@
     <Compile Include="Alumnos\BuscarAlumno.Designer.cs">
       <DependentUpon>BuscarAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cursos\BuscarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\BuscarCurso.Designer.cs">
+      <DependentUpon>BuscarCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cursos\frmCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios\BuscarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\BuscarUsuario.Designer.cs">
+      <DependentUpon>BuscarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alumnos\BuscarAlumno.resx">
       <DependentUpon>BuscarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursos\BuscarCurso.resx">
+      <DependentUpon>BuscarCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cursos\frmCurso.resx">
       <DependentUpon>frmCurso.cs</DependentUpon>
@@ -119,6 +134,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Usuarios\BuscarUsuario.resx">
+      <DependentUpon>BuscarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>

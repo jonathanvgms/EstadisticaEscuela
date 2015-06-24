@@ -46,6 +46,11 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
                 cadena += "El campo Contraseña esta vacio.\n";
             }
 
+            if (this.cmbUsuarioTipodeUsuario.Text.Equals(""))
+            {
+                cadena += "Seleccione un tipo de usuario.\n";
+            }
+
             if (!cadena.Equals(""))
             {
                 MessageBox.Show(cadena);
@@ -62,6 +67,18 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
         {
             txtUsuario.Clear();
             txtContrasenia.Clear();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmUsuario_Load(object sender, EventArgs e)
+        {
+            this.cmbUsuarioTipodeUsuario.Items.Add("Alumno");
+            this.cmbUsuarioTipodeUsuario.Items.Add("Loyaga");
+            this.cmbUsuarioTipodeUsuario.Items.Add("Administrador");
         }
     }
 }

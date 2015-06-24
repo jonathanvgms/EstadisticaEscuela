@@ -27,13 +27,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                     cadena += "El campo Nombre tiene valores incorrectos.\n";
                 }
             }
-            else
-            {
-                cadena = cadena + "El campo Nombre está vacio.\n";
-            }
-
-
-
+           
             if (!txtBuscarAlumnoApellido.Text.Equals(""))
             {
                 if (!Util.todasLetras(this.txtBuscarAlumnoApellido.Text))
@@ -41,10 +35,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                     cadena += "El campo Apellido tiene valores incorrectos.\n";
                 }
             }
-            else
-            {
-                cadena = cadena + "El campo Apellido está vacio.\n";
-            }
+           
             if (!cadena.Equals(""))
             {
                 MessageBox.Show(cadena);

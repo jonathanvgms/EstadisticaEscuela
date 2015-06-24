@@ -89,15 +89,16 @@
             // adasToolStripMenuItem
             // 
             this.adasToolStripMenuItem.Name = "adasToolStripMenuItem";
-            this.adasToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.adasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.adasToolStripMenuItem.Text = "NUEVO";
             this.adasToolStripMenuItem.Click += new System.EventHandler(this.adasToolStripMenuItem_Click);
             // 
             // dasdasdToolStripMenuItem
             // 
             this.dasdasdToolStripMenuItem.Name = "dasdasdToolStripMenuItem";
-            this.dasdasdToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.dasdasdToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dasdasdToolStripMenuItem.Text = "BUSCAR";
+            this.dasdasdToolStripMenuItem.Click += new System.EventHandler(this.dasdasdToolStripMenuItem_Click);
             // 
             // dasdToolStripMenuItem1
             // 
@@ -120,6 +121,7 @@
             this.adasToolStripMenuItem1.Name = "adasToolStripMenuItem1";
             this.adasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.adasToolStripMenuItem1.Text = "BUSCAR";
+            this.adasToolStripMenuItem1.Click += new System.EventHandler(this.adasToolStripMenuItem1_Click);
             // 
             // dasdToolStripMenuItem2
             // 
@@ -175,8 +177,9 @@
             // bUSCARToolStripMenuItem
             // 
             this.bUSCARToolStripMenuItem.Name = "bUSCARToolStripMenuItem";
-            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.bUSCARToolStripMenuItem.Text = "BUSCAR";
+            this.bUSCARToolStripMenuItem.Click += new System.EventHandler(this.bUSCARToolStripMenuItem_Click);
             // 
             // Escritorio
             // 

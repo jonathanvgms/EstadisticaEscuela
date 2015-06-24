@@ -23,6 +23,7 @@ namespace EstadisticasEscuelaFrontEnd.Login
         private void txtLoginNo_Click(object sender, EventArgs e)
         {
             Close();
+            System.Windows.Forms.Application.Exit();
         }
         #endregion
 
