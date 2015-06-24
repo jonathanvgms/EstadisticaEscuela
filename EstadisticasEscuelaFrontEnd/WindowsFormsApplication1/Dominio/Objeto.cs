@@ -7,6 +7,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 {
     class Objeto
     {
+        /**/
         private string tipo;
 
         public string Tipo
