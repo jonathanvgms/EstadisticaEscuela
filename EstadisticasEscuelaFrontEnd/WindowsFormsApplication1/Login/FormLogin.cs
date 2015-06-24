@@ -33,8 +33,24 @@ namespace EstadisticasEscuelaFrontEnd.Login
              * Se debe validad que el usuario existe, si es asi que su contraseña 
              * es la que dice ser, verificar errores si no existe usuario, o campo vacio
              * o campo incorrecto.
-             */ 
-            Close();
+             */
+            string cadena = "";
+
+            if (txtUsername.Text.Equals(""))
+            {
+                cadena += " El campo Usuario esta vacio.\n";
+            }
+
+            if (txtPassword.Text.Equals(""))
+            {
+                cadena += " El campo Contraseña esta vacio.\n";
+            }
+
+
+            if (!cadena.Equals(""))
+            {
+                MessageBox.Show(cadena);                
+            }            
         }
     }
 }
