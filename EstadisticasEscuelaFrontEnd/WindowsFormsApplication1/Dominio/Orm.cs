@@ -10,7 +10,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 {
     static class Orm
     {
-        private static string conectionString;
+        private static string connectionString;
         
         public static List<Objeto> Select(Objeto obj, string where)
         {
@@ -73,12 +73,12 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
                 
         public static void ConectionString(string server, string port, string database, string user, string password)
         {
-            conectionString = "server=" + server + ";user=" + user + ";database=" + database + ";port=" + port + ";password=" + password + ";";
+            connectionString = "server=" + server + ";user=" + user + ";database=" + database + ";port=" + port + ";password=" + password + ";";
         }
 
         private static string ConnectionString()
         {
-            return conectionString;
+            return connectionString;
         }
 
         private static MySqlConnection databaseMySqlConnection()
