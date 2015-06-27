@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Nueva carpeta (2)\mysql-connector-net-6.8.6-noinstall\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -78,6 +82,8 @@
     <Compile Include="Dominio\MateriaCurso.cs" />
     <Compile Include="Dominio\Nota.cs" />
     <Compile Include="Dominio\Objeto.cs" />
+    <Compile Include="Dominio\Orm.cs" />
+    <Compile Include="Dominio\Parametro.cs" />
     <Compile Include="Dominio\Turno.cs" />
     <Compile Include="Escritorio.cs">
       <SubType>Form</SubType>

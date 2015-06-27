@@ -33,11 +33,6 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                 cadena = cadena + "El campo Nombre está vacio.\n";
             }
 
-            /*if (!cadena.Equals(""))
-            {
-                MessageBox.Show(cadena);
-            }*/
-
             if(!txtAlumnoNuevoApellido.Text.Equals(""))
             {
              if (!Util.todasLetras(this.txtAlumnoNuevoApellido.Text))
@@ -50,14 +45,6 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                 cadena = cadena + "El campo Apellido está vacio.\n";
             }
 
-            /*if (!cadena.Equals(""))
-            {
-                MessageBox.Show(cadena);
-            }
-             * */
-
-
-
             if(!txtAlumnoNuevoDNI.Text.Equals(""))
             {
                 if (!Util.todasNumeros(this.txtAlumnoNuevoDNI.Text))
@@ -69,14 +56,6 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             {
                 cadena = cadena + "El campo DNI está vacio.\n";
             }
-
-            /*
-            if (!cadena.Equals(""))
-            {
-                MessageBox.Show(cadena);
-            }
-             * */
-
 
             if(!txtAlumnoNuevoLegajo.Text.Equals(""))
             {
@@ -94,24 +73,22 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             {
                 MessageBox.Show(cadena);
             }
-
-
-
         }
 
         private void btnAlumnoNuevoLimpiar_Click(object sender, EventArgs e)
         {
-
             txtAlumnoNuevoNombre.Clear();
+            
             txtAlumnoNuevoApellido.Clear();
+
             txtAlumnoNuevoLegajo.Clear();
+            
             txtAlumnoNuevoDNI.Clear();
         }
 
         private void btnAlumnoNuevoCancelar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-      
+        }      
     }
 }

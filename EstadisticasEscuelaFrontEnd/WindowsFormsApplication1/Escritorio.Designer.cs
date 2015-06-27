@@ -89,14 +89,14 @@
             // adasToolStripMenuItem
             // 
             this.adasToolStripMenuItem.Name = "adasToolStripMenuItem";
-            this.adasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.adasToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.adasToolStripMenuItem.Text = "NUEVO";
             this.adasToolStripMenuItem.Click += new System.EventHandler(this.adasToolStripMenuItem_Click);
             // 
             // dasdasdToolStripMenuItem
             // 
             this.dasdasdToolStripMenuItem.Name = "dasdasdToolStripMenuItem";
-            this.dasdasdToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dasdasdToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.dasdasdToolStripMenuItem.Text = "BUSCAR";
             this.dasdasdToolStripMenuItem.Click += new System.EventHandler(this.dasdasdToolStripMenuItem_Click);
             // 
@@ -112,14 +112,14 @@
             // dasToolStripMenuItem
             // 
             this.dasToolStripMenuItem.Name = "dasToolStripMenuItem";
-            this.dasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dasToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.dasToolStripMenuItem.Text = "NUEVO";
             this.dasToolStripMenuItem.Click += new System.EventHandler(this.dasToolStripMenuItem_Click);
             // 
             // adasToolStripMenuItem1
             // 
             this.adasToolStripMenuItem1.Name = "adasToolStripMenuItem1";
-            this.adasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.adasToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
             this.adasToolStripMenuItem1.Text = "BUSCAR";
             this.adasToolStripMenuItem1.Click += new System.EventHandler(this.adasToolStripMenuItem1_Click);
             // 
@@ -177,7 +177,7 @@
             // bUSCARToolStripMenuItem
             // 
             this.bUSCARToolStripMenuItem.Name = "bUSCARToolStripMenuItem";
-            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.bUSCARToolStripMenuItem.Text = "BUSCAR";
             this.bUSCARToolStripMenuItem.Click += new System.EventHandler(this.bUSCARToolStripMenuItem_Click);
             // 
@@ -192,7 +192,7 @@
             this.Name = "Escritorio";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "6";
+            this.Text = "ESCRITORIO";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.barraDeMenu.ResumeLayout(false);
             this.barraDeMenu.PerformLayout();

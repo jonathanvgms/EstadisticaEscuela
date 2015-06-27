@@ -7,21 +7,17 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 {
     class Alumno : Objeto
     {
-        private string nombre { get; set; }
-        private int legajo { get; set; }
-        private int dni { get; set; }
-        private int idAlumno { get; set; }
-        private int idNota { get; set; }
-        private int idCurso { get; set; }
-        
-        public Alumno(string unNombre, int unLegajo, int unDni, int unIDAlumno, int unIDNota, int unIDCurso)
+        public Alumno(string nombre, string apellido, int legajo, int dni)
         {
-            nombre = unNombre;
-            legajo = unLegajo;
-            dni = unDni;
-            idAlumno = unIDAlumno;
-            idNota = unIDNota;
-            idCurso = unIDCurso;
+            Parametros.Add(new Parametro("@unNombre", nombre));
+
+            Parametros.Add(new Parametro("@unApellido", apellido));
+
+            Parametros.Add(new Parametro("@unLegajo", legajo));
+
+            Parametros.Add(new Parametro("@unDni", dni));
+
+            Tipo = "Alumno";
         }       
     }
 }
