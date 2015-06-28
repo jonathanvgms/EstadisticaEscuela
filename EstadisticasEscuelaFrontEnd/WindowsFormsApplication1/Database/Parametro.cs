@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using EstadisticasEscuelaFrontEnd.Dominio;
 
-namespace EstadisticasEscuelaFrontEnd.Dominio
+namespace EstadisticasEscuelaFrontEnd.Database
 {
     class Parametro
     {

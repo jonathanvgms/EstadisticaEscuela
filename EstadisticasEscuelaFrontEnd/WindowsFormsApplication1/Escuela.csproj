@@ -56,11 +56,11 @@
     <Compile Include="Alumnos\AlumnoNuevo.Designer.cs">
       <DependentUpon>AlumnoNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Alumnos\BuscarAlumno.cs">
+    <Compile Include="Alumnos\AlumnoBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Alumnos\BuscarAlumno.Designer.cs">
-      <DependentUpon>BuscarAlumno.cs</DependentUpon>
+    <Compile Include="Alumnos\AlumnoBuscar.Designer.cs">
+      <DependentUpon>AlumnoBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="Cursos\BuscarCurso.cs">
       <SubType>Form</SubType>
@@ -81,9 +81,8 @@
     <Compile Include="Dominio\Materia.cs" />
     <Compile Include="Dominio\MateriaCurso.cs" />
     <Compile Include="Dominio\Nota.cs" />
-    <Compile Include="Dominio\Objeto.cs" />
-    <Compile Include="Orm\Orm.cs" />
-    <Compile Include="Orm\Parametro.cs" />
+    <Compile Include="Database\Objeto.cs" />
+    <Compile Include="Database\Parametro.cs" />
     <Compile Include="Dominio\Turno.cs" />
     <Compile Include="Escritorio.cs">
       <SubType>Form</SubType>
@@ -115,8 +114,8 @@
     <EmbeddedResource Include="Alumnos\AlumnoNuevo.resx">
       <DependentUpon>AlumnoNuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Alumnos\BuscarAlumno.resx">
-      <DependentUpon>BuscarAlumno.cs</DependentUpon>
+    <EmbeddedResource Include="Alumnos\AlumnoBuscar.resx">
+      <DependentUpon>AlumnoBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cursos\BuscarCurso.resx">
       <DependentUpon>BuscarCurso.cs</DependentUpon>

@@ -34,11 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblLoginError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLoginOk
             // 
-            this.btnLoginOk.Location = new System.Drawing.Point(273, 127);
+            this.btnLoginOk.Location = new System.Drawing.Point(216, 170);
             this.btnLoginOk.Name = "btnLoginOk";
             this.btnLoginOk.Size = new System.Drawing.Size(75, 23);
             this.btnLoginOk.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             // txtLoginNo
             // 
-            this.txtLoginNo.Location = new System.Drawing.Point(41, 127);
+            this.txtLoginNo.Location = new System.Drawing.Point(309, 170);
             this.txtLoginNo.Name = "txtLoginNo";
             this.txtLoginNo.Size = new System.Drawing.Size(75, 23);
             this.txtLoginNo.TabIndex = 1;
@@ -76,24 +77,33 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(171, 78);
+            this.txtPassword.Location = new System.Drawing.Point(155, 78);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(177, 20);
+            this.txtPassword.Size = new System.Drawing.Size(193, 20);
             this.txtPassword.TabIndex = 5;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(171, 40);
+            this.txtUsername.Location = new System.Drawing.Point(155, 40);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(177, 20);
+            this.txtUsername.Size = new System.Drawing.Size(193, 20);
             this.txtUsername.TabIndex = 6;
+            // 
+            // lblLoginError
+            // 
+            this.lblLoginError.AutoSize = true;
+            this.lblLoginError.Location = new System.Drawing.Point(152, 128);
+            this.lblLoginError.Name = "lblLoginError";
+            this.lblLoginError.Size = new System.Drawing.Size(0, 13);
+            this.lblLoginError.TabIndex = 7;
             // 
             // FormLogin
             // 
             this.AcceptButton = this.btnLoginOk;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(396, 180);
+            this.ClientSize = new System.Drawing.Size(396, 205);
+            this.Controls.Add(this.lblLoginError);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
@@ -106,7 +116,8 @@
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "LOGIN";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PresionarTecla);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,5 +131,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblLoginError;
     }
 }

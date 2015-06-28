@@ -50,7 +50,16 @@ namespace EstadisticasEscuelaFrontEnd.Login
             if (!cadena.Equals(""))
             {
                 MessageBox.Show(cadena);                
-            }            
+            }
+        }
+
+        private void PresionarTecla(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToUInt32(e.KeyChar) == 27)
+            {
+                Close();
+                System.Windows.Forms.Application.Exit();
+            }
         }
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd;
+using EstadisticasEscuelaFrontEnd.Database;
+using EstadisticasEscuelaFrontEnd.Dominio;
 
 namespace EstadisticasEscuelaFrontEnd.Alumnos
 {
@@ -14,65 +16,109 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
     {
         public frmAlumnoNuevo()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         private void btnAlumnoNuevo_Click(object sender, EventArgs e)
         {
-            string cadena = "";
+            bool error = true;
 
-            if (!txtAlumnoNuevoNombre.Text.Equals(""))
+            if (!checkData(txtAlumnoNuevoNombre, lblAlumnoNuevoNombreError)) error = false;
+
+            if (!checkData(txtAlumnoNuevoApellido, lblAlumnoNuevoApellidoError)) error = false;
+
+            if (!checkData(txtAlumnoNuevoDNI, lblAlumnoNuevoDniError)) error = false;
+
+            if (!checkData(txtAlumnoNuevoLegajo, lblAlumnoNuevoLegajoError)) error = false;
+
+            //checkData(cmbAlumnoNuevoCurso, cmbAlumnoNuevoDivision, lblAlumnoNuevoCursoError);
+
+            //checkData(cmbAlumnoNuevoEspecialidad, lblAlumnoNuevoEspecialidadError);
+
+            if (error)
             {
-                if (!Util.todasLetras(this.txtAlumnoNuevoNombre.Text))
+                Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text));
+
+                lblMessage.Text = "ALUMNO GUARDADO CON EXITO";
+            }            
+        }
+        
+        private bool checkData(ComboBox comboA, ComboBox comboB, Label label)
+        {
+            label.Text = "";
+
+            if (comboA.SelectedIndex < 0 && comboB.SelectedIndex < 0)
+            {
+                label.Text = "Seleccione Curso y División";
+            }
+            else
+            {
+                if (comboA.SelectedIndex < 0)
                 {
-                    cadena += "El campo Nombre tiene valores incorrectos.\n";
+                    label.Text = "Seleccione Curso";
+
+                    return false;
+                }
+
+                if (comboB.SelectedIndex < 0)
+                {
+                    label.Text += "Seleccione División";
+
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private bool checkData(ComboBox combo, Label label)
+        {
+            label.Text = "";
+
+            if (combo.SelectedIndex < 0)
+            {
+                label.Text = "Seleccione Especialidad";
+
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool checkData(TextBox textBox, Label label)
+        {
+            label.Text = "";
+
+            if (!textBox.Text.Equals(""))
+            {
+                if (textBox.Name.Equals("txtAlumnoNuevoNombre") || textBox.Name.Equals("txtAlumnoNuevoApellido"))
+                {
+                    if (!Util.todasLetras(textBox.Text))
+                    {
+                        label.Text = "Valores Incorrectos";
+
+                        return false;
+                    }
+                }
+
+                if (textBox.Name.Equals("txtAlumnoNuevoDNI") || textBox.Name.Equals("txtAlumnoNuevoLegajo"))
+                {
+                    if (!Util.todasNumeros(textBox.Text))
+                    {
+                        label.Text = "Valores Incorrectos";
+
+                        return false;
+                    }
                 }
             }
             else
             {
-                cadena = cadena + "El campo Nombre está vacio.\n";
+                label.Text = "Vacio";
+
+                return false;
             }
 
-            if(!txtAlumnoNuevoApellido.Text.Equals(""))
-            {
-             if (!Util.todasLetras(this.txtAlumnoNuevoApellido.Text))
-                {
-                    cadena += "El campo Apellido tiene valores incorrectos.\n";
-                }
-            }
-            else
-            {
-                cadena = cadena + "El campo Apellido está vacio.\n";
-            }
-
-            if(!txtAlumnoNuevoDNI.Text.Equals(""))
-            {
-                if (!Util.todasNumeros(this.txtAlumnoNuevoDNI.Text))
-                {
-                    cadena += "El campo DNI tiene valores incorrectos.\n";
-                }
-            }
-            else
-            {
-                cadena = cadena + "El campo DNI está vacio.\n";
-            }
-
-            if(!txtAlumnoNuevoLegajo.Text.Equals(""))
-            {
-                if (!Util.todasNumeros(this.txtAlumnoNuevoLegajo.Text))
-                {
-                    cadena += "El campo Legajo tiene valores incorrectos.\n";
-                }
-            }
-            else
-            {
-                cadena = cadena + "El campo Legajo está vacio.\n";
-            }
-
-            if (!cadena.Equals(""))
-            {
-                MessageBox.Show(cadena);
-            }
+            return true;
         }
 
         private void btnAlumnoNuevoLimpiar_Click(object sender, EventArgs e)
@@ -84,6 +130,17 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             txtAlumnoNuevoLegajo.Clear();
             
             txtAlumnoNuevoDNI.Clear();
+
+            lblMessage.Text = "";
+
+            lblAlumnoNuevoNombreError.Text = "";
+
+            lblAlumnoNuevoApellidoError.Text = "";
+
+            lblAlumnoNuevoLegajoError.Text = "";
+
+            lblAlumnoNuevoDniError.Text = "";
+
         }
 
         private void btnAlumnoNuevoCancelar_Click(object sender, EventArgs e)

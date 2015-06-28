@@ -7,9 +7,8 @@ namespace EstadisticasEscuelaFrontEnd
 {
     static class Util
     {
-
         //El metodo recibe un string y devuelve un bool verdadero mientras que la cadena este entre A y Z
-        internal static bool todasLetras(string buffer)
+        public static bool todasLetras(string buffer)
 
         {
             string aux = buffer.ToUpper();
@@ -29,7 +28,7 @@ namespace EstadisticasEscuelaFrontEnd
         }
 
         //Este metodo recibe un string y devuelve bool verdadero mientras que la cadena este entre 0 y 9 
-        internal static bool todasNumeros(string buffer)
+        public static bool todasNumeros(string buffer)
         {
 
             for (int i = 0; i < buffer.Length; i++)

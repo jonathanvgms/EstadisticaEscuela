@@ -10,6 +10,7 @@ using EstadisticasEscuelaFrontEnd.Login;
 using EstadisticasEscuelaFrontEnd.Alumnos;
 using EstadisticasEscuelaFrontEnd.Usuarios;
 using EstadisticasEscuelaFrontEnd.Cursos;
+using EstadisticasEscuelaFrontEnd.Database;
 
 namespace EstadisticasEscuelaFrontEnd
 {
@@ -23,8 +24,7 @@ namespace EstadisticasEscuelaFrontEnd
             
             login.ShowDialog(this);
 
-            
-
+            Objeto.ConectionString("localhost", "3306", "mydb", "root", "telesca1234");
         }
 
         private void adsaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace EstadisticasEscuelaFrontEnd
 
         private void dasdasdToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BuscarAlumno buscarAlumno = new BuscarAlumno();
+            AlumnoBuscar buscarAlumno = new AlumnoBuscar();
             buscarAlumno.ShowDialog(this);
         }
 
