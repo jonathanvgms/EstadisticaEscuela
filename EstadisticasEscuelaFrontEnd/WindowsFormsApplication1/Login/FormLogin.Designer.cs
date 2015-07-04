@@ -34,7 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.lblLoginError = new System.Windows.Forms.Label();
+            this.lblLoginUsuario = new System.Windows.Forms.Label();
+            this.lblLoginContrasenia = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLoginOk
@@ -89,21 +90,30 @@
             this.txtUsername.Size = new System.Drawing.Size(193, 20);
             this.txtUsername.TabIndex = 6;
             // 
-            // lblLoginError
+            // lblLoginUsuario
             // 
-            this.lblLoginError.AutoSize = true;
-            this.lblLoginError.Location = new System.Drawing.Point(152, 128);
-            this.lblLoginError.Name = "lblLoginError";
-            this.lblLoginError.Size = new System.Drawing.Size(0, 13);
-            this.lblLoginError.TabIndex = 7;
+            this.lblLoginUsuario.AutoSize = true;
+            this.lblLoginUsuario.Location = new System.Drawing.Point(365, 43);
+            this.lblLoginUsuario.Name = "lblLoginUsuario";
+            this.lblLoginUsuario.Size = new System.Drawing.Size(0, 13);
+            this.lblLoginUsuario.TabIndex = 7;
+            // 
+            // lblLoginContrasenia
+            // 
+            this.lblLoginContrasenia.AutoSize = true;
+            this.lblLoginContrasenia.Location = new System.Drawing.Point(365, 81);
+            this.lblLoginContrasenia.Name = "lblLoginContrasenia";
+            this.lblLoginContrasenia.Size = new System.Drawing.Size(0, 13);
+            this.lblLoginContrasenia.TabIndex = 8;
             // 
             // FormLogin
             // 
             this.AcceptButton = this.btnLoginOk;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(396, 205);
-            this.Controls.Add(this.lblLoginError);
+            this.ClientSize = new System.Drawing.Size(422, 205);
+            this.Controls.Add(this.lblLoginContrasenia);
+            this.Controls.Add(this.lblLoginUsuario);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
@@ -131,6 +141,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.Label lblLoginError;
+        private System.Windows.Forms.Label lblLoginUsuario;
+        private System.Windows.Forms.Label lblLoginContrasenia;
     }
 }

@@ -34,22 +34,15 @@ namespace EstadisticasEscuelaFrontEnd.Login
              * es la que dice ser, verificar errores si no existe usuario, o campo vacio
              * o campo incorrecto.
              */
-            string cadena = "";
-
+            
             if (txtUsername.Text.Equals(""))
             {
-                cadena += " El campo Usuario esta vacio.\n";
+                lblLoginUsuario.Text = "Vacio";
             }
 
             if (txtPassword.Text.Equals(""))
             {
-                cadena += " El campo Contraseña esta vacio.\n";
-            }
-
-
-            if (!cadena.Equals(""))
-            {
-                MessageBox.Show(cadena);                
+                lblLoginContrasenia.Text = "Vacio";
             }
         }
 
