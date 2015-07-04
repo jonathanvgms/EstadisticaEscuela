@@ -65,7 +65,7 @@
             // 
             // btnAlumnoNuevo
             // 
-            this.btnAlumnoNuevo.Location = new System.Drawing.Point(438, 292);
+            this.btnAlumnoNuevo.Location = new System.Drawing.Point(384, 292);
             this.btnAlumnoNuevo.Name = "btnAlumnoNuevo";
             this.btnAlumnoNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnAlumnoNuevo.TabIndex = 1;
@@ -86,7 +86,7 @@
             // btnAlumnoNuevoCancelar
             // 
             this.btnAlumnoNuevoCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAlumnoNuevoCancelar.Location = new System.Drawing.Point(529, 292);
+            this.btnAlumnoNuevoCancelar.Location = new System.Drawing.Point(475, 292);
             this.btnAlumnoNuevoCancelar.Name = "btnAlumnoNuevoCancelar";
             this.btnAlumnoNuevoCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnAlumnoNuevoCancelar.TabIndex = 3;
@@ -261,7 +261,7 @@
             this.AcceptButton = this.btnAlumnoNuevo;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.btnAlumnoNuevoCancelar;
-            this.ClientSize = new System.Drawing.Size(628, 335);
+            this.ClientSize = new System.Drawing.Size(583, 335);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.cmbAlumnoNuevoDivision);
             this.Controls.Add(this.cmbAlumnoNuevoCurso);

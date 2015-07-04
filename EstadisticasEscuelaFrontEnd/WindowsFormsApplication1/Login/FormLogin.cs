@@ -16,7 +16,6 @@ namespace EstadisticasEscuelaFrontEnd.Login
             InitializeComponent();
         }
 
-        #region Cerrar formulario
         /*
          * Cierra el form de Login
          */ 
@@ -25,8 +24,7 @@ namespace EstadisticasEscuelaFrontEnd.Login
             Close();
             System.Windows.Forms.Application.Exit();
         }
-        #endregion
-
+        
         private void btnLoginOk_Click(object sender, EventArgs e)
         {
             /*

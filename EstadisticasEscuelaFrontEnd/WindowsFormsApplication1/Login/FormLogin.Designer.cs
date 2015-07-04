@@ -36,6 +36,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLoginUsuario = new System.Windows.Forms.Label();
             this.lblLoginContrasenia = new System.Windows.Forms.Label();
+            this.lblLoginError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLoginOk
@@ -106,12 +107,21 @@
             this.lblLoginContrasenia.Size = new System.Drawing.Size(0, 13);
             this.lblLoginContrasenia.TabIndex = 8;
             // 
+            // lblLoginError
+            // 
+            this.lblLoginError.AutoSize = true;
+            this.lblLoginError.Location = new System.Drawing.Point(152, 122);
+            this.lblLoginError.Name = "lblLoginError";
+            this.lblLoginError.Size = new System.Drawing.Size(0, 13);
+            this.lblLoginError.TabIndex = 9;
+            // 
             // FormLogin
             // 
             this.AcceptButton = this.btnLoginOk;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(422, 205);
+            this.Controls.Add(this.lblLoginError);
             this.Controls.Add(this.lblLoginContrasenia);
             this.Controls.Add(this.lblLoginUsuario);
             this.Controls.Add(this.txtUsername);
@@ -143,5 +153,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblLoginUsuario;
         private System.Windows.Forms.Label lblLoginContrasenia;
+        private System.Windows.Forms.Label lblLoginError;
     }
 }
