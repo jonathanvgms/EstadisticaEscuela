@@ -24,7 +24,7 @@ namespace EstadisticasEscuelaFrontEnd
             
             login.ShowDialog(this);
 
-            Objeto.ConectionString("localhost", "3306", "mydb", "root", "telesca1234");
+            Objeto.ConectionString("win2012-01", "3306", "escuela", "alumno67", "saramoya");
         }
 
         private void adsaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace EstadisticasEscuelaFrontEnd
 
         private void adasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            BuscarCurso buscarCurso = new BuscarCurso();
+            frmBuscarCurso buscarCurso = new frmBuscarCurso();
             buscarCurso.ShowDialog(this);
         }
 
