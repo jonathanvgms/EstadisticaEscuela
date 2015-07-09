@@ -44,7 +44,6 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
         public Curso(string unAnio, string unaDivision, string unIDTurno, string unIDEspecialidad)
         {          
-           
             idTurno = unIDTurno;
            
             anio = unAnio;

@@ -47,7 +47,7 @@
             // 
             // btnBuscarCursoLimpiar
             // 
-            this.btnBuscarCursoLimpiar.Location = new System.Drawing.Point(2, 548);
+            this.btnBuscarCursoLimpiar.Location = new System.Drawing.Point(12, 555);
             this.btnBuscarCursoLimpiar.Name = "btnBuscarCursoLimpiar";
             this.btnBuscarCursoLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarCursoLimpiar.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             // btnBuscarCursoSalir
             // 
-            this.btnBuscarCursoSalir.Location = new System.Drawing.Point(704, 548);
+            this.btnBuscarCursoSalir.Location = new System.Drawing.Point(704, 555);
             this.btnBuscarCursoSalir.Name = "btnBuscarCursoSalir";
             this.btnBuscarCursoSalir.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarCursoSalir.TabIndex = 1;
@@ -70,9 +70,9 @@
             this.lblBuscarCursoAnio.AutoSize = true;
             this.lblBuscarCursoAnio.Location = new System.Drawing.Point(12, 15);
             this.lblBuscarCursoAnio.Name = "lblBuscarCursoAnio";
-            this.lblBuscarCursoAnio.Size = new System.Drawing.Size(28, 13);
+            this.lblBuscarCursoAnio.Size = new System.Drawing.Size(26, 13);
             this.lblBuscarCursoAnio.TabIndex = 2;
-            this.lblBuscarCursoAnio.Text = "Anio";
+            this.lblBuscarCursoAnio.Text = "Año";
             this.lblBuscarCursoAnio.Click += new System.EventHandler(this.lblBuscarCursoAnio_Click);
             // 
             // lblBuscarCursoDivision
@@ -86,21 +86,21 @@
             // 
             // txtBuscarCursoAnio
             // 
-            this.txtBuscarCursoAnio.Location = new System.Drawing.Point(126, 12);
+            this.txtBuscarCursoAnio.Location = new System.Drawing.Point(85, 12);
             this.txtBuscarCursoAnio.Name = "txtBuscarCursoAnio";
-            this.txtBuscarCursoAnio.Size = new System.Drawing.Size(170, 20);
+            this.txtBuscarCursoAnio.Size = new System.Drawing.Size(203, 20);
             this.txtBuscarCursoAnio.TabIndex = 4;
             // 
             // txtBuscarCursoDivision
             // 
-            this.txtBuscarCursoDivision.Location = new System.Drawing.Point(126, 52);
+            this.txtBuscarCursoDivision.Location = new System.Drawing.Point(85, 52);
             this.txtBuscarCursoDivision.Name = "txtBuscarCursoDivision";
-            this.txtBuscarCursoDivision.Size = new System.Drawing.Size(170, 20);
+            this.txtBuscarCursoDivision.Size = new System.Drawing.Size(203, 20);
             this.txtBuscarCursoDivision.TabIndex = 5;
             // 
             // btnBuscarCursoBuscar
             // 
-            this.btnBuscarCursoBuscar.Location = new System.Drawing.Point(704, 55);
+            this.btnBuscarCursoBuscar.Location = new System.Drawing.Point(704, 50);
             this.btnBuscarCursoBuscar.Name = "btnBuscarCursoBuscar";
             this.btnBuscarCursoBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarCursoBuscar.TabIndex = 6;
@@ -111,9 +111,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 89);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(777, 441);
+            this.dataGridView1.Size = new System.Drawing.Size(767, 441);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -136,23 +136,23 @@
             // cmbBuscarCursoTurno
             // 
             this.cmbBuscarCursoTurno.FormattingEnabled = true;
-            this.cmbBuscarCursoTurno.Location = new System.Drawing.Point(514, 6);
+            this.cmbBuscarCursoTurno.Location = new System.Drawing.Point(443, 11);
             this.cmbBuscarCursoTurno.Name = "cmbBuscarCursoTurno";
-            this.cmbBuscarCursoTurno.Size = new System.Drawing.Size(121, 21);
+            this.cmbBuscarCursoTurno.Size = new System.Drawing.Size(203, 21);
             this.cmbBuscarCursoTurno.TabIndex = 10;
             // 
             // cmbBuscarCursoEspecialidad
             // 
             this.cmbBuscarCursoEspecialidad.FormattingEnabled = true;
-            this.cmbBuscarCursoEspecialidad.Location = new System.Drawing.Point(514, 47);
+            this.cmbBuscarCursoEspecialidad.Location = new System.Drawing.Point(443, 52);
             this.cmbBuscarCursoEspecialidad.Name = "cmbBuscarCursoEspecialidad";
-            this.cmbBuscarCursoEspecialidad.Size = new System.Drawing.Size(121, 21);
+            this.cmbBuscarCursoEspecialidad.Size = new System.Drawing.Size(203, 21);
             this.cmbBuscarCursoEspecialidad.TabIndex = 11;
             // 
             // lblTurno
             // 
             this.lblTurno.AutoSize = true;
-            this.lblTurno.Location = new System.Drawing.Point(430, 14);
+            this.lblTurno.Location = new System.Drawing.Point(353, 15);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(35, 13);
             this.lblTurno.TabIndex = 12;
@@ -161,7 +161,7 @@
             // lblEspecialidad
             // 
             this.lblEspecialidad.AutoSize = true;
-            this.lblEspecialidad.Location = new System.Drawing.Point(433, 47);
+            this.lblEspecialidad.Location = new System.Drawing.Point(353, 55);
             this.lblEspecialidad.Name = "lblEspecialidad";
             this.lblEspecialidad.Size = new System.Drawing.Size(67, 13);
             this.lblEspecialidad.TabIndex = 13;
@@ -171,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 571);
+            this.ClientSize = new System.Drawing.Size(792, 590);
             this.Controls.Add(this.lblEspecialidad);
             this.Controls.Add(this.lblTurno);
             this.Controls.Add(this.cmbBuscarCursoEspecialidad);
@@ -188,7 +188,7 @@
             this.Controls.Add(this.btnBuscarCursoLimpiar);
             this.Name = "frmBuscarCurso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BuscarCurso";
+            this.Text = "BUSCAR CURSO";
             this.Load += new System.EventHandler(this.BuscarCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

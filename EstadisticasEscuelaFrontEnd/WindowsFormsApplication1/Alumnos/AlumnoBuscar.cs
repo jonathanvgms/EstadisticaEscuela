@@ -20,46 +20,34 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
         private void btnBuscarAlumnoBuscar_Click(object sender, EventArgs e)
         {
-            /*
-            string cadena = "";
-            
-            if (!txtBuscarAlumnoNombre.Text.Equals(""))
+            bool error = true;
+
+            if (!checkData(txtAlumnoBuscarNombre, lblAlumnoBuscarNombreError)) error = false;
+
+            if (!checkData(txtAlumnoBuscarApellido, lblAlumnoBuscarApellidoError)) error = false;
+
+            if (error)
             {
-                if (!Util.todasLetras(this.txtBuscarAlumnoNombre.Text))
-                {
-                    cadena += "El campo Nombre tiene valores incorrectos.\n";
-                }
+                dgvAlumnoBuscar.DataSource = null;
+
+                dgvAlumnoBuscar.Columns.Clear();
+                
+                dgvAlumnoBuscar.DataSource = Alumno.Select();
+
+                dgvAlumnoBuscar.Columns.RemoveAt(4);
+
+                DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
+
+                columnaModificar.Name = "Modificar";
+
+                dgvAlumnoBuscar.Columns.Add(columnaModificar);
+
+                DataGridViewButtonColumn columnaEliminar = new DataGridViewButtonColumn();
+
+                columnaEliminar.Name = "Eliminar";
+
+                dgvAlumnoBuscar.Columns.Add(columnaEliminar);
             }
-           
-            if (!txtBuscarAlumnoApellido.Text.Equals(""))
-            {
-                if (!Util.todasLetras(this.txtBuscarAlumnoApellido.Text))
-                {
-                    cadena += "El campo Apellido tiene valores incorrectos.\n";
-                }
-            }
-           
-            if (!cadena.Equals(""))
-            {
-                MessageBox.Show(cadena);
-            }
-             */
-            
-            dgvAlumnoBuscar.DataSource = Alumno.Select();
-
-            dgvAlumnoBuscar.Columns.RemoveAt(4);
-
-            DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
-
-            columnaModificar.Name = "Modificar";
-
-            dgvAlumnoBuscar.Columns.Add(columnaModificar);
-
-            DataGridViewButtonColumn columnaEliminar = new DataGridViewButtonColumn();
-                        
-            columnaEliminar.Name = "Eliminar";
-            
-            dgvAlumnoBuscar.Columns.Add(columnaEliminar);
         }
 
         private void btnBuscarAlumnoSalir_Click(object sender, EventArgs e)
@@ -69,9 +57,71 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
         private void btnBuscarAlumnoLimpiar_Click(object sender, EventArgs e)
         {
-            txtBuscarAlumnoNombre.Clear();
+            txtAlumnoBuscarNombre.Clear();
 
-            txtBuscarAlumnoApellido.Clear();
+            txtAlumnoBuscarApellido.Clear();
+        }
+
+        private bool checkData(ComboBox comboA, ComboBox comboB, Label label)
+        {
+            label.Text = "";
+
+            if (comboA.SelectedIndex < 0 && comboB.SelectedIndex < 0)
+            {
+                label.Text = "Seleccione Curso y División";
+            }
+            else
+            {
+                if (comboA.SelectedIndex < 0)
+                {
+                    label.Text = "Seleccione Curso";
+
+                    return false;
+                }
+
+                if (comboB.SelectedIndex < 0)
+                {
+                    label.Text += "Seleccione División";
+
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private bool checkData(ComboBox combo, Label label)
+        {
+            label.Text = "";
+
+            if (combo.SelectedIndex < 0)
+            {
+                label.Text = "Seleccione Especialidad";
+
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool checkData(TextBox textBox, Label label)
+        {
+            label.Text = "";
+
+            if (!textBox.Text.Equals(""))
+            {
+                if (textBox.Name.Equals("txtAlumnoBuscarNombre") || textBox.Name.Equals("txtAlumnoBuscarApellido"))
+                {
+                    if (!Util.todasLetras(textBox.Text))
+                    {
+                        label.Text = "Valores Incorrectos";
+
+                        return false;
+                    }
+                }
+            }
+            
+            return true;
         }
     }
 }

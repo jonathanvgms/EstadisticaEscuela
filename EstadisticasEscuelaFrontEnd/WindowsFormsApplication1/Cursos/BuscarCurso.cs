@@ -19,18 +19,13 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
         }
 
         private void btnBuscarCursoBuscar_Click(object sender, EventArgs e)
-        {
-            
-            
+        {       
             dataGridView1.DataSource = null;
 
             dataGridView1.DataSource = Curso.Select();
 
             dataGridView1.Columns.RemoveAt(4);
         }
-
-        
-        
 
         private void btnBuscarCursoSalir_Click(object sender, EventArgs e)
         {
@@ -55,13 +50,21 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 
         private void BuscarCurso_Load(object sender, EventArgs e)
         {
-            this.cmbBuscarCursoEspecialidad.Items.Add("Electricidad");
             this.cmbBuscarCursoEspecialidad.Items.Add("Computacion");
+            
             this.cmbBuscarCursoEspecialidad.Items.Add("Electronica");
+            
+            this.cmbBuscarCursoEspecialidad.Items.Add("Electricidad");
 
+            this.cmbBuscarCursoEspecialidad.SelectedIndex = 0;
+            
             this.cmbBuscarCursoTurno.Items.Add("Mañana");
+            
             this.cmbBuscarCursoTurno.Items.Add("Tarde");
+            
             this.cmbBuscarCursoTurno.Items.Add("Noche");
+
+            this.cmbBuscarCursoTurno.SelectedIndex = 0;
         }
 
         private bool checkData(TextBox textBox, Label label)

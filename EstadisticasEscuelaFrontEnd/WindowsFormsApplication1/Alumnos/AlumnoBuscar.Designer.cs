@@ -30,12 +30,14 @@
         {
             this.lblBuscarAlumnoNombre = new System.Windows.Forms.Label();
             this.lblBuscarAlumnoApellido = new System.Windows.Forms.Label();
-            this.txtBuscarAlumnoNombre = new System.Windows.Forms.TextBox();
-            this.txtBuscarAlumnoApellido = new System.Windows.Forms.TextBox();
+            this.txtAlumnoBuscarNombre = new System.Windows.Forms.TextBox();
+            this.txtAlumnoBuscarApellido = new System.Windows.Forms.TextBox();
             this.btnBuscarAlumnoSalir = new System.Windows.Forms.Button();
             this.btnBuscarAlumnoBuscar = new System.Windows.Forms.Button();
             this.dgvAlumnoBuscar = new System.Windows.Forms.DataGridView();
             this.btnBuscarAlumnoLimpiar = new System.Windows.Forms.Button();
+            this.lblAlumnoBuscarNombreError = new System.Windows.Forms.Label();
+            this.lblAlumnoBuscarApellidoError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnoBuscar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,19 +59,19 @@
             this.lblBuscarAlumnoApellido.TabIndex = 1;
             this.lblBuscarAlumnoApellido.Text = "Apellido";
             // 
-            // txtBuscarAlumnoNombre
+            // txtAlumnoBuscarNombre
             // 
-            this.txtBuscarAlumnoNombre.Location = new System.Drawing.Point(89, 12);
-            this.txtBuscarAlumnoNombre.Name = "txtBuscarAlumnoNombre";
-            this.txtBuscarAlumnoNombre.Size = new System.Drawing.Size(212, 20);
-            this.txtBuscarAlumnoNombre.TabIndex = 2;
+            this.txtAlumnoBuscarNombre.Location = new System.Drawing.Point(89, 12);
+            this.txtAlumnoBuscarNombre.Name = "txtAlumnoBuscarNombre";
+            this.txtAlumnoBuscarNombre.Size = new System.Drawing.Size(212, 20);
+            this.txtAlumnoBuscarNombre.TabIndex = 2;
             // 
-            // txtBuscarAlumnoApellido
+            // txtAlumnoBuscarApellido
             // 
-            this.txtBuscarAlumnoApellido.Location = new System.Drawing.Point(89, 51);
-            this.txtBuscarAlumnoApellido.Name = "txtBuscarAlumnoApellido";
-            this.txtBuscarAlumnoApellido.Size = new System.Drawing.Size(212, 20);
-            this.txtBuscarAlumnoApellido.TabIndex = 3;
+            this.txtAlumnoBuscarApellido.Location = new System.Drawing.Point(89, 51);
+            this.txtAlumnoBuscarApellido.Name = "txtAlumnoBuscarApellido";
+            this.txtAlumnoBuscarApellido.Size = new System.Drawing.Size(212, 20);
+            this.txtAlumnoBuscarApellido.TabIndex = 3;
             // 
             // btnBuscarAlumnoSalir
             // 
@@ -109,17 +111,35 @@
             this.btnBuscarAlumnoLimpiar.UseVisualStyleBackColor = true;
             this.btnBuscarAlumnoLimpiar.Click += new System.EventHandler(this.btnBuscarAlumnoLimpiar_Click);
             // 
+            // lblAlumnoBuscarNombreError
+            // 
+            this.lblAlumnoBuscarNombreError.AutoSize = true;
+            this.lblAlumnoBuscarNombreError.Location = new System.Drawing.Point(352, 19);
+            this.lblAlumnoBuscarNombreError.Name = "lblAlumnoBuscarNombreError";
+            this.lblAlumnoBuscarNombreError.Size = new System.Drawing.Size(0, 13);
+            this.lblAlumnoBuscarNombreError.TabIndex = 8;
+            // 
+            // lblAlumnoBuscarApellidoError
+            // 
+            this.lblAlumnoBuscarApellidoError.AutoSize = true;
+            this.lblAlumnoBuscarApellidoError.Location = new System.Drawing.Point(352, 57);
+            this.lblAlumnoBuscarApellidoError.Name = "lblAlumnoBuscarApellidoError";
+            this.lblAlumnoBuscarApellidoError.Size = new System.Drawing.Size(0, 13);
+            this.lblAlumnoBuscarApellidoError.TabIndex = 9;
+            // 
             // AlumnoBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 587);
+            this.Controls.Add(this.lblAlumnoBuscarApellidoError);
+            this.Controls.Add(this.lblAlumnoBuscarNombreError);
             this.Controls.Add(this.btnBuscarAlumnoLimpiar);
             this.Controls.Add(this.dgvAlumnoBuscar);
             this.Controls.Add(this.btnBuscarAlumnoBuscar);
             this.Controls.Add(this.btnBuscarAlumnoSalir);
-            this.Controls.Add(this.txtBuscarAlumnoApellido);
-            this.Controls.Add(this.txtBuscarAlumnoNombre);
+            this.Controls.Add(this.txtAlumnoBuscarApellido);
+            this.Controls.Add(this.txtAlumnoBuscarNombre);
             this.Controls.Add(this.lblBuscarAlumnoApellido);
             this.Controls.Add(this.lblBuscarAlumnoNombre);
             this.Name = "AlumnoBuscar";
@@ -135,11 +155,13 @@
 
         private System.Windows.Forms.Label lblBuscarAlumnoNombre;
         private System.Windows.Forms.Label lblBuscarAlumnoApellido;
-        private System.Windows.Forms.TextBox txtBuscarAlumnoNombre;
-        private System.Windows.Forms.TextBox txtBuscarAlumnoApellido;
+        private System.Windows.Forms.TextBox txtAlumnoBuscarNombre;
+        private System.Windows.Forms.TextBox txtAlumnoBuscarApellido;
         private System.Windows.Forms.Button btnBuscarAlumnoSalir;
         private System.Windows.Forms.Button btnBuscarAlumnoBuscar;
         private System.Windows.Forms.DataGridView dgvAlumnoBuscar;
         private System.Windows.Forms.Button btnBuscarAlumnoLimpiar;
+        private System.Windows.Forms.Label lblAlumnoBuscarNombreError;
+        private System.Windows.Forms.Label lblAlumnoBuscarApellidoError;
     }
 }
