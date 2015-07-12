@@ -62,17 +62,17 @@
     <Compile Include="Alumnos\AlumnoBuscar.Designer.cs">
       <DependentUpon>AlumnoBuscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cursos\BuscarCurso.cs">
+    <Compile Include="Cursos\CursoBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cursos\BuscarCurso.Designer.cs">
-      <DependentUpon>BuscarCurso.cs</DependentUpon>
+    <Compile Include="Cursos\CursoBuscar.Designer.cs">
+      <DependentUpon>CursoBuscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cursos\frmCurso.cs">
+    <Compile Include="Cursos\CursoNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cursos\frmCurso.Designer.cs">
-      <DependentUpon>frmCurso.cs</DependentUpon>
+    <Compile Include="Cursos\CursoNuevo.Designer.cs">
+      <DependentUpon>CursoNuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Dominio\Alumno.cs" />
     <Compile Include="Dominio\Asistencia.cs" />
@@ -117,11 +117,11 @@
     <EmbeddedResource Include="Alumnos\AlumnoBuscar.resx">
       <DependentUpon>AlumnoBuscar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cursos\BuscarCurso.resx">
-      <DependentUpon>BuscarCurso.cs</DependentUpon>
+    <EmbeddedResource Include="Cursos\CursoBuscar.resx">
+      <DependentUpon>CursoBuscar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cursos\frmCurso.resx">
-      <DependentUpon>frmCurso.cs</DependentUpon>
+    <EmbeddedResource Include="Cursos\CursoNuevo.resx">
+      <DependentUpon>CursoNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Escritorio.resx">
       <DependentUpon>Escritorio.cs</DependentUpon>

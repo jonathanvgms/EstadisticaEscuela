@@ -38,6 +38,10 @@
             this.btnBuscarAlumnoLimpiar = new System.Windows.Forms.Button();
             this.lblAlumnoBuscarNombreError = new System.Windows.Forms.Label();
             this.lblAlumnoBuscarApellidoError = new System.Windows.Forms.Label();
+            this.lblEspecialidad = new System.Windows.Forms.Label();
+            this.lblTurno = new System.Windows.Forms.Label();
+            this.cmbBuscarAlumnoEspecialidad = new System.Windows.Forms.ComboBox();
+            this.cmbBuscarAlumnoTurno = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnoBuscar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,9 +100,9 @@
             // dgvAlumnoBuscar
             // 
             this.dgvAlumnoBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlumnoBuscar.Location = new System.Drawing.Point(12, 82);
+            this.dgvAlumnoBuscar.Location = new System.Drawing.Point(12, 93);
             this.dgvAlumnoBuscar.Name = "dgvAlumnoBuscar";
-            this.dgvAlumnoBuscar.Size = new System.Drawing.Size(919, 453);
+            this.dgvAlumnoBuscar.Size = new System.Drawing.Size(919, 442);
             this.dgvAlumnoBuscar.TabIndex = 6;
             // 
             // btnBuscarAlumnoLimpiar
@@ -127,11 +131,49 @@
             this.lblAlumnoBuscarApellidoError.Size = new System.Drawing.Size(0, 13);
             this.lblAlumnoBuscarApellidoError.TabIndex = 9;
             // 
+            // lblEspecialidad
+            // 
+            this.lblEspecialidad.AutoSize = true;
+            this.lblEspecialidad.Location = new System.Drawing.Point(352, 58);
+            this.lblEspecialidad.Name = "lblEspecialidad";
+            this.lblEspecialidad.Size = new System.Drawing.Size(67, 13);
+            this.lblEspecialidad.TabIndex = 17;
+            this.lblEspecialidad.Text = "Especialidad";
+            // 
+            // lblTurno
+            // 
+            this.lblTurno.AutoSize = true;
+            this.lblTurno.Location = new System.Drawing.Point(352, 15);
+            this.lblTurno.Name = "lblTurno";
+            this.lblTurno.Size = new System.Drawing.Size(35, 13);
+            this.lblTurno.TabIndex = 16;
+            this.lblTurno.Text = "Turno";
+            // 
+            // cmbBuscarAlumnoEspecialidad
+            // 
+            this.cmbBuscarAlumnoEspecialidad.FormattingEnabled = true;
+            this.cmbBuscarAlumnoEspecialidad.Location = new System.Drawing.Point(442, 52);
+            this.cmbBuscarAlumnoEspecialidad.Name = "cmbBuscarAlumnoEspecialidad";
+            this.cmbBuscarAlumnoEspecialidad.Size = new System.Drawing.Size(203, 21);
+            this.cmbBuscarAlumnoEspecialidad.TabIndex = 15;
+            // 
+            // cmbBuscarAlumnoTurno
+            // 
+            this.cmbBuscarAlumnoTurno.FormattingEnabled = true;
+            this.cmbBuscarAlumnoTurno.Location = new System.Drawing.Point(442, 11);
+            this.cmbBuscarAlumnoTurno.Name = "cmbBuscarAlumnoTurno";
+            this.cmbBuscarAlumnoTurno.Size = new System.Drawing.Size(203, 21);
+            this.cmbBuscarAlumnoTurno.TabIndex = 14;
+            // 
             // AlumnoBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 587);
+            this.Controls.Add(this.lblEspecialidad);
+            this.Controls.Add(this.lblTurno);
+            this.Controls.Add(this.cmbBuscarAlumnoEspecialidad);
+            this.Controls.Add(this.cmbBuscarAlumnoTurno);
             this.Controls.Add(this.lblAlumnoBuscarApellidoError);
             this.Controls.Add(this.lblAlumnoBuscarNombreError);
             this.Controls.Add(this.btnBuscarAlumnoLimpiar);
@@ -144,7 +186,8 @@
             this.Controls.Add(this.lblBuscarAlumnoNombre);
             this.Name = "AlumnoBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Buscar Alumno";
+            this.Text = "BUSCAR ALUMNO";
+            this.Load += new System.EventHandler(this.AlumnoBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnoBuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -163,5 +206,9 @@
         private System.Windows.Forms.Button btnBuscarAlumnoLimpiar;
         private System.Windows.Forms.Label lblAlumnoBuscarNombreError;
         private System.Windows.Forms.Label lblAlumnoBuscarApellidoError;
+        private System.Windows.Forms.Label lblEspecialidad;
+        private System.Windows.Forms.Label lblTurno;
+        private System.Windows.Forms.ComboBox cmbBuscarAlumnoEspecialidad;
+        private System.Windows.Forms.ComboBox cmbBuscarAlumnoTurno;
     }
 }

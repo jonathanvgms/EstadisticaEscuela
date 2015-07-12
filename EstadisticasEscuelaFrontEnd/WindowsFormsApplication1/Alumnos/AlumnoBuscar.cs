@@ -123,5 +123,24 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             
             return true;
         }
+
+        private void AlumnoBuscar_Load(object sender, EventArgs e)
+        {
+            this.cmbBuscarAlumnoEspecialidad.Items.Add("Computacion");
+
+            this.cmbBuscarAlumnoEspecialidad.Items.Add("Electronica");
+
+            this.cmbBuscarAlumnoEspecialidad.Items.Add("Electricidad");
+
+            this.cmbBuscarAlumnoEspecialidad.SelectedIndex = 0;
+
+            this.cmbBuscarAlumnoTurno.Items.Add("Mañana");
+
+            this.cmbBuscarAlumnoTurno.Items.Add("Tarde");
+
+            this.cmbBuscarAlumnoTurno.Items.Add("Noche");
+
+            this.cmbBuscarAlumnoTurno.SelectedIndex = 0;
+        }
     }
 }

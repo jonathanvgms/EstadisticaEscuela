@@ -47,7 +47,7 @@ namespace EstadisticasEscuelaFrontEnd
 
         private void dasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCurso unfrmCurso= new frmCurso();
+            CursoNuevo unfrmCurso= new CursoNuevo();
             unfrmCurso.ShowDialog(this);
         }
 

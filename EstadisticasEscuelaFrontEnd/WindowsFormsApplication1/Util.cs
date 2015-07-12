@@ -9,7 +9,6 @@ namespace EstadisticasEscuelaFrontEnd
     {
         //El metodo recibe un string y devuelve un bool verdadero mientras que la cadena este entre A y Z
         public static bool todasLetras(string buffer)
-
         {
             string aux = buffer.ToUpper();
 
