@@ -37,7 +37,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             {
                 Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text));
                 
-                lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO";
+                lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO ";
             }            
         }
         
