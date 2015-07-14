@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Escritorio));
             this.barraDeMenu = new System.Windows.Forms.MenuStrip();
             this.dasdaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adsaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -188,9 +189,9 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(734, 386);
             this.Controls.Add(this.barraDeMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.barraDeMenu;
             this.Name = "Escritorio";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ESCRITORIO";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

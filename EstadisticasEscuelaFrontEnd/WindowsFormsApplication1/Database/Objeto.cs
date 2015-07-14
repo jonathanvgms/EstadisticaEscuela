@@ -54,7 +54,7 @@ namespace EstadisticasEscuelaFrontEnd.Database
         {
             MySqlConnection connectionLive = databaseMySqlConnection();
 
-            MySqlCommand command = new MySqlCommand("borrar" + obj.Tipo, connectionLive);
+            MySqlCommand command = new MySqlCommand("eliminar" + obj.Tipo, connectionLive);
 
             command.CommandType = CommandType.StoredProcedure;
 

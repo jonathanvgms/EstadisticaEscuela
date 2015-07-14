@@ -64,12 +64,39 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             Tipo = "Alumno";
         }
 
+        public Alumno (string unLegajo)
+        {
+            Legajo = unLegajo;
+
+            Parametros.Add(new Parametro("@unLegajo", legajo));
+
+            Tipo = "Alumno";
+        }
+
         public static List<Alumno> Select()
         {
             List<Alumno> alumnos = new List<Alumno>();
 
             string query = "select * from alumno";
 
+            alumnos = Query(query, alumnos);
+
+            return alumnos;
+        }    
+
+        public static List<Alumno> Select(string where)
+        {
+            List<Alumno> alumnos = new List<Alumno>();
+
+            string query = "select * from alumno " + where;
+
+            alumnos = Query(query, alumnos);
+
+            return alumnos;
+        }
+
+        private static List<Alumno> Query(string query, List<Alumno> alumnos)
+        {
             MySqlDataReader myReader = null;
 
             MySqlConnection connectionLive = databaseMySqlConnection();
@@ -90,6 +117,6 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             connectionLive.Close();
 
             return alumnos;
-        }    
+        }
     }
 }

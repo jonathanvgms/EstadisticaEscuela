@@ -31,15 +31,13 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             if (!checkData(txtAlumnoNuevoLegajo, lblAlumnoNuevoLegajoError)) error = false;
 
-            //checkData(cmbAlumnoNuevoCurso, cmbAlumnoNuevoDivision, lblAlumnoNuevoCursoError);
-
-            //checkData(cmbAlumnoNuevoEspecialidad, lblAlumnoNuevoEspecialidadError);
+            //falta verificar que el alumno existe en la base de datos
 
             if (error)
             {
                 Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text));
-
-                lblMessage.Text = "ALUMNO GUARDADO CON EXITO";
+                
+                lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO";
             }            
         }
         
@@ -95,7 +93,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                 {
                     if (!Util.todasLetras(textBox.Text))
                     {
-                        label.Text = "Valores Incorrectos";
+                        label.Text = "Valor Incorrecto";
 
                         return false;
                     }
@@ -105,7 +103,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                 {
                     if (!Util.todasNumeros(textBox.Text))
                     {
-                        label.Text = "Valores Incorrectos";
+                        label.Text = "Valor Incorrecto";
 
                         return false;
                     }
@@ -146,6 +144,6 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         private void btnAlumnoNuevoCancelar_Click(object sender, EventArgs e)
         {
             Close();
-        }      
+        }              
     }
 }

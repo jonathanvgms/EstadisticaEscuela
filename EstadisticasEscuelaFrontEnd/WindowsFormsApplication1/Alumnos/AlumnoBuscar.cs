@@ -28,25 +28,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             if (error)
             {
-                dgvAlumnoBuscar.DataSource = null;
-
-                dgvAlumnoBuscar.Columns.Clear();
-                
-                dgvAlumnoBuscar.DataSource = Alumno.Select();
-
-                dgvAlumnoBuscar.Columns.RemoveAt(4);
-
-                DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
-
-                columnaModificar.Name = "Modificar";
-
-                dgvAlumnoBuscar.Columns.Add(columnaModificar);
-
-                DataGridViewButtonColumn columnaEliminar = new DataGridViewButtonColumn();
-
-                columnaEliminar.Name = "Eliminar";
-
-                dgvAlumnoBuscar.Columns.Add(columnaEliminar);
+                loadAlumnoBuscar();
             }
         }
 
@@ -132,15 +114,66 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             this.cmbBuscarAlumnoEspecialidad.Items.Add("Electricidad");
 
-            this.cmbBuscarAlumnoEspecialidad.SelectedIndex = 0;
-
             this.cmbBuscarAlumnoTurno.Items.Add("Mañana");
 
             this.cmbBuscarAlumnoTurno.Items.Add("Tarde");
 
             this.cmbBuscarAlumnoTurno.Items.Add("Noche");
+        }
 
-            this.cmbBuscarAlumnoTurno.SelectedIndex = 0;
+        private void seleccionAlumno(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((e.ColumnIndex == dgvAlumnoBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
+            {
+                frmAlumnoModificar alumnoModificar = new frmAlumnoModificar();
+
+                Alumno alumnoFila = new Alumno(dgvAlumnoBuscar.CurrentRow.Cells[0].Value.ToString(),
+                                               dgvAlumnoBuscar.CurrentRow.Cells[1].Value.ToString(),
+                                               dgvAlumnoBuscar.CurrentRow.Cells[2].Value.ToString(),
+                                               dgvAlumnoBuscar.CurrentRow.Cells[3].Value.ToString());
+
+                alumnoModificar.Alumno = alumnoFila;
+
+                alumnoModificar.ShowDialog(this);
+                
+                //lblBuscarAlumnoError.Text = "ALUMNO MODIFICADO CON EXITO";
+                
+                loadAlumnoBuscar();
+            }
+
+            if ((e.ColumnIndex == dgvAlumnoBuscar.Columns["Eliminar"].Index) && (e.ColumnIndex >= -1))
+            {
+                Alumno.Delete(new Alumno(dgvAlumnoBuscar.CurrentRow.Cells[2].Value.ToString()));
+                
+                lblBuscarAlumnoError.Text = "ALUMNO ELIMINADO CON EXITO";
+                
+                loadAlumnoBuscar();
+            }
+        }
+
+        private void loadAlumnoBuscar()
+        {
+            dgvAlumnoBuscar.DataSource = null;
+
+            dgvAlumnoBuscar.Columns.Clear();
+
+            string query = String.Format("where nombre LIKE '%{0}%' and apellido LIKE '%{1}%'", txtAlumnoBuscarNombre.Text, txtAlumnoBuscarApellido.Text);
+            
+            dgvAlumnoBuscar.DataSource = Alumno.Select(query);
+
+            dgvAlumnoBuscar.Columns.RemoveAt(4);
+
+            DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
+
+            columnaModificar.Name = "Modificar";
+
+            dgvAlumnoBuscar.Columns.Add(columnaModificar);
+
+            DataGridViewButtonColumn columnaEliminar = new DataGridViewButtonColumn();
+
+            columnaEliminar.Name = "Eliminar";
+
+            dgvAlumnoBuscar.Columns.Add(columnaEliminar);
         }
     }
 }
