@@ -125,16 +125,16 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         {
             if ((e.ColumnIndex == dgvAlumnoBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
-                frmAlumnoModificar alumnoModificar = new frmAlumnoModificar();
+                //frmAlumnoModificar alumnoModificar = new frmAlumnoModificar();
 
                 Alumno alumnoFila = new Alumno(dgvAlumnoBuscar.CurrentRow.Cells[0].Value.ToString(),
                                                dgvAlumnoBuscar.CurrentRow.Cells[1].Value.ToString(),
                                                dgvAlumnoBuscar.CurrentRow.Cells[2].Value.ToString(),
                                                dgvAlumnoBuscar.CurrentRow.Cells[3].Value.ToString());
 
-                alumnoModificar.Alumno = alumnoFila;
+                //alumnoModificar.Alumno = alumnoFila;
 
-                alumnoModificar.ShowDialog(this);
+                //alumnoModificar.ShowDialog(this);
                 
                 //lblBuscarAlumnoError.Text = "ALUMNO MODIFICADO CON EXITO";
                 
