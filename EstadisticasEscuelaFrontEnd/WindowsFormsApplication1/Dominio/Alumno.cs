@@ -60,8 +60,8 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             Parametros.Add(new Parametro("@unLegajo", legajo));
 
             Parametros.Add(new Parametro("@unDni", dni));
-
-            Tipo = "Alumno";
+            
+            Tipo = "Alumno"; 
         }
 
         public Alumno (string unLegajo)
