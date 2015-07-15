@@ -8,13 +8,25 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 {
     class Turno : Objeto
     {
-        private int IdTurno { get; set; }
-        private string turno { get; set; }
-
-        public Turno(int UnidTurno, string Unturno)
+        private string _id;
+        
+        public string Id
         {
-            IdTurno = UnidTurno;
-            turno = Unturno;
+            get { return _id; }
+            set { _id = value; }
+        }
+
+        private string _nombre;
+
+        public string Nombre
+        {
+            get { return _nombre; }
+            set { _nombre = value; }
+        }
+
+        public Turno(string nombre)
+        {
+            Nombre = nombre;
         }
     }
 }

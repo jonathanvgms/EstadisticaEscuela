@@ -170,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Recursos\et12icon.ico" />
+    <Content Include="Recursos\main.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

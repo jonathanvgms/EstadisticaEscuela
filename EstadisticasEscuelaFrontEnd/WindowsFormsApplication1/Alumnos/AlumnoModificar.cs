@@ -45,16 +45,6 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         {
             //falta verificar que los datos sean correctos y completes
 
-            /*AlumnoModificado.Nombre = txtAlumnoModificarNombre.Text;
-
-            AlumnoModificado.Apellido = txtAlumnoModificarApellido.Text;
-
-            AlumnoModificado.Legajo = txtAlumnoModificarLegajo.Text;
-
-            AlumnoModificado.Dni = txtAlumnoModificarDNI.Text;
-            
-            Alumno.Update(alumnoModificado);*/
-
             Alumno.Update(new Alumno(alumnoModificado.Id, txtAlumnoModificarNombre.Text, txtAlumnoModificarApellido.Text, txtAlumnoModificarLegajo.Text, txtAlumnoModificarDNI.Text));
 
             Close();

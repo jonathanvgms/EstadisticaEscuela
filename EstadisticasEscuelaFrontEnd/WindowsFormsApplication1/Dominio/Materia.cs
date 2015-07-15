@@ -8,13 +8,25 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 {
     class Materia : Objeto
     {
-        private int idMateria { get; set; }
-        private string materia { get; set; }
+        private string _id;
 
-        public Materia(int unaIDMateria, string unaMateria)
+        public string Id
         {
-            idMateria = unaIDMateria;
-            materia = unaMateria;
+            get { return _id; }
+            set { _id = value; }
+        }
+
+        private string _nombre;
+
+        public string Nombre
+        {
+            get { return _nombre; }
+            set { _nombre = value; }
+        }
+
+        public Materia(string nombre)
+        {
+            Nombre = nombre;
         }
     }
 }

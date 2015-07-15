@@ -8,14 +8,28 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 {
     class Especialidad : Objeto
     {
-        private int IdEspecialidad { get; set; }
-        private string nombreEspecialidad { get; set; }
+        private int _id;
 
-        public Especialidad(int UnIdEspecialidad, string UnnombreEspecialidad)
+        public int Id
         {
-            IdEspecialidad = UnIdEspecialidad;
-            nombreEspecialidad = UnnombreEspecialidad;
+            get { return _id; }
+            set { _id = value; }
         }
-          
+
+
+        private string _tipoEspecialidad;
+
+        public string TipoEspecialidad
+        {
+            get { return _tipoEspecialidad; }
+            set { _tipoEspecialidad = value; }
+        }
+        
+        public Especialidad(int id, string nombre)
+        {
+            Id = id;
+
+            TipoEspecialidad = nombre;
+        }          
     }
 }

@@ -130,7 +130,8 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
                 while (myReader.Read())
                 {
-                    alumnos.Add(new Alumno(myReader["idAlumno"].ToString(), myReader["nombre"].ToString(), myReader["apellido"].ToString(), myReader["legajo"].ToString(), myReader["dni"].ToString()));
+                    alumnos.Add(new Alumno(myReader["idAlumno"].ToString(), myReader["nombre"].ToString(), 
+                        myReader["apellido"].ToString(), myReader["legajo"].ToString(), myReader["dni"].ToString()));
                 }
 
                 myReader.Dispose();
