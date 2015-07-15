@@ -3,6 +3,7 @@ using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using EstadisticasEscuelaFrontEnd.Database;
@@ -11,64 +12,82 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 {
     class Alumno : Objeto
     {
-        private string nombre;
+        private string _id;
+
+        public string Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
+        private string _nombre;
 
         public string Nombre
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return _nombre; }
+            set { _nombre = value; }
         }
 
-        private string apellido;
+        private string _apellido;
 
         public string Apellido
         {
-            get { return apellido; }
-            set { apellido = value; }
+            get { return _apellido; }
+            set { _apellido = value; }
         }
 
-        private string legajo;
+        private string _legajo;
 
         public string Legajo
         {
-            get { return legajo; }
-            set { legajo = value; }
+            get { return _legajo; }
+            set { _legajo = value; }
         }
 
-        private string dni;
+        private string _dni;
 
         public string Dni
         {
-            get { return dni; }
-            set { dni = value; }
+            get { return _dni; }
+            set { _dni = value; }
         }
 
-        public Alumno(string unNombre, string unApellido, string unLegajo, string unDni)
+        public Alumno(string nombre, string apellido, string legajo, string dni)
         {
-            Nombre = unNombre;
+            Nombre = nombre;
 
-            Apellido = unApellido;
+            Apellido = apellido;
 
-            Dni = unDni;
+            Dni = dni;
 
-            Legajo = unLegajo;
+            Legajo = legajo;
 
-            Parametros.Add(new Parametro("@unNombre", nombre));
+            Parametros.Add(new Parametro("@unNombre", Nombre));
 
-            Parametros.Add(new Parametro("@unApellido", apellido));
+            Parametros.Add(new Parametro("@unApellido", Apellido));
 
-            Parametros.Add(new Parametro("@unLegajo", legajo));
+            Parametros.Add(new Parametro("@unLegajo", Legajo));
 
-            Parametros.Add(new Parametro("@unDni", dni));
+            Parametros.Add(new Parametro("@unDni", Dni));
             
             Tipo = "Alumno"; 
         }
 
-        public Alumno (string unLegajo)
+        public Alumno(string id, string nombre, string apellido, string legajo, string dni) 
+            : this (nombre, apellido, legajo, dni)
         {
-            Legajo = unLegajo;
+            Id = id;
 
-            Parametros.Add(new Parametro("@unLegajo", legajo));
+            Parametros.Add(new Parametro("@unIdAlumno", Id));
+
+            Tipo = "Alumno";           
+        }
+
+        public Alumno(string idAlumno)
+        {
+            _id = idAlumno;
+
+            Parametros.Add(new Parametro("@unIdAlumno", _id));
 
             Tipo = "Alumno";
         }
@@ -103,18 +122,25 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
             MySqlCommand command = new MySqlCommand(query, connectionLive);
 
-            connectionLive.Open();
-
-            myReader = command.ExecuteReader();
-
-            while (myReader.Read())
+            try
             {
-                alumnos.Add(new Alumno(myReader["nombre"].ToString(), myReader["apellido"].ToString(), myReader["legajo"].ToString(), myReader["dni"].ToString()));
+                connectionLive.Open();
+
+                myReader = command.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    alumnos.Add(new Alumno(myReader["idAlumno"].ToString(), myReader["nombre"].ToString(), myReader["apellido"].ToString(), myReader["legajo"].ToString(), myReader["dni"].ToString()));
+                }
+
+                myReader.Dispose();
+
+                connectionLive.Close();
             }
-
-            myReader.Dispose();
-
-            connectionLive.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
             return alumnos;
         }

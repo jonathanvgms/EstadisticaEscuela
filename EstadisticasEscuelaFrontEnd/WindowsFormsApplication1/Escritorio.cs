@@ -24,8 +24,8 @@ namespace EstadisticasEscuelaFrontEnd
             
             login.ShowDialog(this);
 
-            Objeto.ConectionString("win2012-01", "3306", "escuela", "alumno67", "saramoya");
-            //Objeto.ConectionString("localhost", "3306", "mydb", "root", "telesca1234");
+            //Objeto.ConectionString("win2012-01", "3306", "escuela", "alumno67", "saramoya");
+            Objeto.ConectionString("localhost", "3306", "mydb", "root", "telesca1234");
         }
 
         private void adsaToolStripMenuItem_Click(object sender, EventArgs e)

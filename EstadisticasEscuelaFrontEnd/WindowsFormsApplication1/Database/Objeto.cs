@@ -3,6 +3,7 @@ using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -11,7 +12,7 @@ namespace EstadisticasEscuelaFrontEnd.Database
     class Objeto
     {
         protected string tipo;
-
+        
         public string Tipo
         {
             get { return tipo; }
@@ -43,7 +44,7 @@ namespace EstadisticasEscuelaFrontEnd.Database
         {
             MySqlConnection connectionLive = databaseMySqlConnection();
 
-            MySqlCommand command = new MySqlCommand("modificar" + obj.Tipo, connectionLive);
+            MySqlCommand command = new MySqlCommand("Actualizar" + obj.Tipo, connectionLive);
 
             command.CommandType = CommandType.StoredProcedure;
 
@@ -74,6 +75,7 @@ namespace EstadisticasEscuelaFrontEnd.Database
         protected static MySqlConnection databaseMySqlConnection()
         {
             MySqlConnection con = new MySqlConnection(ConnectionString());
+
             return con;
         }
 
@@ -94,7 +96,7 @@ namespace EstadisticasEscuelaFrontEnd.Database
             }
             catch (MySqlException ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }       
     }

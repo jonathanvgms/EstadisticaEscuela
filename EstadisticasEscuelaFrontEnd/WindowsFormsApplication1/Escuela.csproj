@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumnos\AlumnoModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\AlumnoModificar.Designer.cs">
+      <DependentUpon>AlumnoModificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alumnos\AlumnoNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,7 @@
     <Compile Include="Cursos\CursoNuevo.Designer.cs">
       <DependentUpon>CursoNuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\IObjeto.cs" />
     <Compile Include="Dominio\Alumno.cs" />
     <Compile Include="Dominio\Asistencia.cs" />
     <Compile Include="Dominio\Curso.cs" />
@@ -111,6 +118,9 @@
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
+    <EmbeddedResource Include="Alumnos\AlumnoModificar.resx">
+      <DependentUpon>AlumnoModificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Alumnos\AlumnoNuevo.resx">
       <DependentUpon>AlumnoNuevo.cs</DependentUpon>
     </EmbeddedResource>

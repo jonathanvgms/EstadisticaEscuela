@@ -125,25 +125,24 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         {
             if ((e.ColumnIndex == dgvAlumnoBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
-                //frmAlumnoModificar alumnoModificar = new frmAlumnoModificar();
+                frmAlumnoModificar alumnoModificar = new frmAlumnoModificar();
 
-                Alumno alumnoFila = new Alumno(dgvAlumnoBuscar.CurrentRow.Cells[0].Value.ToString(),
-                                               dgvAlumnoBuscar.CurrentRow.Cells[1].Value.ToString(),
-                                               dgvAlumnoBuscar.CurrentRow.Cells[2].Value.ToString(),
-                                               dgvAlumnoBuscar.CurrentRow.Cells[3].Value.ToString());
+                alumnoModificar.AlumnoModificado = new Alumno(dgvAlumnoBuscar.CurrentRow.Cells[0].Value.ToString(),
+                                                              dgvAlumnoBuscar.CurrentRow.Cells[1].Value.ToString(),
+                                                              dgvAlumnoBuscar.CurrentRow.Cells[2].Value.ToString(),
+                                                              dgvAlumnoBuscar.CurrentRow.Cells[3].Value.ToString(),
+                                                              dgvAlumnoBuscar.CurrentRow.Cells[4].Value.ToString());
 
-                //alumnoModificar.Alumno = alumnoFila;
-
-                //alumnoModificar.ShowDialog(this);
+                alumnoModificar.ShowDialog(this);
                 
-                //lblBuscarAlumnoError.Text = "ALUMNO MODIFICADO CON EXITO";
+                lblBuscarAlumnoError.Text = "ALUMNO MODIFICADO CON EXITO";
                 
                 loadAlumnoBuscar();
             }
 
             if ((e.ColumnIndex == dgvAlumnoBuscar.Columns["Eliminar"].Index) && (e.ColumnIndex >= -1))
             {
-                Alumno.Delete(new Alumno(dgvAlumnoBuscar.CurrentRow.Cells[2].Value.ToString()));
+                Alumno.Delete(new Alumno(dgvAlumnoBuscar.CurrentRow.Cells[0].Value.ToString()));
                 
                 lblBuscarAlumnoError.Text = "ALUMNO ELIMINADO CON EXITO";
                 
@@ -161,7 +160,9 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             
             dgvAlumnoBuscar.DataSource = Alumno.Select(query);
 
-            dgvAlumnoBuscar.Columns.RemoveAt(4);
+            dgvAlumnoBuscar.Columns["Id"].Visible = false;
+
+            dgvAlumnoBuscar.Columns["Tipo"].Visible = false;
 
             DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
 
