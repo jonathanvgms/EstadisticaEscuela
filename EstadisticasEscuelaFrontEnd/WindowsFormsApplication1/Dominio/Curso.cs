@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySql.Data;
 using EstadisticasEscuelaFrontEnd.Database;
@@ -17,23 +18,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             get { return _id; }
             set { _id = value; }
         }
-
-        private string _idEspecialidad;
-
-        public string IdEspecialidad
-        {
-            get { return _idEspecialidad; }
-            set { _idEspecialidad = value; }
-        }
-
-        private string _idTurno;
-
-        public string IdTurno
-        {
-            get { return _idTurno; }
-            set { _idTurno = value; }
-        }
-
+        
         private string _anio;
 
         public string Anio
@@ -48,6 +33,22 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
         {
             get{ return _division; }
             set { _division = value; }
+        }
+      
+        private string _idTurno;
+
+        public string IdTurno
+        {
+            get { return _idTurno; }
+            set { _idTurno = value; }
+        }
+
+        private string _idEspecialidad;
+
+        public string IdEspecialidad
+        {
+            get { return _idEspecialidad; }
+            set { _idEspecialidad = value; }
         }
 
         public Curso(string anio, string division, string idTurno, string idEspecialidad)
@@ -111,8 +112,6 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
             return cursos;
         }
-
-        
    
         private static List<Curso> Query(string query, List<Curso> cursos)
         {
@@ -122,23 +121,66 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
             MySqlCommand command = new MySqlCommand(query, connectionLive);
 
-            connectionLive.Open();
-
-            myReader = command.ExecuteReader();
-
-            while (myReader.Read())
+            try
             {
-                cursos.Add(new Curso(myReader["anio"].ToString(),
-                        myReader["division"].ToString(),
-                        myReader["idTurno"].ToString(),
-                        myReader["idEspecialidad"].ToString()));
+                connectionLive.Open();
+
+                myReader = command.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    string turno = turnoTexto(myReader["idTurno"].ToString());
+
+                    string especialidad = especialidadTexto(myReader["idEspecialidad"].ToString());
+
+                    cursos.Add(new Curso(myReader["idCurso"].ToString(), myReader["anio"].ToString(), myReader["division"].ToString(), turno, especialidad));
+                }
+
+                myReader.Dispose();
+
+                connectionLive.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
 
-            myReader.Dispose();
-
-            connectionLive.Close();
-
             return cursos;
+        }
+
+        private static string especialidadTexto(string p)
+        {
+            if (p.Equals("1"))
+            {
+                return "Computación";
+            }
+
+            if (p.Equals("2"))
+            {
+                return "Electrónica";
+            }
+
+            if (p.Equals("3"))
+            {
+                return "Eléctrica";
+            }
+
+            return "Ciclo Básico";
+        }
+
+        private static string turnoTexto(string p)
+        {
+            if (p.Equals("1"))
+            {
+                return "Mañana";
+            }
+
+            if (p.Equals("2"))
+            {
+                return "Tarde";
+            }
+
+            return "Noche";
         }
     }
 }

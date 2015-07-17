@@ -86,7 +86,6 @@
     <Compile Include="Dominio\Curso.cs" />
     <Compile Include="Dominio\Especialidad.cs" />
     <Compile Include="Dominio\Materia.cs" />
-    <Compile Include="Dominio\MateriaCurso.cs" />
     <Compile Include="Dominio\Nota.cs" />
     <Compile Include="Database\Objeto.cs" />
     <Compile Include="Database\Parametro.cs" />

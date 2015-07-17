@@ -15,8 +15,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             get { return _id; }
             set { _id = value; }
         }
-
-
+        
         private string _tipoEspecialidad;
 
         public string TipoEspecialidad

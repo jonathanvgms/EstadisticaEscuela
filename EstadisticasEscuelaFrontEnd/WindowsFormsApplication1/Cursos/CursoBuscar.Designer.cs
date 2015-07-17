@@ -32,17 +32,17 @@
             this.btnBuscarCursoSalir = new System.Windows.Forms.Button();
             this.lblBuscarCursoAnio = new System.Windows.Forms.Label();
             this.lblBuscarCursoDivision = new System.Windows.Forms.Label();
-            this.txtBuscarCursoAnio = new System.Windows.Forms.TextBox();
-            this.txtBuscarCursoDivision = new System.Windows.Forms.TextBox();
+            this.txtCursoBuscarAnio = new System.Windows.Forms.TextBox();
+            this.txtCursoBuscarDivision = new System.Windows.Forms.TextBox();
             this.btnBuscarCursoBuscar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCursoBuscar = new System.Windows.Forms.DataGridView();
             this.lblBuscarCursoAnioError = new System.Windows.Forms.Label();
             this.lblBuscarCursoDivisionError = new System.Windows.Forms.Label();
             this.cmbBuscarCursoTurno = new System.Windows.Forms.ComboBox();
             this.cmbBuscarCursoEspecialidad = new System.Windows.Forms.ComboBox();
             this.lblTurno = new System.Windows.Forms.Label();
             this.lblEspecialidad = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursoBuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBuscarCursoLimpiar
@@ -73,7 +73,6 @@
             this.lblBuscarCursoAnio.Size = new System.Drawing.Size(26, 13);
             this.lblBuscarCursoAnio.TabIndex = 2;
             this.lblBuscarCursoAnio.Text = "Año";
-            this.lblBuscarCursoAnio.Click += new System.EventHandler(this.lblBuscarCursoAnio_Click);
             // 
             // lblBuscarCursoDivision
             // 
@@ -84,19 +83,19 @@
             this.lblBuscarCursoDivision.TabIndex = 3;
             this.lblBuscarCursoDivision.Text = "Division";
             // 
-            // txtBuscarCursoAnio
+            // txtCursoBuscarAnio
             // 
-            this.txtBuscarCursoAnio.Location = new System.Drawing.Point(85, 12);
-            this.txtBuscarCursoAnio.Name = "txtBuscarCursoAnio";
-            this.txtBuscarCursoAnio.Size = new System.Drawing.Size(203, 20);
-            this.txtBuscarCursoAnio.TabIndex = 4;
+            this.txtCursoBuscarAnio.Location = new System.Drawing.Point(85, 12);
+            this.txtCursoBuscarAnio.Name = "txtCursoBuscarAnio";
+            this.txtCursoBuscarAnio.Size = new System.Drawing.Size(203, 20);
+            this.txtCursoBuscarAnio.TabIndex = 4;
             // 
-            // txtBuscarCursoDivision
+            // txtCursoBuscarDivision
             // 
-            this.txtBuscarCursoDivision.Location = new System.Drawing.Point(85, 52);
-            this.txtBuscarCursoDivision.Name = "txtBuscarCursoDivision";
-            this.txtBuscarCursoDivision.Size = new System.Drawing.Size(203, 20);
-            this.txtBuscarCursoDivision.TabIndex = 5;
+            this.txtCursoBuscarDivision.Location = new System.Drawing.Point(85, 52);
+            this.txtCursoBuscarDivision.Name = "txtCursoBuscarDivision";
+            this.txtCursoBuscarDivision.Size = new System.Drawing.Size(203, 20);
+            this.txtCursoBuscarDivision.TabIndex = 5;
             // 
             // btnBuscarCursoBuscar
             // 
@@ -108,14 +107,13 @@
             this.btnBuscarCursoBuscar.UseVisualStyleBackColor = true;
             this.btnBuscarCursoBuscar.Click += new System.EventHandler(this.btnBuscarCursoBuscar_Click);
             // 
-            // dataGridView1
+            // dgvCursoBuscar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(767, 441);
-            this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvCursoBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCursoBuscar.Location = new System.Drawing.Point(12, 89);
+            this.dgvCursoBuscar.Name = "dgvCursoBuscar";
+            this.dgvCursoBuscar.Size = new System.Drawing.Size(767, 441);
+            this.dgvCursoBuscar.TabIndex = 7;
             // 
             // lblBuscarCursoAnioError
             // 
@@ -178,10 +176,10 @@
             this.Controls.Add(this.cmbBuscarCursoTurno);
             this.Controls.Add(this.lblBuscarCursoDivisionError);
             this.Controls.Add(this.lblBuscarCursoAnioError);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCursoBuscar);
             this.Controls.Add(this.btnBuscarCursoBuscar);
-            this.Controls.Add(this.txtBuscarCursoDivision);
-            this.Controls.Add(this.txtBuscarCursoAnio);
+            this.Controls.Add(this.txtCursoBuscarDivision);
+            this.Controls.Add(this.txtCursoBuscarAnio);
             this.Controls.Add(this.lblBuscarCursoDivision);
             this.Controls.Add(this.lblBuscarCursoAnio);
             this.Controls.Add(this.btnBuscarCursoSalir);
@@ -190,7 +188,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BUSCAR CURSO";
             this.Load += new System.EventHandler(this.BuscarCurso_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursoBuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,10 +200,10 @@
         private System.Windows.Forms.Button btnBuscarCursoSalir;
         private System.Windows.Forms.Label lblBuscarCursoAnio;
         private System.Windows.Forms.Label lblBuscarCursoDivision;
-        private System.Windows.Forms.TextBox txtBuscarCursoAnio;
-        private System.Windows.Forms.TextBox txtBuscarCursoDivision;
+        private System.Windows.Forms.TextBox txtCursoBuscarAnio;
+        private System.Windows.Forms.TextBox txtCursoBuscarDivision;
         private System.Windows.Forms.Button btnBuscarCursoBuscar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCursoBuscar;
         private System.Windows.Forms.Label lblBuscarCursoAnioError;
         private System.Windows.Forms.Label lblBuscarCursoDivisionError;
         private System.Windows.Forms.ComboBox cmbBuscarCursoTurno;

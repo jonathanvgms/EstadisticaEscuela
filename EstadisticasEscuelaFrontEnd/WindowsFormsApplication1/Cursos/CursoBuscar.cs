@@ -20,11 +20,20 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 
         private void btnBuscarCursoBuscar_Click(object sender, EventArgs e)
         {       
-            dataGridView1.DataSource = null;
+            dgvCursoBuscar.DataSource = null;
 
-            dataGridView1.DataSource = Curso.Select();
+            //string query = String.Format("where curso = {0} and division = {1}", txtCursoBuscarAnio.Text, txtCursoBuscarDivision.Text);
 
-            dataGridView1.Columns.RemoveAt(4);
+            dgvCursoBuscar.DataSource = Curso.Select();
+
+            dgvCursoBuscar.Columns[0].Visible = false;
+
+            dgvCursoBuscar.Columns[5].Visible = false;
+
+            dgvCursoBuscar.Columns[3].Name = "Turno";
+
+            dgvCursoBuscar.Columns[4].Name = "Especialidad";
+
         }
 
         private void btnBuscarCursoSalir_Click(object sender, EventArgs e)
@@ -34,18 +43,9 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 
         private void btnBuscarCursoLimpiar_Click(object sender, EventArgs e)
         {
-            txtBuscarCursoAnio.Clear();
-            txtBuscarCursoDivision.Clear();
-        }
+            txtCursoBuscarAnio.Clear();
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void lblBuscarCursoAnio_Click(object sender, EventArgs e)
-        {
-
+            txtCursoBuscarDivision.Clear();
         }
 
         private void BuscarCurso_Load(object sender, EventArgs e)
