@@ -1,0 +1,11 @@
+orden
+
+especialidad
+turno
+materias
+usuario
+curso
+alumnos
+materia
+materiaCurso
+nota
