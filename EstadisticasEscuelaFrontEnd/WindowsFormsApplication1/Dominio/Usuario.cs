@@ -132,7 +132,6 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             }
 
             return usuarios;
-
         }
 
     }
