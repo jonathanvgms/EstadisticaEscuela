@@ -35,6 +35,11 @@
             this.lblfrmCursoDivision = new System.Windows.Forms.Label();
             this.txtfrmCursoAnio = new System.Windows.Forms.TextBox();
             this.txtfrmCursoDivision = new System.Windows.Forms.TextBox();
+            this.lblfrmCursoTurno = new System.Windows.Forms.Label();
+            this.lblfrmCursoEspecialidad = new System.Windows.Forms.Label();
+            this.lblfrmCursoNuevoError = new System.Windows.Forms.Label();
+            this.cmbfrmCursoTurno = new System.Windows.Forms.ComboBox();
+            this.cmbfrmCursoEspecialidad = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnfrmCursoLimpiar
@@ -79,7 +84,7 @@
             // lblfrmCursoDivision
             // 
             this.lblfrmCursoDivision.AutoSize = true;
-            this.lblfrmCursoDivision.Location = new System.Drawing.Point(23, 132);
+            this.lblfrmCursoDivision.Location = new System.Drawing.Point(24, 88);
             this.lblfrmCursoDivision.Name = "lblfrmCursoDivision";
             this.lblfrmCursoDivision.Size = new System.Drawing.Size(44, 13);
             this.lblfrmCursoDivision.TabIndex = 4;
@@ -94,16 +99,63 @@
             // 
             // txtfrmCursoDivision
             // 
-            this.txtfrmCursoDivision.Location = new System.Drawing.Point(193, 132);
+            this.txtfrmCursoDivision.Location = new System.Drawing.Point(194, 81);
             this.txtfrmCursoDivision.Name = "txtfrmCursoDivision";
             this.txtfrmCursoDivision.Size = new System.Drawing.Size(100, 20);
             this.txtfrmCursoDivision.TabIndex = 6;
             // 
-            // frmCurso
+            // lblfrmCursoTurno
+            // 
+            this.lblfrmCursoTurno.AutoSize = true;
+            this.lblfrmCursoTurno.Location = new System.Drawing.Point(24, 121);
+            this.lblfrmCursoTurno.Name = "lblfrmCursoTurno";
+            this.lblfrmCursoTurno.Size = new System.Drawing.Size(35, 13);
+            this.lblfrmCursoTurno.TabIndex = 7;
+            this.lblfrmCursoTurno.Text = "Turno";
+            // 
+            // lblfrmCursoEspecialidad
+            // 
+            this.lblfrmCursoEspecialidad.AutoSize = true;
+            this.lblfrmCursoEspecialidad.Location = new System.Drawing.Point(24, 159);
+            this.lblfrmCursoEspecialidad.Name = "lblfrmCursoEspecialidad";
+            this.lblfrmCursoEspecialidad.Size = new System.Drawing.Size(67, 13);
+            this.lblfrmCursoEspecialidad.TabIndex = 8;
+            this.lblfrmCursoEspecialidad.Text = "Especialidad";
+            // 
+            // lblfrmCursoNuevoError
+            // 
+            this.lblfrmCursoNuevoError.AutoSize = true;
+            this.lblfrmCursoNuevoError.Location = new System.Drawing.Point(24, 188);
+            this.lblfrmCursoNuevoError.Name = "lblfrmCursoNuevoError";
+            this.lblfrmCursoNuevoError.Size = new System.Drawing.Size(0, 13);
+            this.lblfrmCursoNuevoError.TabIndex = 11;
+            // 
+            // cmbfrmCursoTurno
+            // 
+            this.cmbfrmCursoTurno.FormattingEnabled = true;
+            this.cmbfrmCursoTurno.Location = new System.Drawing.Point(194, 118);
+            this.cmbfrmCursoTurno.Name = "cmbfrmCursoTurno";
+            this.cmbfrmCursoTurno.Size = new System.Drawing.Size(121, 21);
+            this.cmbfrmCursoTurno.TabIndex = 12;
+            // 
+            // cmbfrmCursoEspecialidad
+            // 
+            this.cmbfrmCursoEspecialidad.FormattingEnabled = true;
+            this.cmbfrmCursoEspecialidad.Location = new System.Drawing.Point(194, 156);
+            this.cmbfrmCursoEspecialidad.Name = "cmbfrmCursoEspecialidad";
+            this.cmbfrmCursoEspecialidad.Size = new System.Drawing.Size(121, 21);
+            this.cmbfrmCursoEspecialidad.TabIndex = 13;
+            // 
+            // CursoNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 262);
+            this.Controls.Add(this.cmbfrmCursoEspecialidad);
+            this.Controls.Add(this.cmbfrmCursoTurno);
+            this.Controls.Add(this.lblfrmCursoNuevoError);
+            this.Controls.Add(this.lblfrmCursoEspecialidad);
+            this.Controls.Add(this.lblfrmCursoTurno);
             this.Controls.Add(this.txtfrmCursoDivision);
             this.Controls.Add(this.txtfrmCursoAnio);
             this.Controls.Add(this.lblfrmCursoDivision);
@@ -111,8 +163,9 @@
             this.Controls.Add(this.btnfrmCursoAceptar);
             this.Controls.Add(this.btnfrmCursoCancelar);
             this.Controls.Add(this.btnfrmCursoLimpiar);
-            this.Name = "frmCurso";
+            this.Name = "CursoNuevo";
             this.Text = "frmCurso";
+            this.Load += new System.EventHandler(this.CursoNuevo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,5 +180,10 @@
         private System.Windows.Forms.Label lblfrmCursoDivision;
         private System.Windows.Forms.TextBox txtfrmCursoAnio;
         private System.Windows.Forms.TextBox txtfrmCursoDivision;
+        private System.Windows.Forms.Label lblfrmCursoTurno;
+        private System.Windows.Forms.Label lblfrmCursoEspecialidad;
+        private System.Windows.Forms.Label lblfrmCursoNuevoError;
+        private System.Windows.Forms.ComboBox cmbfrmCursoTurno;
+        private System.Windows.Forms.ComboBox cmbfrmCursoEspecialidad;
     }
 }

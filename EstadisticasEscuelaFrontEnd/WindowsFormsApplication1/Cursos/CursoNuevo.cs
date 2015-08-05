@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using EstadisticasEscuelaFrontEnd.Dominio;
 
 namespace EstadisticasEscuelaFrontEnd.Cursos
 {
@@ -49,6 +50,14 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
             {
                 MessageBox.Show(cadena);
             }
+            MessageBox.Show(cmbfrmCursoEspecialidad.SelectedIndex.ToString());
+            MessageBox.Show(cmbfrmCursoTurno.SelectedIndex.ToString());
+
+   //         Curso.Add(new Curso(txtfrmCursoAnio.Text, txtfrmCursoDivision.Text, cmbfrmCursoTurno.Text, cmbfrmCursoEspecialidad.Text));
+            Curso.Add(new Curso(txtfrmCursoAnio.Text, txtfrmCursoDivision.Text, cmbfrmCursoTurno.SelectedIndex.ToString(), cmbfrmCursoTurno.SelectedIndex.ToString()));
+            lblfrmCursoNuevoError.Text = "CURSO GUARDADO CON EXITO";
+            
+
         }
 
         private void btnfrmCursoCancelar_Click(object sender, EventArgs e)
@@ -60,7 +69,16 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
         {
              txtfrmCursoAnio.Clear();
              txtfrmCursoDivision.Clear();
-        
+        }
+
+        private void CursoNuevo_Load(object sender, EventArgs e)
+        {
+            cmbfrmCursoEspecialidad.Items.Add("Computacion");
+            cmbfrmCursoEspecialidad.Items.Add("Electronica");
+            cmbfrmCursoEspecialidad.Items.Add("Electricidad");
+            cmbfrmCursoTurno.Items.Add("Mañana");
+            cmbfrmCursoTurno.Items.Add("Tarde");
+            cmbfrmCursoTurno.Items.Add("Noche");
         }
     }
 }
