@@ -42,7 +42,7 @@ namespace EstadisticasEscuelaFrontEnd
 
         private void nUEVOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUsuario unfrmUsuario = new frmUsuario();
+            UsuarioNuevo unfrmUsuario = new UsuarioNuevo();
             unfrmUsuario.ShowDialog(this);
         }
 
