@@ -9,7 +9,7 @@ using EstadisticasEscuelaFrontEnd.Database;
 
 namespace EstadisticasEscuelaFrontEnd.Dominio
 {
-    class Usuario :Objeto
+    class Usuario : Objeto
     {
         private string _id;
 
@@ -133,7 +133,8 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
             return usuarios;
 
-            }
         }
+
     }
+}
 
