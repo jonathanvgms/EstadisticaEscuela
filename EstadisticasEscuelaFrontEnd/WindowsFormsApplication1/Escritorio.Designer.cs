@@ -39,10 +39,10 @@
             this.dasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.materiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asistenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nUEVOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bUSCARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asistenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dasdToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.dasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,14 +117,14 @@
             // dasToolStripMenuItem
             // 
             this.dasToolStripMenuItem.Name = "dasToolStripMenuItem";
-            this.dasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dasToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.dasToolStripMenuItem.Text = "Nuevo";
             this.dasToolStripMenuItem.Click += new System.EventHandler(this.dasToolStripMenuItem_Click);
             // 
             // adasToolStripMenuItem1
             // 
             this.adasToolStripMenuItem1.Name = "adasToolStripMenuItem1";
-            this.adasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.adasToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.adasToolStripMenuItem1.Text = "Buscar";
             this.adasToolStripMenuItem1.Click += new System.EventHandler(this.adasToolStripMenuItem1_Click);
             // 
@@ -133,12 +133,6 @@
             this.materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
             this.materiasToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.materiasToolStripMenuItem.Text = "Materias";
-            // 
-            // asistenciasToolStripMenuItem
-            // 
-            this.asistenciasToolStripMenuItem.Name = "asistenciasToolStripMenuItem";
-            this.asistenciasToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.asistenciasToolStripMenuItem.Text = "Asistencias";
             // 
             // uSUARIOSToolStripMenuItem
             // 
@@ -162,6 +156,12 @@
             this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.bUSCARToolStripMenuItem.Text = "Buscar";
             this.bUSCARToolStripMenuItem.Click += new System.EventHandler(this.bUSCARToolStripMenuItem_Click);
+            // 
+            // asistenciasToolStripMenuItem
+            // 
+            this.asistenciasToolStripMenuItem.Name = "asistenciasToolStripMenuItem";
+            this.asistenciasToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.asistenciasToolStripMenuItem.Text = "Asistencias";
             // 
             // dasdToolStripMenuItem2
             // 

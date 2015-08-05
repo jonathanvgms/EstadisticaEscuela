@@ -96,5 +96,32 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
             
             return true;
         }
+
+        private void loadCursoBuscar()
+        {
+            dgvCursoBuscar.DataSource = null;
+
+            dgvCursoBuscar.Columns.Clear();
+
+            string query = string.Format("where anio LIKE '%(0)%' and division LIKE '%{1}%'", txtCursoBuscarAnio, txtCursoBuscarDivision);
+
+            dgvCursoBuscar.DataSource = Curso.Select(query);
+
+            dgvCursoBuscar.Columns["Id"].Visible = false;
+
+            dgvCursoBuscar.Columns["Id"].Visible = false;
+
+            DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
+
+            columnaModificar.Name = "Modificar";
+
+            dgvCursoBuscar.Columns.Add(columnaModificar);
+
+            DataGridViewButtonColumn columnaEliminar = new DataGridViewButtonColumn();
+
+            columnaEliminar.Name = "Eliminar";
+
+            dgvCursoBuscar.Columns.Add(columnaEliminar);
+        }
     }
 }

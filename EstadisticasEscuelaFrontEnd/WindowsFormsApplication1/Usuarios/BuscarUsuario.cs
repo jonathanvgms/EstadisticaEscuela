@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using EstadisticasEscuelaFrontEnd.Database;
+using EstadisticasEscuelaFrontEnd.Dominio;
 namespace EstadisticasEscuelaFrontEnd.Usuarios
 {
     public partial class fmrBuscarUsuario : Form
@@ -43,6 +44,34 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
         {
             txtBuscarUsuarioNombre.Clear();
             
+        }
+
+        private void loadUsuarioBuscar()
+        {
+            dgvUsuarioBuscar.DataSource = null;
+
+            dgvUsuarioBuscar.Columns.Clear();
+
+            string query = string.Format("where nombre LIKE '%{0}%'", txtBuscarUsuarioNombre);
+
+            dgvUsuarioBuscar.DataSource = Usuario.Select(query);
+
+            dgvUsuarioBuscar.Columns["Id"].Visible = false;
+
+            dgvUsuarioBuscar.Columns["Tipo"].Visible = false;
+
+            DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
+
+            columnaModificar.Name = "Modificar";
+
+            dgvUsuarioBuscar.Columns.Add(columnaModificar);
+
+            DataGridViewButtonColumn columnaEliminar = new DataGridViewButtonColumn();
+
+            columnaEliminar.Name = "Eliminar";
+
+            dgvUsuarioBuscar.Columns.Add(columnaEliminar);
+                
         }
     }
 }

@@ -149,7 +149,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                 loadAlumnoBuscar();
             }
         }
-
+        //holamundo %'mun'%
         private void loadAlumnoBuscar()
         {
             dgvAlumnoBuscar.DataSource = null;

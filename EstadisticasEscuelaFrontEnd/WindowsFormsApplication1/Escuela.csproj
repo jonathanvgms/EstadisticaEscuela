@@ -90,6 +90,7 @@
     <Compile Include="Database\Objeto.cs" />
     <Compile Include="Database\Parametro.cs" />
     <Compile Include="Dominio\Turno.cs" />
+    <Compile Include="Dominio\Usuario.cs" />
     <Compile Include="Escritorio.cs">
       <SubType>Form</SubType>
     </Compile>
