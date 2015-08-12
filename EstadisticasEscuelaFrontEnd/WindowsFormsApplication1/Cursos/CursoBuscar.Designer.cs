@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscarCurso));
             this.btnBuscarCursoLimpiar = new System.Windows.Forms.Button();
             this.btnBuscarCursoSalir = new System.Windows.Forms.Button();
             this.lblBuscarCursoAnio = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.btnBuscarCursoLimpiar.TabIndex = 0;
             this.btnBuscarCursoLimpiar.Text = "Limpiar";
             this.btnBuscarCursoLimpiar.UseVisualStyleBackColor = true;
-            this.btnBuscarCursoLimpiar.Click += new System.EventHandler(this.btnBuscarCursoLimpiar_Click);
             // 
             // btnBuscarCursoSalir
             // 
@@ -184,10 +184,10 @@
             this.Controls.Add(this.lblBuscarCursoAnio);
             this.Controls.Add(this.btnBuscarCursoSalir);
             this.Controls.Add(this.btnBuscarCursoLimpiar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBuscarCurso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BUSCAR CURSO";
-            this.Load += new System.EventHandler(this.BuscarCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursoBuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

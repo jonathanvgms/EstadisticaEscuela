@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd.Login;
 using EstadisticasEscuelaFrontEnd.Alumnos;
-using EstadisticasEscuelaFrontEnd.Usuarios;
 using EstadisticasEscuelaFrontEnd.Cursos;
 using EstadisticasEscuelaFrontEnd.Database;
 
@@ -25,7 +24,7 @@ namespace EstadisticasEscuelaFrontEnd
             login.ShowDialog(this);
 
             //Objeto.ConectionString("win2012-01", "3306", "estadisticasescuela", "root", "Lujho12");
-            Objeto.ConectionString("win2012-01", "3306", "escuela", "alumno67", "saramoya");
+            Objeto.ConectionString("win2012-01", "3306", "estadisticasescuela", "alumno67", "saramoya");
 //            Objeto.ConectionString("localhost", "3306", "estadisticasescuela", "root", "saram");
         }
 
@@ -42,13 +41,12 @@ namespace EstadisticasEscuelaFrontEnd
 
         private void nUEVOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUsuarioNuevo unfrmUsuarioNuevo = new frmUsuarioNuevo();
-            unfrmUsuarioNuevo.ShowDialog(this);
+            
         }
 
         private void dasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CursoNuevo unfrmCurso= new CursoNuevo();
+            frmCursoNuevo unfrmCurso= new frmCursoNuevo();
             unfrmCurso.ShowDialog(this);
         }
 
@@ -66,8 +64,7 @@ namespace EstadisticasEscuelaFrontEnd
 
         private void bUSCARToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUsuarioBuscar unfrmUsuarioBuscar = new frmUsuarioBuscar();
-            unfrmUsuarioBuscar.ShowDialog(this);
+            
         }       
     }
 }

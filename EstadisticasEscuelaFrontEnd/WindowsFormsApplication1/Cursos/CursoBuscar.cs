@@ -26,13 +26,33 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 
             dgvCursoBuscar.DataSource = Curso.Select();
 
+            dgvCursoBuscar.Columns["Id"].Visible = false;
+
+            dgvCursoBuscar.Columns["Tipo"].Visible = false;
+
+            DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
+
+            columnaModificar.Name = "Modificar";
+
+            dgvCursoBuscar.Columns.Add(columnaModificar);
+
+            DataGridViewButtonColumn columnaEliminar = new DataGridViewButtonColumn();
+
+            columnaEliminar.Name = "Eliminar";
+
+            dgvCursoBuscar.Columns.Add(columnaEliminar);
+            
+             
+
+
+            /*
             dgvCursoBuscar.Columns[0].Visible = false;
 
             dgvCursoBuscar.Columns[5].Visible = false;
 
             dgvCursoBuscar.Columns[3].Name = "Turno";
 
-            dgvCursoBuscar.Columns[4].Name = "Especialidad";
+            dgvCursoBuscar.Columns[4].Name = "Especialidad"*/
 
         }
 
@@ -99,6 +119,7 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 
         private void loadCursoBuscar()
         {
+            /*
             dgvCursoBuscar.DataSource = null;
 
             dgvCursoBuscar.Columns.Clear();
@@ -110,18 +131,22 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
             dgvCursoBuscar.Columns["Id"].Visible = false;
 
             dgvCursoBuscar.Columns["Id"].Visible = false;
+             * */
+            
 
+        }
+
+        /*
+        private void loadCursoBuscar()
+        {
             DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
-
             columnaModificar.Name = "Modificar";
-
             dgvCursoBuscar.Columns.Add(columnaModificar);
-
             DataGridViewButtonColumn columnaEliminar = new DataGridViewButtonColumn();
-
             columnaEliminar.Name = "Eliminar";
-
             dgvCursoBuscar.Columns.Add(columnaEliminar);
         }
+         * */
+         
     }
 }

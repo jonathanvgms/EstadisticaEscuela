@@ -71,13 +71,19 @@
     <Compile Include="Cursos\CursoBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cursos\CursoBuscar.Designer.cs">
+    <Compile Include="Cursos\CursoBuscar.designer.cs">
       <DependentUpon>CursoBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\CursoModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\CursoModificar.Designer.cs">
+      <DependentUpon>CursoModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Cursos\CursoNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cursos\CursoNuevo.Designer.cs">
+    <Compile Include="Cursos\CursoNuevo.designer.cs">
       <DependentUpon>CursoNuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\IObjeto.cs" />
@@ -103,26 +109,8 @@
     <Compile Include="Login\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Materia\MateriaNuevo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Materia\MateriaNuevo.Designer.cs">
-      <DependentUpon>MateriaNuevo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuarios\frmUsuarioBuscar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios\frmUsuarioBuscar.Designer.cs">
-      <DependentUpon>frmUsuarioBuscar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Usuarios\frmUsuarioNuevo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios\frmUsuarioNuevo.Designer.cs">
-      <DependentUpon>frmUsuarioNuevo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Util.cs" />
     <EmbeddedResource Include="Alumnos\AlumnoModificar.resx">
       <DependentUpon>AlumnoModificar.cs</DependentUpon>
@@ -135,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cursos\CursoBuscar.resx">
       <DependentUpon>CursoBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursos\CursoModificar.resx">
+      <DependentUpon>CursoModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cursos\CursoNuevo.resx">
       <DependentUpon>CursoNuevo.cs</DependentUpon>
@@ -167,6 +158,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Estadisticas\" />
+    <Folder Include="Materia\" />
+    <Folder Include="Usuarios\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Recursos\et12icon.ico" />
