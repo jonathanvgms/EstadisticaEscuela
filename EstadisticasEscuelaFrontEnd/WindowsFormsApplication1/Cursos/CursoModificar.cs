@@ -28,7 +28,26 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
         private void frmCursoModificar_Load(object sender, EventArgs e)
         {
             txtCursoModificarAnio.Text = CursoModificado.Anio;
+
             txtCursoModificarDivision.Text = CursoModificado.Division;
+
+            this.cmbCursoModificarTurno.Items.Add("Mañana");
+
+            this.cmbCursoModificarTurno.Items.Add("Tarde");
+
+            this.cmbCursoModificarTurno.Items.Add("Noche");
+
+            this.cmbCursoModificarTurno.SelectedIndex = 0;
+
+            this.cmbCursoModificarEspecialidad.Items.Add("Computacion");
+
+            this.cmbCursoModificarEspecialidad.Items.Add("Electronica");
+
+            this.cmbCursoModificarEspecialidad.Items.Add("Electrica");
+
+            this.cmbCursoModificarEspecialidad.Items.Add("Ciclo Basico");
+
+            this.cmbCursoModificarEspecialidad.SelectedIndex = 0;
         }
 
         private void btnCursoModificarLimpiar_Click(object sender, EventArgs e)
@@ -36,8 +55,6 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
             txtCursoModificarAnio.Clear();
 
             txtCursoModificarDivision.Clear();
-
-            
         }
 
         private void btnCursoModificarCancelar_Click(object sender, EventArgs e)

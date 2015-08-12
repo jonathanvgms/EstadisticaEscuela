@@ -22,7 +22,9 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
         {       
             dgvCursoBuscar.DataSource = null;
 
-            //string query = String.Format("where curso = {0} and division = {1}", txtCursoBuscarAnio.Text, txtCursoBuscarDivision.Text);f
+            dgvCursoBuscar.Columns.Clear();
+
+            //string query = String.Format("where curso = {0} and division = {1}", txtCursoBuscarAnio.Text, txtCursoBuscarDivision.Text);
 
             dgvCursoBuscar.DataSource = Curso.Select();
 
@@ -41,19 +43,6 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
             columnaEliminar.Name = "Eliminar";
 
             dgvCursoBuscar.Columns.Add(columnaEliminar);
-            
-             
-
-
-            /*
-            dgvCursoBuscar.Columns[0].Visible = false;
-
-            dgvCursoBuscar.Columns[5].Visible = false;
-
-            dgvCursoBuscar.Columns[3].Name = "Turno";
-
-            dgvCursoBuscar.Columns[4].Name = "Especialidad"*/
-
         }
 
         private void btnBuscarCursoSalir_Click(object sender, EventArgs e)
@@ -66,25 +55,6 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
             txtCursoBuscarAnio.Clear();
 
             txtCursoBuscarDivision.Clear();
-        }
-
-        private void BuscarCurso_Load(object sender, EventArgs e)
-        {
-            this.cmbBuscarCursoEspecialidad.Items.Add("Computacion");
-            
-            this.cmbBuscarCursoEspecialidad.Items.Add("Electronica");
-            
-            this.cmbBuscarCursoEspecialidad.Items.Add("Electricidad");
-
-            this.cmbBuscarCursoEspecialidad.SelectedIndex = 0;
-            
-            this.cmbBuscarCursoTurno.Items.Add("Mañana");
-            
-            this.cmbBuscarCursoTurno.Items.Add("Tarde");
-            
-            this.cmbBuscarCursoTurno.Items.Add("Noche");
-
-            this.cmbBuscarCursoTurno.SelectedIndex = 0;
         }
 
         private bool checkData(TextBox textBox, Label label)
@@ -117,17 +87,8 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
             return true;
         }
 
-        private void loadCursoBuscar()
-        {
-            
-        }
-
         private void seleccionCurso(object sender, DataGridViewCellEventArgs e)
         {
-            /*
-            frmCursoModificar a = new frmCursoModificar();
-            a.ShowDialog(this);
-             * */
             if ((e.ColumnIndex == dgvCursoBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
                 frmCursoModificar cursoModificar = new frmCursoModificar();
@@ -140,9 +101,7 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 
                 cursoModificar.ShowDialog(this);
 
-                lblCursoBuscarError.Text = "CURSO MODIFICADO CON EXITO";
-
-                loadCursoBuscar();
+                lblCursoBuscarError.Text = "CURSO MODIFICADO CON EXITO";                         
             }
 
             if ((e.ColumnIndex == dgvCursoBuscar.Columns["Eliminar"].Index) && (e.ColumnIndex >= -1))
@@ -150,20 +109,28 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
                 Curso.Delete(new Curso(dgvCursoBuscar.CurrentRow.Cells[0].Value.ToString()));
 
                 lblCursoBuscarError.Text = "CURSO ELIMINADO CON EXITO";
-
-                loadCursoBuscar();
             }
         }
 
         private void frmBuscarCurso_Load(object sender, EventArgs e)
         {
             this.cmbBuscarCursoTurno.Items.Add("Mañana");
+
             this.cmbBuscarCursoTurno.Items.Add("Tarde");
+
             this.cmbBuscarCursoTurno.Items.Add("Noche");
+
+            this.cmbBuscarCursoTurno.SelectedIndex = 0;
+
             this.cmbBuscarCursoEspecialidad.Items.Add("Computacion");
+
             this.cmbBuscarCursoEspecialidad.Items.Add("Electronica");
+
             this.cmbBuscarCursoEspecialidad.Items.Add("Electrica");
+
             this.cmbBuscarCursoEspecialidad.Items.Add("Ciclo Basico");
+
+            this.cmbBuscarCursoEspecialidad.SelectedIndex = 0;
         }
     }
 }
