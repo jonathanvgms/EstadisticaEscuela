@@ -74,12 +74,6 @@
     <Compile Include="Cursos\CursoBuscar.designer.cs">
       <DependentUpon>CursoBuscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cursos\CursoModificar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cursos\CursoModificar.Designer.cs">
-      <DependentUpon>CursoModificar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Cursos\CursoNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,9 +117,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cursos\CursoBuscar.resx">
       <DependentUpon>CursoBuscar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cursos\CursoModificar.resx">
-      <DependentUpon>CursoModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cursos\CursoNuevo.resx">
       <DependentUpon>CursoNuevo.cs</DependentUpon>
