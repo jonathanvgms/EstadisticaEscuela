@@ -42,8 +42,8 @@ namespace EstadisticasEscuelaFrontEnd
 
         private void nUEVOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UsuarioNuevo unfrmUsuario = new UsuarioNuevo();
-            unfrmUsuario.ShowDialog(this);
+            frmUsuarioNuevo unfrmUsuarioNuevo = new frmUsuarioNuevo();
+            unfrmUsuarioNuevo.ShowDialog(this);
         }
 
         private void dasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,10 +66,8 @@ namespace EstadisticasEscuelaFrontEnd
 
         private void bUSCARToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fmrBuscarUsuario buscarUsuario = new fmrBuscarUsuario();
-            buscarUsuario.ShowDialog(this);
-        }
-
-       
+            frmUsuarioBuscar unfrmUsuarioBuscar = new frmUsuarioBuscar();
+            unfrmUsuarioBuscar.ShowDialog(this);
+        }       
     }
 }
