@@ -1,0 +1,143 @@
+﻿namespace EstadisticasEscuelaFrontEnd.Cursos
+{
+    partial class frmAsistenciaModificar
+    {
+        /// <summary>
+        /// Variable del diseñador requerida.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Limpiar los recursos que se estén utilizando.
+        /// </summary>
+        /// <param name="disposing">true si los recursos administrados se deben eliminar; false en caso contrario, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código generado por el Diseñador de Windows Forms
+
+        /// <summary>
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido del método con el editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lblAsistenciaPresenteNuevo = new System.Windows.Forms.Label();
+            this.lblAsistenciaFechaNuevo = new System.Windows.Forms.Label();
+            this.txtAsistenciaModificarPresente = new System.Windows.Forms.TextBox();
+            this.txtAsistenciaModificarFacha = new System.Windows.Forms.TextBox();
+            this.btnAsistenciaModificarLimpiar = new System.Windows.Forms.Button();
+            this.btnAsistenciaModificarAcepar = new System.Windows.Forms.Button();
+            this.btnAsistenciaModificarCancelar = new System.Windows.Forms.Button();
+            this.Datos = new System.Windows.Forms.GroupBox();
+            this.Datos.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // lblAsistenciaPresenteNuevo
+            // 
+            this.lblAsistenciaPresenteNuevo.AutoSize = true;
+            this.lblAsistenciaPresenteNuevo.Location = new System.Drawing.Point(36, 29);
+            this.lblAsistenciaPresenteNuevo.Name = "lblAsistenciaPresenteNuevo";
+            this.lblAsistenciaPresenteNuevo.Size = new System.Drawing.Size(49, 13);
+            this.lblAsistenciaPresenteNuevo.TabIndex = 0;
+            this.lblAsistenciaPresenteNuevo.Text = "Presente";
+            // 
+            // lblAsistenciaFechaNuevo
+            // 
+            this.lblAsistenciaFechaNuevo.AutoSize = true;
+            this.lblAsistenciaFechaNuevo.Location = new System.Drawing.Point(36, 85);
+            this.lblAsistenciaFechaNuevo.Name = "lblAsistenciaFechaNuevo";
+            this.lblAsistenciaFechaNuevo.Size = new System.Drawing.Size(37, 13);
+            this.lblAsistenciaFechaNuevo.TabIndex = 1;
+            this.lblAsistenciaFechaNuevo.Text = "Fecha";
+            // 
+            // txtAsistenciaModificarPresente
+            // 
+            this.txtAsistenciaModificarPresente.Location = new System.Drawing.Point(151, 29);
+            this.txtAsistenciaModificarPresente.Name = "txtAsistenciaModificarPresente";
+            this.txtAsistenciaModificarPresente.Size = new System.Drawing.Size(131, 20);
+            this.txtAsistenciaModificarPresente.TabIndex = 2;
+            this.txtAsistenciaModificarPresente.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // txtAsistenciaModificarFacha
+            // 
+            this.txtAsistenciaModificarFacha.Location = new System.Drawing.Point(151, 85);
+            this.txtAsistenciaModificarFacha.Name = "txtAsistenciaModificarFacha";
+            this.txtAsistenciaModificarFacha.Size = new System.Drawing.Size(131, 20);
+            this.txtAsistenciaModificarFacha.TabIndex = 3;
+            // 
+            // btnAsistenciaModificarLimpiar
+            // 
+            this.btnAsistenciaModificarLimpiar.Location = new System.Drawing.Point(10, 249);
+            this.btnAsistenciaModificarLimpiar.Name = "btnAsistenciaModificarLimpiar";
+            this.btnAsistenciaModificarLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnAsistenciaModificarLimpiar.TabIndex = 4;
+            this.btnAsistenciaModificarLimpiar.Text = "Limpiar";
+            this.btnAsistenciaModificarLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // btnAsistenciaModificarAcepar
+            // 
+            this.btnAsistenciaModificarAcepar.Location = new System.Drawing.Point(287, 249);
+            this.btnAsistenciaModificarAcepar.Name = "btnAsistenciaModificarAcepar";
+            this.btnAsistenciaModificarAcepar.Size = new System.Drawing.Size(75, 23);
+            this.btnAsistenciaModificarAcepar.TabIndex = 5;
+            this.btnAsistenciaModificarAcepar.Text = "Aceptar";
+            this.btnAsistenciaModificarAcepar.UseVisualStyleBackColor = true;
+            // 
+            // btnAsistenciaModificarCancelar
+            // 
+            this.btnAsistenciaModificarCancelar.Location = new System.Drawing.Point(409, 249);
+            this.btnAsistenciaModificarCancelar.Name = "btnAsistenciaModificarCancelar";
+            this.btnAsistenciaModificarCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnAsistenciaModificarCancelar.TabIndex = 6;
+            this.btnAsistenciaModificarCancelar.Text = "Cancelar";
+            this.btnAsistenciaModificarCancelar.UseVisualStyleBackColor = true;
+            // 
+            // Datos
+            // 
+            this.Datos.Controls.Add(this.lblAsistenciaPresenteNuevo);
+            this.Datos.Controls.Add(this.lblAsistenciaFechaNuevo);
+            this.Datos.Controls.Add(this.txtAsistenciaModificarPresente);
+            this.Datos.Controls.Add(this.txtAsistenciaModificarFacha);
+            this.Datos.Location = new System.Drawing.Point(12, 27);
+            this.Datos.Name = "Datos";
+            this.Datos.Size = new System.Drawing.Size(470, 159);
+            this.Datos.TabIndex = 7;
+            this.Datos.TabStop = false;
+            this.Datos.Text = "Datos";
+            // 
+            // frmAsistenciaModificar
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(494, 306);
+            this.Controls.Add(this.Datos);
+            this.Controls.Add(this.btnAsistenciaModificarCancelar);
+            this.Controls.Add(this.btnAsistenciaModificarAcepar);
+            this.Controls.Add(this.btnAsistenciaModificarLimpiar);
+            this.Name = "frmAsistenciaModificar";
+            this.Text = "AsistenciaModificar";
+            this.Datos.ResumeLayout(false);
+            this.Datos.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblAsistenciaPresenteNuevo;
+        private System.Windows.Forms.Label lblAsistenciaFechaNuevo;
+        private System.Windows.Forms.TextBox txtAsistenciaModificarPresente;
+        private System.Windows.Forms.TextBox txtAsistenciaModificarFacha;
+        private System.Windows.Forms.Button btnAsistenciaModificarLimpiar;
+        private System.Windows.Forms.Button btnAsistenciaModificarAcepar;
+        private System.Windows.Forms.Button btnAsistenciaModificarCancelar;
+        private System.Windows.Forms.GroupBox Datos;
+    }
+}
