@@ -228,7 +228,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BUSCAR ALUMNO";
+            this.Text = "Buscar Alumno";
             this.Load += new System.EventHandler(this.AlumnoBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnoBuscar)).EndInit();
             this.groupBox1.ResumeLayout(false);

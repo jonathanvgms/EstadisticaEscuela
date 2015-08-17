@@ -49,25 +49,26 @@ namespace EstadisticasEscuelaFrontEnd.Materia
             }
         }
 
-        private bool checkData(TextBox texbox, Label label)
+        private bool checkData(TextBox texBox, Label label)
         {
             label.Text = "";
 
-            if (!texbox.Text.Equals(""))
+            if (!texBox.Text.Equals(""))
             {
-                if (texbox.Name.Equals("txtMateriaNuevoMateria"))
+                if (texBox.Name.Equals("txtMateriaNuevoMateria"))
                 {
-                    if (!Util.todasLetras(texbox.Text))
+                    if (!Util.todasLetras(texBox.Text))
                     {
-                        label.Text = "Vacio";
+                        label.Text = "Valor incorrecto";
 
                         return false;
                     }
                 }
             }
+
             else
             {
-                label.Text = "Valor Incorrecto";
+                label.Text = "Vacio";
 
                 return false;
             }

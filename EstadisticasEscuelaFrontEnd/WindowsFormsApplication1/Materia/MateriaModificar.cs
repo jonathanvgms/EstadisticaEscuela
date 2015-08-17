@@ -44,6 +44,7 @@ namespace EstadisticasEscuelaFrontEnd.Materia
             bool error = true;
 
             if (!checkData(txtMateriaModificarMateria, lblMateriaModificarMateriaError)) error = false;
+
             if (error)
             {
                 Dominio.Materia.Add(new Dominio.Materia(txtMateriaModificarMateria.Text));

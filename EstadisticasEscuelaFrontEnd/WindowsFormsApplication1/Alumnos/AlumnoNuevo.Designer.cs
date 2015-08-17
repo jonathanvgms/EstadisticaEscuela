@@ -187,7 +187,7 @@
             // lblAlumnoNuevoCursoError
             // 
             this.lblAlumnoNuevoCursoError.AutoSize = true;
-            this.lblAlumnoNuevoCursoError.Location = new System.Drawing.Point(479, 228);
+            this.lblAlumnoNuevoCursoError.Location = new System.Drawing.Point(479, 174);
             this.lblAlumnoNuevoCursoError.Name = "lblAlumnoNuevoCursoError";
             this.lblAlumnoNuevoCursoError.Size = new System.Drawing.Size(0, 13);
             this.lblAlumnoNuevoCursoError.TabIndex = 21;
@@ -203,7 +203,7 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(137, 297);
+            this.lblMessage.Location = new System.Drawing.Point(12, 254);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 13);
             this.lblMessage.TabIndex = 26;
@@ -213,6 +213,7 @@
             this.Datos.Controls.Add(this.textBox2);
             this.Datos.Controls.Add(this.btnAlumnoNuevoBuscarUsuario);
             this.Datos.Controls.Add(this.btnAlumnoNuevoBuscarCurso);
+            this.Datos.Controls.Add(this.lblAlumnoNuevoCursoError);
             this.Datos.Controls.Add(this.textBox1);
             this.Datos.Controls.Add(this.lblAlumnoNuevoUsuario);
             this.Datos.Controls.Add(this.lblAlumnoNuevoCurso);
@@ -230,7 +231,7 @@
             this.Datos.Controls.Add(this.txtAlumnoNuevoDNI);
             this.Datos.Location = new System.Drawing.Point(12, 12);
             this.Datos.Name = "Datos";
-            this.Datos.Size = new System.Drawing.Size(467, 239);
+            this.Datos.Size = new System.Drawing.Size(547, 239);
             this.Datos.TabIndex = 27;
             this.Datos.TabStop = false;
             this.Datos.Text = "Datos";
@@ -292,11 +293,10 @@
             this.AcceptButton = this.btnAlumnoNuevo;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.btnAlumnoNuevoCancelar;
-            this.ClientSize = new System.Drawing.Size(491, 317);
+            this.ClientSize = new System.Drawing.Size(571, 317);
             this.Controls.Add(this.Datos);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblAlumnoNuevoError);
-            this.Controls.Add(this.lblAlumnoNuevoCursoError);
             this.Controls.Add(this.btnAlumnoNuevoCancelar);
             this.Controls.Add(this.btnAlumnoNuevoLimpiar);
             this.Controls.Add(this.btnAlumnoNuevo);
@@ -308,7 +308,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ALUMNO NUEVO";
+            this.Text = "Alumno Nuevo";
             this.Datos.ResumeLayout(false);
             this.Datos.PerformLayout();
             this.ResumeLayout(false);

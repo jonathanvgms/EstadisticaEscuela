@@ -120,6 +120,9 @@
             this.dgvMateriaBuscar.Name = "dgvMateriaBuscar";
             this.dgvMateriaBuscar.Size = new System.Drawing.Size(681, 329);
             this.dgvMateriaBuscar.TabIndex = 4;
+            /*
+            this.dgvMateriaBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionMateria);
+             * */
             // 
             // frmMateriaBuscar
             // 
@@ -133,7 +136,7 @@
             this.Controls.Add(this.FiltroDeBusqueda);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMateriaBuscar";
-            this.Text = "MateriaBuscar";
+            this.Text = "Buscar Materia";
             this.FiltroDeBusqueda.ResumeLayout(false);
             this.FiltroDeBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateriaBuscar)).EndInit();

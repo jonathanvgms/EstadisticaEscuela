@@ -29,7 +29,7 @@ namespace EstadisticasEscuelaFrontEnd.Materia
                 loadMateriaBuscar();
             }
         }
-
+        /*
         private bool checkData(ComboBox comboA, ComboBox comboB, Label label)
         {
             label.Text = "";
@@ -42,6 +42,7 @@ namespace EstadisticasEscuelaFrontEnd.Materia
             }
             return true;
         }
+         * */
 
         private bool checkData(TextBox textbox, Label label)
         {
@@ -84,8 +85,6 @@ namespace EstadisticasEscuelaFrontEnd.Materia
 
             dgvMateriaBuscar.Columns.Add(columnaModificar);
 
-            dgvMateriaBuscar.Columns.Add(columnaModificar);
-
             DataGridViewButtonColumn columnaEliminar = new DataGridViewButtonColumn();
 
             columnaEliminar.Name = "Eliminar";
@@ -103,5 +102,35 @@ namespace EstadisticasEscuelaFrontEnd.Materia
             txtMateriaBuscarMateria.Text = "";
             lblMateriaBuscarMateriaError.Text = "";
         }
+        /*
+        private void seleccionMateria(object sender, DataGridViewCellEventArgs e)
+        {           
+            if ((e.ColumnIndex == dgvMateriaBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
+            {
+                frmMateriaModificar materiaModificar = new frmMateriaModificar();
+
+                materiaModificar.MateriaModificada = new Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString(),
+                                                              dgvMateriaBuscar.CurrentRow.Cells[1].Value.ToString(),
+                                                              dgvMateriaBuscar.CurrentRow.Cells[2].Value.ToString(),
+                                                              dgvMateriaBuscar.CurrentRow.Cells[3].Value.ToString(),
+                                                              dgvMateriaBuscar.CurrentRow.Cells[4].Value.ToString());
+
+                materiaModificar.ShowDialog(this);
+
+                lblMateriaBuscarMateriaError.Text = "ALUMNO MODIFICADO CON EXITO";
+              
+                loadMateriaBuscar();
+            }
+
+            if ((e.ColumnIndex == dgvMateriaBuscar.Columns["Eliminar"].Index) && (e.ColumnIndex >= -1))
+            {
+                Dominio.Materia.Delete(new Dominio.Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString()));
+
+                lblMateriaBuscarMateriaError.Text = "ALUMNO ELIMINADO CON EXITO";
+
+                loadMateriaBuscar();
+            }
+        }
+         * */
     }
 }

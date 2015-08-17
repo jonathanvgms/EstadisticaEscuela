@@ -9,15 +9,56 @@ using System.Windows.Forms;
 
 namespace EstadisticasEscuelaFrontEnd.Usuarios
 {
-    public partial class UsuarioNuevo : Form
+    public partial class frmUsuarioNuevo : Form
     {
-        public UsuarioNuevo()
+        public frmUsuarioNuevo()
         {
             InitializeComponent();
         }
 
-        private void btnfrmUsuarioAceptar_Click(object sender, EventArgs e)
+        private bool checkData(ComboBox comboA, Label label)
         {
+            label.Text = "";
+
+            if (comboA.SelectedIndex < 0)
+            {
+                label.Text = "Seleccione Tipo de Usuarip";
+
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool checkData(TextBox textBox, Label label)
+        {
+            label.Text = "";
+
+            if (!textBox.Text.Equals(""))
+            {
+                if (textBox.Name.Equals("txtUsuarioNuevoUsuario") || textBox.Name.Equals("txtUsuarioNuevoContrasenia"))
+                {
+                    if (!Util.todasLetras(textBox.Text))
+                    {
+                        label.Text = "Valor Incorrecto";
+
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                label.Text = "Vacio";
+
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btnUsuarioNuevoAceptar_Click(object sender, EventArgs e)
+        {
+            /*
             string cadena = "";
             if (!txtUsuario.Text.Equals(""))
             {
@@ -55,30 +96,35 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             {
                 MessageBox.Show(cadena);
             }
+             */
 
+            bool error = true;
+            if (!checkData(txtUsuarioNuevoUsuario, lblUsuarioNuevoUsuarioError)) error = false;
+            if (!checkData(txtUsuarioNuevoContrasenia, lblUsuarioNuevoContraseniaError)) error = false;
+            if (!checkData(cmbUsuarioNuevoTipodeUsuario, lblUsuarioNuevoTipodeUsuarioError)) error = false;
+
+            if (error)
+            {
+                Dominio.Usuario.Add(new Dominio.Usuario(txtUsuarioNuevoUsuario.Text, txtUsuarioNuevoContrasenia.Text, cmbUsuarioNuevoTipodeUsuario.SelectedIndex.ToString()));
+                lblUsuarioNuevoError.Text = "USUARIO GUARDADO CON EXITO";
+            }
         }
 
-        private void btnfrmUsuarioCancelar_Click(object sender, EventArgs e)
+        private void btnUsuarioNuevoCancelar_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnfrmUsuarioLimpiar_Click(object sender, EventArgs e)
+        private void btnUsuarioNuevoLimpiar_Click(object sender, EventArgs e)
         {
-            txtUsuario.Clear();
-            txtContrasenia.Clear();
+            txtUsuarioNuevoUsuario.Clear();
+            txtUsuarioNuevoContrasenia.Clear();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void UsuarioNuevo_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void frmUsuario_Load(object sender, EventArgs e)
-        {
-            this.cmbUsuarioTipodeUsuario.Items.Add("Alumno");
-            this.cmbUsuarioTipodeUsuario.Items.Add("Loyaga");
-            this.cmbUsuarioTipodeUsuario.Items.Add("Administrador");
+            this.cmbUsuarioNuevoTipodeUsuario.Items.Add("Alumno");
+            this.cmbUsuarioNuevoTipodeUsuario.Items.Add("Administrador");
         }
     }
 }
