@@ -38,8 +38,8 @@
             this.btnAsistenciaBuscarBuscar = new System.Windows.Forms.Button();
             this.btnAsistenciaBuscarCancelar = new System.Windows.Forms.Button();
             this.FiltroDeBusqueda = new System.Windows.Forms.GroupBox();
-            this.lblAsistenciaBuscarPresenteError = new System.Windows.Forms.Label();
             this.lblAsistenciaBuscarFechaError = new System.Windows.Forms.Label();
+            this.lblAsistenciaBuscarPresenteError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsistenciaBucar)).BeginInit();
             this.FiltroDeBusqueda.SuspendLayout();
             this.SuspendLayout();
@@ -105,6 +105,7 @@
             this.btnAsistenciaBuscarBuscar.TabIndex = 6;
             this.btnAsistenciaBuscarBuscar.Text = "Buscar";
             this.btnAsistenciaBuscarBuscar.UseVisualStyleBackColor = true;
+            this.btnAsistenciaBuscarBuscar.Click += new System.EventHandler(this.btnAsistenciaBuscarBuscar_Click);
             // 
             // btnAsistenciaBuscarCancelar
             // 
@@ -131,14 +132,6 @@
             this.FiltroDeBusqueda.TabStop = false;
             this.FiltroDeBusqueda.Text = "Filtro de Busqueda";
             // 
-            // lblAsistenciaBuscarPresenteError
-            // 
-            this.lblAsistenciaBuscarPresenteError.AutoSize = true;
-            this.lblAsistenciaBuscarPresenteError.Location = new System.Drawing.Point(298, 48);
-            this.lblAsistenciaBuscarPresenteError.Name = "lblAsistenciaBuscarPresenteError";
-            this.lblAsistenciaBuscarPresenteError.Size = new System.Drawing.Size(0, 13);
-            this.lblAsistenciaBuscarPresenteError.TabIndex = 7;
-            // 
             // lblAsistenciaBuscarFechaError
             // 
             this.lblAsistenciaBuscarFechaError.AutoSize = true;
@@ -146,6 +139,14 @@
             this.lblAsistenciaBuscarFechaError.Name = "lblAsistenciaBuscarFechaError";
             this.lblAsistenciaBuscarFechaError.Size = new System.Drawing.Size(0, 13);
             this.lblAsistenciaBuscarFechaError.TabIndex = 8;
+            // 
+            // lblAsistenciaBuscarPresenteError
+            // 
+            this.lblAsistenciaBuscarPresenteError.AutoSize = true;
+            this.lblAsistenciaBuscarPresenteError.Location = new System.Drawing.Point(298, 48);
+            this.lblAsistenciaBuscarPresenteError.Name = "lblAsistenciaBuscarPresenteError";
+            this.lblAsistenciaBuscarPresenteError.Size = new System.Drawing.Size(0, 13);
+            this.lblAsistenciaBuscarPresenteError.TabIndex = 7;
             // 
             // frmAsistenciaBuscar
             // 

@@ -63,5 +63,10 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
             lblAsistenciaBuscarPresenteError.Text = "";
         }
 
+        private void btnAsistenciaBuscarBuscar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }
