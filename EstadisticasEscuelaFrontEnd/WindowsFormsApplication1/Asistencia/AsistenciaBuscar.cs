@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using EstadisticasEscuelaFrontEnd.Database;
+using EstadisticasEscuelaFrontEnd.Dominio;
 
 namespace EstadisticasEscuelaFrontEnd.Asistencia
 {
@@ -14,21 +16,6 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
         public frmAsistenciaBuscar()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private bool checkData(TextBox textBox, Label label)
@@ -65,7 +52,25 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
 
         private void btnAsistenciaBuscarBuscar_Click(object sender, EventArgs e)
         {
-            
+            /*bool error = true;
+
+            if (!checkData(txtAsistenciaBuscarFecha, lblAsistenciaBuscarFechaError)) error = false;
+
+            if (!checkData(txtAsistenciaBuscarPresente, lblAsistenciaBuscarPresenteError)) error = false;
+            /*
+            if (error)
+            {
+                loadAsistencia
+            }*/
+        }
+
+        private void loadAsistenciaBuscar()
+        {
+            dgvAsistenciaBucar.DataSource = null;
+
+            dgvAsistenciaBucar.Columns.Clear();
+
+            //string query = string.Format("where 
         }
 
     }

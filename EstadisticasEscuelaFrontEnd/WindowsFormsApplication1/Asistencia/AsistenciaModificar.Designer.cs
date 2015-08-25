@@ -36,9 +36,10 @@
             this.btnAsistenciaModificarAcepar = new System.Windows.Forms.Button();
             this.btnAsistenciaModificarCancelar = new System.Windows.Forms.Button();
             this.Datos = new System.Windows.Forms.GroupBox();
-            this.lblAsistenciaModificarPresenteError = new System.Windows.Forms.Label();
             this.lblAsistenciaModificarFechaError = new System.Windows.Forms.Label();
+            this.lblAsistenciaModificarPresenteError = new System.Windows.Forms.Label();
             this.lblAsistenciaModificarMensajeError = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Datos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,15 +63,14 @@
             // 
             // txtAsistenciaModificarPresente
             // 
-            this.txtAsistenciaModificarPresente.Location = new System.Drawing.Point(151, 29);
+            this.txtAsistenciaModificarPresente.Location = new System.Drawing.Point(141, 26);
             this.txtAsistenciaModificarPresente.Name = "txtAsistenciaModificarPresente";
             this.txtAsistenciaModificarPresente.Size = new System.Drawing.Size(131, 20);
             this.txtAsistenciaModificarPresente.TabIndex = 2;
-            //this.txtAsistenciaModificarPresente.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtAsistenciaModificarFacha
             // 
-            this.txtAsistenciaModificarFacha.Location = new System.Drawing.Point(151, 85);
+            this.txtAsistenciaModificarFacha.Location = new System.Drawing.Point(153, 199);
             this.txtAsistenciaModificarFacha.Name = "txtAsistenciaModificarFacha";
             this.txtAsistenciaModificarFacha.Size = new System.Drawing.Size(131, 20);
             this.txtAsistenciaModificarFacha.TabIndex = 3;
@@ -106,26 +106,18 @@
             // 
             // Datos
             // 
+            this.Datos.Controls.Add(this.dateTimePicker1);
             this.Datos.Controls.Add(this.lblAsistenciaModificarFechaError);
             this.Datos.Controls.Add(this.lblAsistenciaModificarPresenteError);
             this.Datos.Controls.Add(this.lblAsistenciaPresenteNuevo);
             this.Datos.Controls.Add(this.lblAsistenciaFechaNuevo);
             this.Datos.Controls.Add(this.txtAsistenciaModificarPresente);
-            this.Datos.Controls.Add(this.txtAsistenciaModificarFacha);
             this.Datos.Location = new System.Drawing.Point(12, 27);
             this.Datos.Name = "Datos";
             this.Datos.Size = new System.Drawing.Size(470, 159);
             this.Datos.TabIndex = 7;
             this.Datos.TabStop = false;
             this.Datos.Text = "Datos";
-            // 
-            // lblAsistenciaModificarPresenteError
-            // 
-            this.lblAsistenciaModificarPresenteError.AutoSize = true;
-            this.lblAsistenciaModificarPresenteError.Location = new System.Drawing.Point(300, 35);
-            this.lblAsistenciaModificarPresenteError.Name = "lblAsistenciaModificarPresenteError";
-            this.lblAsistenciaModificarPresenteError.Size = new System.Drawing.Size(0, 13);
-            this.lblAsistenciaModificarPresenteError.TabIndex = 4;
             // 
             // lblAsistenciaModificarFechaError
             // 
@@ -135,6 +127,14 @@
             this.lblAsistenciaModificarFechaError.Size = new System.Drawing.Size(0, 13);
             this.lblAsistenciaModificarFechaError.TabIndex = 5;
             // 
+            // lblAsistenciaModificarPresenteError
+            // 
+            this.lblAsistenciaModificarPresenteError.AutoSize = true;
+            this.lblAsistenciaModificarPresenteError.Location = new System.Drawing.Point(300, 35);
+            this.lblAsistenciaModificarPresenteError.Name = "lblAsistenciaModificarPresenteError";
+            this.lblAsistenciaModificarPresenteError.Size = new System.Drawing.Size(0, 13);
+            this.lblAsistenciaModificarPresenteError.TabIndex = 4;
+            // 
             // lblAsistenciaModificarMensajeError
             // 
             this.lblAsistenciaModificarMensajeError.AutoSize = true;
@@ -142,6 +142,13 @@
             this.lblAsistenciaModificarMensajeError.Name = "lblAsistenciaModificarMensajeError";
             this.lblAsistenciaModificarMensajeError.Size = new System.Drawing.Size(0, 13);
             this.lblAsistenciaModificarMensajeError.TabIndex = 8;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(141, 79);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // frmAsistenciaModificar
             // 
@@ -153,6 +160,7 @@
             this.Controls.Add(this.btnAsistenciaModificarCancelar);
             this.Controls.Add(this.btnAsistenciaModificarAcepar);
             this.Controls.Add(this.btnAsistenciaModificarLimpiar);
+            this.Controls.Add(this.txtAsistenciaModificarFacha);
             this.Name = "frmAsistenciaModificar";
             this.Text = "AsistenciaModificar";
             this.Load += new System.EventHandler(this.frmAsistenciaModificar_Load);
@@ -176,5 +184,6 @@
         private System.Windows.Forms.Label lblAsistenciaModificarFechaError;
         private System.Windows.Forms.Label lblAsistenciaModificarPresenteError;
         private System.Windows.Forms.Label lblAsistenciaModificarMensajeError;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

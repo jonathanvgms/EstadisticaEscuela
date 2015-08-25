@@ -52,7 +52,6 @@
             this.lblAsistenciaBuscarPresente.Size = new System.Drawing.Size(49, 13);
             this.lblAsistenciaBuscarPresente.TabIndex = 0;
             this.lblAsistenciaBuscarPresente.Text = "Presente";
-            this.lblAsistenciaBuscarPresente.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblASistenciaBuscarFecha
             // 
@@ -76,7 +75,6 @@
             this.txtAsistenciaBuscarFecha.Name = "txtAsistenciaBuscarFecha";
             this.txtAsistenciaBuscarFecha.Size = new System.Drawing.Size(133, 20);
             this.txtAsistenciaBuscarFecha.TabIndex = 3;
-            this.txtAsistenciaBuscarFecha.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dgvAsistenciaBucar
             // 
@@ -85,7 +83,6 @@
             this.dgvAsistenciaBucar.Name = "dgvAsistenciaBucar";
             this.dgvAsistenciaBucar.Size = new System.Drawing.Size(599, 286);
             this.dgvAsistenciaBucar.TabIndex = 4;
-            this.dgvAsistenciaBucar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnAsistenciaBuscarLimpiar
             // 

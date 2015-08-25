@@ -94,8 +94,10 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
 
         private void btnAsistenciaNuevoBuscarAlumno_Click(object sender, EventArgs e)
         {
-            //frmAlumnoSeleccionar unfrmAlumnoBuscar = new frmAlumnoSeleccionar();
-            //unfrmAlumnoBuscar.ShowDialog(this);
+            AlumnoSeleccionar unfrmAlumnoBuscar = new AlumnoSeleccionar();
+            unfrmAlumnoBuscar.ShowDialog(this);
+
+            
         }
 
         private void btnAsisntenciaNuevoBuscarCurso_Click(object sender, EventArgs e)
@@ -116,7 +118,7 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
             }
             else
             {
-                //El radio esta sinb marcar
+                //El radio esta sin marcar
                 TrueFalse(rbtAsistenciaNuevoPresente);
             }
             
@@ -130,5 +132,6 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
             }
             return (0).ToString();
         }
+
     }
 }

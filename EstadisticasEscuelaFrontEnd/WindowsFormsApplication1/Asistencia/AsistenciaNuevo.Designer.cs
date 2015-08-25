@@ -34,6 +34,7 @@
             this.btnAsistenciaBuscarAceptar = new System.Windows.Forms.Button();
             this.lblAsistenciaBuscarLimpiar = new System.Windows.Forms.Button();
             this.Datos = new System.Windows.Forms.GroupBox();
+            this.lblAsistenciaNuevoPresentismoError = new System.Windows.Forms.Label();
             this.rbtAsistenciaNuevoAusente = new System.Windows.Forms.RadioButton();
             this.rbtAsistenciaNuevoPresente = new System.Windows.Forms.RadioButton();
             this.lblAsistenicaNuevoError = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.lblAsistenciaNuevoCurso = new System.Windows.Forms.Label();
             this.lblAsistenciaNuevoAlumno = new System.Windows.Forms.Label();
             this.lblAsistenicaNuevoGuardadoConExito = new System.Windows.Forms.Label();
-            this.lblAsistenciaNuevoPresentismoError = new System.Windows.Forms.Label();
             this.Datos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +121,14 @@
             this.Datos.Text = "Datos";
             
             // 
+            // lblAsistenciaNuevoPresentismoError
+            // 
+            this.lblAsistenciaNuevoPresentismoError.AutoSize = true;
+            this.lblAsistenciaNuevoPresentismoError.Location = new System.Drawing.Point(275, 110);
+            this.lblAsistenciaNuevoPresentismoError.Name = "lblAsistenciaNuevoPresentismoError";
+            this.lblAsistenciaNuevoPresentismoError.Size = new System.Drawing.Size(0, 13);
+            this.lblAsistenciaNuevoPresentismoError.TabIndex = 19;
+            // 
             // rbtAsistenciaNuevoAusente
             // 
             this.rbtAsistenciaNuevoAusente.AutoSize = true;
@@ -192,6 +200,7 @@
             // 
             this.txtAsistneciaNuevoCurso.Location = new System.Drawing.Point(112, 184);
             this.txtAsistneciaNuevoCurso.Name = "txtAsistneciaNuevoCurso";
+            this.txtAsistneciaNuevoCurso.ReadOnly = true;
             this.txtAsistneciaNuevoCurso.Size = new System.Drawing.Size(100, 20);
             this.txtAsistneciaNuevoCurso.TabIndex = 7;
             // 
@@ -199,6 +208,7 @@
             // 
             this.txtAsisnteciaNuevoAlumno.Location = new System.Drawing.Point(112, 147);
             this.txtAsisnteciaNuevoAlumno.Name = "txtAsisnteciaNuevoAlumno";
+            this.txtAsisnteciaNuevoAlumno.ReadOnly = true;
             this.txtAsisnteciaNuevoAlumno.Size = new System.Drawing.Size(100, 20);
             this.txtAsisnteciaNuevoAlumno.TabIndex = 6;
             // 
@@ -219,7 +229,6 @@
             this.lblAsistenciaNuevoAlumno.Size = new System.Drawing.Size(42, 13);
             this.lblAsistenciaNuevoAlumno.TabIndex = 4;
             this.lblAsistenciaNuevoAlumno.Text = "Alumno";
-            
             // 
             // lblAsistenicaNuevoGuardadoConExito
             // 
@@ -228,14 +237,6 @@
             this.lblAsistenicaNuevoGuardadoConExito.Name = "lblAsistenicaNuevoGuardadoConExito";
             this.lblAsistenicaNuevoGuardadoConExito.Size = new System.Drawing.Size(0, 13);
             this.lblAsistenicaNuevoGuardadoConExito.TabIndex = 8;
-            // 
-            // lblAsistenciaNuevoPresentismoError
-            // 
-            this.lblAsistenciaNuevoPresentismoError.AutoSize = true;
-            this.lblAsistenciaNuevoPresentismoError.Location = new System.Drawing.Point(275, 110);
-            this.lblAsistenciaNuevoPresentismoError.Name = "lblAsistenciaNuevoPresentismoError";
-            this.lblAsistenciaNuevoPresentismoError.Size = new System.Drawing.Size(0, 13);
-            this.lblAsistenciaNuevoPresentismoError.TabIndex = 19;
             // 
             // frmAsistenciaNuevo
             // 
