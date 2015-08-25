@@ -67,9 +67,9 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             
             Parametros.Add(new Parametro("@unaDivision", Division));
 
-            Parametros.Add(new Parametro("@unTurno", Turno));
+            Parametros.Add(new Parametro("@unIDTurno", Turno));
 
-            Parametros.Add(new Parametro("@unaEspecialidad", Especialidad));
+            Parametros.Add(new Parametro("@unIdEspecialidad", Especialidad));
 
             Tipo = "Curso";
         }
@@ -79,7 +79,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
         {
             Id = id;
 
-            Parametros.Add(new Parametro("@idCurso", Id));
+            Parametros.Add(new Parametro("@unIDCurso", Id));
 
             Tipo = "Curso";
         }
@@ -88,7 +88,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
         {
             Id = id;
 
-            Parametros.Add(new Parametro("@idCurso", Id));
+            Parametros.Add(new Parametro("@unIDCurso", Id));
 
             Tipo = "Curso";
         }
