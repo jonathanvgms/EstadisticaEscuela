@@ -11,7 +11,7 @@ using EstadisticasEscuelaFrontEnd.Alumnos;
 using EstadisticasEscuelaFrontEnd.Usuarios;
 using EstadisticasEscuelaFrontEnd.Cursos;
 using EstadisticasEscuelaFrontEnd.Database;
-using EstadisticasEscuelaFrontEnd.Materia;
+using EstadisticasEscuelaFrontEnd.Materias;
 using EstadisticasEscuelaFrontEnd.Asistencia;
 
 

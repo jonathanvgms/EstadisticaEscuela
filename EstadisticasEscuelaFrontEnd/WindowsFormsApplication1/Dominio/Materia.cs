@@ -1,4 +1,4 @@
-﻿using System;
+﻿                                                                                                                                                  using System;
 using System.Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,16 +28,41 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             set { _nombreMateria = value; }
         }
 
-        public void Materiaa(string nombreMateria)
+        private string _turno;
+
+        public string Turno
+        {
+            get { return _turno; }
+            set { _turno = value; }
+        }
+
+        private string _especialidad;
+
+        public string Especialidad
+        {
+            get { return _especialidad; }
+            set { _especialidad = value; }
+        }
+
+        public Materia(string nombreMateria, string turno, string especialidad)
         {
             NombreMateria = nombreMateria;
 
+            Turno = turno;
+
+            Especialidad = especialidad;
+
             Parametros.Add(new Parametro("@unaMateria", NombreMateria));
+
+            Parametros.Add(new Parametro("@unTurno", Turno));
+
+            Parametros.Add(new Parametro("@unaEspecialidad", Especialidad));
 
             Tipo = "Materia";
         }
 
-        public Materia(string id, string unNombreMateria):this (unNombreMateria)
+        public Materia(string id, string unNombreMateria, string turno, string especialidad)
+            :this (unNombreMateria, turno, especialidad)
             
         {
             Id = id;
@@ -94,7 +119,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
                 while (myReader.Read())
                 {
-                    materias.Add(new Materia(myReader["idMateria"].ToString(), myReader["materia"].ToString()));
+                    materias.Add(new Materia(myReader["idMateria"].ToString(), myReader["materia"].ToString(), myReader["turno"].ToString(), myReader["especialidad"].ToString()));
                 }
                 myReader.Dispose();
 

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd.Database;
 using EstadisticasEscuelaFrontEnd.Dominio;
 
-namespace EstadisticasEscuelaFrontEnd.Materia
+namespace EstadisticasEscuelaFrontEnd.Materias
 {
     public partial class frmMateriaBuscar : Form
     {
@@ -29,24 +29,25 @@ namespace EstadisticasEscuelaFrontEnd.Materia
                 loadMateriaBuscar();
             }
         }
-        /*
-        private bool checkData(ComboBox comboA, ComboBox comboB, Label label)
+        
+        /*private bool checkData(ComboBox comboA, Label label)
         {
             label.Text = "";
 
-            if (comboA.SelectedIndex < 0 && comboB.SelectedIndex < 0)
+            if (comboA.SelectedIndex < 0 )
             {
-                label.Text = "Seleccion Materia";
+                label.Text = "Seleccione Turno";
 
                 return false;
             }
+
             return true;
         }
-         * */
+         */
 
         private bool checkData(TextBox textbox, Label label)
         {
-            label.Text = "";
+            //label.Text = "";
 
             if (!textbox.Text.Equals(""))
             {
@@ -54,7 +55,7 @@ namespace EstadisticasEscuelaFrontEnd.Materia
                 {
                     if (Util.todasLetras(textbox.Text))
                     {
-                        label.Text = "Valores Incorrectos";
+                        label.Text = "Valor Incorrecto";
 
                         return false;
 
@@ -99,10 +100,11 @@ namespace EstadisticasEscuelaFrontEnd.Materia
 
         private void btnMateriaBuscarLimpiar_Click(object sender, EventArgs e)
         {
-            txtMateriaBuscarMateria.Text = "";
-            lblMateriaBuscarMateriaError.Text = "";
+           // txtMateriaBuscarMateria.Text = "";
+           // lblMateriaBuscarMateriaError.Text = "";
+            
         }
-        /*
+
         private void seleccionMateria(object sender, DataGridViewCellEventArgs e)
         {           
             if ((e.ColumnIndex == dgvMateriaBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
@@ -110,14 +112,13 @@ namespace EstadisticasEscuelaFrontEnd.Materia
                 frmMateriaModificar materiaModificar = new frmMateriaModificar();
 
                 materiaModificar.MateriaModificada = new Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString(),
-                                                              dgvMateriaBuscar.CurrentRow.Cells[1].Value.ToString(),
-                                                              dgvMateriaBuscar.CurrentRow.Cells[2].Value.ToString(),
-                                                              dgvMateriaBuscar.CurrentRow.Cells[3].Value.ToString(),
-                                                              dgvMateriaBuscar.CurrentRow.Cells[4].Value.ToString());
+                                                                 dgvMateriaBuscar.CurrentRow.Cells[1].Value.ToString(),
+                                                                 dgvMateriaBuscar.CurrentRow.Cells[2].Value.ToString(),
+                                                                 dgvMateriaBuscar.CurrentRow.Cells[3].Value.ToString());
 
                 materiaModificar.ShowDialog(this);
 
-                lblMateriaBuscarMateriaError.Text = "ALUMNO MODIFICADO CON EXITO";
+                lblMateriaBuscarMateriaError.Text = "MATERIA MODIFICADA CON EXITO";
               
                 loadMateriaBuscar();
             }
@@ -126,11 +127,28 @@ namespace EstadisticasEscuelaFrontEnd.Materia
             {
                 Dominio.Materia.Delete(new Dominio.Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString()));
 
-                lblMateriaBuscarMateriaError.Text = "ALUMNO ELIMINADO CON EXITO";
+                lblMateriaBuscarMateriaError.Text = "MATERIA ELIMINADA CON EXITO";
 
                 loadMateriaBuscar();
             }
         }
-         * */
+
+        private void frmMateriaBuscar_Load(object sender, EventArgs e)
+        {
+            this.cmbMateriaBuscarEspecialidad.Items.Add("Computacion");
+
+            this.cmbMateriaBuscarEspecialidad.Items.Add("Electronica");
+
+            this.cmbMateriaBuscarEspecialidad.Items.Add("Electricidad");
+
+            this.cmbMateriaBuscarEspecialidad.Items.Add("Ciclo Basico");
+
+            this.cmbMateriaBuscarTurno.Items.Add("Mañana");
+
+            this.cmbMateriaBuscarTurno.Items.Add("Tarde");
+
+            this.cmbMateriaBuscarTurno.Items.Add("Noche");
+        }
+         
     }
 }

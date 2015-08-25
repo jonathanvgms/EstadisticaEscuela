@@ -119,7 +119,7 @@
             this.Datos.TabStop = false;
             this.Datos.Tag = "Fecha";
             this.Datos.Text = "Datos";
-            this.Datos.Enter += new System.EventHandler(this.Datos_Enter);
+            
             // 
             // rbtAsistenciaNuevoAusente
             // 
@@ -131,7 +131,6 @@
             this.rbtAsistenciaNuevoAusente.TabStop = true;
             this.rbtAsistenciaNuevoAusente.Text = "Ausente";
             this.rbtAsistenciaNuevoAusente.UseVisualStyleBackColor = true;
-            this.rbtAsistenciaNuevoAusente.CheckedChanged += new System.EventHandler(this.rbtAsistenciaNuevoAusente_CheckedChanged);
             // 
             // rbtAsistenciaNuevoPresente
             // 
@@ -143,7 +142,6 @@
             this.rbtAsistenciaNuevoPresente.TabStop = true;
             this.rbtAsistenciaNuevoPresente.Text = "Presente";
             this.rbtAsistenciaNuevoPresente.UseVisualStyleBackColor = true;
-            this.rbtAsistenciaNuevoPresente.CheckedChanged += new System.EventHandler(this.rbtAsistenciaNuevoPresente_CheckedChanged);
             // 
             // lblAsistenicaNuevoError
             // 
@@ -221,7 +219,7 @@
             this.lblAsistenciaNuevoAlumno.Size = new System.Drawing.Size(42, 13);
             this.lblAsistenciaNuevoAlumno.TabIndex = 4;
             this.lblAsistenciaNuevoAlumno.Text = "Alumno";
-            this.lblAsistenciaNuevoAlumno.Click += new System.EventHandler(this.lblAsistenciaNuevoAlumno_Click);
+            
             // 
             // lblAsistenicaNuevoGuardadoConExito
             // 

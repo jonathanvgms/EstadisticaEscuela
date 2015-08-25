@@ -10,7 +10,7 @@ using EstadisticasEscuelaFrontEnd;
 using EstadisticasEscuelaFrontEnd.Database;
 using EstadisticasEscuelaFrontEnd.Dominio;
 
-namespace EstadisticasEscuelaFrontEnd.Materia
+namespace EstadisticasEscuelaFrontEnd.Materias
 {
     public partial class frmMateriaNuevo : Form
     {
@@ -73,6 +73,23 @@ namespace EstadisticasEscuelaFrontEnd.Materia
                 return false;
             }
             return true;
+        }
+
+        private void frmMateriaNuevo_Load(object sender, EventArgs e)
+        {
+            this.cmbMateriaNuevaEspecialidad.Items.Add("Computacion");
+
+            this.cmbMateriaNuevaEspecialidad.Items.Add("Electronica");
+
+            this.cmbMateriaNuevaEspecialidad.Items.Add("Electricidad");
+
+            this.cmbMateriaNuevaEspecialidad.Items.Add("Ciclo Basico");
+
+            this.cmbMateriaNuevaTurno.Items.Add("Mañana");
+
+            this.cmbMateriaNuevaTurno.Items.Add("Tarde");
+
+            this.cmbMateriaNuevaTurno.Items.Add("Noche");
         }
     }
 }

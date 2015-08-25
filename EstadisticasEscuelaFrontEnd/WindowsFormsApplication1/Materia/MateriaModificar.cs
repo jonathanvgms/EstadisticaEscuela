@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd.Dominio;
 
-namespace EstadisticasEscuelaFrontEnd.Materia
+namespace EstadisticasEscuelaFrontEnd.Materias
 {
     public partial class frmMateriaModificar : Form
     {
@@ -39,7 +39,7 @@ namespace EstadisticasEscuelaFrontEnd.Materia
 
         private void btnMateriaModificarAceptar_Click(object sender, EventArgs e)
         {
-            Dominio.Materia.Update(new Dominio.Materia(materiaModificada.Id, txtMateriaModificarMateria.Text));
+            Dominio.Materia.Update(new Dominio.Materia(materiaModificada.Id, txtMateriaModificarMateria.Text, cmbMateriaModificarTurno.Text,cmbMateriaModificarEspecialidad.Text));
 
             bool error = true;
 
@@ -47,7 +47,7 @@ namespace EstadisticasEscuelaFrontEnd.Materia
 
             if (error)
             {
-                Dominio.Materia.Add(new Dominio.Materia(txtMateriaModificarMateria.Text));
+                Dominio.Materia.Add(new Dominio.Materia(txtMateriaModificarMateria.Text, cmbMateriaModificarTurno.Text, cmbMateriaModificarEspecialidad.Text));
                 lblMateriaModificarMateriaError.Text = "MATERIA MODIFICADA CON EXITO";
             }
         }

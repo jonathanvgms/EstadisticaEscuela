@@ -1,4 +1,4 @@
-﻿namespace EstadisticasEscuelaFrontEnd.Materia
+﻿namespace EstadisticasEscuelaFrontEnd.Materias
 {
     partial class frmMateriaNuevo
     {
@@ -37,6 +37,10 @@
             this.Datos = new System.Windows.Forms.GroupBox();
             this.lblMateriaNuevoVacio = new System.Windows.Forms.Label();
             this.lblMateriaNuevoError = new System.Windows.Forms.Label();
+            this.lblMateriaNuevoTurno = new System.Windows.Forms.Label();
+            this.lblMateriaNuevaEspecialidad = new System.Windows.Forms.Label();
+            this.cmbMateriaNuevaTurno = new System.Windows.Forms.ComboBox();
+            this.cmbMateriaNuevaEspecialidad = new System.Windows.Forms.ComboBox();
             this.Datos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +77,7 @@
             // lblMateriaNuevoMateria
             // 
             this.lblMateriaNuevoMateria.AutoSize = true;
-            this.lblMateriaNuevoMateria.Location = new System.Drawing.Point(33, 41);
+            this.lblMateriaNuevoMateria.Location = new System.Drawing.Point(34, 33);
             this.lblMateriaNuevoMateria.Name = "lblMateriaNuevoMateria";
             this.lblMateriaNuevoMateria.Size = new System.Drawing.Size(42, 13);
             this.lblMateriaNuevoMateria.TabIndex = 3;
@@ -81,19 +85,23 @@
             // 
             // txtMateriaNuevoMateria
             // 
-            this.txtMateriaNuevoMateria.Location = new System.Drawing.Point(133, 34);
+            this.txtMateriaNuevoMateria.Location = new System.Drawing.Point(133, 30);
             this.txtMateriaNuevoMateria.Name = "txtMateriaNuevoMateria";
             this.txtMateriaNuevoMateria.Size = new System.Drawing.Size(147, 20);
             this.txtMateriaNuevoMateria.TabIndex = 4;
             // 
             // Datos
             // 
+            this.Datos.Controls.Add(this.cmbMateriaNuevaEspecialidad);
+            this.Datos.Controls.Add(this.cmbMateriaNuevaTurno);
+            this.Datos.Controls.Add(this.lblMateriaNuevaEspecialidad);
+            this.Datos.Controls.Add(this.lblMateriaNuevoTurno);
             this.Datos.Controls.Add(this.lblMateriaNuevoVacio);
             this.Datos.Controls.Add(this.lblMateriaNuevoMateria);
             this.Datos.Controls.Add(this.txtMateriaNuevoMateria);
-            this.Datos.Location = new System.Drawing.Point(14, 39);
+            this.Datos.Location = new System.Drawing.Point(14, 12);
             this.Datos.Name = "Datos";
-            this.Datos.Size = new System.Drawing.Size(448, 105);
+            this.Datos.Size = new System.Drawing.Size(448, 132);
             this.Datos.TabIndex = 5;
             this.Datos.TabStop = false;
             this.Datos.Text = "Datos";
@@ -114,6 +122,40 @@
             this.lblMateriaNuevoError.Size = new System.Drawing.Size(0, 13);
             this.lblMateriaNuevoError.TabIndex = 6;
             // 
+            // lblMateriaNuevoTurno
+            // 
+            this.lblMateriaNuevoTurno.AutoSize = true;
+            this.lblMateriaNuevoTurno.Location = new System.Drawing.Point(37, 68);
+            this.lblMateriaNuevoTurno.Name = "lblMateriaNuevoTurno";
+            this.lblMateriaNuevoTurno.Size = new System.Drawing.Size(35, 13);
+            this.lblMateriaNuevoTurno.TabIndex = 6;
+            this.lblMateriaNuevoTurno.Text = "Turno";
+            // 
+            // lblMateriaNuevaEspecialidad
+            // 
+            this.lblMateriaNuevaEspecialidad.AutoSize = true;
+            this.lblMateriaNuevaEspecialidad.Location = new System.Drawing.Point(34, 104);
+            this.lblMateriaNuevaEspecialidad.Name = "lblMateriaNuevaEspecialidad";
+            this.lblMateriaNuevaEspecialidad.Size = new System.Drawing.Size(67, 13);
+            this.lblMateriaNuevaEspecialidad.TabIndex = 7;
+            this.lblMateriaNuevaEspecialidad.Text = "Especialidad";
+            // 
+            // cmbMateriaNuevaTurno
+            // 
+            this.cmbMateriaNuevaTurno.FormattingEnabled = true;
+            this.cmbMateriaNuevaTurno.Location = new System.Drawing.Point(133, 60);
+            this.cmbMateriaNuevaTurno.Name = "cmbMateriaNuevaTurno";
+            this.cmbMateriaNuevaTurno.Size = new System.Drawing.Size(121, 21);
+            this.cmbMateriaNuevaTurno.TabIndex = 8;
+            // 
+            // cmbMateriaNuevaEspecialidad
+            // 
+            this.cmbMateriaNuevaEspecialidad.FormattingEnabled = true;
+            this.cmbMateriaNuevaEspecialidad.Location = new System.Drawing.Point(133, 96);
+            this.cmbMateriaNuevaEspecialidad.Name = "cmbMateriaNuevaEspecialidad";
+            this.cmbMateriaNuevaEspecialidad.Size = new System.Drawing.Size(121, 21);
+            this.cmbMateriaNuevaEspecialidad.TabIndex = 9;
+            // 
             // frmMateriaNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,6 +169,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMateriaNuevo";
             this.Text = "Materia Nuevo";
+            this.Load += new System.EventHandler(this.frmMateriaNuevo_Load);
             this.Datos.ResumeLayout(false);
             this.Datos.PerformLayout();
             this.ResumeLayout(false);
@@ -144,5 +187,9 @@
         private System.Windows.Forms.GroupBox Datos;
         private System.Windows.Forms.Label lblMateriaNuevoError;
         private System.Windows.Forms.Label lblMateriaNuevoVacio;
+        private System.Windows.Forms.ComboBox cmbMateriaNuevaEspecialidad;
+        private System.Windows.Forms.ComboBox cmbMateriaNuevaTurno;
+        private System.Windows.Forms.Label lblMateriaNuevaEspecialidad;
+        private System.Windows.Forms.Label lblMateriaNuevoTurno;
     }
 }
