@@ -58,46 +58,6 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
         private void btnUsuarioNuevoAceptar_Click(object sender, EventArgs e)
         {
-            /*
-            string cadena = "";
-            if (!txtUsuario.Text.Equals(""))
-            {
-                if (!Util.todasLetras(this.txtUsuario.Text))
-                {
-                    cadena += "El campo Usuario tiene valores incorrectos.\n";
-                }
-               
-            }
-
-            else
-            {
-                cadena += " El campo Usuario esta vacio.\n";
-            }
-
-            if (!txtContrasenia.Text.Equals(""))
-            {
-                if (!Util.todasLetras(this.txtContrasenia.Text))
-                {
-                    cadena += "El campo Contraseña tiene valores incorrectos.\n";
-                }
-            }
-
-            else
-            {
-                cadena += "El campo Contraseña esta vacio.\n";
-            }
-
-            if (this.cmbUsuarioTipodeUsuario.Text.Equals(""))
-            {
-                cadena += "Seleccione un tipo de usuario.\n";
-            }
-
-            if (!cadena.Equals(""))
-            {
-                MessageBox.Show(cadena);
-            }
-             */
-
             bool error = true;
             if (!checkData(txtUsuarioNuevoUsuario, lblUsuarioNuevoUsuarioError)) error = false;
             if (!checkData(txtUsuarioNuevoContrasenia, lblUsuarioNuevoContraseniaError)) error = false;
@@ -105,7 +65,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
             if (error)
             {
-                Dominio.Usuario.Add(new Dominio.Usuario(txtUsuarioNuevoUsuario.Text, txtUsuarioNuevoContrasenia.Text, cmbUsuarioNuevoTipodeUsuario.SelectedIndex.ToString()));
+                Dominio.Usuario.Add(new Dominio.Usuario(txtUsuarioNuevoUsuario.Text, txtUsuarioNuevoContrasenia.Text,"1"));
                 lblUsuarioNuevoError.Text = "USUARIO GUARDADO CON EXITO";
             }
         }

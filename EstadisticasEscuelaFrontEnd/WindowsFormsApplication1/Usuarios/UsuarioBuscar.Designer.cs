@@ -35,13 +35,15 @@
             this.btnBuscarUsuarioBuscar = new System.Windows.Forms.Button();
             this.btnBuscarUsuarioLimpiar = new System.Windows.Forms.Button();
             this.btnBuscarUsuarioSalir = new System.Windows.Forms.Button();
+            this.lblUsuarioBuscarError = new System.Windows.Forms.Label();
+            this.lblUsuarioBuscarNombreError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarioBuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBuscarUsuarioNombre
             // 
             this.lblBuscarUsuarioNombre.AutoSize = true;
-            this.lblBuscarUsuarioNombre.Location = new System.Drawing.Point(21, 35);
+            this.lblBuscarUsuarioNombre.Location = new System.Drawing.Point(21, 38);
             this.lblBuscarUsuarioNombre.Name = "lblBuscarUsuarioNombre";
             this.lblBuscarUsuarioNombre.Size = new System.Drawing.Size(47, 13);
             this.lblBuscarUsuarioNombre.TabIndex = 0;
@@ -61,6 +63,7 @@
             this.dgvUsuarioBuscar.Name = "dgvUsuarioBuscar";
             this.dgvUsuarioBuscar.Size = new System.Drawing.Size(644, 290);
             this.dgvUsuarioBuscar.TabIndex = 4;
+            this.dgvUsuarioBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionUsuario);
             // 
             // btnBuscarUsuarioBuscar
             // 
@@ -92,11 +95,29 @@
             this.btnBuscarUsuarioSalir.UseVisualStyleBackColor = true;
             this.btnBuscarUsuarioSalir.Click += new System.EventHandler(this.btnBuscarUsuarioSalir_Click);
             // 
+            // lblUsuarioBuscarError
+            // 
+            this.lblUsuarioBuscarError.AutoSize = true;
+            this.lblUsuarioBuscarError.Location = new System.Drawing.Point(24, 373);
+            this.lblUsuarioBuscarError.Name = "lblUsuarioBuscarError";
+            this.lblUsuarioBuscarError.Size = new System.Drawing.Size(0, 13);
+            this.lblUsuarioBuscarError.TabIndex = 8;
+            // 
+            // lblUsuarioBuscarNombreError
+            // 
+            this.lblUsuarioBuscarNombreError.AutoSize = true;
+            this.lblUsuarioBuscarNombreError.Location = new System.Drawing.Point(230, 41);
+            this.lblUsuarioBuscarNombreError.Name = "lblUsuarioBuscarNombreError";
+            this.lblUsuarioBuscarNombreError.Size = new System.Drawing.Size(0, 13);
+            this.lblUsuarioBuscarNombreError.TabIndex = 9;
+            // 
             // frmUsuarioBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 431);
+            this.Controls.Add(this.lblUsuarioBuscarNombreError);
+            this.Controls.Add(this.lblUsuarioBuscarError);
             this.Controls.Add(this.btnBuscarUsuarioSalir);
             this.Controls.Add(this.btnBuscarUsuarioLimpiar);
             this.Controls.Add(this.btnBuscarUsuarioBuscar);
@@ -121,5 +142,7 @@
         private System.Windows.Forms.Button btnBuscarUsuarioBuscar;
         private System.Windows.Forms.Button btnBuscarUsuarioLimpiar;
         private System.Windows.Forms.Button btnBuscarUsuarioSalir;
+        private System.Windows.Forms.Label lblUsuarioBuscarError;
+        private System.Windows.Forms.Label lblUsuarioBuscarNombreError;
     }
 }

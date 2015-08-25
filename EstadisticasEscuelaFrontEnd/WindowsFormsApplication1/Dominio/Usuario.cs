@@ -54,9 +54,9 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
             Parametros.Add(new Parametro("@unNombreUsuario", nombre));
 
-            Parametros.Add(new Parametro("@unaConstrasenia", contrasenia));
+            Parametros.Add(new Parametro("@unaContrasenia", contrasenia));
 
-            Parametros.Add(new Parametro("@unHabilitado", habilitado));
+            Parametros.Add(new Parametro("@hab", habilitado));
 
             Tipo = "Usuario";
         }

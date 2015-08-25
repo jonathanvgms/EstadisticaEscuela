@@ -39,9 +39,9 @@
             this.cmbUsuarioNuevoTipodeUsuario = new System.Windows.Forms.ComboBox();
             this.lblUsuarioNuevoTipodeUsuario = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblUsuarioNuevoUsuarioError = new System.Windows.Forms.Label();
-            this.lblUsuarioNuevoContraseniaError = new System.Windows.Forms.Label();
             this.lblUsuarioNuevoTipodeUsuarioError = new System.Windows.Forms.Label();
+            this.lblUsuarioNuevoContraseniaError = new System.Windows.Forms.Label();
+            this.lblUsuarioNuevoUsuarioError = new System.Windows.Forms.Label();
             this.lblUsuarioNuevoError = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -143,13 +143,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
-            // lblUsuarioNuevoUsuarioError
+            // lblUsuarioNuevoTipodeUsuarioError
             // 
-            this.lblUsuarioNuevoUsuarioError.AutoSize = true;
-            this.lblUsuarioNuevoUsuarioError.Location = new System.Drawing.Point(336, 33);
-            this.lblUsuarioNuevoUsuarioError.Name = "lblUsuarioNuevoUsuarioError";
-            this.lblUsuarioNuevoUsuarioError.Size = new System.Drawing.Size(0, 13);
-            this.lblUsuarioNuevoUsuarioError.TabIndex = 10;
+            this.lblUsuarioNuevoTipodeUsuarioError.AutoSize = true;
+            this.lblUsuarioNuevoTipodeUsuarioError.Location = new System.Drawing.Point(336, 119);
+            this.lblUsuarioNuevoTipodeUsuarioError.Name = "lblUsuarioNuevoTipodeUsuarioError";
+            this.lblUsuarioNuevoTipodeUsuarioError.Size = new System.Drawing.Size(0, 13);
+            this.lblUsuarioNuevoTipodeUsuarioError.TabIndex = 12;
             // 
             // lblUsuarioNuevoContraseniaError
             // 
@@ -159,13 +159,13 @@
             this.lblUsuarioNuevoContraseniaError.Size = new System.Drawing.Size(0, 13);
             this.lblUsuarioNuevoContraseniaError.TabIndex = 11;
             // 
-            // lblUsuarioNuevoTipodeUsuarioError
+            // lblUsuarioNuevoUsuarioError
             // 
-            this.lblUsuarioNuevoTipodeUsuarioError.AutoSize = true;
-            this.lblUsuarioNuevoTipodeUsuarioError.Location = new System.Drawing.Point(336, 119);
-            this.lblUsuarioNuevoTipodeUsuarioError.Name = "lblUsuarioNuevoTipodeUsuarioError";
-            this.lblUsuarioNuevoTipodeUsuarioError.Size = new System.Drawing.Size(0, 13);
-            this.lblUsuarioNuevoTipodeUsuarioError.TabIndex = 12;
+            this.lblUsuarioNuevoUsuarioError.AutoSize = true;
+            this.lblUsuarioNuevoUsuarioError.Location = new System.Drawing.Point(336, 33);
+            this.lblUsuarioNuevoUsuarioError.Name = "lblUsuarioNuevoUsuarioError";
+            this.lblUsuarioNuevoUsuarioError.Size = new System.Drawing.Size(0, 13);
+            this.lblUsuarioNuevoUsuarioError.TabIndex = 10;
             // 
             // lblUsuarioNuevoError
             // 
