@@ -24,7 +24,7 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 
             dgvCursoBuscar.Columns.Clear();
 
-            //string query = String.Format("where curso = {0} and division = {1}", txtCursoBuscarAnio.Text, txtCursoBuscarDivision.Text);
+            string query = String.Format("where curso = {0} and division = {1}", txtCursoBuscarAnio.Text, txtCursoBuscarDivision.Text);
 
             dgvCursoBuscar.DataSource = Curso.Select();
 
