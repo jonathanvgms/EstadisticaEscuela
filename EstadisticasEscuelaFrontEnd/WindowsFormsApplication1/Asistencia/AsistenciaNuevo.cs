@@ -94,8 +94,8 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
 
         private void btnAsistenciaNuevoBuscarAlumno_Click(object sender, EventArgs e)
         {
-            AlumnoSeleccionar unfrmAlumnoBuscar = new AlumnoSeleccionar();
-            unfrmAlumnoBuscar.ShowDialog(this);
+            /*AlumnoSeleccionar unfrmAlumnoBuscar = new AlumnoSeleccionar();
+            unfrmAlumnoBuscar.ShowDialog(this);*/
 
             
         }

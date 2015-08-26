@@ -68,12 +68,6 @@
     <Compile Include="Alumnos\AlumnoBuscar.Designer.cs">
       <DependentUpon>AlumnoBuscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Alumnos\SeleccionarAlumno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Alumnos\SeleccionarAlumno.Designer.cs">
-      <DependentUpon>SeleccionarAlumno.cs</DependentUpon>
-    </Compile>
     <Compile Include="Asistencia\AsistenciaBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,9 +174,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alumnos\AlumnoBuscar.resx">
       <DependentUpon>AlumnoBuscar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Alumnos\SeleccionarAlumno.resx">
-      <DependentUpon>SeleccionarAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Asistencia\AsistenciaBuscar.resx">
       <DependentUpon>AsistenciaBuscar.cs</DependentUpon>
