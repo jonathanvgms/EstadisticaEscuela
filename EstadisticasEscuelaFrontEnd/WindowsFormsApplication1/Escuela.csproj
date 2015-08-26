@@ -71,7 +71,7 @@
     <Compile Include="Alumnos\AlumnoSeleccionar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Alumnos\AlumnoSeleccionar.Designer.cs">
+    <Compile Include="Alumnos\AlumnoSeleccionar.designer.cs">
       <DependentUpon>AlumnoSeleccionar.cs</DependentUpon>
     </Compile>
     <Compile Include="Asistencia\AsistenciaBuscar.cs">
@@ -180,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alumnos\AlumnoBuscar.resx">
       <DependentUpon>AlumnoBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumnos\AlumnoSeleccionar.resx">
+      <DependentUpon>AlumnoSeleccionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Asistencia\AsistenciaBuscar.resx">
       <DependentUpon>AsistenciaBuscar.cs</DependentUpon>
