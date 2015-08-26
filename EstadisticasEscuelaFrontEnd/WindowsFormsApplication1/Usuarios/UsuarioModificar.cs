@@ -46,7 +46,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
                 return false;
             }
 
-            return false;
+            return true;
         }
 
         private bool checkData(ComboBox combo, Label label)
@@ -77,20 +77,26 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
         private void btnUsuarioModificarAceptar_Click_1(object sender, EventArgs e)
         {
-            Usuario.Update(new Usuario(usuarioModificado.Id, txtUsuarioModificarNombre.Text, txtUsuarioModificarContrasenia.Text, "1"));
-
+           
             bool error = true;
 
             if (!checkData(txtUsuarioModificarNombre, lblUsuarioModificarNombreError)) error = false;
 
+            MessageBox.Show(error.ToString());
+
             if (!checkData(txtUsuarioModificarContrasenia, lblUsuarioModificarContraseniaError)) error = false;
 
+            MessageBox.Show(error.ToString());
+
             if (!checkData(cmbUsuarioModificarTipoDeUsuario, lblUsuarioModificarTipoDeUsuarioError)) error = false;
+            MessageBox.Show(error.ToString());
+
+            
 
             if (error)
             {
-                Usuario.Add(new Usuario(txtUsuarioModificarNombre.Text, txtUsuarioModificarContrasenia.Text, cmbUsuarioModificarTipoDeUsuario.Text.ToString()));
-                
+                Usuario.Update(new Usuario(usuarioModificado.Id, txtUsuarioModificarNombre.Text, txtUsuarioModificarContrasenia.Text, "1"));
+                              
                 lblUsuarioModificarError.Text = "USUARIO MODIFICADO CON EXITO";
             }
         }

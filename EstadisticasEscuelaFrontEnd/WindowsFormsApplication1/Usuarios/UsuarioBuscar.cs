@@ -28,6 +28,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             {
                 loadUsuarioBuscar();
             }
+
         }
 
         private bool checkData(TextBox textBox, Label label)
