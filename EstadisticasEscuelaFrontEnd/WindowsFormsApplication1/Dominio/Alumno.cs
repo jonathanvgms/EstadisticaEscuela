@@ -52,7 +52,15 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             set { _dni = value; }
         }
 
-        public Alumno(string nombre, string apellido, string legajo, string dni)
+        private string _idUsuario;
+
+        public string IdUsuario 
+        { 
+            get{ return _idUsuario;}
+            set { _idUsuario = value; } 
+        }
+
+        public Alumno(string nombre, string apellido, string legajo, string dni, string idUsuario)
         {
             Nombre = nombre;
 
@@ -62,6 +70,8 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
             Legajo = legajo;
 
+            IdUsuario = idUsuario;
+
             Parametros.Add(new Parametro("@unNombre", Nombre));
 
             Parametros.Add(new Parametro("@unApellido", Apellido));
@@ -69,12 +79,14 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             Parametros.Add(new Parametro("@unLegajo", Legajo));
 
             Parametros.Add(new Parametro("@unDni", Dni));
+
+            Parametros.Add(new Parametro("@unIdUsuario", idUsuario));
             
             Tipo = "Alumno"; 
         }
 
-        public Alumno(string id, string nombre, string apellido, string legajo, string dni) 
-            : this (nombre,apellido,legajo,dni)
+        public Alumno(string id, string nombre, string apellido, string legajo, string dni,string idUsuario) 
+            : this (nombre, apellido, legajo, dni, idUsuario)
         {
             Id = id;
 
@@ -130,8 +142,8 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
                 while (myReader.Read())
                 {
-                    alumnos.Add(new Alumno(myReader["idAlumno"].ToString(), myReader["nombre"].ToString(), 
-                        myReader["apellido"].ToString(), myReader["legajo"].ToString(), myReader["dni"].ToString()));
+                    alumnos.Add(new Alumno(myReader["Id"].ToString(), myReader["Nombre"].ToString(), 
+                    myReader["Apellido"].ToString(), myReader["Legajo"].ToString(), myReader["Dni"].ToString(), myReader["IdUsuario"].ToString()));
                 }
 
                 myReader.Dispose();
