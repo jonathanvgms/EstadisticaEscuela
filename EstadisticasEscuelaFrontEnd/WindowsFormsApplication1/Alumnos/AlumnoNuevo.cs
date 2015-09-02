@@ -37,7 +37,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             if (error)
             {
-                Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text));
+                Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text,txtAlumnoNuevoUsuario.Text));
 
                 lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO ";
             }
@@ -156,7 +156,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
         private void btnAlumnoNuevoBuscarUsuario_Click(object sender, EventArgs e)
         {
-            frmUsuarioBuscar unFrmUsuarioBuscar = new frmUsuarioBuscar();
+            frmUsuarioNuevo unFrmUsuarioBuscar = new frmUsuarioNuevo();
             unFrmUsuarioBuscar.ShowDialog(this);
         }
     }

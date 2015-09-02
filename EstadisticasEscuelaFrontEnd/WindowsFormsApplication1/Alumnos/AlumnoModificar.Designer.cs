@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlumnoModificar));
             this.Datos = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAlumnoModificarIdUsuario = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtAlumnoModificarNombre = new System.Windows.Forms.TextBox();
             this.lblAlumnoNuevoNombre = new System.Windows.Forms.Label();
             this.txtAlumnoModificarApellido = new System.Windows.Forms.TextBox();
@@ -47,10 +51,6 @@
             this.btnAlumnoModificarCancelar = new System.Windows.Forms.Button();
             this.btnAlumnoModificarLimpiar = new System.Windows.Forms.Button();
             this.btnAlumnoModificarAceptar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.Datos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             // 
             this.Datos.Controls.Add(this.label2);
             this.Datos.Controls.Add(this.textBox2);
-            this.Datos.Controls.Add(this.textBox1);
+            this.Datos.Controls.Add(this.txtAlumnoModificarIdUsuario);
             this.Datos.Controls.Add(this.label1);
             this.Datos.Controls.Add(this.txtAlumnoModificarNombre);
             this.Datos.Controls.Add(this.lblAlumnoNuevoNombre);
@@ -78,6 +78,38 @@
             this.Datos.TabIndex = 33;
             this.Datos.TabStop = false;
             this.Datos.Text = "Datos";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 215);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "label2";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(128, 208);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 35;
+            // 
+            // txtAlumnoModificarIdUsuario
+            // 
+            this.txtAlumnoModificarIdUsuario.Location = new System.Drawing.Point(128, 168);
+            this.txtAlumnoModificarIdUsuario.Name = "txtAlumnoModificarIdUsuario";
+            this.txtAlumnoModificarIdUsuario.Size = new System.Drawing.Size(209, 20);
+            this.txtAlumnoModificarIdUsuario.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 175);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "IdUsuario";
             // 
             // txtAlumnoModificarNombre
             // 
@@ -222,38 +254,6 @@
             this.btnAlumnoModificarAceptar.UseVisualStyleBackColor = true;
             this.btnAlumnoModificarAceptar.Click += new System.EventHandler(this.btnAlumnoModificarAceptar_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 175);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 215);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "label2";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(128, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 22;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(128, 208);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 35;
-            // 
             // frmAlumnoModificar
             // 
             this.AcceptButton = this.btnAlumnoModificarAceptar;
@@ -304,7 +304,7 @@
         private System.Windows.Forms.Button btnAlumnoModificarAceptar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAlumnoModificarIdUsuario;
         private System.Windows.Forms.Label label1;
     }
 }

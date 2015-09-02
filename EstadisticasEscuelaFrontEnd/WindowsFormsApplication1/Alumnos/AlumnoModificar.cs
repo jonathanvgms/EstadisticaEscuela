@@ -59,7 +59,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             if (error)
             {
-                Alumno.Add(new Alumno(txtAlumnoModificarNombre.Text, txtAlumnoModificarApellido.Text, txtAlumnoModificarDNI.Text, txtAlumnoModificarLegajo.Text));
+                Alumno.Add(new Alumno(txtAlumnoModificarNombre.Text, txtAlumnoModificarApellido.Text, txtAlumnoModificarDNI.Text, txtAlumnoModificarLegajo.Text,txtAlumnoModificarIdUsuario.Text));
 
                 lblAlumnoModificarError.Text = "ALUMNO MODIFICADO CON EXITO";
 

@@ -48,8 +48,8 @@
             this.lblAlumnoNuevoError = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
             this.Datos = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnAlumnoNuevoBuscarUsuario = new System.Windows.Forms.Button();
+            this.txtAlumnoNuevoUsuario = new System.Windows.Forms.TextBox();
+            this.btnAlumnoNuevoCrearUsuario = new System.Windows.Forms.Button();
             this.btnAlumnoNuevoBuscarCurso = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblAlumnoNuevoUsuario = new System.Windows.Forms.Label();
@@ -210,8 +210,8 @@
             // 
             // Datos
             // 
-            this.Datos.Controls.Add(this.textBox2);
-            this.Datos.Controls.Add(this.btnAlumnoNuevoBuscarUsuario);
+            this.Datos.Controls.Add(this.txtAlumnoNuevoUsuario);
+            this.Datos.Controls.Add(this.btnAlumnoNuevoCrearUsuario);
             this.Datos.Controls.Add(this.btnAlumnoNuevoBuscarCurso);
             this.Datos.Controls.Add(this.lblAlumnoNuevoCursoError);
             this.Datos.Controls.Add(this.textBox1);
@@ -236,22 +236,22 @@
             this.Datos.TabStop = false;
             this.Datos.Text = "Datos";
             // 
-            // textBox2
+            // txtAlumnoNuevoUsuario
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 204);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 20);
-            this.textBox2.TabIndex = 29;
+            this.txtAlumnoNuevoUsuario.Location = new System.Drawing.Point(128, 204);
+            this.txtAlumnoNuevoUsuario.Name = "txtAlumnoNuevoUsuario";
+            this.txtAlumnoNuevoUsuario.Size = new System.Drawing.Size(209, 20);
+            this.txtAlumnoNuevoUsuario.TabIndex = 29;
             // 
-            // btnAlumnoNuevoBuscarUsuario
+            // btnAlumnoNuevoCrearUsuario
             // 
-            this.btnAlumnoNuevoBuscarUsuario.Location = new System.Drawing.Point(386, 201);
-            this.btnAlumnoNuevoBuscarUsuario.Name = "btnAlumnoNuevoBuscarUsuario";
-            this.btnAlumnoNuevoBuscarUsuario.Size = new System.Drawing.Size(75, 23);
-            this.btnAlumnoNuevoBuscarUsuario.TabIndex = 30;
-            this.btnAlumnoNuevoBuscarUsuario.Text = "Buscar";
-            this.btnAlumnoNuevoBuscarUsuario.UseVisualStyleBackColor = true;
-            this.btnAlumnoNuevoBuscarUsuario.Click += new System.EventHandler(this.btnAlumnoNuevoBuscarUsuario_Click);
+            this.btnAlumnoNuevoCrearUsuario.Location = new System.Drawing.Point(386, 201);
+            this.btnAlumnoNuevoCrearUsuario.Name = "btnAlumnoNuevoCrearUsuario";
+            this.btnAlumnoNuevoCrearUsuario.Size = new System.Drawing.Size(75, 23);
+            this.btnAlumnoNuevoCrearUsuario.TabIndex = 30;
+            this.btnAlumnoNuevoCrearUsuario.Text = "Crear Usuario";
+            this.btnAlumnoNuevoCrearUsuario.UseVisualStyleBackColor = true;
+            this.btnAlumnoNuevoCrearUsuario.Click += new System.EventHandler(this.btnAlumnoNuevoBuscarUsuario_Click);
             // 
             // btnAlumnoNuevoBuscarCurso
             // 
@@ -337,8 +337,8 @@
         private System.Windows.Forms.Label lblAlumnoNuevoError;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.GroupBox Datos;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button btnAlumnoNuevoBuscarUsuario;
+        private System.Windows.Forms.TextBox txtAlumnoNuevoUsuario;
+        private System.Windows.Forms.Button btnAlumnoNuevoCrearUsuario;
         private System.Windows.Forms.Button btnAlumnoNuevoBuscarCurso;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblAlumnoNuevoUsuario;
