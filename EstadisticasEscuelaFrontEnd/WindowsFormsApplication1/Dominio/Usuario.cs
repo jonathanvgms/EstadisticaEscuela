@@ -52,11 +52,11 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
             Habilitado = habilitado;
 
-            Parametros.Add(new Parametro("@unNombreUsuario", nombre));
+            Parametros.Add(new Parametro("@unNombre", nombre));
 
             Parametros.Add(new Parametro("@unaContrasenia", contrasenia));
 
-            Parametros.Add(new Parametro("@hab", habilitado));
+            Parametros.Add(new Parametro("@unHabilitado", habilitado));
 
             Tipo = "Usuario";
         }
@@ -118,8 +118,8 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
                 while (myReader.Read())
                 {
-                    usuarios.Add(new Usuario(myReader["idUsuario"].ToString(), myReader["nombreUsuario"].ToString(),
-                        myReader["contrasenia"].ToString(), myReader["habilitado"].ToString()));
+                    usuarios.Add(new Usuario(myReader["Id"].ToString(), myReader["Nombre"].ToString(),
+                        myReader["Contrasenia"].ToString(), myReader["Habilitado"].ToString()));
                 }
 
                 myReader.Dispose();

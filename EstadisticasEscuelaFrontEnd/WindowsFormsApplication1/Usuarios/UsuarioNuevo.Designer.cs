@@ -39,6 +39,9 @@
             this.cmbUsuarioNuevoTipodeUsuario = new System.Windows.Forms.ComboBox();
             this.lblUsuarioNuevoTipodeUsuario = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblUsuarioNuevoTipoDeRolError = new System.Windows.Forms.Label();
+            this.cmbUsuarioNuevoTipoDeRol = new System.Windows.Forms.ComboBox();
+            this.lblUsuarioNuevoTipoDeRol = new System.Windows.Forms.Label();
             this.lblUsuarioNuevoTipodeUsuarioError = new System.Windows.Forms.Label();
             this.lblUsuarioNuevoContraseniaError = new System.Windows.Forms.Label();
             this.lblUsuarioNuevoUsuarioError = new System.Windows.Forms.Label();
@@ -78,7 +81,7 @@
             // lblUsuarioContrasenia
             // 
             this.lblUsuarioContrasenia.AutoSize = true;
-            this.lblUsuarioContrasenia.Location = new System.Drawing.Point(36, 76);
+            this.lblUsuarioContrasenia.Location = new System.Drawing.Point(36, 73);
             this.lblUsuarioContrasenia.Name = "lblUsuarioContrasenia";
             this.lblUsuarioContrasenia.Size = new System.Drawing.Size(61, 13);
             this.lblUsuarioContrasenia.TabIndex = 3;
@@ -93,7 +96,7 @@
             // 
             // txtUsuarioNuevoContrasenia
             // 
-            this.txtUsuarioNuevoContrasenia.Location = new System.Drawing.Point(202, 73);
+            this.txtUsuarioNuevoContrasenia.Location = new System.Drawing.Point(202, 66);
             this.txtUsuarioNuevoContrasenia.Name = "txtUsuarioNuevoContrasenia";
             this.txtUsuarioNuevoContrasenia.Size = new System.Drawing.Size(121, 20);
             this.txtUsuarioNuevoContrasenia.TabIndex = 6;
@@ -111,7 +114,7 @@
             // cmbUsuarioNuevoTipodeUsuario
             // 
             this.cmbUsuarioNuevoTipodeUsuario.FormattingEnabled = true;
-            this.cmbUsuarioNuevoTipodeUsuario.Location = new System.Drawing.Point(202, 116);
+            this.cmbUsuarioNuevoTipodeUsuario.Location = new System.Drawing.Point(202, 100);
             this.cmbUsuarioNuevoTipodeUsuario.Name = "cmbUsuarioNuevoTipodeUsuario";
             this.cmbUsuarioNuevoTipodeUsuario.Size = new System.Drawing.Size(121, 21);
             this.cmbUsuarioNuevoTipodeUsuario.TabIndex = 8;
@@ -119,7 +122,7 @@
             // lblUsuarioNuevoTipodeUsuario
             // 
             this.lblUsuarioNuevoTipodeUsuario.AutoSize = true;
-            this.lblUsuarioNuevoTipodeUsuario.Location = new System.Drawing.Point(36, 119);
+            this.lblUsuarioNuevoTipodeUsuario.Location = new System.Drawing.Point(36, 103);
             this.lblUsuarioNuevoTipodeUsuario.Name = "lblUsuarioNuevoTipodeUsuario";
             this.lblUsuarioNuevoTipodeUsuario.Size = new System.Drawing.Size(82, 13);
             this.lblUsuarioNuevoTipodeUsuario.TabIndex = 9;
@@ -127,6 +130,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblUsuarioNuevoTipoDeRolError);
+            this.groupBox1.Controls.Add(this.cmbUsuarioNuevoTipoDeRol);
+            this.groupBox1.Controls.Add(this.lblUsuarioNuevoTipoDeRol);
             this.groupBox1.Controls.Add(this.lblUsuarioNuevoTipodeUsuarioError);
             this.groupBox1.Controls.Add(this.lblUsuarioNuevoContraseniaError);
             this.groupBox1.Controls.Add(this.lblUsuarioNuevoUsuarioError);
@@ -138,15 +144,40 @@
             this.groupBox1.Controls.Add(this.txtUsuarioNuevoContrasenia);
             this.groupBox1.Location = new System.Drawing.Point(12, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 164);
+            this.groupBox1.Size = new System.Drawing.Size(490, 193);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // lblUsuarioNuevoTipoDeRolError
+            // 
+            this.lblUsuarioNuevoTipoDeRolError.AutoSize = true;
+            this.lblUsuarioNuevoTipoDeRolError.Location = new System.Drawing.Point(336, 136);
+            this.lblUsuarioNuevoTipoDeRolError.Name = "lblUsuarioNuevoTipoDeRolError";
+            this.lblUsuarioNuevoTipoDeRolError.Size = new System.Drawing.Size(0, 13);
+            this.lblUsuarioNuevoTipoDeRolError.TabIndex = 15;
+            // 
+            // cmbUsuarioNuevoTipoDeRol
+            // 
+            this.cmbUsuarioNuevoTipoDeRol.FormattingEnabled = true;
+            this.cmbUsuarioNuevoTipoDeRol.Location = new System.Drawing.Point(202, 133);
+            this.cmbUsuarioNuevoTipoDeRol.Name = "cmbUsuarioNuevoTipoDeRol";
+            this.cmbUsuarioNuevoTipoDeRol.Size = new System.Drawing.Size(121, 21);
+            this.cmbUsuarioNuevoTipoDeRol.TabIndex = 14;
+            // 
+            // lblUsuarioNuevoTipoDeRol
+            // 
+            this.lblUsuarioNuevoTipoDeRol.AutoSize = true;
+            this.lblUsuarioNuevoTipoDeRol.Location = new System.Drawing.Point(36, 136);
+            this.lblUsuarioNuevoTipoDeRol.Name = "lblUsuarioNuevoTipoDeRol";
+            this.lblUsuarioNuevoTipoDeRol.Size = new System.Drawing.Size(62, 13);
+            this.lblUsuarioNuevoTipoDeRol.TabIndex = 13;
+            this.lblUsuarioNuevoTipoDeRol.Text = "Tipo de Rol";
+            // 
             // lblUsuarioNuevoTipodeUsuarioError
             // 
             this.lblUsuarioNuevoTipodeUsuarioError.AutoSize = true;
-            this.lblUsuarioNuevoTipodeUsuarioError.Location = new System.Drawing.Point(336, 119);
+            this.lblUsuarioNuevoTipodeUsuarioError.Location = new System.Drawing.Point(336, 103);
             this.lblUsuarioNuevoTipodeUsuarioError.Name = "lblUsuarioNuevoTipodeUsuarioError";
             this.lblUsuarioNuevoTipodeUsuarioError.Size = new System.Drawing.Size(0, 13);
             this.lblUsuarioNuevoTipodeUsuarioError.TabIndex = 12;
@@ -213,5 +244,8 @@
         private System.Windows.Forms.Label lblUsuarioNuevoContraseniaError;
         private System.Windows.Forms.Label lblUsuarioNuevoUsuarioError;
         private System.Windows.Forms.Label lblUsuarioNuevoError;
+        private System.Windows.Forms.ComboBox cmbUsuarioNuevoTipoDeRol;
+        private System.Windows.Forms.Label lblUsuarioNuevoTipoDeRol;
+        private System.Windows.Forms.Label lblUsuarioNuevoTipoDeRolError;
     }
 }
