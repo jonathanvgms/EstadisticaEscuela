@@ -33,7 +33,7 @@ namespace EstadisticasEscuelaFrontEnd.Database
         {
             MySqlConnection connectionLive = databaseMySqlConnection();
 
-            MySqlCommand command = new MySqlCommand("alta" + obj.Tipo, connectionLive);
+            MySqlCommand command = new MySqlCommand("Alta" + obj.Tipo, connectionLive);
 
             command.CommandType = CommandType.StoredProcedure;
 

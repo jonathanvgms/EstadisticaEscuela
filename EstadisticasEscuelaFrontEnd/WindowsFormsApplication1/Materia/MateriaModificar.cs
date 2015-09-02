@@ -39,7 +39,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
         private void btnMateriaModificarAceptar_Click(object sender, EventArgs e)
         {
-            Dominio.Materia.Update(new Dominio.Materia(materiaModificada.Id, txtMateriaModificarMateria.Text, cmbMateriaModificarTurno.Text,cmbMateriaModificarEspecialidad.Text));
+            Dominio.Materia.Update(new Dominio.Materia(materiaModificada.Id, txtMateriaModificarMateria.Text));
 
             bool error = true;
 
@@ -47,7 +47,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
             if (error)
             {
-                Dominio.Materia.Add(new Dominio.Materia(txtMateriaModificarMateria.Text, cmbMateriaModificarTurno.Text, cmbMateriaModificarEspecialidad.Text));
+               Dominio.Materia.Add(new Dominio.Materia(txtMateriaModificarMateria.Text));
                 lblMateriaModificarMateriaError.Text = "MATERIA MODIFICADA CON EXITO";
             }
         }
@@ -78,10 +78,9 @@ namespace EstadisticasEscuelaFrontEnd.Materias
             return false;
         }
 
-        private void frmMateriaModificar_Load(object sender, EventArgs e)
+        private void lblMateriaModificarMateriaError_Click(object sender, EventArgs e)
         {
-            txtMateriaModificarMateria.Text = MateriaModificada.NombreMateria;
+
         }
-        
     }
 }

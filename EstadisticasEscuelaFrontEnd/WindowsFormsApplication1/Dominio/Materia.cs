@@ -1,5 +1,4 @@
-﻿                                                                                                                                                  using System;
-using System.Data;
+﻿                                                                                                                                                  using System;using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,68 +19,41 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             set { _id = value; }
         }
 
-        private string _nombreMateria;
+        private string _nombre;
 
-        public string NombreMateria
+        public string Nombre
         {
-            get { return _nombreMateria; }
-            set { _nombreMateria = value; }
+            get { return _nombre; }
+            set { _nombre = value; }
         }
 
-        private string _turno;
-
-        public string Turno
-        {
-            get { return _turno; }
-            set { _turno = value; }
-        }
-
-        private string _especialidad;
-
-        public string Especialidad
-        {
-            get { return _especialidad; }
-            set { _especialidad = value; }
-        }
-
-        public Materia(string nombreMateria, string turno, string especialidad)
-        {
-            NombreMateria = nombreMateria;
-
-            Turno = turno;
-
-            Especialidad = especialidad;
-
-            Parametros.Add(new Parametro("@unaMateria", NombreMateria));
-
-            Parametros.Add(new Parametro("@unTurno", Turno));
-
-            Parametros.Add(new Parametro("@unaEspecialidad", Especialidad));
-
-            Tipo = "Materia";
-        }
-
-        public Materia(string id, string unNombreMateria, string turno, string especialidad)
-            :this (unNombreMateria, turno, especialidad)
-            
+        
+        public Materia(string id, string nombreMateria)
         {
             Id = id;
 
+            Nombre = nombreMateria;
+            
             Parametros.Add(new Parametro("@unIdMateria", Id));
 
+            Parametros.Add(new Parametro("@unNombre", Nombre));
+
             Tipo = "Materia";
         }
 
-        public Materia(string idMateria)
+     
+
+        public Materia(string nombre)
         {
-            _id = idMateria;
+            Nombre = nombre;
 
-            Parametros.Add(new Parametro("@unIdMateria", _id));
+            Parametros.Add(new Parametro("@unNombre", nombre));
 
             Tipo = "Materia";
         }
 
-        private static List<Materia> Select()
+
+        public static List<Materia> Select()
         {
             List<Materia> materia = new List<Materia>();
 
@@ -119,7 +91,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
                 while (myReader.Read())
                 {
-                    materias.Add(new Materia(myReader["idMateria"].ToString(), myReader["materia"].ToString(), myReader["turno"].ToString(), myReader["especialidad"].ToString()));
+                    materias.Add(new Materia(myReader["Id"].ToString(), myReader["Nombre"].ToString()));
                 }
                 myReader.Dispose();
 

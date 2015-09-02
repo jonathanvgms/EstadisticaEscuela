@@ -98,7 +98,7 @@
             // lblMateriaBuscarMateriaError
             // 
             this.lblMateriaBuscarMateriaError.AutoSize = true;
-            this.lblMateriaBuscarMateriaError.Location = new System.Drawing.Point(331, 56);
+            this.lblMateriaBuscarMateriaError.Location = new System.Drawing.Point(331, 34);
             this.lblMateriaBuscarMateriaError.Name = "lblMateriaBuscarMateriaError";
             this.lblMateriaBuscarMateriaError.Size = new System.Drawing.Size(0, 13);
             this.lblMateriaBuscarMateriaError.TabIndex = 2;
@@ -162,6 +162,7 @@
             this.dgvMateriaBuscar.Name = "dgvMateriaBuscar";
             this.dgvMateriaBuscar.Size = new System.Drawing.Size(681, 336);
             this.dgvMateriaBuscar.TabIndex = 4;
+            this.dgvMateriaBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionMateria);
             // 
             // frmMateriaBuscar
             // 

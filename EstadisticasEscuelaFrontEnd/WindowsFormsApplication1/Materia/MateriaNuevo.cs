@@ -43,7 +43,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
             if (error)
             {
-                Dominio.Materia.Add(new Dominio.Materia(txtMateriaNuevoMateria.Text));
+                Materia.Add(new Materia(txtMateriaNuevoMateria.Text));
                 
                 lblMateriaNuevoError.Text = "MATERIA GUARDADA CON EXITO";
             }
@@ -75,21 +75,6 @@ namespace EstadisticasEscuelaFrontEnd.Materias
             return true;
         }
 
-        private void frmMateriaNuevo_Load(object sender, EventArgs e)
-        {
-            this.cmbMateriaNuevaEspecialidad.Items.Add("Computacion");
-
-            this.cmbMateriaNuevaEspecialidad.Items.Add("Electronica");
-
-            this.cmbMateriaNuevaEspecialidad.Items.Add("Electricidad");
-
-            this.cmbMateriaNuevaEspecialidad.Items.Add("Ciclo Basico");
-
-            this.cmbMateriaNuevaTurno.Items.Add("Mañana");
-
-            this.cmbMateriaNuevaTurno.Items.Add("Tarde");
-
-            this.cmbMateriaNuevaTurno.Items.Add("Noche");
-        }
+      
     }
 }

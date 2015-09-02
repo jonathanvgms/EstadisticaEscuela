@@ -53,7 +53,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
             {
                 if (textbox.Name.Equals("txtMateriaBuscarMateria"))
                 {
-                    if (Util.todasLetras(textbox.Text))
+                    if (!Util.todasLetras(textbox.Text))
                     {
                         label.Text = "Valor Incorrecto";
 
@@ -74,7 +74,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
             string query = String.Format("where materia LIKE '%{0}%'", txtMateriaBuscarMateria.Text);
 
-            dgvMateriaBuscar.DataSource = Dominio.Materia.Select(query);
+            dgvMateriaBuscar.DataSource = Dominio.Materia.Select();
 
             dgvMateriaBuscar.Columns["Id"].Visible = false;
 
@@ -110,12 +110,10 @@ namespace EstadisticasEscuelaFrontEnd.Materias
             if ((e.ColumnIndex == dgvMateriaBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
                 frmMateriaModificar materiaModificar = new frmMateriaModificar();
-
+                
                 materiaModificar.MateriaModificada = new Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString(),
-                                                                 dgvMateriaBuscar.CurrentRow.Cells[1].Value.ToString(),
-                                                                 dgvMateriaBuscar.CurrentRow.Cells[2].Value.ToString(),
-                                                                 dgvMateriaBuscar.CurrentRow.Cells[3].Value.ToString());
-
+                                                                 dgvMateriaBuscar.CurrentRow.Cells[1].Value.ToString());
+                
                 materiaModificar.ShowDialog(this);
 
                 lblMateriaBuscarMateriaError.Text = "MATERIA MODIFICADA CON EXITO";
@@ -125,7 +123,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
             if ((e.ColumnIndex == dgvMateriaBuscar.Columns["Eliminar"].Index) && (e.ColumnIndex >= -1))
             {
-                Dominio.Materia.Delete(new Dominio.Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString()));
+                Materia.Delete(new Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString()));
 
                 lblMateriaBuscarMateriaError.Text = "MATERIA ELIMINADA CON EXITO";
 
@@ -139,7 +137,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
             this.cmbMateriaBuscarEspecialidad.Items.Add("Electronica");
 
-            this.cmbMateriaBuscarEspecialidad.Items.Add("Electricidad");
+            this.cmbMateriaBuscarEspecialidad.Items.Add("Electrica");
 
             this.cmbMateriaBuscarEspecialidad.Items.Add("Ciclo Basico");
 
@@ -149,6 +147,10 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
             this.cmbMateriaBuscarTurno.Items.Add("Noche");
         }
+
+        
+
+        
          
     }
 }

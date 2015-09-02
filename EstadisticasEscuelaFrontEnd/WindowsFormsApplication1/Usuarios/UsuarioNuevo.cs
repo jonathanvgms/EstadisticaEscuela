@@ -22,7 +22,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
             if (comboA.SelectedIndex < 0)
             {
-                label.Text = "Seleccione Tipo de Usuarip";
+                label.Text = "Seleccione Tipo de Usuario";
 
                 return false;
             }
