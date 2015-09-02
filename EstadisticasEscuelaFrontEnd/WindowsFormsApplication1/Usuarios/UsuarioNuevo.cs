@@ -16,6 +16,23 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             InitializeComponent();
         }
 
+<<<<<<< .mine
+||||||| .r73
+        private bool checkData(ComboBox comboA, Label label)
+        {
+            label.Text = "";
+
+            if (comboA.SelectedIndex < 0)
+            {
+                label.Text = "Seleccione Tipo de Usuarip";
+
+                return false;
+            }
+
+            return true;
+        }
+
+=======
         private bool checkData(ComboBox comboA, Label label)
         {
             label.Text = "";
@@ -30,6 +47,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             return true;
         }
 
+>>>>>>> .r75
         private bool checkData(TextBox textBox, Label label)
         {
             label.Text = "";
@@ -61,7 +79,8 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             bool error = true;
             if (!checkData(txtUsuarioNuevoUsuario, lblUsuarioNuevoUsuarioError)) error = false;
             if (!checkData(txtUsuarioNuevoContrasenia, lblUsuarioNuevoContraseniaError)) error = false;
-            if (!checkData(cmbUsuarioNuevoTipodeUsuario, lblUsuarioNuevoTipodeUsuarioError)) error = false;
+            if (!checkdata(cmbUsuarioNuevoTipodeUsuario, cmbUsuarioNuevoTipoDeRol, lblUsuarioNuevoTipodeUsuarioError, lblUsuarioNuevoTipoDeRolError)) error = false;
+            
 
             if (error)
             {
@@ -85,6 +104,66 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
         {
             this.cmbUsuarioNuevoTipodeUsuario.Items.Add("Alumno");
             this.cmbUsuarioNuevoTipodeUsuario.Items.Add("Administrador");
+            this.cmbUsuarioNuevoTipoDeRol.Items.Add("Docente");
+            this.cmbUsuarioNuevoTipoDeRol.Items.Add("Alumno");
+            this.cmbUsuarioNuevoTipoDeRol.Items.Add("Preceptor");
+            this.cmbUsuarioNuevoTipoDeRol.Items.Add("Secretario");
+            this.cmbUsuarioNuevoTipoDeRol.Items.Add("Administrador");
+
         }
+        private bool checkdata(ComboBox comboUsuario, ComboBox comboRol, Label labelUsuario, Label labelRol)
+        {
+            labelUsuario.Text = "";
+
+            labelRol.Text = "";
+
+
+            if (comboRol.SelectedIndex < 0)
+            {
+                labelRol.Text = "Seleccione Rol";
+
+                return false;
+
+            }
+            if (comboUsuario.SelectedIndex < 0)
+            {
+                labelUsuario.Text = "Seleccione Usuario";
+
+                return false;
+
+            }
+
+            return true;
+        }
+        /*
+        private bool checkdata(ComboBox comboTipoUsuario, ComboBox comboTipoRol, Label label)
+        {
+            label.Text = "";
+
+            if (comboTipoUsuario.SelectedIndex < 0 && comboTipoRol.SelectedIndex < 0)
+            {
+                label.Text = "Seleccione Tipo de Usuario y Tipo De Rol";
+                return false;
+            }
+            else
+            {
+                if (comboTipoUsuario.SelectedIndex < 0)
+                {
+                    label.Text = "Seleccione Tipo de Usuario";
+
+                    return false;
+
+                }
+                if (comboTipoRol.SelectedIndex < 0)
+                {
+                    label.Text = "Seleccione TipoRol";
+
+                    return false;
+
+                }
+            }
+            return true;
+        }
+         * */
     }
 }
