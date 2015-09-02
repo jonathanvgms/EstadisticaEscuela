@@ -41,7 +41,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             if (error)
             {
-                
+                loadAlumnoSeleccionar();
             }
 
         }
@@ -152,8 +152,28 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         {
             if ((e.ColumnIndex == dgvAlumnoSeleccionar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
-                //frmAlumnoModificar alumno
+                frmAlumnoModificar alumnoModificar = new frmAlumnoModificar();
+
+                alumnoModificar.AlumnoModificado = new Alumno(dgvAlumnoSeleccionar.CurrentRow.Cells[0].Value.ToString(),
+                                                              dgvAlumnoSeleccionar.CurrentRow.Cells[1].Value.ToString(),
+                                                              dgvAlumnoSeleccionar.CurrentRow.Cells[2].Value.ToString(),
+                                                              dgvAlumnoSeleccionar.CurrentRow.Cells[3].Value.ToString(),
+                                                              dgvAlumnoSeleccionar.CurrentRow.Cells[4].Value.ToString());
+                alumnoModificar.ShowDialog(this);
+
+                lblAlumnoSeleccionarError.Text = "ALUMNO MODIFICADO CON EXITO";
+
+                loadAlumnoSeleccionar();
             }
+
+            if ((e.ColumnIndex == dgvAlumnoSeleccionar.Columns["ELiminar"].Index) && (e.ColumnIndex >= -1))
+	        {
+		        Alumno.Delete(new Alumno(dgvAlumnoSeleccionar.CurrentRow.Cells[0].Value.ToString()));
+
+                lblAlumnoSeleccionarError.Text = "ALUMNO ALIMINADO CON EXITO";
+
+                loadAlumnoSeleccionar();
+	        }
         }
     }
 }
