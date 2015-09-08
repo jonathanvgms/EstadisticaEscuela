@@ -19,12 +19,12 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             set { _id = value; }
         }
 
-        private string _nombreUsuario;
+        private string _nombre;
 
-        public string NombreUsuario
+        public string Nombre
         {
-            get { return _nombreUsuario; }
-            set { _nombreUsuario = value; }
+            get { return _nombre; }
+            set { _nombre = value; }
 
         }
 
@@ -44,13 +44,23 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             set { _habilitado = value; }
         }
 
-        public Usuario(string nombre, string contrasenia, string habilitado)
+        private string _idRol;
+
+        public string IdRol
         {
-            NombreUsuario = nombre;
+            get { return _idRol; }
+            set { _idRol = value; }
+        }
+
+        public Usuario(string nombre, string contrasenia, string habilitado, string idRol)
+        {
+            Nombre = nombre;
 
             Contrasenia = contrasenia;
 
             Habilitado = habilitado;
+
+            IdRol = idRol;
 
             Parametros.Add(new Parametro("@unNombre", nombre));
 
@@ -58,24 +68,26 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
             Parametros.Add(new Parametro("@unHabilitado", habilitado));
 
+            Parametros.Add(new Parametro("@unIdRol", idRol));
+
             Tipo = "Usuario";
         }
 
-        public Usuario(string id, string nombreUsuario, string contrasenia, string habilitado)
-            : this(nombreUsuario, contrasenia, habilitado)
+        public Usuario(string id, string nombre, string contrasenia, string habilitado, string idRol) 
+            : this (nombre, contrasenia, habilitado, idRol)
         {
             Id = id;
 
-            Parametros.Add(new Parametro("@unIdUsuario", Id));
+            Parametros.Add(new Parametro("@unIdUsuario", id));
 
             Tipo = "Usuario";
         }
 
         public Usuario(string idUsuario)
         {
-            _id = idUsuario;
+            Id = idUsuario;
 
-            Parametros.Add(new Parametro("@unIdUsuario", _id));
+            Parametros.Add(new Parametro("@unIdUsuario", Id));
 
             Tipo = "Usuario";
         }
@@ -119,7 +131,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
                 while (myReader.Read())
                 {
                     usuarios.Add(new Usuario(myReader["Id"].ToString(), myReader["Nombre"].ToString(),
-                        myReader["Contrasenia"].ToString(), myReader["Habilitado"].ToString()));
+                        myReader["Contrasenia"].ToString(), myReader["Habilitado"].ToString(), myReader["idRol"].ToString()));
                 }
 
                 myReader.Dispose();

@@ -6,11 +6,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using EstadisticasEscuelaFrontEnd.Dominio;
 
 namespace EstadisticasEscuelaFrontEnd.Cursos
 {
     public partial class frmCursoNuevo : Form
     {
+        private Curso _cursoModificado;
+
+        internal Curso CursoModificado
+        {
+            get { return _cursoModificado; }
+            set { _cursoModificado = value; }
+        }
+
         public frmCursoNuevo()
         {
             InitializeComponent();

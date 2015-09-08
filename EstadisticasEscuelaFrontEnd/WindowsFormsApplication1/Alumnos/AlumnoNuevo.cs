@@ -16,6 +16,16 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 {
     public partial class frmAlumnoNuevo : Form
     {
+        private Usuario nuevoUsuario { get; set; }
+
+        private Alumno alumnoModificado;
+
+        internal Alumno AlumnoModificado
+        {
+            get { return alumnoModificado; }
+            set { alumnoModificado = value; }
+        }
+
         public frmAlumnoNuevo()
         {
             InitializeComponent();
@@ -33,12 +43,25 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             if (!checkData(txtAlumnoNuevoLegajo, lblAlumnoNuevoLegajoError)) error = false;
 
-            //falta verificar que el alumno existe en la base de datos
+            if (txtAlumnoNuevoUsuario.Text.Length == 0)
+            {
+                error = false;
+
+                lblAlumnoNuevoUsuarioError.Text = "Seleccionar Usuario";
+            }
+            
+            /*
+             * falta verificar que el alumno existe en la base de datos
+            */
 
             if (error)
             {
-                Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text,txtAlumnoNuevoUsuario.Text));
+                Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text, nuevoUsuario.Id));
 
+                /*
+                 * falta verificar que el alumno persistió en la base de datos
+                 */
+ 
                 lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO ";
             }
         }
@@ -148,16 +171,42 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             Close();
         }
 
-        private void btnAlumnoNuevoBuscarCurso_Click(object sender, EventArgs e)
-        {
-            frmBuscarCurso unFrmBuscarCurso = new frmBuscarCurso();
-            unFrmBuscarCurso.ShowDialog(this);
-        }
-
         private void btnAlumnoNuevoBuscarUsuario_Click(object sender, EventArgs e)
         {
-            frmUsuarioNuevo unFrmUsuarioBuscar = new frmUsuarioNuevo();
+            frmUsuarioBuscar unFrmUsuarioBuscar = new frmUsuarioBuscar();
+
             unFrmUsuarioBuscar.ShowDialog(this);
+
+            /*
+             * error si busco un usuario y no traigo nada
+             */ 
+            
+            nuevoUsuario = unFrmUsuarioBuscar.UsuarioBuscado;
+
+            txtAlumnoNuevoUsuario.Text = nuevoUsuario.Nombre;
+        }
+
+        private void frmAlumnoNuevo_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (alumnoModificado.Nombre.Length != 0)
+                {
+                    txtAlumnoNuevoNombre.Text = alumnoModificado.Nombre;
+
+                    txtAlumnoNuevoApellido.Text = alumnoModificado.Apellido;
+
+                    txtAlumnoNuevoDNI.Text = alumnoModificado.Dni;
+
+                    txtAlumnoNuevoLegajo.Text = alumnoModificado.Legajo;
+
+                    txtAlumnoNuevoUsuario.Text = alumnoModificado.IdUsuario;
+                }
+            }
+            catch
+            { 
+
+            }
         }
     }
 }

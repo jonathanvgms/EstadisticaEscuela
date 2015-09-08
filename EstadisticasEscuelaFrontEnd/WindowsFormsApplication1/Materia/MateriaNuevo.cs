@@ -14,6 +14,13 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 {
     public partial class frmMateriaNuevo : Form
     {
+        private Materia materiaModificada;
+
+        internal Materia MateriaModificada
+        {
+            get { return materiaModificada; }
+            set { materiaModificada = value; }
+        }
         public frmMateriaNuevo()
         {
             InitializeComponent();

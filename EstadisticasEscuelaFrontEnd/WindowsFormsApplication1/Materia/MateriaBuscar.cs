@@ -109,7 +109,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
         {           
             if ((e.ColumnIndex == dgvMateriaBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
-                frmMateriaModificar materiaModificar = new frmMateriaModificar();
+                frmMateriaNuevo materiaModificar = new frmMateriaNuevo();
                 
                 materiaModificar.MateriaModificada = new Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString(),
                                                                  dgvMateriaBuscar.CurrentRow.Cells[1].Value.ToString());
@@ -130,27 +130,5 @@ namespace EstadisticasEscuelaFrontEnd.Materias
                 loadMateriaBuscar();
             }
         }
-
-        private void frmMateriaBuscar_Load(object sender, EventArgs e)
-        {
-            this.cmbMateriaBuscarEspecialidad.Items.Add("Computacion");
-
-            this.cmbMateriaBuscarEspecialidad.Items.Add("Electronica");
-
-            this.cmbMateriaBuscarEspecialidad.Items.Add("Electrica");
-
-            this.cmbMateriaBuscarEspecialidad.Items.Add("Ciclo Basico");
-
-            this.cmbMateriaBuscarTurno.Items.Add("Mañana");
-
-            this.cmbMateriaBuscarTurno.Items.Add("Tarde");
-
-            this.cmbMateriaBuscarTurno.Items.Add("Noche");
-        }
-
-        
-
-        
-         
     }
 }

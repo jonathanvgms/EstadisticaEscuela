@@ -6,33 +6,25 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using EstadisticasEscuelaFrontEnd.Dominio;
 
 namespace EstadisticasEscuelaFrontEnd.Usuarios
 {
     public partial class frmUsuarioNuevo : Form
     {
+        Usuario usuarioNuevo;
+
+        internal Usuario UsuarioNuevo
+        {
+            get { return usuarioNuevo; }
+            set { usuarioNuevo = value; }
+        }
+
         public frmUsuarioNuevo()
         {
             InitializeComponent();
         }
 
-<<<<<<< .mine
-||||||| .r73
-        private bool checkData(ComboBox comboA, Label label)
-        {
-            label.Text = "";
-
-            if (comboA.SelectedIndex < 0)
-            {
-                label.Text = "Seleccione Tipo de Usuarip";
-
-                return false;
-            }
-
-            return true;
-        }
-
-=======
         private bool checkData(ComboBox comboA, Label label)
         {
             label.Text = "";
@@ -47,7 +39,6 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             return true;
         }
 
->>>>>>> .r75
         private bool checkData(TextBox textBox, Label label)
         {
             label.Text = "";
@@ -79,14 +70,20 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             bool error = true;
             if (!checkData(txtUsuarioNuevoUsuario, lblUsuarioNuevoUsuarioError)) error = false;
             if (!checkData(txtUsuarioNuevoContrasenia, lblUsuarioNuevoContraseniaError)) error = false;
-            if (!checkdata(cmbUsuarioNuevoTipodeUsuario, cmbUsuarioNuevoTipoDeRol, lblUsuarioNuevoTipodeUsuarioError, lblUsuarioNuevoTipoDeRolError)) error = false;
             
 
             if (error)
-            {
-                Dominio.Usuario.Add(new Dominio.Usuario(txtUsuarioNuevoUsuario.Text, txtUsuarioNuevoContrasenia.Text,"1"));
+            {                
+                //antes de realizar el insert en la base de datos, falta verificar que no existe el usuario
+
+                Usuario.Add(new Usuario(txtUsuarioNuevoUsuario.Text, txtUsuarioNuevoContrasenia.Text, "1", (lsbUsuarioNuevoTipo.SelectedIndex + 1).ToString()));
+
+                usuarioNuevo = Usuario.Select().Find(x => x.Nombre.Equals(txtUsuarioNuevoUsuario.Text));
+
                 lblUsuarioNuevoError.Text = "USUARIO GUARDADO CON EXITO";
             }
+
+            Close();
         }
 
         private void btnUsuarioNuevoCancelar_Click(object sender, EventArgs e)
@@ -99,18 +96,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             txtUsuarioNuevoUsuario.Clear();
             txtUsuarioNuevoContrasenia.Clear();
         }
-
-        private void UsuarioNuevo_Load(object sender, EventArgs e)
-        {
-            this.cmbUsuarioNuevoTipodeUsuario.Items.Add("Alumno");
-            this.cmbUsuarioNuevoTipodeUsuario.Items.Add("Administrador");
-            this.cmbUsuarioNuevoTipoDeRol.Items.Add("Docente");
-            this.cmbUsuarioNuevoTipoDeRol.Items.Add("Alumno");
-            this.cmbUsuarioNuevoTipoDeRol.Items.Add("Preceptor");
-            this.cmbUsuarioNuevoTipoDeRol.Items.Add("Secretario");
-            this.cmbUsuarioNuevoTipoDeRol.Items.Add("Administrador");
-
-        }
+        
         private bool checkdata(ComboBox comboUsuario, ComboBox comboRol, Label labelUsuario, Label labelRol)
         {
             labelUsuario.Text = "";

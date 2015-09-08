@@ -81,7 +81,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `materia` WRITE;
 /*!40000 ALTER TABLE `materia` DISABLE KEYS */;
-INSERT INTO `materia` VALUES (1,'Práctica Profesionalizante');
+INSERT INTO `materia` VALUES (1, '1000','Práctica Profesionalizante');
 /*!40000 ALTER TABLE `materia` ENABLE KEYS */;
 UNLOCK TABLES;
 

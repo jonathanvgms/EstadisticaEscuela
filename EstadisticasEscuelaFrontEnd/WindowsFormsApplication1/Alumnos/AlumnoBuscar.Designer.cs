@@ -41,9 +41,9 @@
             this.lblAlumnoBuscarApellidoError = new System.Windows.Forms.Label();
             this.lblEspecialidad = new System.Windows.Forms.Label();
             this.lblTurno = new System.Windows.Forms.Label();
-            this.cmbBuscarAlumnoEspecialidad = new System.Windows.Forms.ComboBox();
-            this.cmbBuscarAlumnoTurno = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtAlumnoBuscarLegajo = new System.Windows.Forms.TextBox();
+            this.txtAlumnoBuscarDni = new System.Windows.Forms.TextBox();
             this.lblBuscarAlumnoError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnoBuscar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -153,45 +153,29 @@
             this.lblEspecialidad.AutoSize = true;
             this.lblEspecialidad.Location = new System.Drawing.Point(365, 68);
             this.lblEspecialidad.Name = "lblEspecialidad";
-            this.lblEspecialidad.Size = new System.Drawing.Size(67, 13);
+            this.lblEspecialidad.Size = new System.Drawing.Size(39, 13);
             this.lblEspecialidad.TabIndex = 17;
-            this.lblEspecialidad.Text = "Especialidad";
+            this.lblEspecialidad.Text = "Legajo";
             // 
             // lblTurno
             // 
             this.lblTurno.AutoSize = true;
             this.lblTurno.Location = new System.Drawing.Point(365, 29);
             this.lblTurno.Name = "lblTurno";
-            this.lblTurno.Size = new System.Drawing.Size(35, 13);
+            this.lblTurno.Size = new System.Drawing.Size(26, 13);
             this.lblTurno.TabIndex = 16;
-            this.lblTurno.Text = "Turno";
-            // 
-            // cmbBuscarAlumnoEspecialidad
-            // 
-            this.cmbBuscarAlumnoEspecialidad.FormattingEnabled = true;
-            this.cmbBuscarAlumnoEspecialidad.Location = new System.Drawing.Point(458, 65);
-            this.cmbBuscarAlumnoEspecialidad.Name = "cmbBuscarAlumnoEspecialidad";
-            this.cmbBuscarAlumnoEspecialidad.Size = new System.Drawing.Size(212, 21);
-            this.cmbBuscarAlumnoEspecialidad.TabIndex = 15;
-            // 
-            // cmbBuscarAlumnoTurno
-            // 
-            this.cmbBuscarAlumnoTurno.FormattingEnabled = true;
-            this.cmbBuscarAlumnoTurno.Location = new System.Drawing.Point(458, 25);
-            this.cmbBuscarAlumnoTurno.Name = "cmbBuscarAlumnoTurno";
-            this.cmbBuscarAlumnoTurno.Size = new System.Drawing.Size(212, 21);
-            this.cmbBuscarAlumnoTurno.TabIndex = 14;
+            this.lblTurno.Text = "DNI";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtAlumnoBuscarLegajo);
+            this.groupBox1.Controls.Add(this.txtAlumnoBuscarDni);
             this.groupBox1.Controls.Add(this.lblBuscarAlumnoNombre);
             this.groupBox1.Controls.Add(this.lblEspecialidad);
             this.groupBox1.Controls.Add(this.lblBuscarAlumnoApellido);
             this.groupBox1.Controls.Add(this.lblTurno);
             this.groupBox1.Controls.Add(this.txtAlumnoBuscarNombre);
-            this.groupBox1.Controls.Add(this.cmbBuscarAlumnoEspecialidad);
             this.groupBox1.Controls.Add(this.txtAlumnoBuscarApellido);
-            this.groupBox1.Controls.Add(this.cmbBuscarAlumnoTurno);
             this.groupBox1.Controls.Add(this.lblAlumnoBuscarNombreError);
             this.groupBox1.Controls.Add(this.lblAlumnoBuscarApellidoError);
             this.groupBox1.Location = new System.Drawing.Point(15, 12);
@@ -200,6 +184,20 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro de Busqueda";
+            // 
+            // txtAlumnoBuscarLegajo
+            // 
+            this.txtAlumnoBuscarLegajo.Location = new System.Drawing.Point(453, 64);
+            this.txtAlumnoBuscarLegajo.Name = "txtAlumnoBuscarLegajo";
+            this.txtAlumnoBuscarLegajo.Size = new System.Drawing.Size(212, 20);
+            this.txtAlumnoBuscarLegajo.TabIndex = 19;
+            // 
+            // txtAlumnoBuscarDni
+            // 
+            this.txtAlumnoBuscarDni.Location = new System.Drawing.Point(453, 26);
+            this.txtAlumnoBuscarDni.Name = "txtAlumnoBuscarDni";
+            this.txtAlumnoBuscarDni.Size = new System.Drawing.Size(212, 20);
+            this.txtAlumnoBuscarDni.TabIndex = 18;
             // 
             // lblBuscarAlumnoError
             // 
@@ -229,7 +227,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Alumno";
-            this.Load += new System.EventHandler(this.AlumnoBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnoBuscar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -252,9 +249,9 @@
         private System.Windows.Forms.Label lblAlumnoBuscarApellidoError;
         private System.Windows.Forms.Label lblEspecialidad;
         private System.Windows.Forms.Label lblTurno;
-        private System.Windows.Forms.ComboBox cmbBuscarAlumnoEspecialidad;
-        private System.Windows.Forms.ComboBox cmbBuscarAlumnoTurno;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblBuscarAlumnoError;
+        private System.Windows.Forms.TextBox txtAlumnoBuscarLegajo;
+        private System.Windows.Forms.TextBox txtAlumnoBuscarDni;
     }
 }

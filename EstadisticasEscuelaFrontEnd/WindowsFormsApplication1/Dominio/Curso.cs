@@ -167,21 +167,17 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
                     }
                     switch((myReader["idEspecialidad"].ToString()))
                     {
-                        case "1":
-                            especialidad="Computacion";
+                        case "1": especialidad = "Ciclo Básico";
                             break;
-                        case "2":
-                            especialidad="Electronica";
+                        case "2": especialidad = "Computación";
                             break;
-                        case "3":
-                            especialidad="Electrica";
+                        case "3": especialidad = "Electrónica";
                             break;
-                        case "4":
-                            especialidad="Ciclo Basico";
+                        case "4": especialidad = "Eléctrica";
                             break;
                     }
 
-                    cursos.Add(new Curso(myReader["idCurso"].ToString(), myReader["anio"].ToString(), myReader["division"].ToString(),turno,especialidad));
+                    cursos.Add(new Curso(myReader["Id"].ToString(), myReader["anio"].ToString(), myReader["division"].ToString(), turno, especialidad));
 
                 }
 

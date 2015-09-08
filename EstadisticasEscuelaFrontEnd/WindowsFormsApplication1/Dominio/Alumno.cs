@@ -78,7 +78,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
             Parametros.Add(new Parametro("@unLegajo", Legajo));
 
-            Parametros.Add(new Parametro("@unDni", Dni));
+            Parametros.Add(new Parametro("@unDNI", Dni));
 
             Parametros.Add(new Parametro("@unIdUsuario", idUsuario));
             

@@ -13,6 +13,14 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 {
     public partial class frmUsuarioBuscar : Form
     {
+        Usuario usuarioBuscado;
+
+        internal Usuario UsuarioBuscado
+        {
+            get { return usuarioBuscado; }
+            set { usuarioBuscado = value; }
+        }
+
         public frmUsuarioBuscar()
         {
             InitializeComponent();
@@ -67,13 +75,15 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
             dgvUsuarioBuscar.Columns.Clear();
 
-            string query = string.Format("where nombreUsuario LIKE '%{0}%'", txtBuscarUsuarioNombre);
+            string query = string.Format("where nombre LIKE '%{0}%'", txtBuscarUsuarioNombre.Text);
 
             dgvUsuarioBuscar.DataSource = Usuario.Select();
 
             dgvUsuarioBuscar.Columns["Id"].Visible = false;
 
             dgvUsuarioBuscar.Columns["Tipo"].Visible = false;
+
+            dgvUsuarioBuscar.Columns["IdRol"].Visible = false;
 
             DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
 
@@ -86,7 +96,6 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             columnaEliminar.Name = "Eliminar";
 
             dgvUsuarioBuscar.Columns.Add(columnaEliminar);
-                
         }
 
         private void seleccionUsuario(object sender, DataGridViewCellEventArgs e)
@@ -111,11 +120,16 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             if ((e.ColumnIndex == dgvUsuarioBuscar.Columns["Eliminar"].Index) && (e.ColumnIndex >= -1))
             {
                 Usuario.Delete(new Usuario(dgvUsuarioBuscar.CurrentRow.Cells[0].Value.ToString()));
-                //MessageBox.Show(dgvUsuarioBuscar.CurrentRow.Cells[0].Value.ToString());
-
+                
                 lblUsuarioBuscarError.Text = "USUARIO ELIMINADO CON EXITO";
 
                 loadUsuarioBuscar();
+            }
+
+            if ((e.ColumnIndex == dgvUsuarioBuscar.Columns["Nombre"].Index) && (e.ColumnIndex >= -1))
+            {
+                usuarioBuscado = new Usuario(dgvUsuarioBuscar.CurrentRow.Cells[0].Value.ToString(), dgvUsuarioBuscar.CurrentRow.Cells[1].Value.ToString(),
+                dgvUsuarioBuscar.CurrentRow.Cells[2].Value.ToString(), dgvUsuarioBuscar.CurrentRow.Cells[3].Value.ToString() , dgvUsuarioBuscar.CurrentRow.Cells[4].Value.ToString());
             }
         }
     }

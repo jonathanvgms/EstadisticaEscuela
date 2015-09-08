@@ -37,6 +37,8 @@
             this.Datos = new System.Windows.Forms.GroupBox();
             this.lblMateriaNuevoVacio = new System.Windows.Forms.Label();
             this.lblMateriaNuevoError = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Datos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             // 
             // btnMateriaNuevoAceptar
             // 
-            this.btnMateriaNuevoAceptar.Location = new System.Drawing.Point(284, 139);
+            this.btnMateriaNuevoAceptar.Location = new System.Drawing.Point(306, 139);
             this.btnMateriaNuevoAceptar.Name = "btnMateriaNuevoAceptar";
             this.btnMateriaNuevoAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnMateriaNuevoAceptar.TabIndex = 1;
@@ -73,7 +75,7 @@
             // lblMateriaNuevoMateria
             // 
             this.lblMateriaNuevoMateria.AutoSize = true;
-            this.lblMateriaNuevoMateria.Location = new System.Drawing.Point(34, 33);
+            this.lblMateriaNuevoMateria.Location = new System.Drawing.Point(17, 82);
             this.lblMateriaNuevoMateria.Name = "lblMateriaNuevoMateria";
             this.lblMateriaNuevoMateria.Size = new System.Drawing.Size(42, 13);
             this.lblMateriaNuevoMateria.TabIndex = 3;
@@ -81,19 +83,21 @@
             // 
             // txtMateriaNuevoMateria
             // 
-            this.txtMateriaNuevoMateria.Location = new System.Drawing.Point(133, 30);
+            this.txtMateriaNuevoMateria.Location = new System.Drawing.Point(86, 79);
             this.txtMateriaNuevoMateria.Name = "txtMateriaNuevoMateria";
-            this.txtMateriaNuevoMateria.Size = new System.Drawing.Size(147, 20);
+            this.txtMateriaNuevoMateria.Size = new System.Drawing.Size(166, 20);
             this.txtMateriaNuevoMateria.TabIndex = 4;
             // 
             // Datos
             // 
+            this.Datos.Controls.Add(this.label1);
+            this.Datos.Controls.Add(this.textBox1);
             this.Datos.Controls.Add(this.lblMateriaNuevoVacio);
             this.Datos.Controls.Add(this.lblMateriaNuevoMateria);
             this.Datos.Controls.Add(this.txtMateriaNuevoMateria);
-            this.Datos.Location = new System.Drawing.Point(14, 27);
+            this.Datos.Location = new System.Drawing.Point(12, 12);
             this.Datos.Name = "Datos";
-            this.Datos.Size = new System.Drawing.Size(448, 65);
+            this.Datos.Size = new System.Drawing.Size(448, 121);
             this.Datos.TabIndex = 5;
             this.Datos.TabStop = false;
             this.Datos.Text = "Datos";
@@ -114,11 +118,27 @@
             this.lblMateriaNuevoError.Size = new System.Drawing.Size(0, 13);
             this.lblMateriaNuevoError.TabIndex = 6;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Código";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(86, 34);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(166, 20);
+            this.textBox1.TabIndex = 7;
+            // 
             // frmMateriaNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 177);
+            this.ClientSize = new System.Drawing.Size(474, 175);
             this.Controls.Add(this.lblMateriaNuevoError);
             this.Controls.Add(this.Datos);
             this.Controls.Add(this.btnMateriaBuscarLimpiar);
@@ -144,5 +164,7 @@
         private System.Windows.Forms.GroupBox Datos;
         private System.Windows.Forms.Label lblMateriaNuevoError;
         private System.Windows.Forms.Label lblMateriaNuevoVacio;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

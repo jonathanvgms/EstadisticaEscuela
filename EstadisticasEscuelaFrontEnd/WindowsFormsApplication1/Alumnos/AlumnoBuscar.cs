@@ -105,33 +105,19 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             
             return true;
         }
-
-        private void AlumnoBuscar_Load(object sender, EventArgs e)
-        {
-            this.cmbBuscarAlumnoEspecialidad.Items.Add("Computacion");
-
-            this.cmbBuscarAlumnoEspecialidad.Items.Add("Electronica");
-
-            this.cmbBuscarAlumnoEspecialidad.Items.Add("Electricidad");
-
-            this.cmbBuscarAlumnoTurno.Items.Add("Mañana");
-
-            this.cmbBuscarAlumnoTurno.Items.Add("Tarde");
-
-            this.cmbBuscarAlumnoTurno.Items.Add("Noche");
-        }
-
+        
         private void seleccionAlumno(object sender, DataGridViewCellEventArgs e)
         {
             if ((e.ColumnIndex == dgvAlumnoBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
-                frmAlumnoModificar alumnoModificar = new frmAlumnoModificar();
+                frmAlumnoNuevo alumnoModificar = new frmAlumnoNuevo();
 
-                alumnoModificar.AlumnoModificado = new Alumno(dgvAlumnoBuscar.CurrentRow.Cells[0].Value.ToString(),
-                                                              dgvAlumnoBuscar.CurrentRow.Cells[1].Value.ToString(),
+                string nombreUsuario = Usuario.Select().ToList().Find(x => x.Id.ToString().Equals(dgvAlumnoBuscar.CurrentRow.Cells[5].Value.ToString())).Nombre;
+                
+                alumnoModificar.AlumnoModificado = new Alumno(dgvAlumnoBuscar.CurrentRow.Cells[1].Value.ToString(),
                                                               dgvAlumnoBuscar.CurrentRow.Cells[2].Value.ToString(),
                                                               dgvAlumnoBuscar.CurrentRow.Cells[3].Value.ToString(),
-                                                              dgvAlumnoBuscar.CurrentRow.Cells[4].Value.ToString());
+                                                              dgvAlumnoBuscar.CurrentRow.Cells[4].Value.ToString(), nombreUsuario);
 
                 alumnoModificar.ShowDialog(this);
                 
@@ -156,13 +142,19 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             dgvAlumnoBuscar.Columns.Clear();
 
+            /*
+             * falta resolver la consulta dinamica incluyendo todos los textbox
+             */
+
             string query = String.Format("where nombre LIKE '%{0}%' and apellido LIKE '%{1}%'", txtAlumnoBuscarNombre.Text, txtAlumnoBuscarApellido.Text);
             
-            dgvAlumnoBuscar.DataSource = Alumno.Select(query);
+            dgvAlumnoBuscar.DataSource = Alumno.Select();
 
             dgvAlumnoBuscar.Columns["Id"].Visible = false;
 
             dgvAlumnoBuscar.Columns["Tipo"].Visible = false;
+
+            dgvAlumnoBuscar.Columns["IdUsuario"].Visible = true;
 
             DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
 

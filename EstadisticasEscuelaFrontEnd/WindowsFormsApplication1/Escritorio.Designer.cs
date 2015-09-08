@@ -52,6 +52,12 @@
             this.dasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.eSTADISTICA3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eSTADISTICA4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarNotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarNotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoRolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarRolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barraDeMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,11 +65,13 @@
             // 
             this.barraDeMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dasdaToolStripMenuItem,
-            this.dasdToolStripMenuItem,
+            this.uSUARIOSToolStripMenuItem,
+            this.rolToolStripMenuItem,
             this.dasdToolStripMenuItem1,
             this.materiasToolStripMenuItem,
-            this.uSUARIOSToolStripMenuItem,
+            this.dasdToolStripMenuItem,
             this.asistenciasToolStripMenuItem,
+            this.notasToolStripMenuItem,
             this.dasdToolStripMenuItem2});
             this.barraDeMenu.Location = new System.Drawing.Point(0, 0);
             this.barraDeMenu.Name = "barraDeMenu";
@@ -98,14 +106,14 @@
             // adasToolStripMenuItem
             // 
             this.adasToolStripMenuItem.Name = "adasToolStripMenuItem";
-            this.adasToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.adasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.adasToolStripMenuItem.Text = "Nuevo";
             this.adasToolStripMenuItem.Click += new System.EventHandler(this.adasToolStripMenuItem_Click);
             // 
             // dasdasdToolStripMenuItem
             // 
             this.dasdasdToolStripMenuItem.Name = "dasdasdToolStripMenuItem";
-            this.dasdasdToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.dasdasdToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dasdasdToolStripMenuItem.Text = "Buscar";
             this.dasdasdToolStripMenuItem.Click += new System.EventHandler(this.dasdasdToolStripMenuItem_Click);
             // 
@@ -121,14 +129,14 @@
             // dasToolStripMenuItem
             // 
             this.dasToolStripMenuItem.Name = "dasToolStripMenuItem";
-            this.dasToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.dasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dasToolStripMenuItem.Text = "Nuevo";
             this.dasToolStripMenuItem.Click += new System.EventHandler(this.dasToolStripMenuItem_Click);
             // 
             // adasToolStripMenuItem1
             // 
             this.adasToolStripMenuItem1.Name = "adasToolStripMenuItem1";
-            this.adasToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
+            this.adasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.adasToolStripMenuItem1.Text = "Buscar";
             this.adasToolStripMenuItem1.Click += new System.EventHandler(this.adasToolStripMenuItem1_Click);
             // 
@@ -144,14 +152,14 @@
             // nuevoToolStripMenuItem1
             // 
             this.nuevoToolStripMenuItem1.Name = "nuevoToolStripMenuItem1";
-            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.nuevoToolStripMenuItem1.Text = "Nuevo";
             this.nuevoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoToolStripMenuItem1_Click);
             // 
             // buscarToolStripMenuItem1
             // 
             this.buscarToolStripMenuItem1.Name = "buscarToolStripMenuItem1";
-            this.buscarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.buscarToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.buscarToolStripMenuItem1.Text = "Buscar";
             this.buscarToolStripMenuItem1.Click += new System.EventHandler(this.buscarToolStripMenuItem1_Click);
             // 
@@ -190,14 +198,14 @@
             // nuevoToolStripMenuItem2
             // 
             this.nuevoToolStripMenuItem2.Name = "nuevoToolStripMenuItem2";
-            this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(109, 22);
             this.nuevoToolStripMenuItem2.Text = "Nuevo";
             this.nuevoToolStripMenuItem2.Click += new System.EventHandler(this.nuevoToolStripMenuItem2_Click);
             // 
             // buscarToolStripMenuItem2
             // 
             this.buscarToolStripMenuItem2.Name = "buscarToolStripMenuItem2";
-            this.buscarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.buscarToolStripMenuItem2.Size = new System.Drawing.Size(109, 22);
             this.buscarToolStripMenuItem2.Text = "Buscar";
             this.buscarToolStripMenuItem2.Click += new System.EventHandler(this.buscarToolStripMenuItem2_Click);
             // 
@@ -235,6 +243,48 @@
             this.eSTADISTICA4ToolStripMenuItem.Name = "eSTADISTICA4ToolStripMenuItem";
             this.eSTADISTICA4ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.eSTADISTICA4ToolStripMenuItem.Text = "ESTADISTICA4";
+            // 
+            // notasToolStripMenuItem
+            // 
+            this.notasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asignarNotaToolStripMenuItem,
+            this.modificarNotaToolStripMenuItem});
+            this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
+            this.notasToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.notasToolStripMenuItem.Text = "Notas";
+            // 
+            // asignarNotaToolStripMenuItem
+            // 
+            this.asignarNotaToolStripMenuItem.Name = "asignarNotaToolStripMenuItem";
+            this.asignarNotaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.asignarNotaToolStripMenuItem.Text = "Asignar Nota";
+            // 
+            // modificarNotaToolStripMenuItem
+            // 
+            this.modificarNotaToolStripMenuItem.Name = "modificarNotaToolStripMenuItem";
+            this.modificarNotaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.modificarNotaToolStripMenuItem.Text = "Modificar Nota";
+            // 
+            // rolToolStripMenuItem
+            // 
+            this.rolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoRolToolStripMenuItem,
+            this.buscarRolToolStripMenuItem});
+            this.rolToolStripMenuItem.Name = "rolToolStripMenuItem";
+            this.rolToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
+            this.rolToolStripMenuItem.Text = "Rol";
+            // 
+            // nuevoRolToolStripMenuItem
+            // 
+            this.nuevoRolToolStripMenuItem.Name = "nuevoRolToolStripMenuItem";
+            this.nuevoRolToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevoRolToolStripMenuItem.Text = "Nuevo Rol";
+            // 
+            // buscarRolToolStripMenuItem
+            // 
+            this.buscarRolToolStripMenuItem.Name = "buscarRolToolStripMenuItem";
+            this.buscarRolToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.buscarRolToolStripMenuItem.Text = "Buscar Rol";
             // 
             // Escritorio
             // 
@@ -281,6 +331,12 @@
         private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem notasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarNotaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarNotaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoRolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarRolToolStripMenuItem;
     }
 }
 

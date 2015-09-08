@@ -55,7 +55,7 @@ namespace EstadisticasEscuelaFrontEnd.Database
         {
             MySqlConnection connectionLive = databaseMySqlConnection();
 
-            MySqlCommand command = new MySqlCommand("baja" + obj.Tipo, connectionLive);
+            MySqlCommand command = new MySqlCommand("Baja" + obj.Tipo, connectionLive);
 
             command.CommandType = CommandType.StoredProcedure;
 

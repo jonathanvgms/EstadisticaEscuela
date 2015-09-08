@@ -44,17 +44,16 @@
             this.lblAlumnoNuevoApellidoError = new System.Windows.Forms.Label();
             this.lblAlumnoNuevoLegajoError = new System.Windows.Forms.Label();
             this.lblAlumnoNuevoDniError = new System.Windows.Forms.Label();
-            this.lblAlumnoNuevoCursoError = new System.Windows.Forms.Label();
             this.lblAlumnoNuevoError = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
             this.Datos = new System.Windows.Forms.GroupBox();
+            this.lblAlumnoNuevoUsuarioError = new System.Windows.Forms.Label();
             this.txtAlumnoNuevoUsuario = new System.Windows.Forms.TextBox();
             this.btnAlumnoNuevoCrearUsuario = new System.Windows.Forms.Button();
-            this.btnAlumnoNuevoBuscarCurso = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblAlumnoNuevoUsuario = new System.Windows.Forms.Label();
-            this.lblAlumnoNuevoCurso = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Datos.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAlumnoNuevoNombre
@@ -68,7 +67,7 @@
             // 
             // btnAlumnoNuevo
             // 
-            this.btnAlumnoNuevo.Location = new System.Drawing.Point(313, 282);
+            this.btnAlumnoNuevo.Location = new System.Drawing.Point(416, 226);
             this.btnAlumnoNuevo.Name = "btnAlumnoNuevo";
             this.btnAlumnoNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnAlumnoNuevo.TabIndex = 1;
@@ -78,7 +77,7 @@
             // 
             // btnAlumnoNuevoLimpiar
             // 
-            this.btnAlumnoNuevoLimpiar.Location = new System.Drawing.Point(12, 282);
+            this.btnAlumnoNuevoLimpiar.Location = new System.Drawing.Point(13, 226);
             this.btnAlumnoNuevoLimpiar.Name = "btnAlumnoNuevoLimpiar";
             this.btnAlumnoNuevoLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnAlumnoNuevoLimpiar.TabIndex = 2;
@@ -89,7 +88,7 @@
             // btnAlumnoNuevoCancelar
             // 
             this.btnAlumnoNuevoCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAlumnoNuevoCancelar.Location = new System.Drawing.Point(404, 282);
+            this.btnAlumnoNuevoCancelar.Location = new System.Drawing.Point(507, 226);
             this.btnAlumnoNuevoCancelar.Name = "btnAlumnoNuevoCancelar";
             this.btnAlumnoNuevoCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnAlumnoNuevoCancelar.TabIndex = 3;
@@ -184,18 +183,10 @@
             this.lblAlumnoNuevoDniError.Size = new System.Drawing.Size(0, 13);
             this.lblAlumnoNuevoDniError.TabIndex = 20;
             // 
-            // lblAlumnoNuevoCursoError
-            // 
-            this.lblAlumnoNuevoCursoError.AutoSize = true;
-            this.lblAlumnoNuevoCursoError.Location = new System.Drawing.Point(479, 174);
-            this.lblAlumnoNuevoCursoError.Name = "lblAlumnoNuevoCursoError";
-            this.lblAlumnoNuevoCursoError.Size = new System.Drawing.Size(0, 13);
-            this.lblAlumnoNuevoCursoError.TabIndex = 21;
-            // 
             // lblAlumnoNuevoError
             // 
             this.lblAlumnoNuevoError.AutoSize = true;
-            this.lblAlumnoNuevoError.Location = new System.Drawing.Point(108, 223);
+            this.lblAlumnoNuevoError.Location = new System.Drawing.Point(109, 223);
             this.lblAlumnoNuevoError.Name = "lblAlumnoNuevoError";
             this.lblAlumnoNuevoError.Size = new System.Drawing.Size(0, 13);
             this.lblAlumnoNuevoError.TabIndex = 22;
@@ -203,20 +194,17 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(12, 254);
+            this.lblMessage.Location = new System.Drawing.Point(13, 254);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 13);
             this.lblMessage.TabIndex = 26;
             // 
             // Datos
             // 
+            this.Datos.Controls.Add(this.lblAlumnoNuevoUsuarioError);
             this.Datos.Controls.Add(this.txtAlumnoNuevoUsuario);
             this.Datos.Controls.Add(this.btnAlumnoNuevoCrearUsuario);
-            this.Datos.Controls.Add(this.btnAlumnoNuevoBuscarCurso);
-            this.Datos.Controls.Add(this.lblAlumnoNuevoCursoError);
-            this.Datos.Controls.Add(this.textBox1);
             this.Datos.Controls.Add(this.lblAlumnoNuevoUsuario);
-            this.Datos.Controls.Add(this.lblAlumnoNuevoCurso);
             this.Datos.Controls.Add(this.txtAlumnoNuevoNombre);
             this.Datos.Controls.Add(this.lblAlumnoNuevoNombre);
             this.Datos.Controls.Add(this.txtAlumnoNuevoApellido);
@@ -229,77 +217,68 @@
             this.Datos.Controls.Add(this.lblAlumnoNuevoNombreError);
             this.Datos.Controls.Add(this.lblAlumnoNuevoDNI);
             this.Datos.Controls.Add(this.txtAlumnoNuevoDNI);
-            this.Datos.Location = new System.Drawing.Point(12, 12);
+            this.Datos.Location = new System.Drawing.Point(13, 12);
             this.Datos.Name = "Datos";
-            this.Datos.Size = new System.Drawing.Size(547, 239);
+            this.Datos.Size = new System.Drawing.Size(569, 208);
             this.Datos.TabIndex = 27;
             this.Datos.TabStop = false;
             this.Datos.Text = "Datos";
             // 
+            // lblAlumnoNuevoUsuarioError
+            // 
+            this.lblAlumnoNuevoUsuarioError.AutoSize = true;
+            this.lblAlumnoNuevoUsuarioError.Location = new System.Drawing.Point(454, 174);
+            this.lblAlumnoNuevoUsuarioError.Name = "lblAlumnoNuevoUsuarioError";
+            this.lblAlumnoNuevoUsuarioError.Size = new System.Drawing.Size(0, 13);
+            this.lblAlumnoNuevoUsuarioError.TabIndex = 31;
+            // 
             // txtAlumnoNuevoUsuario
             // 
-            this.txtAlumnoNuevoUsuario.Location = new System.Drawing.Point(128, 204);
+            this.txtAlumnoNuevoUsuario.Location = new System.Drawing.Point(128, 174);
             this.txtAlumnoNuevoUsuario.Name = "txtAlumnoNuevoUsuario";
+            this.txtAlumnoNuevoUsuario.ReadOnly = true;
             this.txtAlumnoNuevoUsuario.Size = new System.Drawing.Size(209, 20);
             this.txtAlumnoNuevoUsuario.TabIndex = 29;
             // 
             // btnAlumnoNuevoCrearUsuario
             // 
-            this.btnAlumnoNuevoCrearUsuario.Location = new System.Drawing.Point(386, 201);
+            this.btnAlumnoNuevoCrearUsuario.Location = new System.Drawing.Point(366, 172);
             this.btnAlumnoNuevoCrearUsuario.Name = "btnAlumnoNuevoCrearUsuario";
             this.btnAlumnoNuevoCrearUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnAlumnoNuevoCrearUsuario.TabIndex = 30;
-            this.btnAlumnoNuevoCrearUsuario.Text = "Crear Usuario";
+            this.btnAlumnoNuevoCrearUsuario.Text = "Buscar Usuario";
             this.btnAlumnoNuevoCrearUsuario.UseVisualStyleBackColor = true;
             this.btnAlumnoNuevoCrearUsuario.Click += new System.EventHandler(this.btnAlumnoNuevoBuscarUsuario_Click);
-            // 
-            // btnAlumnoNuevoBuscarCurso
-            // 
-            this.btnAlumnoNuevoBuscarCurso.Location = new System.Drawing.Point(386, 163);
-            this.btnAlumnoNuevoBuscarCurso.Name = "btnAlumnoNuevoBuscarCurso";
-            this.btnAlumnoNuevoBuscarCurso.Size = new System.Drawing.Size(75, 23);
-            this.btnAlumnoNuevoBuscarCurso.TabIndex = 23;
-            this.btnAlumnoNuevoBuscarCurso.Text = "Buscar";
-            this.btnAlumnoNuevoBuscarCurso.UseVisualStyleBackColor = true;
-            this.btnAlumnoNuevoBuscarCurso.Click += new System.EventHandler(this.btnAlumnoNuevoBuscarCurso_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(128, 167);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 20);
-            this.textBox1.TabIndex = 22;
             // 
             // lblAlumnoNuevoUsuario
             // 
             this.lblAlumnoNuevoUsuario.AutoSize = true;
-            this.lblAlumnoNuevoUsuario.Location = new System.Drawing.Point(27, 211);
+            this.lblAlumnoNuevoUsuario.Location = new System.Drawing.Point(27, 177);
             this.lblAlumnoNuevoUsuario.Name = "lblAlumnoNuevoUsuario";
             this.lblAlumnoNuevoUsuario.Size = new System.Drawing.Size(56, 13);
             this.lblAlumnoNuevoUsuario.TabIndex = 28;
             this.lblAlumnoNuevoUsuario.Text = "USUARIO";
             // 
-            // lblAlumnoNuevoCurso
+            // panel1
             // 
-            this.lblAlumnoNuevoCurso.AutoSize = true;
-            this.lblAlumnoNuevoCurso.Location = new System.Drawing.Point(27, 173);
-            this.lblAlumnoNuevoCurso.Name = "lblAlumnoNuevoCurso";
-            this.lblAlumnoNuevoCurso.Size = new System.Drawing.Size(45, 13);
-            this.lblAlumnoNuevoCurso.TabIndex = 21;
-            this.lblAlumnoNuevoCurso.Text = "CURSO";
+            this.panel1.Controls.Add(this.Datos);
+            this.panel1.Controls.Add(this.btnAlumnoNuevo);
+            this.panel1.Controls.Add(this.lblMessage);
+            this.panel1.Controls.Add(this.btnAlumnoNuevoLimpiar);
+            this.panel1.Controls.Add(this.lblAlumnoNuevoError);
+            this.panel1.Controls.Add(this.btnAlumnoNuevoCancelar);
+            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(595, 262);
+            this.panel1.TabIndex = 28;
             // 
             // frmAlumnoNuevo
             // 
             this.AcceptButton = this.btnAlumnoNuevo;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.btnAlumnoNuevoCancelar;
-            this.ClientSize = new System.Drawing.Size(571, 317);
-            this.Controls.Add(this.Datos);
-            this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.lblAlumnoNuevoError);
-            this.Controls.Add(this.btnAlumnoNuevoCancelar);
-            this.Controls.Add(this.btnAlumnoNuevoLimpiar);
-            this.Controls.Add(this.btnAlumnoNuevo);
+            this.ClientSize = new System.Drawing.Size(601, 267);
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -309,10 +288,12 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alumno Nuevo";
+            this.Load += new System.EventHandler(this.frmAlumnoNuevo_Load);
             this.Datos.ResumeLayout(false);
             this.Datos.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -333,15 +314,13 @@
         private System.Windows.Forms.Label lblAlumnoNuevoApellidoError;
         private System.Windows.Forms.Label lblAlumnoNuevoLegajoError;
         private System.Windows.Forms.Label lblAlumnoNuevoDniError;
-        private System.Windows.Forms.Label lblAlumnoNuevoCursoError;
         private System.Windows.Forms.Label lblAlumnoNuevoError;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.GroupBox Datos;
         private System.Windows.Forms.TextBox txtAlumnoNuevoUsuario;
         private System.Windows.Forms.Button btnAlumnoNuevoCrearUsuario;
-        private System.Windows.Forms.Button btnAlumnoNuevoBuscarCurso;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblAlumnoNuevoUsuario;
-        private System.Windows.Forms.Label lblAlumnoNuevoCurso;
+        private System.Windows.Forms.Label lblAlumnoNuevoUsuarioError;
+        private System.Windows.Forms.Panel panel1;
     }
 }

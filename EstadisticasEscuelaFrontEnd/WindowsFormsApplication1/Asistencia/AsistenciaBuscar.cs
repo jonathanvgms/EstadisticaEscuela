@@ -45,7 +45,6 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
         private void btnAsistenciaBuscarLimpiar_Click(object sender, EventArgs e)
         {
             txtAsistenciaBuscarFecha.Text = "";
-            txtAsistenciaBuscarPresente.Text = "";
             lblAsistenciaBuscarFechaError.Text = "";
             lblAsistenciaBuscarPresenteError.Text = "";
         }
@@ -72,6 +71,5 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
 
             //string query = string.Format("where 
         }
-
     }
 }

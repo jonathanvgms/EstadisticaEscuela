@@ -94,10 +94,9 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
 
         private void btnAsistenciaNuevoBuscarAlumno_Click(object sender, EventArgs e)
         {
-            /*AlumnoSeleccionar unfrmAlumnoBuscar = new AlumnoSeleccionar();
-            unfrmAlumnoBuscar.ShowDialog(this);*/
+            frmAlumnoBuscar alumnoBuscar = new frmAlumnoBuscar();
 
-            
+            alumnoBuscar.ShowDialog(this);
         }
 
         private void btnAsisntenciaNuevoBuscarCurso_Click(object sender, EventArgs e)
@@ -133,5 +132,9 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
             return (0).ToString();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -91,7 +91,9 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
         {
             if ((e.ColumnIndex == dgvCursoBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
-                frmCursoModificar cursoModificar = new frmCursoModificar();
+                //frmCursoModificar cursoModificar = new frmCursoModificar();
+
+                frmCursoNuevo cursoModificar = new frmCursoNuevo();
                                 
                 cursoModificar.CursoModificado = new Curso(dgvCursoBuscar.CurrentRow.Cells[0].Value.ToString(),
                                                               dgvCursoBuscar.CurrentRow.Cells[1].Value.ToString(),
