@@ -53,17 +53,39 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             /*
              * falta verificar que el alumno existe en la base de datos
             */
+            /*
+            if (Alumno.Select("where DNI = " + txtAlumnoNuevoDNI.Text).Count != 0)
+            {
+                MessageBox.Show("hjhjjh");
+            }
+             * */
+
 
             if (error)
             {
-                Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text, nuevoUsuario.Id));
+                if ((Alumno.Select("where DNI = " + txtAlumnoNuevoDNI.Text).Count == 0)&&(alumnoModificado.Nombre.Length != 0))
+                {
+                    Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text, nuevoUsuario.Id));
+                    lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO ";
+                }
+
+                else
+                {
+                    MessageBox.Show("El DNI del alumno ya existe");
+                }
+                
+                //Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text, nuevoUsuario.Id));
+
+                
 
                 /*
                  * falta verificar que el alumno persistió en la base de datos
                  */
  
-                lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO ";
+                //lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO ";
             }
+
+
         }
 
         private bool checkData(ComboBox comboA, ComboBox comboB, Label label)

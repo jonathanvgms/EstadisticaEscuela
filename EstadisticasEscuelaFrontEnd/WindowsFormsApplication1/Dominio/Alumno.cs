@@ -113,7 +113,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             alumnos = Query(query, alumnos);
 
             return alumnos;
-        }    
+        }
 
         public static List<Alumno> Select(string where)
         {
@@ -125,6 +125,8 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
             return alumnos;
         }
+
+        
 
         private static List<Alumno> Query(string query, List<Alumno> alumnos)
         {

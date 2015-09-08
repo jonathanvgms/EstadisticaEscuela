@@ -27,9 +27,10 @@ namespace EstadisticasEscuelaFrontEnd
             
             login.ShowDialog(this);
             */
-            Objeto.ConectionString("localhost", "3306", "estadisticasescuela", "root", "telesca");
-            //Objeto.ConectionString("win2012-01", "3306", "escuela", "alumno67", "saramoya");
-            //Objeto.ConectionString("win2012-01", "3306", "estadisticasescuela", "alumno67", "saramoya");
+            //Objeto.ConectionString("localhost", "3306", "estadisticasescuela", "root", "telesca");
+            Objeto.ConectionString("win2012-01", "3306", "pp67_estadisticasescuela", "alumno67", "saramoya");
+            //Objeto.ConectionString("win2012-01", "3306", "pp67_estadisticasescuela", "alumno67", "saramoya");
+
         }
 
         private void adsaToolStripMenuItem_Click(object sender, EventArgs e)
