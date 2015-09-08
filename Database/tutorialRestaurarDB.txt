@@ -1,4 +1,4 @@
-1- Abrir la base de datos "estadisticasEscuela v3.0"
+1- Abrir la base de datos
 2- Ir al Menu "Database" -> "Forward Engineer" (Ctrl + G)
 3- En la pantalla de "Options" tildar/marcar las opciones:
 
@@ -12,7 +12,7 @@ Despues dar siguiente a todo.
 5- Ir al menu "Server" -> "Data Import"
 6- Seleccionar la opcion:
 
-"Import form self-Contained File" y buscar el archivo "eset12.sql"
+"Import form self-Contained File" y buscar el archivo "***Data.sql"
 
 7- En "Default Target Schema", seleccionar "estadisticasEscuela"
 8- Apretar el Boton "Start Import"
