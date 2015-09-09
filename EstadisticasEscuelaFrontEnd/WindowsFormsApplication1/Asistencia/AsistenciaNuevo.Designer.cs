@@ -34,20 +34,14 @@
             this.btnAsistenciaBuscarAceptar = new System.Windows.Forms.Button();
             this.lblAsistenciaBuscarLimpiar = new System.Windows.Forms.Button();
             this.Datos = new System.Windows.Forms.GroupBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.lblAsistenciaNuevoPresentismoError = new System.Windows.Forms.Label();
             this.rbtAsistenciaNuevoAusente = new System.Windows.Forms.RadioButton();
             this.rbtAsistenciaNuevoPresente = new System.Windows.Forms.RadioButton();
             this.lblAsistenicaNuevoError = new System.Windows.Forms.Label();
             this.lblAsistenciaNuevoFechaError = new System.Windows.Forms.Label();
             this.lblAsistenciaNuevoPresentismo = new System.Windows.Forms.Label();
-            this.btnAsisntenciaNuevoBuscarCurso = new System.Windows.Forms.Button();
-            this.btnAsistenciaNuevoBuscarAlumno = new System.Windows.Forms.Button();
-            this.txtAsistneciaNuevoCurso = new System.Windows.Forms.TextBox();
-            this.txtAsisnteciaNuevoAlumno = new System.Windows.Forms.TextBox();
-            this.lblAsistenciaNuevoCurso = new System.Windows.Forms.Label();
-            this.lblAsistenciaNuevoAlumno = new System.Windows.Forms.Label();
             this.lblAsistenicaNuevoGuardadoConExito = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.Datos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,12 +102,6 @@
             this.Datos.Controls.Add(this.lblAsistenicaNuevoError);
             this.Datos.Controls.Add(this.lblAsistenciaNuevoFechaError);
             this.Datos.Controls.Add(this.lblAsistenciaNuevoPresentismo);
-            this.Datos.Controls.Add(this.btnAsisntenciaNuevoBuscarCurso);
-            this.Datos.Controls.Add(this.btnAsistenciaNuevoBuscarAlumno);
-            this.Datos.Controls.Add(this.txtAsistneciaNuevoCurso);
-            this.Datos.Controls.Add(this.txtAsisnteciaNuevoAlumno);
-            this.Datos.Controls.Add(this.lblAsistenciaNuevoCurso);
-            this.Datos.Controls.Add(this.lblAsistenciaNuevoAlumno);
             this.Datos.Controls.Add(this.lblAsintenciaNuevoFecha);
             this.Datos.Controls.Add(this.txtAsistenciaNuevoFecha);
             this.Datos.Location = new System.Drawing.Point(3, 12);
@@ -123,6 +111,12 @@
             this.Datos.TabStop = false;
             this.Datos.Tag = "Fecha";
             this.Datos.Text = "Datos";
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(338, 25);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 20;
             // 
             // lblAsistenciaNuevoPresentismoError
             // 
@@ -179,60 +173,6 @@
             this.lblAsistenciaNuevoPresentismo.TabIndex = 10;
             this.lblAsistenciaNuevoPresentismo.Text = "Presentismo";
             // 
-            // btnAsisntenciaNuevoBuscarCurso
-            // 
-            this.btnAsisntenciaNuevoBuscarCurso.Location = new System.Drawing.Point(338, 244);
-            this.btnAsisntenciaNuevoBuscarCurso.Name = "btnAsisntenciaNuevoBuscarCurso";
-            this.btnAsisntenciaNuevoBuscarCurso.Size = new System.Drawing.Size(97, 23);
-            this.btnAsisntenciaNuevoBuscarCurso.TabIndex = 9;
-            this.btnAsisntenciaNuevoBuscarCurso.Text = "Buscar Curso";
-            this.btnAsisntenciaNuevoBuscarCurso.UseVisualStyleBackColor = true;
-            this.btnAsisntenciaNuevoBuscarCurso.Click += new System.EventHandler(this.btnAsisntenciaNuevoBuscarCurso_Click);
-            // 
-            // btnAsistenciaNuevoBuscarAlumno
-            // 
-            this.btnAsistenciaNuevoBuscarAlumno.Location = new System.Drawing.Point(338, 207);
-            this.btnAsistenciaNuevoBuscarAlumno.Name = "btnAsistenciaNuevoBuscarAlumno";
-            this.btnAsistenciaNuevoBuscarAlumno.Size = new System.Drawing.Size(97, 23);
-            this.btnAsistenciaNuevoBuscarAlumno.TabIndex = 8;
-            this.btnAsistenciaNuevoBuscarAlumno.Text = "Buscar Alumno";
-            this.btnAsistenciaNuevoBuscarAlumno.UseVisualStyleBackColor = true;
-            this.btnAsistenciaNuevoBuscarAlumno.Click += new System.EventHandler(this.btnAsistenciaNuevoBuscarAlumno_Click);
-            // 
-            // txtAsistneciaNuevoCurso
-            // 
-            this.txtAsistneciaNuevoCurso.Location = new System.Drawing.Point(106, 246);
-            this.txtAsistneciaNuevoCurso.Name = "txtAsistneciaNuevoCurso";
-            this.txtAsistneciaNuevoCurso.ReadOnly = true;
-            this.txtAsistneciaNuevoCurso.Size = new System.Drawing.Size(210, 20);
-            this.txtAsistneciaNuevoCurso.TabIndex = 7;
-            // 
-            // txtAsisnteciaNuevoAlumno
-            // 
-            this.txtAsisnteciaNuevoAlumno.Location = new System.Drawing.Point(106, 209);
-            this.txtAsisnteciaNuevoAlumno.Name = "txtAsisnteciaNuevoAlumno";
-            this.txtAsisnteciaNuevoAlumno.ReadOnly = true;
-            this.txtAsisnteciaNuevoAlumno.Size = new System.Drawing.Size(210, 20);
-            this.txtAsisnteciaNuevoAlumno.TabIndex = 6;
-            // 
-            // lblAsistenciaNuevoCurso
-            // 
-            this.lblAsistenciaNuevoCurso.AutoSize = true;
-            this.lblAsistenciaNuevoCurso.Location = new System.Drawing.Point(21, 249);
-            this.lblAsistenciaNuevoCurso.Name = "lblAsistenciaNuevoCurso";
-            this.lblAsistenciaNuevoCurso.Size = new System.Drawing.Size(34, 13);
-            this.lblAsistenciaNuevoCurso.TabIndex = 5;
-            this.lblAsistenciaNuevoCurso.Text = "Curso";
-            // 
-            // lblAsistenciaNuevoAlumno
-            // 
-            this.lblAsistenciaNuevoAlumno.AutoSize = true;
-            this.lblAsistenciaNuevoAlumno.Location = new System.Drawing.Point(21, 212);
-            this.lblAsistenciaNuevoAlumno.Name = "lblAsistenciaNuevoAlumno";
-            this.lblAsistenciaNuevoAlumno.Size = new System.Drawing.Size(42, 13);
-            this.lblAsistenciaNuevoAlumno.TabIndex = 4;
-            this.lblAsistenciaNuevoAlumno.Text = "Alumno";
-            // 
             // lblAsistenicaNuevoGuardadoConExito
             // 
             this.lblAsistenicaNuevoGuardadoConExito.AutoSize = true;
@@ -240,12 +180,6 @@
             this.lblAsistenicaNuevoGuardadoConExito.Name = "lblAsistenicaNuevoGuardadoConExito";
             this.lblAsistenicaNuevoGuardadoConExito.Size = new System.Drawing.Size(0, 13);
             this.lblAsistenicaNuevoGuardadoConExito.TabIndex = 8;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(338, 25);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 20;
             // 
             // frmAsistenciaNuevo
             // 
@@ -278,12 +212,6 @@
         private System.Windows.Forms.Button btnAsistenciaBuscarAceptar;
         private System.Windows.Forms.Button lblAsistenciaBuscarLimpiar;
         private System.Windows.Forms.GroupBox Datos;
-        private System.Windows.Forms.Button btnAsisntenciaNuevoBuscarCurso;
-        private System.Windows.Forms.Button btnAsistenciaNuevoBuscarAlumno;
-        private System.Windows.Forms.TextBox txtAsistneciaNuevoCurso;
-        private System.Windows.Forms.TextBox txtAsisnteciaNuevoAlumno;
-        private System.Windows.Forms.Label lblAsistenciaNuevoCurso;
-        private System.Windows.Forms.Label lblAsistenciaNuevoAlumno;
         private System.Windows.Forms.Label lblAsistenicaNuevoError;
         private System.Windows.Forms.Label lblAsistenciaNuevoFechaError;
         private System.Windows.Forms.Label lblAsistenciaNuevoPresentismo;

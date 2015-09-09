@@ -55,11 +55,6 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
             txtAsistenciaNuevoFecha.Clear();
 
             //txtAsistenciaNuevoPresentismo.Clear();
-
-            txtAsisnteciaNuevoAlumno.Clear();
-
-            txtAsistneciaNuevoCurso.Clear();
-
         }
 
         private void btnAsistenciaBuscarCancelar_Click(object sender, EventArgs e)

@@ -12,19 +12,49 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 {
     class Asistencia : Objeto
     {
-        private int IdAsistencia { get; set; }
-        private DateTime Fecha { get; set; }
-        private Boolean presentismo { get; set; }
-        private int IdAlumno { get; set; }
+        private int _id;
 
-        public Asistencia(int UnIdAsistencia, DateTime UnaFecha, Boolean UnPresentismo, int UnIdAlumno)
+        public int Id
         {
-            IdAsistencia = UnIdAsistencia;
+            get { return _id; }
+            set { _id = value; }
+        }
+
+        private DateTime _fecha;
+
+        public DateTime Fecha
+        {
+            get { return _fecha; }
+            set { _fecha = value; }
+        }
+        private bool _presentismo;
+
+        public bool Presentismo
+        {
+            get { return _presentismo; }
+            set { _presentismo = value; }
+        }
+        private int _idAlumno;
+
+        public int IdAlumno
+        {
+            get { return _idAlumno; }
+            set { _idAlumno = value; }
+        }
+
+        public Asistencia( DateTime UnaFecha, Boolean UnPresentismo, int UnIdAlumno)
+        {
             Fecha = UnaFecha;
-            presentismo = UnPresentismo;
+            Presentismo = UnPresentismo;
             IdAlumno = UnIdAlumno;
 
-            //Parametros.Add(new Parametro("@"))
+            //Parametros.Add(new Parametro("@unaFecha",Fecha));
+
+            //Parametros.Add(new Parametro("@UnPresentismo", Presentismo));
+
+            Parametros.Add(new Parametro("@unIdAlumno", IdAlumno));
+
+            Tipo = "";
         }
     }
 }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd.Database;
 using EstadisticasEscuelaFrontEnd.Dominio;
+using EstadisticasEscuelaFrontEnd.Cursos;
+using EstadisticasEscuelaFrontEnd.Asistencia;
 
 namespace EstadisticasEscuelaFrontEnd.Asistencia
 {
@@ -51,11 +53,11 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
 
         private void btnAsistenciaBuscarBuscar_Click(object sender, EventArgs e)
         {
-            /*bool error = true;
+            bool error = true;
 
-            if (!checkData(txtAsistenciaBuscarFecha, lblAsistenciaBuscarFechaError)) error = false;
+            //if (!checkData(txtAsistenciaBuscarFecha, lblAsistenciaBuscarFechaError)) error = false;
 
-            if (!checkData(txtAsistenciaBuscarPresente, lblAsistenciaBuscarPresenteError)) error = false;
+            //if (!checkData(txtAsistenciaBuscarPresente, lblAsistenciaBuscarPresenteError)) error = false;
             /*
             if (error)
             {
@@ -70,6 +72,22 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
             dgvAsistenciaBucar.Columns.Clear();
 
             //string query = string.Format("where 
+        }
+
+        private void btnAsistenciaBuscarBuscarCurso_Click(object sender, EventArgs e)
+        {
+            frmBuscarCurso unBuscarCurso = new frmBuscarCurso();
+            unBuscarCurso.ShowDialog(this);
+        }
+
+        private void dgvAsistenciaBucar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((e.ColumnIndex == dgvAsistenciaBucar.Columns ["Modificar"].Index) && (e.ColumnIndex >= -1))
+            {
+                frmAsistenciaBuscar asistenciaModificar = new frmAsistenciaBuscar();
+
+                string nombreAsistencia = 
+            }
         }
     }
 }

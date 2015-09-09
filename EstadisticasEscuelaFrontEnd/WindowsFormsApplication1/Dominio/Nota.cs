@@ -51,8 +51,8 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
         public int NotaDefinitiva
         {
-            get { return _notaFinal; }
-            set { _notaFinal = value; }
+            get { return _notaDefinitiva; }
+            set { _notaDefinitiva = value; }
         }
 
         private int _idMateria;
@@ -69,7 +69,7 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             Nota1Trimestre = UnaNota1Trimestre;
             Nota2Trimestre = unaNota2Trimestre;
             Nota3Trimestre = unaNota3Trimestre;
-            NotaFinal = unaNotaDefinitiva;
+            NotaFinal = unaNotaFinal;
             NotaDefinitiva = unaNotaDefinitiva;
             IdMateria = unaIdMateria;
 

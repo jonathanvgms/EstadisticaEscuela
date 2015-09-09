@@ -36,13 +36,12 @@
             this.btnAsistenciaBuscarBuscar = new System.Windows.Forms.Button();
             this.btnAsistenciaBuscarCancelar = new System.Windows.Forms.Button();
             this.FiltroDeBusqueda = new System.Windows.Forms.GroupBox();
+            this.btnAsistenciaBuscarFecha = new System.Windows.Forms.Button();
+            this.lblAsistenciaBuscarFechaEtiqueta = new System.Windows.Forms.Label();
+            this.txtAsistenciaBuscar = new System.Windows.Forms.TextBox();
             this.lblAsistenciaBuscarFechaError = new System.Windows.Forms.Label();
             this.lblAsistenciaBuscarPresenteError = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAsistenciaBuscarBuscarCurso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsistenciaBucar)).BeginInit();
             this.FiltroDeBusqueda.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +49,7 @@
             // lblASistenciaBuscarFecha
             // 
             this.lblASistenciaBuscarFecha.AutoSize = true;
-            this.lblASistenciaBuscarFecha.Location = new System.Drawing.Point(19, 76);
+            this.lblASistenciaBuscarFecha.Location = new System.Drawing.Point(15, 34);
             this.lblASistenciaBuscarFecha.Name = "lblASistenciaBuscarFecha";
             this.lblASistenciaBuscarFecha.Size = new System.Drawing.Size(34, 13);
             this.lblASistenciaBuscarFecha.TabIndex = 1;
@@ -58,8 +57,10 @@
             // 
             // txtAsistenciaBuscarFecha
             // 
-            this.txtAsistenciaBuscarFecha.Location = new System.Drawing.Point(98, 73);
+            this.txtAsistenciaBuscarFecha.Enabled = false;
+            this.txtAsistenciaBuscarFecha.Location = new System.Drawing.Point(94, 31);
             this.txtAsistenciaBuscarFecha.Name = "txtAsistenciaBuscarFecha";
+            this.txtAsistenciaBuscarFecha.ReadOnly = true;
             this.txtAsistenciaBuscarFecha.Size = new System.Drawing.Size(159, 20);
             this.txtAsistenciaBuscarFecha.TabIndex = 3;
             // 
@@ -68,8 +69,9 @@
             this.dgvAsistenciaBucar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsistenciaBucar.Location = new System.Drawing.Point(12, 162);
             this.dgvAsistenciaBucar.Name = "dgvAsistenciaBucar";
-            this.dgvAsistenciaBucar.Size = new System.Drawing.Size(599, 286);
+            this.dgvAsistenciaBucar.Size = new System.Drawing.Size(655, 286);
             this.dgvAsistenciaBucar.TabIndex = 4;
+            this.dgvAsistenciaBucar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsistenciaBucar_CellContentClick);
             // 
             // btnAsistenciaBuscarLimpiar
             // 
@@ -83,7 +85,7 @@
             // 
             // btnAsistenciaBuscarBuscar
             // 
-            this.btnAsistenciaBuscarBuscar.Location = new System.Drawing.Point(536, 133);
+            this.btnAsistenciaBuscarBuscar.Location = new System.Drawing.Point(592, 130);
             this.btnAsistenciaBuscarBuscar.Name = "btnAsistenciaBuscarBuscar";
             this.btnAsistenciaBuscarBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnAsistenciaBuscarBuscar.TabIndex = 6;
@@ -93,7 +95,7 @@
             // 
             // btnAsistenciaBuscarCancelar
             // 
-            this.btnAsistenciaBuscarCancelar.Location = new System.Drawing.Point(536, 454);
+            this.btnAsistenciaBuscarCancelar.Location = new System.Drawing.Point(592, 454);
             this.btnAsistenciaBuscarCancelar.Name = "btnAsistenciaBuscarCancelar";
             this.btnAsistenciaBuscarCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnAsistenciaBuscarCancelar.TabIndex = 7;
@@ -103,21 +105,47 @@
             // 
             // FiltroDeBusqueda
             // 
-            this.FiltroDeBusqueda.Controls.Add(this.button1);
-            this.FiltroDeBusqueda.Controls.Add(this.label2);
-            this.FiltroDeBusqueda.Controls.Add(this.textBox2);
-            this.FiltroDeBusqueda.Controls.Add(this.label1);
-            this.FiltroDeBusqueda.Controls.Add(this.textBox1);
+            this.FiltroDeBusqueda.Controls.Add(this.btnAsistenciaBuscarBuscarCurso);
+            this.FiltroDeBusqueda.Controls.Add(this.btnAsistenciaBuscarFecha);
+            this.FiltroDeBusqueda.Controls.Add(this.lblAsistenciaBuscarFechaEtiqueta);
+            this.FiltroDeBusqueda.Controls.Add(this.txtAsistenciaBuscar);
             this.FiltroDeBusqueda.Controls.Add(this.lblAsistenciaBuscarFechaError);
             this.FiltroDeBusqueda.Controls.Add(this.lblAsistenciaBuscarPresenteError);
             this.FiltroDeBusqueda.Controls.Add(this.lblASistenciaBuscarFecha);
             this.FiltroDeBusqueda.Controls.Add(this.txtAsistenciaBuscarFecha);
             this.FiltroDeBusqueda.Location = new System.Drawing.Point(12, 12);
             this.FiltroDeBusqueda.Name = "FiltroDeBusqueda";
-            this.FiltroDeBusqueda.Size = new System.Drawing.Size(599, 112);
+            this.FiltroDeBusqueda.Size = new System.Drawing.Size(655, 112);
             this.FiltroDeBusqueda.TabIndex = 8;
             this.FiltroDeBusqueda.TabStop = false;
             this.FiltroDeBusqueda.Text = "Filtro de Busqueda";
+            // 
+            // btnAsistenciaBuscarFecha
+            // 
+            this.btnAsistenciaBuscarFecha.Location = new System.Drawing.Point(482, 57);
+            this.btnAsistenciaBuscarFecha.Name = "btnAsistenciaBuscarFecha";
+            this.btnAsistenciaBuscarFecha.Size = new System.Drawing.Size(92, 23);
+            this.btnAsistenciaBuscarFecha.TabIndex = 13;
+            this.btnAsistenciaBuscarFecha.Text = "Buscar Fecha";
+            this.btnAsistenciaBuscarFecha.UseVisualStyleBackColor = true;
+            // 
+            // lblAsistenciaBuscarFechaEtiqueta
+            // 
+            this.lblAsistenciaBuscarFechaEtiqueta.AutoSize = true;
+            this.lblAsistenciaBuscarFechaEtiqueta.Location = new System.Drawing.Point(361, 34);
+            this.lblAsistenciaBuscarFechaEtiqueta.Name = "lblAsistenciaBuscarFechaEtiqueta";
+            this.lblAsistenciaBuscarFechaEtiqueta.Size = new System.Drawing.Size(37, 13);
+            this.lblAsistenciaBuscarFechaEtiqueta.TabIndex = 11;
+            this.lblAsistenciaBuscarFechaEtiqueta.Text = "Fecha";
+            // 
+            // txtAsistenciaBuscar
+            // 
+            this.txtAsistenciaBuscar.Enabled = false;
+            this.txtAsistenciaBuscar.Location = new System.Drawing.Point(415, 31);
+            this.txtAsistenciaBuscar.Name = "txtAsistenciaBuscar";
+            this.txtAsistenciaBuscar.ReadOnly = true;
+            this.txtAsistenciaBuscar.Size = new System.Drawing.Size(159, 20);
+            this.txtAsistenciaBuscar.TabIndex = 12;
             // 
             // lblAsistenciaBuscarFechaError
             // 
@@ -135,52 +163,21 @@
             this.lblAsistenciaBuscarPresenteError.Size = new System.Drawing.Size(0, 13);
             this.lblAsistenciaBuscarPresenteError.TabIndex = 7;
             // 
-            // label1
+            // btnAsistenciaBuscarBuscarCurso
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Alumno";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(98, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 20);
-            this.textBox1.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(304, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Fecha";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(358, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 20);
-            this.textBox2.TabIndex = 12;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(425, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Buscar Fecha";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAsistenciaBuscarBuscarCurso.Location = new System.Drawing.Point(158, 57);
+            this.btnAsistenciaBuscarBuscarCurso.Name = "btnAsistenciaBuscarBuscarCurso";
+            this.btnAsistenciaBuscarBuscarCurso.Size = new System.Drawing.Size(95, 23);
+            this.btnAsistenciaBuscarBuscarCurso.TabIndex = 14;
+            this.btnAsistenciaBuscarBuscarCurso.Text = "Buscar Curso";
+            this.btnAsistenciaBuscarBuscarCurso.UseVisualStyleBackColor = true;
+            this.btnAsistenciaBuscarBuscarCurso.Click += new System.EventHandler(this.btnAsistenciaBuscarBuscarCurso_Click);
             // 
             // frmAsistenciaBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 487);
+            this.ClientSize = new System.Drawing.Size(679, 487);
             this.Controls.Add(this.FiltroDeBusqueda);
             this.Controls.Add(this.btnAsistenciaBuscarCancelar);
             this.Controls.Add(this.dgvAsistenciaBucar);
@@ -208,10 +205,9 @@
         private System.Windows.Forms.GroupBox FiltroDeBusqueda;
         private System.Windows.Forms.Label lblAsistenciaBuscarFechaError;
         private System.Windows.Forms.Label lblAsistenciaBuscarPresenteError;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnAsistenciaBuscarFecha;
+        private System.Windows.Forms.Label lblAsistenciaBuscarFechaEtiqueta;
+        private System.Windows.Forms.TextBox txtAsistenciaBuscar;
+        private System.Windows.Forms.Button btnAsistenciaBuscarBuscarCurso;
     }
 }
