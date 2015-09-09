@@ -43,6 +43,8 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             if (!checkData(txtAlumnoNuevoLegajo, lblAlumnoNuevoLegajoError)) error = false;
 
+            if (!checkData(txtAlumnoNuevoDescripcion, lblAlumnoNuevoDescripcionError)) error = false;
+
             if (txtAlumnoNuevoUsuario.Text.Length == 0)
             {
                 error = false;
@@ -50,16 +52,6 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                 lblAlumnoNuevoUsuarioError.Text = "Seleccionar Usuario";
             }
             
-            /*
-             * falta verificar que el alumno existe en la base de datos
-            */
-            /*
-            if (Alumno.Select("where DNI = " + txtAlumnoNuevoDNI.Text).Count != 0)
-            {
-                MessageBox.Show("hjhjjh");
-            }
-             * */
-
 
             if (error)
             {
@@ -73,16 +65,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                 {
                     MessageBox.Show("El DNI del alumno ya existe");
                 }
-                
-                //Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text, nuevoUsuario.Id));
 
-                
-
-                /*
-                 * falta verificar que el alumno persistió en la base de datos
-                 */
- 
-                //lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO ";
             }
 
 
@@ -136,7 +119,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             if (!textBox.Text.Equals(""))
             {
-                if (textBox.Name.Equals("txtAlumnoNuevoNombre") || textBox.Name.Equals("txtAlumnoNuevoApellido"))
+                if (textBox.Name.Equals("txtAlumnoNuevoNombre") || textBox.Name.Equals("txtAlumnoNuevoApellido") || textBox.Name.Equals("txtAlumnoNuevoDescripcion"))
                 {
                     if (!Util.todasLetras(textBox.Text))
                     {
@@ -176,7 +159,9 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             txtAlumnoNuevoDNI.Clear();
 
-            lblMessage.Text = "";
+            txtAlumnoNuevoDescripcion.Clear();
+
+            //lblMessage.Text = "";
 
             lblAlumnoNuevoNombreError.Text = "";
 
@@ -185,6 +170,8 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             lblAlumnoNuevoLegajoError.Text = "";
 
             lblAlumnoNuevoDniError.Text = "";
+
+            lblAlumnoNuevoDescripcionError.Text = "";
 
         }
 
@@ -223,6 +210,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                     txtAlumnoNuevoLegajo.Text = alumnoModificado.Legajo;
 
                     txtAlumnoNuevoUsuario.Text = alumnoModificado.IdUsuario;
+
                 }
             }
             catch

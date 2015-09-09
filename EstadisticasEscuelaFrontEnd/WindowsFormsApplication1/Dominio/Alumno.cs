@@ -51,6 +51,15 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             get { return _dni; }
             set { _dni = value; }
         }
+        /*
+        private string _descripcion;
+
+        public string Descripcion
+        {
+            get { return _descripcion; }
+            set { _descripcion = value; }
+        }
+        */
 
         private string _idUsuario;
 
@@ -72,6 +81,8 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
 
             IdUsuario = idUsuario;
 
+            //Descripcion=descripcion;
+
             Parametros.Add(new Parametro("@unNombre", Nombre));
 
             Parametros.Add(new Parametro("@unApellido", Apellido));
@@ -81,6 +92,8 @@ namespace EstadisticasEscuelaFrontEnd.Dominio
             Parametros.Add(new Parametro("@unDNI", Dni));
 
             Parametros.Add(new Parametro("@unIdUsuario", idUsuario));
+
+           // Parametros.Add(new Parametro("@unaDescripcion",Descripcion);
             
             Tipo = "Alumno"; 
         }
