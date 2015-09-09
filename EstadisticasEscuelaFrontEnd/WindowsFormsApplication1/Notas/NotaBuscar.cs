@@ -34,14 +34,11 @@ namespace EstadisticasEscuelaFrontEnd.Notas
 
         private void dgvNotaBuscar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if((e.ColumnIndex == dgvNotaBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
+            if ((e.ColumnIndex == dgvNotaBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
                 NotaBuscar notaModificar = new NotaBuscar();
-                string no
-
-        }
-
-       
+            }
+        }       
       
     }
 }
