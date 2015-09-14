@@ -21,7 +21,7 @@
 
 LOCK TABLES `alumno` WRITE;
 /*!40000 ALTER TABLE `alumno` DISABLE KEYS */;
-INSERT INTO `alumno` VALUES (1,'Ariel','Galvan','100','1000',2),(2,'Angel','Aybar','101','1001',3),(3,'Luz ','Ramos','102','1002',4),(4,'Jorge ','Loyaga','103','1003',5);
+INSERT INTO `alumno` VALUES (1,'Ariel','Galvan','100','1000',NULL,1,2),(2,'Angel','Aybar','101','1001',NULL,1,3),(3,'Luz ','Ramos','102','1002',NULL,1,4),(4,'Jorge ','Loyaga','103','1003',NULL,1,5);
 /*!40000 ALTER TABLE `alumno` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -31,7 +31,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `alumno_x_curso` WRITE;
 /*!40000 ALTER TABLE `alumno_x_curso` DISABLE KEYS */;
-INSERT INTO `alumno_x_curso` VALUES (1,2015,1,1,1),(2,2015,1,2,2),(3,2015,1,3,3),(4,2015,1,4,4);
+INSERT INTO `alumno_x_curso` VALUES (1,2015,1,1,1,1),(2,2015,1,1,2,2),(3,2015,1,1,3,3),(4,2015,1,1,4,4);
 /*!40000 ALTER TABLE `alumno_x_curso` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,7 +51,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `curso` WRITE;
 /*!40000 ALTER TABLE `curso` DISABLE KEYS */;
-INSERT INTO `curso` VALUES (1,6,7,2,2),(2,6,8,2,1);
+INSERT INTO `curso` VALUES (1,6,7,1,2,2),(2,6,8,1,2,1);
 /*!40000 ALTER TABLE `curso` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +61,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `docente` WRITE;
 /*!40000 ALTER TABLE `docente` DISABLE KEYS */;
-INSERT INTO `docente` VALUES (1,'Jonathan','Velazquez',NULL,1);
+INSERT INTO `docente` VALUES (1,'Jonathan','Velazquez',NULL,1,1);
 /*!40000 ALTER TABLE `docente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +111,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `rol` WRITE;
 /*!40000 ALTER TABLE `rol` DISABLE KEYS */;
-INSERT INTO `rol` VALUES (1,1,0,0,0,0),(2,0,1,0,0,0),(3,0,0,1,0,0),(4,0,0,0,1,0),(5,0,0,0,0,1);
+INSERT INTO `rol` VALUES (1,1,1,1,1,1,1,1);
 /*!40000 ALTER TABLE `rol` ENABLE KEYS */;
 UNLOCK TABLES;
 
