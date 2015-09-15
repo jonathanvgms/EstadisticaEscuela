@@ -13,10 +13,10 @@ namespace EstadisticasEscuelaFrontEnd.Modelo
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EstadisticasEscuelaEntities : DbContext
+    public partial class EestadisticasEscuelaEntities : DbContext
     {
-        public EstadisticasEscuelaEntities()
-            : base("name=EstadisticasEscuelaEntities")
+        public EestadisticasEscuelaEntities()
+            : base("name=EestadisticasEscuelaEntities")
         {
         }
     

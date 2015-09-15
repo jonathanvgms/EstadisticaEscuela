@@ -4,31 +4,31 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="62c7f26e06f147a4b3d2df88ce587e43" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.alumno" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.alumno_x_curso" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.asistencia" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.curso" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.docente" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.especialidad" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.materia" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.materia_x_curso" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.nota" Width="1.5" PointX="10.5" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.rol" Width="1.5" PointX="1.5" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.turno" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EstadisticasEscuelaModelo.usuario" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_Alumno_Usuario1" ManuallyRouted="false" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_Alumno_X_Curso_Alumno1" ManuallyRouted="false" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_nota_Alumno1" ManuallyRouted="false" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_Alumno_X_Curso_Asistencia1" ManuallyRouted="false" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_Alumno_X_Curso_Curso1" ManuallyRouted="false" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_Curso_Especialidad" ManuallyRouted="false" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_Curso_Turno1" ManuallyRouted="false" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_Materia_X_Curso_Curso1" ManuallyRouted="false" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_Docente_Usuario1" ManuallyRouted="false" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_Materia_X_Curso_Materia1" ManuallyRouted="false" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_nota_Materia_X_Curso1" ManuallyRouted="false" />
-        <AssociationConnector Association="EstadisticasEscuelaModelo.fk_Usuario_Rol1" ManuallyRouted="false" />
+      <Diagram DiagramId="51aa2ef89d1d4bbead1b27dc49c8e182" Name="Diagram1">
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.alumno" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.alumno_x_curso" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.asistencia" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.curso" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.docente" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.especialidad" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.materia" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.materia_x_curso" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.nota" Width="1.5" PointX="10.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.rol" Width="1.5" PointX="1.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.turno" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pp67_estadisticasescuelaModel.usuario" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_Alumno_Usuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_Alumno_X_Curso_Alumno1" ManuallyRouted="false" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_nota_Alumno1" ManuallyRouted="false" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_Alumno_X_Curso_Asistencia1" ManuallyRouted="false" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_Alumno_X_Curso_Curso1" ManuallyRouted="false" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_Curso_Especialidad" ManuallyRouted="false" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_Curso_Turno1" ManuallyRouted="false" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_Materia_X_Curso_Curso1" ManuallyRouted="false" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_Docente_Usuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_Materia_X_Curso_Materia1" ManuallyRouted="false" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_nota_Materia_X_Curso1" ManuallyRouted="false" />
+        <AssociationConnector Association="pp67_estadisticasescuelaModel.fk_Usuario_Rol1" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

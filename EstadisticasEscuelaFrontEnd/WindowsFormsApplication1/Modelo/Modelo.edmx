@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EstadisticasEscuelaModelo.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+      <Schema Namespace="pp67_estadisticasescuelaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityType Name="alumno">
           <Key>
             <PropertyRef Name="Id" />
@@ -426,7 +426,7 @@
         <Function Name="BajaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
           <Parameter Name="unIdUsuario" Type="int" Mode="In" />
         </Function>
-        <EntityContainer Name="EstadisticasEscuelaModeloStoreContainer">
+        <EntityContainer Name="pp67_estadisticasescuelaModelStoreContainer">
           <EntitySet Name="alumno" EntityType="Self.alumno" Schema="pp67_estadisticasescuela" store:Type="Tables" />
           <EntitySet Name="alumno_x_curso" EntityType="Self.alumno_x_curso" Schema="pp67_estadisticasescuela" store:Type="Tables" />
           <EntitySet Name="asistencia" EntityType="Self.asistencia" Schema="pp67_estadisticasescuela" store:Type="Tables" />
@@ -492,7 +492,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="EstadisticasEscuelaModelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <Schema Namespace="pp67_estadisticasescuelaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityType Name="alumno">
           <Key>
             <PropertyRef Name="Id" />
@@ -781,7 +781,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EstadisticasEscuelaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EestadisticasEscuelaEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="alumno" EntityType="Self.alumno" />
           <EntitySet Name="alumno_x_curso" EntityType="Self.alumno_x_curso" />
           <EntitySet Name="asistencia" EntityType="Self.asistencia" />
@@ -848,9 +848,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="EstadisticasEscuelaModeloStoreContainer" CdmEntityContainer="EstadisticasEscuelaEntities">
+        <EntityContainerMapping StorageEntityContainer="pp67_estadisticasescuelaModelStoreContainer" CdmEntityContainer="EestadisticasEscuelaEntities">
           <EntitySetMapping Name="alumno">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.alumno">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.alumno">
               <MappingFragment StoreEntitySet="alumno">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -864,7 +864,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="alumno_x_curso">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.alumno_x_curso">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.alumno_x_curso">
               <MappingFragment StoreEntitySet="alumno_x_curso">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="AnioLectivo" ColumnName="AnioLectivo" />
@@ -876,7 +876,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="asistencia">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.asistencia">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.asistencia">
               <MappingFragment StoreEntitySet="asistencia">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
@@ -885,7 +885,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="curso">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.curso">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.curso">
               <MappingFragment StoreEntitySet="curso">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Anio" ColumnName="Anio" />
@@ -897,7 +897,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="docente">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.docente">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.docente">
               <MappingFragment StoreEntitySet="docente">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -909,7 +909,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="especialidad">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.especialidad">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.especialidad">
               <MappingFragment StoreEntitySet="especialidad">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -917,7 +917,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="materia">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.materia">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.materia">
               <MappingFragment StoreEntitySet="materia">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -926,7 +926,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="materia_x_curso">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.materia_x_curso">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.materia_x_curso">
               <MappingFragment StoreEntitySet="materia_x_curso">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdMateria" ColumnName="IdMateria" />
@@ -935,7 +935,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="nota">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.nota">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.nota">
               <MappingFragment StoreEntitySet="nota">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nota1erTrim" ColumnName="Nota1erTrim" />
@@ -949,7 +949,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="rol">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.rol">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.rol">
               <MappingFragment StoreEntitySet="rol">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Usuario" ColumnName="Usuario" />
@@ -963,7 +963,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="turno">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.turno">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.turno">
               <MappingFragment StoreEntitySet="turno">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -971,7 +971,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="usuario">
-            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.usuario">
+            <EntityTypeMapping TypeName="pp67_estadisticasescuelaModel.usuario">
               <MappingFragment StoreEntitySet="usuario">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
