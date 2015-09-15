@@ -1,0 +1,1007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EstadisticasEscuelaModelo.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="alumno">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Legajo" Type="mediumtext" Nullable="false" />
+          <Property Name="Dni" Type="mediumtext" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+          <Property Name="Habilitado" Type="bool" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="alumno_x_curso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AnioLectivo" Type="int" Nullable="false" />
+          <Property Name="Habilitado" Type="bool" Nullable="false" />
+          <Property Name="IdCurso" Type="int" Nullable="false" />
+          <Property Name="IdAlumno" Type="int" Nullable="false" />
+          <Property Name="IdAsistencia" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="asistencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Presente" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="curso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Anio" Type="int" Nullable="false" />
+          <Property Name="Division" Type="int" Nullable="false" />
+          <Property Name="Habilitado" Type="bool" Nullable="false" />
+          <Property Name="IdEspecialidad" Type="int" Nullable="false" />
+          <Property Name="IdTurno" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="docente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ficha" Type="mediumtext" />
+          <Property Name="Habilitado" Type="bool" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="especialidad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="materia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="materia_x_curso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdMateria" Type="int" Nullable="false" />
+          <Property Name="IdCurso" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nota">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nota1erTrim" Type="tinyint" />
+          <Property Name="Nota2doTrim" Type="tinyint" />
+          <Property Name="Nota3erTrim" Type="tinyint" />
+          <Property Name="NotaDefinitiva" Type="tinyint" />
+          <Property Name="NotaFinal" Type="float" />
+          <Property Name="IdAlumno" Type="int" Nullable="false" />
+          <Property Name="IdMateriaCurso" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Usuario" Type="bool" Nullable="false" />
+          <Property Name="Rol" Type="bool" Nullable="false" />
+          <Property Name="Cursos" Type="bool" Nullable="false" />
+          <Property Name="Materias" Type="bool" Nullable="false" />
+          <Property Name="Alumnos" Type="bool" Nullable="false" />
+          <Property Name="Asistencias" Type="bool" Nullable="false" />
+          <Property Name="Notas" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="turno">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Contrasenia" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Habilitado" Type="bool" Nullable="false" />
+          <Property Name="IdRol" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_Alumno_Usuario1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="alumno" Type="Self.alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="alumno">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Alumno_X_Curso_Alumno1">
+          <End Role="alumno" Type="Self.alumno" Multiplicity="1" />
+          <End Role="alumno_x_curso" Type="Self.alumno_x_curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumno">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="alumno_x_curso">
+              <PropertyRef Name="IdAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Alumno_X_Curso_Asistencia1">
+          <End Role="asistencia" Type="Self.asistencia" Multiplicity="1" />
+          <End Role="alumno_x_curso" Type="Self.alumno_x_curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asistencia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="alumno_x_curso">
+              <PropertyRef Name="IdAsistencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Alumno_X_Curso_Curso1">
+          <End Role="curso" Type="Self.curso" Multiplicity="1" />
+          <End Role="alumno_x_curso" Type="Self.alumno_x_curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="curso">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="alumno_x_curso">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Curso_Especialidad">
+          <End Role="especialidad" Type="Self.especialidad" Multiplicity="1" />
+          <End Role="curso" Type="Self.curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="especialidad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="curso">
+              <PropertyRef Name="IdEspecialidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Curso_Turno1">
+          <End Role="turno" Type="Self.turno" Multiplicity="1" />
+          <End Role="curso" Type="Self.curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="turno">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="curso">
+              <PropertyRef Name="IdTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Docente_Usuario1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="docente" Type="Self.docente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="docente">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Materia_X_Curso_Curso1">
+          <End Role="curso" Type="Self.curso" Multiplicity="1" />
+          <End Role="materia_x_curso" Type="Self.materia_x_curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="curso">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="materia_x_curso">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Materia_X_Curso_Materia1">
+          <End Role="materia" Type="Self.materia" Multiplicity="1" />
+          <End Role="materia_x_curso" Type="Self.materia_x_curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="materia_x_curso">
+              <PropertyRef Name="IdMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_nota_Alumno1">
+          <End Role="alumno" Type="Self.alumno" Multiplicity="1" />
+          <End Role="nota" Type="Self.nota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumno">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="nota">
+              <PropertyRef Name="IdAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_nota_Materia_X_Curso1">
+          <End Role="materia_x_curso" Type="Self.materia_x_curso" Multiplicity="1" />
+          <End Role="nota" Type="Self.nota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia_x_curso">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="nota">
+              <PropertyRef Name="IdMateriaCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Usuario_Rol1">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="ActualizarAlumno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIDAlumno" Type="int" Mode="In" />
+          <Parameter Name="unNombre" Type="varchar" Mode="In" />
+          <Parameter Name="unApellido" Type="varchar" Mode="In" />
+          <Parameter Name="unLegajo" Type="int" Mode="In" />
+          <Parameter Name="unDNI" Type="int" Mode="In" />
+          <Parameter Name="unIdUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ActualizarAlumnoCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdAlumnoCurso" Type="int" Mode="In" />
+          <Parameter Name="unAnioElectivo" Type="int" Mode="In" />
+          <Parameter Name="unIdCurso" Type="int" Mode="In" />
+          <Parameter Name="unIdAlumno" Type="int" Mode="In" />
+          <Parameter Name="unIdAsistencia" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ActualizarAsistencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdAsistencia" Type="int" Mode="In" />
+          <Parameter Name="unaFecha" Type="datetime" Mode="In" />
+          <Parameter Name="unPresente" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="ActualizarCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdCurso" Type="int" Mode="In" />
+          <Parameter Name="unAnio" Type="int" Mode="In" />
+          <Parameter Name="unaDivision" Type="int" Mode="In" />
+          <Parameter Name="unIdEspecialidad" Type="int" Mode="In" />
+          <Parameter Name="unIdTurno" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ActualizarDocente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdDocente" Type="int" Mode="In" />
+          <Parameter Name="unNombre" Type="varchar" Mode="In" />
+          <Parameter Name="unApellido" Type="varchar" Mode="In" />
+          <Parameter Name="unaFicha" Type="mediumtext" Mode="In" />
+          <Parameter Name="unIdUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ActualizarMateria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdMateria" Type="int" Mode="In" />
+          <Parameter Name="unCodigo" Type="varchar" Mode="In" />
+          <Parameter Name="unNombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ActualizarMateriaCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdMateriaCurso" Type="int" Mode="In" />
+          <Parameter Name="unIdMateria" Type="int" Mode="In" />
+          <Parameter Name="unIDCurso" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ActualizarNota" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdNota" Type="int" Mode="In" />
+          <Parameter Name="unaNota1erTrim" Type="tinyint" Mode="In" />
+          <Parameter Name="unaNota2doTrim" Type="tinyint" Mode="In" />
+          <Parameter Name="unaNota3erTrim" Type="tinyint" Mode="In" />
+          <Parameter Name="unaNotaDefinitiva" Type="tinyint" Mode="In" />
+          <Parameter Name="unaNotaFinal" Type="float" Mode="In" />
+          <Parameter Name="unIdAlumno" Type="int" Mode="In" />
+          <Parameter Name="unIDMateriaCurso" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ActualizarRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdRol" Type="int" Mode="In" />
+          <Parameter Name="unDocente" Type="tinyint" Mode="In" />
+          <Parameter Name="unAlumno" Type="tinyint" Mode="In" />
+          <Parameter Name="unPreceptor" Type="tinyint" Mode="In" />
+          <Parameter Name="unSecretario" Type="tinyint" Mode="In" />
+          <Parameter Name="unAdministrador" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="ActualizarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdUsuario" Type="int" Mode="In" />
+          <Parameter Name="unNombre" Type="varchar" Mode="In" />
+          <Parameter Name="unaContrasenia" Type="varchar" Mode="In" />
+          <Parameter Name="unHabilitado" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="AltaAlumno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unNombre" Type="varchar" Mode="In" />
+          <Parameter Name="unApellido" Type="varchar" Mode="In" />
+          <Parameter Name="unLegajo" Type="int" Mode="In" />
+          <Parameter Name="unDNI" Type="int" Mode="In" />
+          <Parameter Name="unIdUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AltaAlumnoCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unAnioElectivo" Type="int" Mode="In" />
+          <Parameter Name="unIdCurso" Type="int" Mode="In" />
+          <Parameter Name="unIdAlumno" Type="int" Mode="In" />
+          <Parameter Name="unIdAsistencia" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AltaAsistencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unaFecha" Type="datetime" Mode="In" />
+          <Parameter Name="unPresentismo" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="AltaCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unAnio" Type="int" Mode="In" />
+          <Parameter Name="unaDivision" Type="int" Mode="In" />
+          <Parameter Name="unIdEspecialidad" Type="int" Mode="In" />
+          <Parameter Name="unIdTurno" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AltaDocente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unNombre" Type="varchar" Mode="In" />
+          <Parameter Name="unApellido" Type="varchar" Mode="In" />
+          <Parameter Name="unaFicha" Type="mediumtext" Mode="In" />
+          <Parameter Name="unIdUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AltaMateria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unCodigo" Type="varchar" Mode="In" />
+          <Parameter Name="unNombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="AltaMateriaCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdMateria" Type="int" Mode="In" />
+          <Parameter Name="unIdCurso" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AltaNota" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unaNota1erTrim" Type="tinyint" Mode="In" />
+          <Parameter Name="unaNota2doTrim" Type="tinyint" Mode="In" />
+          <Parameter Name="unaNota3erTrim" Type="tinyint" Mode="In" />
+          <Parameter Name="unaNotaDefinitiva" Type="tinyint" Mode="In" />
+          <Parameter Name="unaNotaFinal" Type="float" Mode="In" />
+          <Parameter Name="unIdAlumno" Type="int" Mode="In" />
+          <Parameter Name="unIDMateriaCurso" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AltaRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unDocente" Type="tinyint" Mode="In" />
+          <Parameter Name="unAlumno" Type="tinyint" Mode="In" />
+          <Parameter Name="unPreceptor" Type="tinyint" Mode="In" />
+          <Parameter Name="unSecretario" Type="tinyint" Mode="In" />
+          <Parameter Name="unAdministrador" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="AltaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unNombre" Type="varchar" Mode="In" />
+          <Parameter Name="unaContrasenia" Type="varchar" Mode="In" />
+          <Parameter Name="unHabilitado" Type="tinyint" Mode="In" />
+          <Parameter Name="unIdRol" Type="int" Mode="In" />
+        </Function>
+        <Function Name="BajaAlumno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdAlumno" Type="int" Mode="In" />
+        </Function>
+        <Function Name="BajaAlumnoCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdAlumnoCurso" Type="int" Mode="In" />
+        </Function>
+        <Function Name="BajaAsistencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdAsistencia" Type="int" Mode="In" />
+        </Function>
+        <Function Name="BajaCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdCurso" Type="int" Mode="In" />
+        </Function>
+        <Function Name="BajaDocente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdDocente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="BajaMateria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdMateria" Type="int" Mode="In" />
+        </Function>
+        <Function Name="BajaMateriaCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIDMateriaCurso" Type="int" Mode="In" />
+        </Function>
+        <Function Name="BajaNota" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdNota" Type="int" Mode="In" />
+        </Function>
+        <Function Name="BajaRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdRol" Type="int" Mode="In" />
+        </Function>
+        <Function Name="BajaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pp67_estadisticasescuela">
+          <Parameter Name="unIdUsuario" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="EstadisticasEscuelaModeloStoreContainer">
+          <EntitySet Name="alumno" EntityType="Self.alumno" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <EntitySet Name="alumno_x_curso" EntityType="Self.alumno_x_curso" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <EntitySet Name="asistencia" EntityType="Self.asistencia" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <EntitySet Name="curso" EntityType="Self.curso" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <EntitySet Name="docente" EntityType="Self.docente" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <EntitySet Name="especialidad" EntityType="Self.especialidad" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <EntitySet Name="materia" EntityType="Self.materia" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <EntitySet Name="materia_x_curso" EntityType="Self.materia_x_curso" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <EntitySet Name="nota" EntityType="Self.nota" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <EntitySet Name="rol" EntityType="Self.rol" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <EntitySet Name="turno" EntityType="Self.turno" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="pp67_estadisticasescuela" store:Type="Tables" />
+          <AssociationSet Name="fk_Alumno_Usuario1" Association="Self.fk_Alumno_Usuario1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="alumno" EntitySet="alumno" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Alumno_X_Curso_Alumno1" Association="Self.fk_Alumno_X_Curso_Alumno1">
+            <End Role="alumno" EntitySet="alumno" />
+            <End Role="alumno_x_curso" EntitySet="alumno_x_curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Alumno_X_Curso_Asistencia1" Association="Self.fk_Alumno_X_Curso_Asistencia1">
+            <End Role="asistencia" EntitySet="asistencia" />
+            <End Role="alumno_x_curso" EntitySet="alumno_x_curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Alumno_X_Curso_Curso1" Association="Self.fk_Alumno_X_Curso_Curso1">
+            <End Role="curso" EntitySet="curso" />
+            <End Role="alumno_x_curso" EntitySet="alumno_x_curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Curso_Especialidad" Association="Self.fk_Curso_Especialidad">
+            <End Role="especialidad" EntitySet="especialidad" />
+            <End Role="curso" EntitySet="curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Curso_Turno1" Association="Self.fk_Curso_Turno1">
+            <End Role="turno" EntitySet="turno" />
+            <End Role="curso" EntitySet="curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Docente_Usuario1" Association="Self.fk_Docente_Usuario1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="docente" EntitySet="docente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Materia_X_Curso_Curso1" Association="Self.fk_Materia_X_Curso_Curso1">
+            <End Role="curso" EntitySet="curso" />
+            <End Role="materia_x_curso" EntitySet="materia_x_curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Materia_X_Curso_Materia1" Association="Self.fk_Materia_X_Curso_Materia1">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="materia_x_curso" EntitySet="materia_x_curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_nota_Alumno1" Association="Self.fk_nota_Alumno1">
+            <End Role="alumno" EntitySet="alumno" />
+            <End Role="nota" EntitySet="nota" />
+          </AssociationSet>
+          <AssociationSet Name="fk_nota_Materia_X_Curso1" Association="Self.fk_nota_Materia_X_Curso1">
+            <End Role="materia_x_curso" EntitySet="materia_x_curso" />
+            <End Role="nota" EntitySet="nota" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Usuario_Rol1" Association="Self.fk_Usuario_Rol1">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EstadisticasEscuelaModelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="alumno">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Legajo" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dni" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.fk_Alumno_Usuario1" FromRole="alumno" ToRole="usuario" />
+          <NavigationProperty Name="alumno_x_curso" Relationship="Self.fk_Alumno_X_Curso_Alumno1" FromRole="alumno" ToRole="alumno_x_curso" />
+          <NavigationProperty Name="nota" Relationship="Self.fk_nota_Alumno1" FromRole="alumno" ToRole="nota" />
+        </EntityType>
+        <EntityType Name="alumno_x_curso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnioLectivo" Type="Int32" Nullable="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="IdCurso" Type="Int32" Nullable="false" />
+          <Property Name="IdAlumno" Type="Int32" Nullable="false" />
+          <Property Name="IdAsistencia" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="alumno" Relationship="Self.fk_Alumno_X_Curso_Alumno1" FromRole="alumno_x_curso" ToRole="alumno" />
+          <NavigationProperty Name="asistencia" Relationship="Self.fk_Alumno_X_Curso_Asistencia1" FromRole="alumno_x_curso" ToRole="asistencia" />
+          <NavigationProperty Name="curso" Relationship="Self.fk_Alumno_X_Curso_Curso1" FromRole="alumno_x_curso" ToRole="curso" />
+        </EntityType>
+        <EntityType Name="asistencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="Presente" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="alumno_x_curso" Relationship="Self.fk_Alumno_X_Curso_Asistencia1" FromRole="asistencia" ToRole="alumno_x_curso" />
+        </EntityType>
+        <EntityType Name="curso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Anio" Type="Int32" Nullable="false" />
+          <Property Name="Division" Type="Int32" Nullable="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="IdEspecialidad" Type="Int32" Nullable="false" />
+          <Property Name="IdTurno" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="alumno_x_curso" Relationship="Self.fk_Alumno_X_Curso_Curso1" FromRole="curso" ToRole="alumno_x_curso" />
+          <NavigationProperty Name="especialidad" Relationship="Self.fk_Curso_Especialidad" FromRole="curso" ToRole="especialidad" />
+          <NavigationProperty Name="turno" Relationship="Self.fk_Curso_Turno1" FromRole="curso" ToRole="turno" />
+          <NavigationProperty Name="materia_x_curso" Relationship="Self.fk_Materia_X_Curso_Curso1" FromRole="curso" ToRole="materia_x_curso" />
+        </EntityType>
+        <EntityType Name="docente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ficha" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.fk_Docente_Usuario1" FromRole="docente" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="especialidad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="curso" Relationship="Self.fk_Curso_Especialidad" FromRole="especialidad" ToRole="curso" />
+        </EntityType>
+        <EntityType Name="materia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="materia_x_curso" Relationship="Self.fk_Materia_X_Curso_Materia1" FromRole="materia" ToRole="materia_x_curso" />
+        </EntityType>
+        <EntityType Name="materia_x_curso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMateria" Type="Int32" Nullable="false" />
+          <Property Name="IdCurso" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="curso" Relationship="Self.fk_Materia_X_Curso_Curso1" FromRole="materia_x_curso" ToRole="curso" />
+          <NavigationProperty Name="materia" Relationship="Self.fk_Materia_X_Curso_Materia1" FromRole="materia_x_curso" ToRole="materia" />
+          <NavigationProperty Name="nota" Relationship="Self.fk_nota_Materia_X_Curso1" FromRole="materia_x_curso" ToRole="nota" />
+        </EntityType>
+        <EntityType Name="nota">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nota1erTrim" Type="SByte" />
+          <Property Name="Nota2doTrim" Type="SByte" />
+          <Property Name="Nota3erTrim" Type="SByte" />
+          <Property Name="NotaDefinitiva" Type="SByte" />
+          <Property Name="NotaFinal" Type="Single" />
+          <Property Name="IdAlumno" Type="Int32" Nullable="false" />
+          <Property Name="IdMateriaCurso" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="alumno" Relationship="Self.fk_nota_Alumno1" FromRole="nota" ToRole="alumno" />
+          <NavigationProperty Name="materia_x_curso" Relationship="Self.fk_nota_Materia_X_Curso1" FromRole="nota" ToRole="materia_x_curso" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Usuario" Type="Boolean" Nullable="false" />
+          <Property Name="Rol1" Type="Boolean" Nullable="false" />
+          <Property Name="Cursos" Type="Boolean" Nullable="false" />
+          <Property Name="Materias" Type="Boolean" Nullable="false" />
+          <Property Name="Alumnos" Type="Boolean" Nullable="false" />
+          <Property Name="Asistencias" Type="Boolean" Nullable="false" />
+          <Property Name="Notas" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="usuario1" Relationship="Self.fk_Usuario_Rol1" FromRole="rol" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="turno">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="curso" Relationship="Self.fk_Curso_Turno1" FromRole="turno" ToRole="curso" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contrasenia" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="IdRol" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="alumno" Relationship="Self.fk_Alumno_Usuario1" FromRole="usuario" ToRole="alumno" />
+          <NavigationProperty Name="docente" Relationship="Self.fk_Docente_Usuario1" FromRole="usuario" ToRole="docente" />
+          <NavigationProperty Name="rol" Relationship="Self.fk_Usuario_Rol1" FromRole="usuario" ToRole="rol" />
+        </EntityType>
+        <Association Name="fk_Alumno_Usuario1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="alumno" Type="Self.alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="alumno">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Alumno_X_Curso_Alumno1">
+          <End Role="alumno" Type="Self.alumno" Multiplicity="1" />
+          <End Role="alumno_x_curso" Type="Self.alumno_x_curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumno">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="alumno_x_curso">
+              <PropertyRef Name="IdAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_nota_Alumno1">
+          <End Role="alumno" Type="Self.alumno" Multiplicity="1" />
+          <End Role="nota" Type="Self.nota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alumno">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="nota">
+              <PropertyRef Name="IdAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Alumno_X_Curso_Asistencia1">
+          <End Role="asistencia" Type="Self.asistencia" Multiplicity="1" />
+          <End Role="alumno_x_curso" Type="Self.alumno_x_curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asistencia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="alumno_x_curso">
+              <PropertyRef Name="IdAsistencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Alumno_X_Curso_Curso1">
+          <End Role="curso" Type="Self.curso" Multiplicity="1" />
+          <End Role="alumno_x_curso" Type="Self.alumno_x_curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="curso">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="alumno_x_curso">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Curso_Especialidad">
+          <End Role="especialidad" Type="Self.especialidad" Multiplicity="1" />
+          <End Role="curso" Type="Self.curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="especialidad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="curso">
+              <PropertyRef Name="IdEspecialidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Curso_Turno1">
+          <End Role="turno" Type="Self.turno" Multiplicity="1" />
+          <End Role="curso" Type="Self.curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="turno">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="curso">
+              <PropertyRef Name="IdTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Materia_X_Curso_Curso1">
+          <End Role="curso" Type="Self.curso" Multiplicity="1" />
+          <End Role="materia_x_curso" Type="Self.materia_x_curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="curso">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="materia_x_curso">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Docente_Usuario1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="docente" Type="Self.docente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="docente">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Materia_X_Curso_Materia1">
+          <End Role="materia" Type="Self.materia" Multiplicity="1" />
+          <End Role="materia_x_curso" Type="Self.materia_x_curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="materia_x_curso">
+              <PropertyRef Name="IdMateria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_nota_Materia_X_Curso1">
+          <End Role="materia_x_curso" Type="Self.materia_x_curso" Multiplicity="1" />
+          <End Role="nota" Type="Self.nota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia_x_curso">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="nota">
+              <PropertyRef Name="IdMateriaCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Usuario_Rol1">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EstadisticasEscuelaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="alumno" EntityType="Self.alumno" />
+          <EntitySet Name="alumno_x_curso" EntityType="Self.alumno_x_curso" />
+          <EntitySet Name="asistencia" EntityType="Self.asistencia" />
+          <EntitySet Name="curso" EntityType="Self.curso" />
+          <EntitySet Name="docente" EntityType="Self.docente" />
+          <EntitySet Name="especialidad" EntityType="Self.especialidad" />
+          <EntitySet Name="materia" EntityType="Self.materia" />
+          <EntitySet Name="materia_x_curso" EntityType="Self.materia_x_curso" />
+          <EntitySet Name="nota" EntityType="Self.nota" />
+          <EntitySet Name="rol" EntityType="Self.rol" />
+          <EntitySet Name="turno" EntityType="Self.turno" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <AssociationSet Name="fk_Alumno_Usuario1" Association="Self.fk_Alumno_Usuario1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="alumno" EntitySet="alumno" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Alumno_X_Curso_Alumno1" Association="Self.fk_Alumno_X_Curso_Alumno1">
+            <End Role="alumno" EntitySet="alumno" />
+            <End Role="alumno_x_curso" EntitySet="alumno_x_curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_nota_Alumno1" Association="Self.fk_nota_Alumno1">
+            <End Role="alumno" EntitySet="alumno" />
+            <End Role="nota" EntitySet="nota" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Alumno_X_Curso_Asistencia1" Association="Self.fk_Alumno_X_Curso_Asistencia1">
+            <End Role="asistencia" EntitySet="asistencia" />
+            <End Role="alumno_x_curso" EntitySet="alumno_x_curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Alumno_X_Curso_Curso1" Association="Self.fk_Alumno_X_Curso_Curso1">
+            <End Role="curso" EntitySet="curso" />
+            <End Role="alumno_x_curso" EntitySet="alumno_x_curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Curso_Especialidad" Association="Self.fk_Curso_Especialidad">
+            <End Role="especialidad" EntitySet="especialidad" />
+            <End Role="curso" EntitySet="curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Curso_Turno1" Association="Self.fk_Curso_Turno1">
+            <End Role="turno" EntitySet="turno" />
+            <End Role="curso" EntitySet="curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Materia_X_Curso_Curso1" Association="Self.fk_Materia_X_Curso_Curso1">
+            <End Role="curso" EntitySet="curso" />
+            <End Role="materia_x_curso" EntitySet="materia_x_curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Docente_Usuario1" Association="Self.fk_Docente_Usuario1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="docente" EntitySet="docente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Materia_X_Curso_Materia1" Association="Self.fk_Materia_X_Curso_Materia1">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="materia_x_curso" EntitySet="materia_x_curso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_nota_Materia_X_Curso1" Association="Self.fk_nota_Materia_X_Curso1">
+            <End Role="materia_x_curso" EntitySet="materia_x_curso" />
+            <End Role="nota" EntitySet="nota" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Usuario_Rol1" Association="Self.fk_Usuario_Rol1">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EstadisticasEscuelaModeloStoreContainer" CdmEntityContainer="EstadisticasEscuelaEntities">
+          <EntitySetMapping Name="alumno">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.alumno">
+              <MappingFragment StoreEntitySet="alumno">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Legajo" ColumnName="Legajo" />
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="alumno_x_curso">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.alumno_x_curso">
+              <MappingFragment StoreEntitySet="alumno_x_curso">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AnioLectivo" ColumnName="AnioLectivo" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+                <ScalarProperty Name="IdAlumno" ColumnName="IdAlumno" />
+                <ScalarProperty Name="IdAsistencia" ColumnName="IdAsistencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="asistencia">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.asistencia">
+              <MappingFragment StoreEntitySet="asistencia">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Presente" ColumnName="Presente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="curso">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.curso">
+              <MappingFragment StoreEntitySet="curso">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+                <ScalarProperty Name="IdTurno" ColumnName="IdTurno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="docente">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.docente">
+              <MappingFragment StoreEntitySet="docente">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Ficha" ColumnName="Ficha" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="especialidad">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.especialidad">
+              <MappingFragment StoreEntitySet="especialidad">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="materia">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.materia">
+              <MappingFragment StoreEntitySet="materia">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="materia_x_curso">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.materia_x_curso">
+              <MappingFragment StoreEntitySet="materia_x_curso">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdMateria" ColumnName="IdMateria" />
+                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nota">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.nota">
+              <MappingFragment StoreEntitySet="nota">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nota1erTrim" ColumnName="Nota1erTrim" />
+                <ScalarProperty Name="Nota2doTrim" ColumnName="Nota2doTrim" />
+                <ScalarProperty Name="Nota3erTrim" ColumnName="Nota3erTrim" />
+                <ScalarProperty Name="NotaDefinitiva" ColumnName="NotaDefinitiva" />
+                <ScalarProperty Name="NotaFinal" ColumnName="NotaFinal" />
+                <ScalarProperty Name="IdAlumno" ColumnName="IdAlumno" />
+                <ScalarProperty Name="IdMateriaCurso" ColumnName="IdMateriaCurso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rol">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.rol">
+              <MappingFragment StoreEntitySet="rol">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Rol1" ColumnName="Rol" />
+                <ScalarProperty Name="Cursos" ColumnName="Cursos" />
+                <ScalarProperty Name="Materias" ColumnName="Materias" />
+                <ScalarProperty Name="Alumnos" ColumnName="Alumnos" />
+                <ScalarProperty Name="Asistencias" ColumnName="Asistencias" />
+                <ScalarProperty Name="Notas" ColumnName="Notas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="turno">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.turno">
+              <MappingFragment StoreEntitySet="turno">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="EstadisticasEscuelaModelo.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

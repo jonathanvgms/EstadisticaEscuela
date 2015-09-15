@@ -1,0 +1,9 @@
+﻿Cada vez que corran el programa tiene que configurar el conectionstring del archivo App.Config para que se conecte a la base de datos.
+
+en mi caso es:
+
+<add name="EstadisticasEscuelaEntities" connectionString="metadata=res://*/Modelo.Modelo.csdl|res://*/Modelo.Modelo.ssdl|res://*/Modelo.Modelo.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=localhost;user id=root;password=telesca;persistsecurityinfo=True;database=pp67_estadisticasescuela&quot;" providerName="System.Data.EntityClient" />
+
+en en server de la secu es:
+
+<add name="EstadisticasEscuelaEntities" connectionString="metadata=res://*/Modelo.Modelo.csdl|res://*/Modelo.Modelo.ssdl|res://*/Modelo.Modelo.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=win2012-01;user id=alumno67;password=saramoya;persistsecurityinfo=True;database=pp67_estadisticasescuela&quot;" providerName="System.Data.EntityClient" />

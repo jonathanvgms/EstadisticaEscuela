@@ -53,7 +53,7 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
 
         private void btnAsistenciaBuscarBuscar_Click(object sender, EventArgs e)
         {
-            bool error = true;
+            
 
             //if (!checkData(txtAsistenciaBuscarFecha, lblAsistenciaBuscarFechaError)) error = false;
 
@@ -84,9 +84,7 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
         {
             if ((e.ColumnIndex == dgvAsistenciaBucar.Columns ["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
-                frmAsistenciaBuscar asistenciaModificar = new frmAsistenciaBuscar();
-
-                string nombreAsistencia = 
+                //frmAsistenciaBuscar asistenciaModificar = new frmAsistenciaBuscar();                
             }
         }
     }
