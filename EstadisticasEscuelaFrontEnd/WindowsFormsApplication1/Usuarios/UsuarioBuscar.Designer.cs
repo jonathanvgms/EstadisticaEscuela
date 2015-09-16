@@ -58,10 +58,10 @@
             // dgvUsuarioBuscar
             // 
             this.dgvUsuarioBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarioBuscar.Location = new System.Drawing.Point(12, 47);
+            this.dgvUsuarioBuscar.Location = new System.Drawing.Point(11, 43);
             this.dgvUsuarioBuscar.Name = "dgvUsuarioBuscar";
             this.dgvUsuarioBuscar.RowHeadersVisible = false;
-            this.dgvUsuarioBuscar.Size = new System.Drawing.Size(676, 523);
+            this.dgvUsuarioBuscar.Size = new System.Drawing.Size(676, 527);
             this.dgvUsuarioBuscar.TabIndex = 4;
             this.dgvUsuarioBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionUsuario);
             // 
@@ -88,7 +88,7 @@
             // lblUsuarioBuscarError
             // 
             this.lblUsuarioBuscarError.AutoSize = true;
-            this.lblUsuarioBuscarError.Location = new System.Drawing.Point(24, 371);
+            this.lblUsuarioBuscarError.Location = new System.Drawing.Point(12, 576);
             this.lblUsuarioBuscarError.Name = "lblUsuarioBuscarError";
             this.lblUsuarioBuscarError.Size = new System.Drawing.Size(0, 13);
             this.lblUsuarioBuscarError.TabIndex = 8;

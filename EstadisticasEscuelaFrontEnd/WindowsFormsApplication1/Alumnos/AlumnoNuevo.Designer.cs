@@ -126,11 +126,11 @@
             // lblAlumnoNuevoDescripcion
             // 
             this.lblAlumnoNuevoDescripcion.AutoSize = true;
-            this.lblAlumnoNuevoDescripcion.Location = new System.Drawing.Point(27, 226);
+            this.lblAlumnoNuevoDescripcion.Location = new System.Drawing.Point(26, 226);
             this.lblAlumnoNuevoDescripcion.Name = "lblAlumnoNuevoDescripcion";
-            this.lblAlumnoNuevoDescripcion.Size = new System.Drawing.Size(80, 13);
+            this.lblAlumnoNuevoDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblAlumnoNuevoDescripcion.TabIndex = 32;
-            this.lblAlumnoNuevoDescripcion.Text = "DESCRIPCION";
+            this.lblAlumnoNuevoDescripcion.Text = "Descripcion";
             // 
             // txtAlumnoNuevoDescripcion
             // 
@@ -169,11 +169,11 @@
             // lblAlumnoNuevoUsuario
             // 
             this.lblAlumnoNuevoUsuario.AutoSize = true;
-            this.lblAlumnoNuevoUsuario.Location = new System.Drawing.Point(27, 177);
+            this.lblAlumnoNuevoUsuario.Location = new System.Drawing.Point(26, 177);
             this.lblAlumnoNuevoUsuario.Name = "lblAlumnoNuevoUsuario";
-            this.lblAlumnoNuevoUsuario.Size = new System.Drawing.Size(56, 13);
+            this.lblAlumnoNuevoUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblAlumnoNuevoUsuario.TabIndex = 28;
-            this.lblAlumnoNuevoUsuario.Text = "USUARIO";
+            this.lblAlumnoNuevoUsuario.Text = "Usuario";
             // 
             // txtAlumnoNuevoNombre
             // 
@@ -185,11 +185,11 @@
             // lblAlumnoNuevoNombre
             // 
             this.lblAlumnoNuevoNombre.AutoSize = true;
-            this.lblAlumnoNuevoNombre.Location = new System.Drawing.Point(27, 33);
+            this.lblAlumnoNuevoNombre.Location = new System.Drawing.Point(26, 29);
             this.lblAlumnoNuevoNombre.Name = "lblAlumnoNuevoNombre";
-            this.lblAlumnoNuevoNombre.Size = new System.Drawing.Size(54, 13);
+            this.lblAlumnoNuevoNombre.Size = new System.Drawing.Size(44, 13);
             this.lblAlumnoNuevoNombre.TabIndex = 0;
-            this.lblAlumnoNuevoNombre.Text = "NOMBRE";
+            this.lblAlumnoNuevoNombre.Text = "Nombre";
             // 
             // txtAlumnoNuevoApellido
             // 
@@ -224,11 +224,11 @@
             // lblAlumnoNuevoApellido
             // 
             this.lblAlumnoNuevoApellido.AutoSize = true;
-            this.lblAlumnoNuevoApellido.Location = new System.Drawing.Point(27, 70);
+            this.lblAlumnoNuevoApellido.Location = new System.Drawing.Point(27, 66);
             this.lblAlumnoNuevoApellido.Name = "lblAlumnoNuevoApellido";
-            this.lblAlumnoNuevoApellido.Size = new System.Drawing.Size(59, 13);
+            this.lblAlumnoNuevoApellido.Size = new System.Drawing.Size(44, 13);
             this.lblAlumnoNuevoApellido.TabIndex = 7;
-            this.lblAlumnoNuevoApellido.Text = "APELLIDO";
+            this.lblAlumnoNuevoApellido.Text = "Apellido";
             // 
             // lblAlumnoNuevoApellidoError
             // 
@@ -241,11 +241,11 @@
             // lblAlumnoNuevoLegajo
             // 
             this.lblAlumnoNuevoLegajo.AutoSize = true;
-            this.lblAlumnoNuevoLegajo.Location = new System.Drawing.Point(27, 103);
+            this.lblAlumnoNuevoLegajo.Location = new System.Drawing.Point(27, 99);
             this.lblAlumnoNuevoLegajo.Name = "lblAlumnoNuevoLegajo";
-            this.lblAlumnoNuevoLegajo.Size = new System.Drawing.Size(48, 13);
+            this.lblAlumnoNuevoLegajo.Size = new System.Drawing.Size(39, 13);
             this.lblAlumnoNuevoLegajo.TabIndex = 8;
-            this.lblAlumnoNuevoLegajo.Text = "LEGAJO";
+            this.lblAlumnoNuevoLegajo.Text = "Legajo";
             // 
             // lblAlumnoNuevoNombreError
             // 

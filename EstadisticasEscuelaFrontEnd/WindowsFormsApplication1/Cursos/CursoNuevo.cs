@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd.Dominio;
+using EstadisticasEscuelaFrontEnd.Materias;
+using EstadisticasEscuelaFrontEnd.Modelo;
 
 namespace EstadisticasEscuelaFrontEnd.Cursos
 {
     public partial class frmCursoNuevo : Form
     {
+        EestadisticasEscuelaEntities context;
+
         private Curso _cursoModificado;
 
         internal Curso CursoModificado
@@ -27,53 +31,33 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 
         private void btnfrmCursoAceptar_Click(object sender, EventArgs e)
         {
-            /*string cadena = "";
-
-            if (!txtfrmCursoAnio.Text.Equals(""))
-            {
-                if (!Util.todasNumeros(this.txtfrmCursoAnio.Text))
-                {
-                    cadena += "El campo Anio tiene valores incorrectos.\n";
-                }
-            }
-            else
-            {
-                cadena = cadena + "El campo Anio está vacio.\n";
-            }
-
-
-            if (!txtfrmCursoDivision.Text.Equals(""))
-            {
-                if (!Util.todasNumeros(this.txtfrmCursoDivision.Text))
-                {
-                    cadena += "El campo Division tiene valores incorrectos.\n";
-                }
-            }
-            else
-            {
-                cadena = cadena + "El campo Division está vacio.\n";
-            }
-
-            if (!cadena.Equals(""))
-            {
-                MessageBox.Show(cadena);
-            }*/
 
             bool error = true;
 
-            if (!checkdata(cmbCursoNuevoTurno,cmbCursoNuevoEspecialidad,lblCursoNuevoEspecialidadError)) error = false;
+            if (!checkdata(cmbCursoNuevoTurno,cmbCursoNuevoEspecialidad,lblCursoNuevoTurnoError,lblCursoNuevoEspecialidadError)) error = false;
 
-            //if (!checkData(txtCursoNuevoAnio, lblCusoNuevoAnioError)) error = false;
+            if (!checkData(txtCursoNuevoAnio, lblCusoNuevoAnioError)) error = false;
 
-            //if (!checkData(txtCursoNuevoDivision, lblCursoNuevoDivisionError)) error = false;
+            if (!checkData(txtCursoNuevoDivision, lblCursoNuevoDivisionError)) error = false;
 
             //Falta Verificar que el Curso existe en la Base de Datos
 
             if (error)
             {
-                Dominio.Curso.Add(new Dominio.Curso(txtCursoNuevoAnio.Text,txtCursoNuevoDivision.Text,cmbCursoNuevoTurno.SelectedIndex.ToString(),cmbCursoNuevoEspecialidad.SelectedIndex.ToString()));
+                try
+                {
 
-                lblCursoNuevoMensaje.Text = "CURSO GUARDADO CON EXITO";
+                    context.curso.Add(new curso { Anio = int.Parse(txtCursoNuevoAnio.Text), Division = int.Parse(txtCursoNuevoDivision.Text),        });
+
+                    context.SaveChanges();
+
+                    lblCursoNuevoMensaje.Text = "CURSO GUARDADO CON EXITO";
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.ToString());
+                }
+
             }
 
 
@@ -88,8 +72,7 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
         {
              txtCursoNuevoAnio.Clear();
              txtCursoNuevoDivision.Clear();
-             
-        
+
         }
 
         private void frmCursoNuevo_Load(object sender, EventArgs e)
@@ -103,13 +86,16 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
             this.cmbCursoNuevoEspecialidad.Items.Add("Ciclo Basico");
         }
 
-        private bool checkdata(ComboBox comboTurno, ComboBox ComboEspecialidad, Label label)
+
+        private bool checkdata(ComboBox comboTurno, ComboBox ComboEspecialidad, Label label, Label label2)
         {
             label.Text = "";
 
             if (ComboEspecialidad.SelectedIndex < 0 && comboTurno.SelectedIndex < 0)
             {
-                label.Text = "Seleccione Turno y Especialidad";
+                label.Text = "Seleccione Turno";
+
+                label2.Text = "Seleccione Especialidad";
                 return false;
             }
             else
@@ -123,26 +109,38 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
                 }
                 if (comboTurno.SelectedIndex < 0)
                 {
-                    label.Text = "Seleccione Turno";
+                    label2.Text = "Seleccione Turno";
 
                     return false;
 
                 }
             }
-                return true;
-          }
+            return true;
+        }
+    
+         
 
-        private bool checkData(TextBox texBox, Label label)
+        private bool checkData(TextBox textBox, Label label)
         {
             label.Text = "";
 
-            if (!texBox.Text.Equals(""))
+            if (!textBox.Text.Equals(""))
             {
-                if (texBox.Name.Equals("txtCursoNuevoAnio") || texBox.Name.Equals("txtCursoNuevoDivision"))
+                if (textBox.Name.Equals("txtCursoNuevoAnio") || textBox.Name.Equals("txtCursoNuevoDivision"))
                 {
-                    if (!Util.todasNumeros(texBox.Text))
+                    if (!Util.todasNumeros(textBox.Text))
                     {
-                        label.Text = "VALOR INCORRECTO";
+                        label.Text = "Valor Incorrecto";
+
+                        return false;
+                    }
+                }
+
+                if (textBox.Name.Equals("txtCursoNuevoAnio") || textBox.Name.Equals("txtCursoNuevoDivision"))
+                {
+                    if (!Util.todasNumeros(textBox.Text))
+                    {
+                        label.Text = "Valor Incorrecto";
 
                         return false;
                     }
@@ -150,13 +148,18 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
             }
             else
             {
-                label.Text = "VACIO";
+                label.Text = "Vacio";
 
                 return false;
             }
-                return true;
-            }
-        
-        
+
+            return true;
+        }
+
+        private void btnCursoNuevoAgregarMateria_Click(object sender, EventArgs e)
+        {
+            frmMateriaNuevo unfrmMateriaNuevo = new frmMateriaNuevo();
+            unfrmMateriaNuevo.Show();
+        }
     }
 }

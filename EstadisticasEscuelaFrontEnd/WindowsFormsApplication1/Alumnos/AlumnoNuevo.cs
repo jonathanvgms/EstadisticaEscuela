@@ -58,14 +58,14 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             if (!checkData(txtAlumnoNuevoLegajo, lblAlumnoNuevoLegajoError)) error = false;
 
-            if (!checkData(txtAlumnoNuevoDescripcion, lblAlumnoNuevoDescripcionError)) error = false;
-
             if (txtAlumnoNuevoUsuario.Text.Length == 0)
             {
+
                 error = false;
 
                 lblAlumnoNuevoUsuarioError.Text = "Seleccionar Usuario";
             }
+
             
 
             if (error)
@@ -89,7 +89,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                             //Traer el idUsuario del nombre del usuario
                             int idUser = context.usuario.Where(x => x.Nombre == txtAlumnoNuevoUsuario.Text).FirstOrDefault().Id;
 
-                            context.alumno.Add(new alumno { Nombre = txtAlumnoNuevoNombre.Text, Apellido = txtAlumnoNuevoApellido.Text, Dni = txtAlumnoNuevoDNI.Text, Legajo = txtAlumnoNuevoLegajo.Text, Descripcion = txtAlumnoNuevoDescripcion.Text, IdUsuario = idUser });
+                            context.alumno.Add(new alumno { Nombre = txtAlumnoNuevoNombre.Text, Apellido = txtAlumnoNuevoApellido.Text, Dni = txtAlumnoNuevoDNI.Text, Legajo = txtAlumnoNuevoLegajo.Text, Descripcion = txtAlumnoNuevoDescripcion.Text, IdUsuario = idUser, Habilitado = true });
 
                             context.SaveChanges();
 
@@ -247,7 +247,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             unFrmUsuarioBuscar.ShowDialog(this);
 
-            txtAlumnoNuevoUsuario.Text = nombreUsuario;
+            txtAlumnoNuevoUsuario.Text = unFrmUsuarioBuscar.nombreUsuario;
         }
 
         private void frmAlumnoNuevo_Load(object sender, EventArgs e)

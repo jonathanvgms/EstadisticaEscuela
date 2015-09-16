@@ -13,6 +13,8 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 {
     public partial class frmUsuarioBuscar : Form
     {
+        public string nombreUsuario;
+
         Usuario usuarioBuscado;
 
         internal Usuario UsuarioBuscado
@@ -79,8 +81,14 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
             dgvUsuarioBuscar.DataSource = Usuario.Select();
 
-            dgvUsuarioBuscar.Columns["Id"].Visible = false;
+            DataGridViewButtonColumn columnaSeleccionar = new DataGridViewButtonColumn();
 
+            columnaSeleccionar.Name = "Seleccionar";
+
+            dgvUsuarioBuscar.Columns.Add(columnaSeleccionar);
+
+            dgvUsuarioBuscar.Columns["Id"].Visible = false;
+                       
             dgvUsuarioBuscar.Columns["Tipo"].Visible = false;
 
             dgvUsuarioBuscar.Columns["IdRol"].Visible = false;
@@ -100,6 +108,14 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
         private void seleccionUsuario(object sender, DataGridViewCellEventArgs e)
         {
+            if ((e.ColumnIndex == dgvUsuarioBuscar.Columns["Seleccionar"].Index) && (e.ColumnIndex >= -1))
+            {
+                nombreUsuario = dgvUsuarioBuscar.CurrentRow.Cells[1].Value.ToString();
+
+                
+                MessageBox.Show("Usuario Seleccionado");
+            }
+
             if ((e.ColumnIndex == dgvUsuarioBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
 
@@ -125,12 +141,13 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
                 loadUsuarioBuscar();
             }
-
+            /*
             if ((e.ColumnIndex == dgvUsuarioBuscar.Columns["Nombre"].Index) && (e.ColumnIndex >= -1))
             {
                 usuarioBuscado = new Usuario(dgvUsuarioBuscar.CurrentRow.Cells[0].Value.ToString(), dgvUsuarioBuscar.CurrentRow.Cells[1].Value.ToString(),
                 dgvUsuarioBuscar.CurrentRow.Cells[2].Value.ToString(), dgvUsuarioBuscar.CurrentRow.Cells[3].Value.ToString() , dgvUsuarioBuscar.CurrentRow.Cells[4].Value.ToString());
             }
+             */
         }
     }
 }
