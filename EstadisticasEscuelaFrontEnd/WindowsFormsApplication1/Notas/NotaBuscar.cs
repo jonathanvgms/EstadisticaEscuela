@@ -38,7 +38,20 @@ namespace EstadisticasEscuelaFrontEnd.Notas
             {
                 NotaBuscar notaModificar = new NotaBuscar();
             }
-        }       
+        }
+
+        private void btnNotaBuscarLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNotaBuscarAlumno.Clear();
+            txtNotaBuscarCurso.Clear();
+        }
+
+       
+       
+
+      
+
+           
       
     }
 }
