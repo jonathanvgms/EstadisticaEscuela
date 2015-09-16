@@ -8,14 +8,18 @@ using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd.Database;
 using EstadisticasEscuelaFrontEnd.Dominio;
+using EstadisticasEscuelaFrontEnd.Modelo;
 
 namespace EstadisticasEscuelaFrontEnd.Materias
 {
     public partial class frmMateriaBuscar : Form
     {
+        EestadisticasEscuelaEntities context;
         public frmMateriaBuscar()
         {
             InitializeComponent();
+
+            context = new EestadisticasEscuelaEntities();
         }
 
         private void btnMateriaBuscarBuscar_Click(object sender, EventArgs e)
@@ -114,6 +118,8 @@ namespace EstadisticasEscuelaFrontEnd.Materias
                 materiaModificar.MateriaModificada = new Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString(),
                                                                  dgvMateriaBuscar.CurrentRow.Cells[1].Value.ToString());
                 
+
+
                 materiaModificar.ShowDialog(this);
 
                 lblMateriaBuscarMateriaError.Text = "MATERIA MODIFICADA CON EXITO";

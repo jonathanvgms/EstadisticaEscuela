@@ -9,11 +9,16 @@ using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd;
 using EstadisticasEscuelaFrontEnd.Database;
 using EstadisticasEscuelaFrontEnd.Dominio;
+using EstadisticasEscuelaFrontEnd.Modelo;
 
 namespace EstadisticasEscuelaFrontEnd.Materias
 {
     public partial class frmMateriaNuevo : Form
     {
+        EestadisticasEscuelaEntities context;
+
+        public bool estado = true;
+
         private Materia materiaModificada;
 
         internal Materia MateriaModificada
@@ -24,6 +29,8 @@ namespace EstadisticasEscuelaFrontEnd.Materias
         public frmMateriaNuevo()
         {
             InitializeComponent();
+
+            context = new EestadisticasEscuelaEntities();
         }
 
         private void btnMateriaNuevoCancelar_Click(object sender, EventArgs e)
@@ -35,7 +42,11 @@ namespace EstadisticasEscuelaFrontEnd.Materias
         {
             txtMateriaNuevoMateria.Clear();
 
-            lblMateriaNuevoVacio.Text = "";
+            txtMateriaNuevoCodigo.Clear();
+
+            lblMateriaNuevoCodigoVacio.Text = "";
+
+            lblMateriaNuevaMateriaVacio.Text = "";
 
             lblMateriaNuevoError.Text = "";
         }
@@ -44,15 +55,45 @@ namespace EstadisticasEscuelaFrontEnd.Materias
         {
             bool error = true;
 
-            if (!checkData(txtMateriaNuevoMateria, lblMateriaNuevoVacio)) error = false;
+            //materia mat;
+
+            if (!checkData(txtMateriaNuevoMateria, lblMateriaNuevaMateriaVacio)) error = false;
+
+            if (!checkData(txtMateriaNuevoCodigo, lblMateriaNuevoCodigoVacio)) error = false;
 
             //falta verificar que el alumno existe en la base de datos
 
             if (error)
             {
-                Materia.Add(new Materia(txtMateriaNuevoMateria.Text));
-                
-                lblMateriaNuevoError.Text = "MATERIA GUARDADA CON EXITO";
+                if (estado)
+                {
+                    if (context.materia.Any(x => x.Codigo == txtMateriaNuevoCodigo.Text))
+                    {
+                        lblMateriaNuevoError.Text = "LA MATERIA YA EXISTE";
+                    }
+                    else
+                    {
+                        //Materia.Add(new Materia(txtMateriaNuevoMateria.Text));
+                        try
+                        {
+                            //int idmat = context.materia.Where(x => x.Nombre == txtMateriaNuevoMateria.Text).FirstOrDefault().Id;
+
+                            context.materia.Add(new materia { Nombre = txtMateriaNuevoMateria.Text, Codigo = txtMateriaNuevoCodigo.Text });
+
+                            context.SaveChanges();
+
+                            lblMateriaNuevoError.Text = "MATERIA GUARDADA CON EXITO";
+                        }
+                        catch (Exception exc)
+                        {
+                            MessageBox.Show(exc.ToString());
+                        }
+                    }
+                }
+                else
+                {
+                   
+                }
             }
         }
 
@@ -62,17 +103,26 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
             if (!texBox.Text.Equals(""))
             {
-                if (texBox.Name.Equals("txtMateriaNuevoMateria"))
+                if (texBox.Name.Equals("txtMateriaNuevoCodigo"))
                 {
-                    if (!Util.todasLetras(texBox.Text))
+                    if (!Util.todasNumeros(texBox.Text))
                     {
                         label.Text = "Valor incorrecto";
 
                         return false;
                     }
                 }
-            }
 
+                if (texBox.Name.Equals("txtMateriaNuevoMateria"))
+                {
+                    if (!Util.todasLetras(texBox.Text))
+                    {
+                        label.Text = "Valor Incorrecto";
+
+                        return false;
+                    }
+                }
+            }
             else
             {
                 label.Text = "Vacio";
@@ -82,6 +132,6 @@ namespace EstadisticasEscuelaFrontEnd.Materias
             return true;
         }
 
-      
+        
     }
 }
