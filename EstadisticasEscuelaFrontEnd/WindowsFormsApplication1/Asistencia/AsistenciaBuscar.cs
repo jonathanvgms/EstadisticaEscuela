@@ -47,13 +47,15 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
         private void btnAsistenciaBuscarLimpiar_Click(object sender, EventArgs e)
         {
             txtAsistenciaBuscarFecha.Text = "";
+
             lblAsistenciaBuscarFechaError.Text = "";
+
             lblAsistenciaBuscarPresenteError.Text = "";
         }
 
         private void btnAsistenciaBuscarBuscar_Click(object sender, EventArgs e)
         {
-            bool error = true;
+            //bool error = true;
 
             //if (!checkData(txtAsistenciaBuscarFecha, lblAsistenciaBuscarFechaError)) error = false;
 

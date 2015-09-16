@@ -11,16 +11,27 @@ using EstadisticasEscuelaFrontEnd.Database;
 using EstadisticasEscuelaFrontEnd.Dominio;
 using EstadisticasEscuelaFrontEnd.Cursos;
 using EstadisticasEscuelaFrontEnd.Usuarios;
+using EstadisticasEscuelaFrontEnd.Modelo;
 
 namespace EstadisticasEscuelaFrontEnd.Alumnos
 {
     public partial class frmAlumnoNuevo : Form
     {
-        private Usuario nuevoUsuario { get; set; }
+        EestadisticasEscuelaEntities context;
 
-        private Alumno alumnoModificado;
+        public bool estado = true;
 
-        internal Alumno AlumnoModificado
+        private string nombreUsuario;
+
+        public string NombreUsuario
+        {
+            get { return nombreUsuario; }
+            set { nombreUsuario = value; }
+        }
+
+        private alumno alumnoModificado;
+
+        internal alumno AlumnoModificado
         {
             get { return alumnoModificado; }
             set { alumnoModificado = value; }
@@ -29,11 +40,15 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         public frmAlumnoNuevo()
         {
             InitializeComponent();
+
+            context = new EestadisticasEscuelaEntities(); 
         }
 
         private void btnAlumnoNuevo_Click(object sender, EventArgs e)
         {
             bool error = true;
+            
+            alumno alum;
 
             if (!checkData(txtAlumnoNuevoNombre, lblAlumnoNuevoNombreError)) error = false;
 
@@ -55,20 +70,68 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             if (error)
             {
-                if ((Alumno.Select("where DNI = " + txtAlumnoNuevoDNI.Text).Count == 0)&&(alumnoModificado.Nombre.Length != 0))
+                /*
+                 * si estado es true, el alumno no existe en la base de datos, por lo tanto lo agrego
+                 */ 
+                if(estado)
                 {
-                    Alumno.Add(new Alumno(txtAlumnoNuevoNombre.Text, txtAlumnoNuevoApellido.Text, txtAlumnoNuevoLegajo.Text, txtAlumnoNuevoDNI.Text, nuevoUsuario.Id));
-                    lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO ";
-                }
+                    // preguntar si existe el dni
+                    if (context.alumno.Any(x => x.Dni == txtAlumnoNuevoDNI.Text))
+                    {
+                        //mostrar error el dni del alumno existente
+                        lblAlumnoNuevoError.Text = "El DNI DEL ALUMNO YA EXISTE";
+                    }
+                    else
+                    {
+                        //agrego al nuevo alumno
+                        try
+                        {
+                            //Traer el idUsuario del nombre del usuario
+                            int idUser = context.usuario.Where(x => x.Nombre == txtAlumnoNuevoUsuario.Text).FirstOrDefault().Id;
 
+                            context.alumno.Add(new alumno { Nombre = txtAlumnoNuevoNombre.Text, Apellido = txtAlumnoNuevoApellido.Text, Dni = txtAlumnoNuevoDNI.Text, Legajo = txtAlumnoNuevoLegajo.Text, Descripcion = txtAlumnoNuevoDescripcion.Text, IdUsuario = idUser });
+
+                            context.SaveChanges();
+
+                            lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO";
+                        }
+                        catch (Exception exc)
+                        {
+                            MessageBox.Show(exc.ToString());
+                        }
+                    }
+                }
                 else
                 {
-                    MessageBox.Show("El DNI del alumno ya existe");
-                }
+                    //traigo al alumno existente, lo modifico y persisto los cambios
+                    try
+                    {                    
+                        int idAlum = Convert.ToInt32(alumnoModificado.Id);
 
+                        alum = context.alumno.Where(x => x.Id == idAlum).FirstOrDefault();
+
+                        alum.Nombre = txtAlumnoNuevoNombre.Text;
+
+                        alum.Apellido = txtAlumnoNuevoApellido.Text;
+
+                        alum.Dni = txtAlumnoNuevoDNI.Text;
+
+                        alum.Legajo = txtAlumnoNuevoLegajo.Text;
+
+                        alum.Descripcion = txtAlumnoNuevoDescripcion.Text;
+
+                        alum.IdUsuario = context.usuario.Where(x => x.Nombre == txtAlumnoNuevoUsuario.Text).FirstOrDefault().Id;
+
+                        context.SaveChanges();
+
+                        lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO";
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.ToString());
+                    }
+                }      
             }
-
-
         }
 
         private bool checkData(ComboBox comboA, ComboBox comboB, Label label)
@@ -161,8 +224,6 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             txtAlumnoNuevoDescripcion.Clear();
 
-            //lblMessage.Text = "";
-
             lblAlumnoNuevoNombreError.Text = "";
 
             lblAlumnoNuevoApellidoError.Text = "";
@@ -186,37 +247,27 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             unFrmUsuarioBuscar.ShowDialog(this);
 
-            /*
-             * error si busco un usuario y no traigo nada
-             */ 
-            
-            nuevoUsuario = unFrmUsuarioBuscar.UsuarioBuscado;
-
-            txtAlumnoNuevoUsuario.Text = nuevoUsuario.Nombre;
+            txtAlumnoNuevoUsuario.Text = nombreUsuario;
         }
 
         private void frmAlumnoNuevo_Load(object sender, EventArgs e)
         {
-            try
+            if (!estado)
             {
-                if (alumnoModificado.Nombre.Length != 0)
-                {
-                    txtAlumnoNuevoNombre.Text = alumnoModificado.Nombre;
+                txtAlumnoNuevoNombre.Text = alumnoModificado.Nombre;
 
-                    txtAlumnoNuevoApellido.Text = alumnoModificado.Apellido;
+                txtAlumnoNuevoApellido.Text = alumnoModificado.Apellido;
 
-                    txtAlumnoNuevoDNI.Text = alumnoModificado.Dni;
+                txtAlumnoNuevoDNI.Text = alumnoModificado.Dni;
 
-                    txtAlumnoNuevoLegajo.Text = alumnoModificado.Legajo;
+                txtAlumnoNuevoLegajo.Text = alumnoModificado.Legajo;
 
-                    txtAlumnoNuevoUsuario.Text = alumnoModificado.IdUsuario;
+                txtAlumnoNuevoDescripcion.Text = alumnoModificado.Descripcion;
 
-                }
-            }
-            catch
-            { 
+                txtAlumnoNuevoUsuario.Text = nombreUsuario;
 
-            }
+                this.Text = "Modificar Alumno";
+            }         
         }
     }
 }

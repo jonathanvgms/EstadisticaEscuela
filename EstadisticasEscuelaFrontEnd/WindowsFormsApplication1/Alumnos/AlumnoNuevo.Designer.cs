@@ -33,32 +33,32 @@
             this.btnAlumnoNuevoLimpiar = new System.Windows.Forms.Button();
             this.btnAlumnoNuevoCancelar = new System.Windows.Forms.Button();
             this.Datos = new System.Windows.Forms.GroupBox();
-            this.txtAlumnoNuevoDNI = new System.Windows.Forms.TextBox();
-            this.lblAlumnoNuevoDNI = new System.Windows.Forms.Label();
-            this.lblAlumnoNuevoNombreError = new System.Windows.Forms.Label();
-            this.lblAlumnoNuevoLegajo = new System.Windows.Forms.Label();
-            this.lblAlumnoNuevoApellidoError = new System.Windows.Forms.Label();
-            this.lblAlumnoNuevoApellido = new System.Windows.Forms.Label();
-            this.lblAlumnoNuevoLegajoError = new System.Windows.Forms.Label();
-            this.lblAlumnoNuevoDniError = new System.Windows.Forms.Label();
-            this.txtAlumnoNuevoLegajo = new System.Windows.Forms.TextBox();
-            this.txtAlumnoNuevoApellido = new System.Windows.Forms.TextBox();
-            this.lblAlumnoNuevoNombre = new System.Windows.Forms.Label();
-            this.txtAlumnoNuevoNombre = new System.Windows.Forms.TextBox();
-            this.lblAlumnoNuevoUsuario = new System.Windows.Forms.Label();
-            this.btnAlumnoNuevoCrearUsuario = new System.Windows.Forms.Button();
-            this.txtAlumnoNuevoUsuario = new System.Windows.Forms.TextBox();
-            this.lblAlumnoNuevoUsuarioError = new System.Windows.Forms.Label();
-            this.txtAlumnoNuevoDescripcion = new System.Windows.Forms.TextBox();
-            this.lblAlumnoNuevoDescripcion = new System.Windows.Forms.Label();
-            this.lblAlumnoNuevoError = new System.Windows.Forms.Label();
             this.lblAlumnoNuevoDescripcionError = new System.Windows.Forms.Label();
+            this.lblAlumnoNuevoDescripcion = new System.Windows.Forms.Label();
+            this.txtAlumnoNuevoDescripcion = new System.Windows.Forms.TextBox();
+            this.lblAlumnoNuevoUsuarioError = new System.Windows.Forms.Label();
+            this.txtAlumnoNuevoUsuario = new System.Windows.Forms.TextBox();
+            this.btnAlumnoNuevoCrearUsuario = new System.Windows.Forms.Button();
+            this.lblAlumnoNuevoUsuario = new System.Windows.Forms.Label();
+            this.txtAlumnoNuevoNombre = new System.Windows.Forms.TextBox();
+            this.lblAlumnoNuevoNombre = new System.Windows.Forms.Label();
+            this.txtAlumnoNuevoApellido = new System.Windows.Forms.TextBox();
+            this.txtAlumnoNuevoLegajo = new System.Windows.Forms.TextBox();
+            this.lblAlumnoNuevoDniError = new System.Windows.Forms.Label();
+            this.lblAlumnoNuevoLegajoError = new System.Windows.Forms.Label();
+            this.lblAlumnoNuevoApellido = new System.Windows.Forms.Label();
+            this.lblAlumnoNuevoApellidoError = new System.Windows.Forms.Label();
+            this.lblAlumnoNuevoLegajo = new System.Windows.Forms.Label();
+            this.lblAlumnoNuevoNombreError = new System.Windows.Forms.Label();
+            this.lblAlumnoNuevoDNI = new System.Windows.Forms.Label();
+            this.txtAlumnoNuevoDNI = new System.Windows.Forms.TextBox();
+            this.lblAlumnoNuevoError = new System.Windows.Forms.Label();
             this.Datos.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAlumnoNuevo
             // 
-            this.btnAlumnoNuevo.Location = new System.Drawing.Point(627, 265);
+            this.btnAlumnoNuevo.Location = new System.Drawing.Point(533, 387);
             this.btnAlumnoNuevo.Name = "btnAlumnoNuevo";
             this.btnAlumnoNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnAlumnoNuevo.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             // btnAlumnoNuevoLimpiar
             // 
-            this.btnAlumnoNuevoLimpiar.Location = new System.Drawing.Point(12, 265);
+            this.btnAlumnoNuevoLimpiar.Location = new System.Drawing.Point(12, 387);
             this.btnAlumnoNuevoLimpiar.Name = "btnAlumnoNuevoLimpiar";
             this.btnAlumnoNuevoLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnAlumnoNuevoLimpiar.TabIndex = 2;
@@ -79,7 +79,7 @@
             // btnAlumnoNuevoCancelar
             // 
             this.btnAlumnoNuevoCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAlumnoNuevoCancelar.Location = new System.Drawing.Point(744, 265);
+            this.btnAlumnoNuevoCancelar.Location = new System.Drawing.Point(614, 387);
             this.btnAlumnoNuevoCancelar.Name = "btnAlumnoNuevoCancelar";
             this.btnAlumnoNuevoCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnAlumnoNuevoCancelar.TabIndex = 3;
@@ -110,115 +110,51 @@
             this.Datos.Controls.Add(this.txtAlumnoNuevoDNI);
             this.Datos.Location = new System.Drawing.Point(12, 12);
             this.Datos.Name = "Datos";
-            this.Datos.Size = new System.Drawing.Size(886, 223);
+            this.Datos.Size = new System.Drawing.Size(677, 369);
             this.Datos.TabIndex = 27;
             this.Datos.TabStop = false;
             this.Datos.Text = "Datos";
             // 
-            // txtAlumnoNuevoDNI
+            // lblAlumnoNuevoDescripcionError
             // 
-            this.txtAlumnoNuevoDNI.Location = new System.Drawing.Point(128, 134);
-            this.txtAlumnoNuevoDNI.Name = "txtAlumnoNuevoDNI";
-            this.txtAlumnoNuevoDNI.Size = new System.Drawing.Size(209, 20);
-            this.txtAlumnoNuevoDNI.TabIndex = 10;
+            this.lblAlumnoNuevoDescripcionError.AutoSize = true;
+            this.lblAlumnoNuevoDescripcionError.Location = new System.Drawing.Point(755, 29);
+            this.lblAlumnoNuevoDescripcionError.Name = "lblAlumnoNuevoDescripcionError";
+            this.lblAlumnoNuevoDescripcionError.Size = new System.Drawing.Size(0, 13);
+            this.lblAlumnoNuevoDescripcionError.TabIndex = 33;
             // 
-            // lblAlumnoNuevoDNI
+            // lblAlumnoNuevoDescripcion
             // 
-            this.lblAlumnoNuevoDNI.AutoSize = true;
-            this.lblAlumnoNuevoDNI.Location = new System.Drawing.Point(27, 141);
-            this.lblAlumnoNuevoDNI.Name = "lblAlumnoNuevoDNI";
-            this.lblAlumnoNuevoDNI.Size = new System.Drawing.Size(26, 13);
-            this.lblAlumnoNuevoDNI.TabIndex = 9;
-            this.lblAlumnoNuevoDNI.Text = "DNI";
+            this.lblAlumnoNuevoDescripcion.AutoSize = true;
+            this.lblAlumnoNuevoDescripcion.Location = new System.Drawing.Point(27, 226);
+            this.lblAlumnoNuevoDescripcion.Name = "lblAlumnoNuevoDescripcion";
+            this.lblAlumnoNuevoDescripcion.Size = new System.Drawing.Size(80, 13);
+            this.lblAlumnoNuevoDescripcion.TabIndex = 32;
+            this.lblAlumnoNuevoDescripcion.Text = "DESCRIPCION";
             // 
-            // lblAlumnoNuevoNombreError
+            // txtAlumnoNuevoDescripcion
             // 
-            this.lblAlumnoNuevoNombreError.AutoSize = true;
-            this.lblAlumnoNuevoNombreError.Location = new System.Drawing.Point(363, 29);
-            this.lblAlumnoNuevoNombreError.Name = "lblAlumnoNuevoNombreError";
-            this.lblAlumnoNuevoNombreError.Size = new System.Drawing.Size(0, 13);
-            this.lblAlumnoNuevoNombreError.TabIndex = 17;
+            this.txtAlumnoNuevoDescripcion.Location = new System.Drawing.Point(125, 223);
+            this.txtAlumnoNuevoDescripcion.Multiline = true;
+            this.txtAlumnoNuevoDescripcion.Name = "txtAlumnoNuevoDescripcion";
+            this.txtAlumnoNuevoDescripcion.Size = new System.Drawing.Size(539, 127);
+            this.txtAlumnoNuevoDescripcion.TabIndex = 28;
             // 
-            // lblAlumnoNuevoLegajo
+            // lblAlumnoNuevoUsuarioError
             // 
-            this.lblAlumnoNuevoLegajo.AutoSize = true;
-            this.lblAlumnoNuevoLegajo.Location = new System.Drawing.Point(27, 103);
-            this.lblAlumnoNuevoLegajo.Name = "lblAlumnoNuevoLegajo";
-            this.lblAlumnoNuevoLegajo.Size = new System.Drawing.Size(48, 13);
-            this.lblAlumnoNuevoLegajo.TabIndex = 8;
-            this.lblAlumnoNuevoLegajo.Text = "LEGAJO";
+            this.lblAlumnoNuevoUsuarioError.AutoSize = true;
+            this.lblAlumnoNuevoUsuarioError.Location = new System.Drawing.Point(454, 174);
+            this.lblAlumnoNuevoUsuarioError.Name = "lblAlumnoNuevoUsuarioError";
+            this.lblAlumnoNuevoUsuarioError.Size = new System.Drawing.Size(0, 13);
+            this.lblAlumnoNuevoUsuarioError.TabIndex = 31;
             // 
-            // lblAlumnoNuevoApellidoError
+            // txtAlumnoNuevoUsuario
             // 
-            this.lblAlumnoNuevoApellidoError.AutoSize = true;
-            this.lblAlumnoNuevoApellidoError.Location = new System.Drawing.Point(363, 66);
-            this.lblAlumnoNuevoApellidoError.Name = "lblAlumnoNuevoApellidoError";
-            this.lblAlumnoNuevoApellidoError.Size = new System.Drawing.Size(0, 13);
-            this.lblAlumnoNuevoApellidoError.TabIndex = 18;
-            // 
-            // lblAlumnoNuevoApellido
-            // 
-            this.lblAlumnoNuevoApellido.AutoSize = true;
-            this.lblAlumnoNuevoApellido.Location = new System.Drawing.Point(27, 70);
-            this.lblAlumnoNuevoApellido.Name = "lblAlumnoNuevoApellido";
-            this.lblAlumnoNuevoApellido.Size = new System.Drawing.Size(59, 13);
-            this.lblAlumnoNuevoApellido.TabIndex = 7;
-            this.lblAlumnoNuevoApellido.Text = "APELLIDO";
-            // 
-            // lblAlumnoNuevoLegajoError
-            // 
-            this.lblAlumnoNuevoLegajoError.AutoSize = true;
-            this.lblAlumnoNuevoLegajoError.Location = new System.Drawing.Point(363, 99);
-            this.lblAlumnoNuevoLegajoError.Name = "lblAlumnoNuevoLegajoError";
-            this.lblAlumnoNuevoLegajoError.Size = new System.Drawing.Size(0, 13);
-            this.lblAlumnoNuevoLegajoError.TabIndex = 19;
-            // 
-            // lblAlumnoNuevoDniError
-            // 
-            this.lblAlumnoNuevoDniError.AutoSize = true;
-            this.lblAlumnoNuevoDniError.Location = new System.Drawing.Point(363, 133);
-            this.lblAlumnoNuevoDniError.Name = "lblAlumnoNuevoDniError";
-            this.lblAlumnoNuevoDniError.Size = new System.Drawing.Size(0, 13);
-            this.lblAlumnoNuevoDniError.TabIndex = 20;
-            // 
-            // txtAlumnoNuevoLegajo
-            // 
-            this.txtAlumnoNuevoLegajo.Location = new System.Drawing.Point(128, 96);
-            this.txtAlumnoNuevoLegajo.Name = "txtAlumnoNuevoLegajo";
-            this.txtAlumnoNuevoLegajo.Size = new System.Drawing.Size(209, 20);
-            this.txtAlumnoNuevoLegajo.TabIndex = 6;
-            // 
-            // txtAlumnoNuevoApellido
-            // 
-            this.txtAlumnoNuevoApellido.Location = new System.Drawing.Point(128, 63);
-            this.txtAlumnoNuevoApellido.Name = "txtAlumnoNuevoApellido";
-            this.txtAlumnoNuevoApellido.Size = new System.Drawing.Size(209, 20);
-            this.txtAlumnoNuevoApellido.TabIndex = 5;
-            // 
-            // lblAlumnoNuevoNombre
-            // 
-            this.lblAlumnoNuevoNombre.AutoSize = true;
-            this.lblAlumnoNuevoNombre.Location = new System.Drawing.Point(27, 33);
-            this.lblAlumnoNuevoNombre.Name = "lblAlumnoNuevoNombre";
-            this.lblAlumnoNuevoNombre.Size = new System.Drawing.Size(54, 13);
-            this.lblAlumnoNuevoNombre.TabIndex = 0;
-            this.lblAlumnoNuevoNombre.Text = "NOMBRE";
-            // 
-            // txtAlumnoNuevoNombre
-            // 
-            this.txtAlumnoNuevoNombre.Location = new System.Drawing.Point(128, 26);
-            this.txtAlumnoNuevoNombre.Name = "txtAlumnoNuevoNombre";
-            this.txtAlumnoNuevoNombre.Size = new System.Drawing.Size(209, 20);
-            this.txtAlumnoNuevoNombre.TabIndex = 4;
-            // 
-            // lblAlumnoNuevoUsuario
-            // 
-            this.lblAlumnoNuevoUsuario.AutoSize = true;
-            this.lblAlumnoNuevoUsuario.Location = new System.Drawing.Point(27, 177);
-            this.lblAlumnoNuevoUsuario.Name = "lblAlumnoNuevoUsuario";
-            this.lblAlumnoNuevoUsuario.Size = new System.Drawing.Size(56, 13);
-            this.lblAlumnoNuevoUsuario.TabIndex = 28;
-            this.lblAlumnoNuevoUsuario.Text = "USUARIO";
+            this.txtAlumnoNuevoUsuario.Location = new System.Drawing.Point(128, 174);
+            this.txtAlumnoNuevoUsuario.Name = "txtAlumnoNuevoUsuario";
+            this.txtAlumnoNuevoUsuario.ReadOnly = true;
+            this.txtAlumnoNuevoUsuario.Size = new System.Drawing.Size(209, 20);
+            this.txtAlumnoNuevoUsuario.TabIndex = 29;
             // 
             // btnAlumnoNuevoCrearUsuario
             // 
@@ -230,61 +166,125 @@
             this.btnAlumnoNuevoCrearUsuario.UseVisualStyleBackColor = true;
             this.btnAlumnoNuevoCrearUsuario.Click += new System.EventHandler(this.btnAlumnoNuevoBuscarUsuario_Click);
             // 
-            // txtAlumnoNuevoUsuario
+            // lblAlumnoNuevoUsuario
             // 
-            this.txtAlumnoNuevoUsuario.Location = new System.Drawing.Point(128, 174);
-            this.txtAlumnoNuevoUsuario.Name = "txtAlumnoNuevoUsuario";
-            this.txtAlumnoNuevoUsuario.ReadOnly = true;
-            this.txtAlumnoNuevoUsuario.Size = new System.Drawing.Size(209, 20);
-            this.txtAlumnoNuevoUsuario.TabIndex = 29;
+            this.lblAlumnoNuevoUsuario.AutoSize = true;
+            this.lblAlumnoNuevoUsuario.Location = new System.Drawing.Point(27, 177);
+            this.lblAlumnoNuevoUsuario.Name = "lblAlumnoNuevoUsuario";
+            this.lblAlumnoNuevoUsuario.Size = new System.Drawing.Size(56, 13);
+            this.lblAlumnoNuevoUsuario.TabIndex = 28;
+            this.lblAlumnoNuevoUsuario.Text = "USUARIO";
             // 
-            // lblAlumnoNuevoUsuarioError
+            // txtAlumnoNuevoNombre
             // 
-            this.lblAlumnoNuevoUsuarioError.AutoSize = true;
-            this.lblAlumnoNuevoUsuarioError.Location = new System.Drawing.Point(454, 174);
-            this.lblAlumnoNuevoUsuarioError.Name = "lblAlumnoNuevoUsuarioError";
-            this.lblAlumnoNuevoUsuarioError.Size = new System.Drawing.Size(0, 13);
-            this.lblAlumnoNuevoUsuarioError.TabIndex = 31;
+            this.txtAlumnoNuevoNombre.Location = new System.Drawing.Point(128, 26);
+            this.txtAlumnoNuevoNombre.Name = "txtAlumnoNuevoNombre";
+            this.txtAlumnoNuevoNombre.Size = new System.Drawing.Size(209, 20);
+            this.txtAlumnoNuevoNombre.TabIndex = 4;
             // 
-            // txtAlumnoNuevoDescripcion
+            // lblAlumnoNuevoNombre
             // 
-            this.txtAlumnoNuevoDescripcion.Location = new System.Drawing.Point(536, 26);
-            this.txtAlumnoNuevoDescripcion.Multiline = true;
-            this.txtAlumnoNuevoDescripcion.Name = "txtAlumnoNuevoDescripcion";
-            this.txtAlumnoNuevoDescripcion.Size = new System.Drawing.Size(212, 103);
-            this.txtAlumnoNuevoDescripcion.TabIndex = 28;
+            this.lblAlumnoNuevoNombre.AutoSize = true;
+            this.lblAlumnoNuevoNombre.Location = new System.Drawing.Point(27, 33);
+            this.lblAlumnoNuevoNombre.Name = "lblAlumnoNuevoNombre";
+            this.lblAlumnoNuevoNombre.Size = new System.Drawing.Size(54, 13);
+            this.lblAlumnoNuevoNombre.TabIndex = 0;
+            this.lblAlumnoNuevoNombre.Text = "NOMBRE";
             // 
-            // lblAlumnoNuevoDescripcion
+            // txtAlumnoNuevoApellido
             // 
-            this.lblAlumnoNuevoDescripcion.AutoSize = true;
-            this.lblAlumnoNuevoDescripcion.Location = new System.Drawing.Point(467, 33);
-            this.lblAlumnoNuevoDescripcion.Name = "lblAlumnoNuevoDescripcion";
-            this.lblAlumnoNuevoDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.lblAlumnoNuevoDescripcion.TabIndex = 32;
-            this.lblAlumnoNuevoDescripcion.Text = "Descripcion";
+            this.txtAlumnoNuevoApellido.Location = new System.Drawing.Point(128, 63);
+            this.txtAlumnoNuevoApellido.Name = "txtAlumnoNuevoApellido";
+            this.txtAlumnoNuevoApellido.Size = new System.Drawing.Size(209, 20);
+            this.txtAlumnoNuevoApellido.TabIndex = 5;
+            // 
+            // txtAlumnoNuevoLegajo
+            // 
+            this.txtAlumnoNuevoLegajo.Location = new System.Drawing.Point(128, 96);
+            this.txtAlumnoNuevoLegajo.Name = "txtAlumnoNuevoLegajo";
+            this.txtAlumnoNuevoLegajo.Size = new System.Drawing.Size(209, 20);
+            this.txtAlumnoNuevoLegajo.TabIndex = 6;
+            // 
+            // lblAlumnoNuevoDniError
+            // 
+            this.lblAlumnoNuevoDniError.AutoSize = true;
+            this.lblAlumnoNuevoDniError.Location = new System.Drawing.Point(363, 141);
+            this.lblAlumnoNuevoDniError.Name = "lblAlumnoNuevoDniError";
+            this.lblAlumnoNuevoDniError.Size = new System.Drawing.Size(0, 13);
+            this.lblAlumnoNuevoDniError.TabIndex = 20;
+            // 
+            // lblAlumnoNuevoLegajoError
+            // 
+            this.lblAlumnoNuevoLegajoError.AutoSize = true;
+            this.lblAlumnoNuevoLegajoError.Location = new System.Drawing.Point(363, 99);
+            this.lblAlumnoNuevoLegajoError.Name = "lblAlumnoNuevoLegajoError";
+            this.lblAlumnoNuevoLegajoError.Size = new System.Drawing.Size(0, 13);
+            this.lblAlumnoNuevoLegajoError.TabIndex = 19;
+            // 
+            // lblAlumnoNuevoApellido
+            // 
+            this.lblAlumnoNuevoApellido.AutoSize = true;
+            this.lblAlumnoNuevoApellido.Location = new System.Drawing.Point(27, 70);
+            this.lblAlumnoNuevoApellido.Name = "lblAlumnoNuevoApellido";
+            this.lblAlumnoNuevoApellido.Size = new System.Drawing.Size(59, 13);
+            this.lblAlumnoNuevoApellido.TabIndex = 7;
+            this.lblAlumnoNuevoApellido.Text = "APELLIDO";
+            // 
+            // lblAlumnoNuevoApellidoError
+            // 
+            this.lblAlumnoNuevoApellidoError.AutoSize = true;
+            this.lblAlumnoNuevoApellidoError.Location = new System.Drawing.Point(363, 66);
+            this.lblAlumnoNuevoApellidoError.Name = "lblAlumnoNuevoApellidoError";
+            this.lblAlumnoNuevoApellidoError.Size = new System.Drawing.Size(0, 13);
+            this.lblAlumnoNuevoApellidoError.TabIndex = 18;
+            // 
+            // lblAlumnoNuevoLegajo
+            // 
+            this.lblAlumnoNuevoLegajo.AutoSize = true;
+            this.lblAlumnoNuevoLegajo.Location = new System.Drawing.Point(27, 103);
+            this.lblAlumnoNuevoLegajo.Name = "lblAlumnoNuevoLegajo";
+            this.lblAlumnoNuevoLegajo.Size = new System.Drawing.Size(48, 13);
+            this.lblAlumnoNuevoLegajo.TabIndex = 8;
+            this.lblAlumnoNuevoLegajo.Text = "LEGAJO";
+            // 
+            // lblAlumnoNuevoNombreError
+            // 
+            this.lblAlumnoNuevoNombreError.AutoSize = true;
+            this.lblAlumnoNuevoNombreError.Location = new System.Drawing.Point(363, 29);
+            this.lblAlumnoNuevoNombreError.Name = "lblAlumnoNuevoNombreError";
+            this.lblAlumnoNuevoNombreError.Size = new System.Drawing.Size(0, 13);
+            this.lblAlumnoNuevoNombreError.TabIndex = 17;
+            // 
+            // lblAlumnoNuevoDNI
+            // 
+            this.lblAlumnoNuevoDNI.AutoSize = true;
+            this.lblAlumnoNuevoDNI.Location = new System.Drawing.Point(27, 141);
+            this.lblAlumnoNuevoDNI.Name = "lblAlumnoNuevoDNI";
+            this.lblAlumnoNuevoDNI.Size = new System.Drawing.Size(26, 13);
+            this.lblAlumnoNuevoDNI.TabIndex = 9;
+            this.lblAlumnoNuevoDNI.Text = "DNI";
+            // 
+            // txtAlumnoNuevoDNI
+            // 
+            this.txtAlumnoNuevoDNI.Location = new System.Drawing.Point(128, 134);
+            this.txtAlumnoNuevoDNI.Name = "txtAlumnoNuevoDNI";
+            this.txtAlumnoNuevoDNI.Size = new System.Drawing.Size(209, 20);
+            this.txtAlumnoNuevoDNI.TabIndex = 10;
             // 
             // lblAlumnoNuevoError
             // 
             this.lblAlumnoNuevoError.AutoSize = true;
-            this.lblAlumnoNuevoError.Location = new System.Drawing.Point(12, 238);
+            this.lblAlumnoNuevoError.Location = new System.Drawing.Point(98, 392);
             this.lblAlumnoNuevoError.Name = "lblAlumnoNuevoError";
             this.lblAlumnoNuevoError.Size = new System.Drawing.Size(0, 13);
             this.lblAlumnoNuevoError.TabIndex = 28;
-            // 
-            // lblAlumnoNuevoDescripcionError
-            // 
-            this.lblAlumnoNuevoDescripcionError.AutoSize = true;
-            this.lblAlumnoNuevoDescripcionError.Location = new System.Drawing.Point(755, 29);
-            this.lblAlumnoNuevoDescripcionError.Name = "lblAlumnoNuevoDescripcionError";
-            this.lblAlumnoNuevoDescripcionError.Size = new System.Drawing.Size(0, 13);
-            this.lblAlumnoNuevoDescripcionError.TabIndex = 33;
             // 
             // frmAlumnoNuevo
             // 
             this.AcceptButton = this.btnAlumnoNuevo;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.btnAlumnoNuevoCancelar;
-            this.ClientSize = new System.Drawing.Size(910, 300);
+            this.ClientSize = new System.Drawing.Size(699, 416);
             this.Controls.Add(this.lblAlumnoNuevoError);
             this.Controls.Add(this.Datos);
             this.Controls.Add(this.btnAlumnoNuevo);
@@ -298,7 +298,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alumno Nuevo";
+            this.Text = "Nuevo Alumno";
             this.Load += new System.EventHandler(this.frmAlumnoNuevo_Load);
             this.Datos.ResumeLayout(false);
             this.Datos.PerformLayout();
