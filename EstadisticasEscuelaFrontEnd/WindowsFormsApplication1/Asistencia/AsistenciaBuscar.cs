@@ -53,21 +53,7 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
             lblAsistenciaBuscarPresenteError.Text = "";
         }
 
-        private void btnAsistenciaBuscarBuscar_Click(object sender, EventArgs e)
-        {
-            //bool error = true;
-
-            //if (!checkData(txtAsistenciaBuscarFecha, lblAsistenciaBuscarFechaError)) error = false;
-
-            //if (!checkData(txtAsistenciaBuscarPresente, lblAsistenciaBuscarPresenteError)) error = false;
-            /*
-            if (error)
-            {
-                loadAsistencia
-            }*/
-        }
-
-        private void loadAsistenciaBuscar()
+      private void loadAsistenciaBuscar()
         {
             dgvAsistenciaBucar.DataSource = null;
 
@@ -86,8 +72,14 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
         {
             if ((e.ColumnIndex == dgvAsistenciaBucar.Columns ["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
+                frmAsistenciaNuevo asistenciaModificar = new frmAsistenciaNuevo();
+
+                //Convierto el id a int
+                int idAsistencia = Convert.ToInt32(dgvAsistenciaBucar.CurrentRow.Cells[0].Value.ToString());
+
                 
             }
         }
+
     }
 }
