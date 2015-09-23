@@ -7,12 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd.Dominio;
+using EstadisticasEscuelaFrontEnd.Cursos;
+using EstadisticasEscuelaFrontEnd.Usuarios;
+using EstadisticasEscuelaFrontEnd.Modelo;
+using EstadisticasEscuelaFrontEnd.Database;
 
 namespace EstadisticasEscuelaFrontEnd.Usuarios
 {
     public partial class frmUsuarioNuevo : Form
     {
         Usuario usuarioNuevo;
+
+        EestadisticasEscuelaEntities context;
+
+        public bool estado = true;
 
         internal Usuario UsuarioNuevo
         {
@@ -23,6 +31,9 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
         public frmUsuarioNuevo()
         {
             InitializeComponent();
+
+            context = new EestadisticasEscuelaEntities();
+
         }
 
         private bool checkData(ComboBox comboA, Label label)
@@ -68,22 +79,48 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
         private void btnUsuarioNuevoAceptar_Click(object sender, EventArgs e)
         {
             bool error = true;
+
+            Usuario usuar;
+
             if (!checkData(txtUsuarioNuevoUsuario, lblUsuarioNuevoUsuarioError)) error = false;
             if (!checkData(txtUsuarioNuevoContrasenia, lblUsuarioNuevoContraseniaError)) error = false;
             
 
             if (error)
             {                
-                //antes de realizar el insert en la base de datos, falta verificar que no existe el usuario
+                if(estado)
+                {
+                    if (context.usuario.Any(x => x.Nombre == txtUsuarioNuevoUsuario.Text))
+                    {
+                        lblUsuarioNuevoError.Text = "EL USUARIO YA EXISTE";
+                    }
+                    
+                        
+                    else
+                    {
+                        try
+                        {
+                            context.usuario.Add(new usuario { Nombre = txtUsuarioNuevoUsuario.Text, Contrasenia = txtUsuarioNuevoContrasenia.Text, Habilitado = false, IdRol = lsbUsuarioNuevoTipo.SelectedIndex + 1 });
 
+                            context.SaveChanges();
+
+                            lblUsuarioNuevoError.Text = "USUARIO GUARDADO CON EXITO";
+                        }
+                        catch (Exception exc)
+                        {
+                            MessageBox.Show(exc.ToString());
+                        }
+                    }
+                }
+                //antes de realizar el insert en la base de datos, falta verificar que no existe el usuario
+                /*
                 Usuario.Add(new Usuario(txtUsuarioNuevoUsuario.Text, txtUsuarioNuevoContrasenia.Text, "1", (lsbUsuarioNuevoTipo.SelectedIndex + 1).ToString()));
 
                 usuarioNuevo = Usuario.Select().Find(x => x.Nombre.Equals(txtUsuarioNuevoUsuario.Text));
 
                 lblUsuarioNuevoError.Text = "USUARIO GUARDADO CON EXITO";
+                 * */
             }
-
-            Close();
         }
 
         private void btnUsuarioNuevoCancelar_Click(object sender, EventArgs e)
@@ -151,5 +188,23 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             return true;
         }
          * */
+        public void loadUsuarioNuevo()
+        {
+            context.rol.Select(x => lsbUsuarioNuevoTipo.Items.Add(x.Nombre));
+        }
+
+        private void frmUsuarioNuevo_Load(object sender, EventArgs e)
+        {
+            //context.rol.Select(x => lsbUsuarioNuevoTipo.Items.Add(x.Nombre));
+            try
+            {
+                context.rol.ToList().ForEach(x => Console.WriteLine(x.Nombre));
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show(exc.ToString());
+            }
+            
+        }
     }
 }

@@ -36,12 +36,12 @@
             this.txtUsuarioNuevoUsuario = new System.Windows.Forms.TextBox();
             this.txtUsuarioNuevoContrasenia = new System.Windows.Forms.TextBox();
             this.btnUsuarioNuevoLimpiar = new System.Windows.Forms.Button();
-            this.lblUsuarioNuevoTipodeUsuario = new System.Windows.Forms.Label();
+            this.lblUsuarioNuevoRol = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lsbUsuarioNuevoTipo = new System.Windows.Forms.ListBox();
             this.lblUsuarioNuevoContraseniaError = new System.Windows.Forms.Label();
             this.lblUsuarioNuevoUsuarioError = new System.Windows.Forms.Label();
             this.lblUsuarioNuevoError = new System.Windows.Forms.Label();
-            this.lsbUsuarioNuevoTipo = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,14 +107,14 @@
             this.btnUsuarioNuevoLimpiar.UseVisualStyleBackColor = true;
             this.btnUsuarioNuevoLimpiar.Click += new System.EventHandler(this.btnUsuarioNuevoLimpiar_Click);
             // 
-            // lblUsuarioNuevoTipodeUsuario
+            // lblUsuarioNuevoRol
             // 
-            this.lblUsuarioNuevoTipodeUsuario.AutoSize = true;
-            this.lblUsuarioNuevoTipodeUsuario.Location = new System.Drawing.Point(74, 95);
-            this.lblUsuarioNuevoTipodeUsuario.Name = "lblUsuarioNuevoTipodeUsuario";
-            this.lblUsuarioNuevoTipodeUsuario.Size = new System.Drawing.Size(82, 13);
-            this.lblUsuarioNuevoTipodeUsuario.TabIndex = 9;
-            this.lblUsuarioNuevoTipodeUsuario.Text = "Tipo de Usuario";
+            this.lblUsuarioNuevoRol.AutoSize = true;
+            this.lblUsuarioNuevoRol.Location = new System.Drawing.Point(74, 95);
+            this.lblUsuarioNuevoRol.Name = "lblUsuarioNuevoRol";
+            this.lblUsuarioNuevoRol.Size = new System.Drawing.Size(23, 13);
+            this.lblUsuarioNuevoRol.TabIndex = 9;
+            this.lblUsuarioNuevoRol.Text = "Rol";
             // 
             // groupBox1
             // 
@@ -122,7 +122,7 @@
             this.groupBox1.Controls.Add(this.lblUsuarioNuevoContraseniaError);
             this.groupBox1.Controls.Add(this.lblUsuarioNuevoUsuarioError);
             this.groupBox1.Controls.Add(this.txtUsuarioNuevoUsuario);
-            this.groupBox1.Controls.Add(this.lblUsuarioNuevoTipodeUsuario);
+            this.groupBox1.Controls.Add(this.lblUsuarioNuevoRol);
             this.groupBox1.Controls.Add(this.lblUsuarioUsuario);
             this.groupBox1.Controls.Add(this.lblUsuarioContrasenia);
             this.groupBox1.Controls.Add(this.txtUsuarioNuevoContrasenia);
@@ -132,6 +132,20 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // lsbUsuarioNuevoTipo
+            // 
+            this.lsbUsuarioNuevoTipo.FormattingEnabled = true;
+            this.lsbUsuarioNuevoTipo.Items.AddRange(new object[] {
+            "Docente",
+            "Alumno",
+            "Preceptor",
+            "Secretario",
+            "Admintrador"});
+            this.lsbUsuarioNuevoTipo.Location = new System.Drawing.Point(203, 95);
+            this.lsbUsuarioNuevoTipo.Name = "lsbUsuarioNuevoTipo";
+            this.lsbUsuarioNuevoTipo.Size = new System.Drawing.Size(181, 121);
+            this.lsbUsuarioNuevoTipo.TabIndex = 12;
             // 
             // lblUsuarioNuevoContraseniaError
             // 
@@ -157,20 +171,6 @@
             this.lblUsuarioNuevoError.Size = new System.Drawing.Size(0, 13);
             this.lblUsuarioNuevoError.TabIndex = 11;
             // 
-            // lsbUsuarioNuevoTipo
-            // 
-            this.lsbUsuarioNuevoTipo.FormattingEnabled = true;
-            this.lsbUsuarioNuevoTipo.Items.AddRange(new object[] {
-            "Docente",
-            "Alumno",
-            "Preceptor",
-            "Secretario",
-            "Admintrador"});
-            this.lsbUsuarioNuevoTipo.Location = new System.Drawing.Point(203, 95);
-            this.lsbUsuarioNuevoTipo.Name = "lsbUsuarioNuevoTipo";
-            this.lsbUsuarioNuevoTipo.Size = new System.Drawing.Size(181, 121);
-            this.lsbUsuarioNuevoTipo.TabIndex = 12;
-            // 
             // frmUsuarioNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +185,7 @@
             this.Name = "frmUsuarioNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario Nuevo";
+            this.Load += new System.EventHandler(this.frmUsuarioNuevo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -201,7 +202,7 @@
         private System.Windows.Forms.TextBox txtUsuarioNuevoUsuario;
         private System.Windows.Forms.TextBox txtUsuarioNuevoContrasenia;
         private System.Windows.Forms.Button btnUsuarioNuevoLimpiar;
-        private System.Windows.Forms.Label lblUsuarioNuevoTipodeUsuario;
+        private System.Windows.Forms.Label lblUsuarioNuevoRol;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblUsuarioNuevoContraseniaError;
         private System.Windows.Forms.Label lblUsuarioNuevoUsuarioError;
