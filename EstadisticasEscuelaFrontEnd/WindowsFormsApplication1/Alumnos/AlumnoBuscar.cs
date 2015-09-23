@@ -15,7 +15,14 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
     public partial class frmAlumnoBuscar : Form
     {
         EestadisticasEscuelaEntities context;
+        
+        private alumno alumnoseleccionado;
 
+        public alumno Alumnoseleccionado
+        {
+            get { return alumnoseleccionado; }
+            set { alumnoseleccionado = value; }
+        }
         public frmAlumnoBuscar()
         {
             InitializeComponent();
@@ -113,6 +120,13 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         
         private void seleccionAlumno(object sender, DataGridViewCellEventArgs e)
         {
+            if ((e.ColumnIndex == dgvAlumnoBuscar.Columns["Seleccionar"].Index) && (e.ColumnIndex >= -1))
+            {
+                //"" = dgvAlumnoBuscar.CurrentRow.Cells[1].Value.ToString();
+
+                MessageBox.Show("Alumno Seleccionado");
+            }
+            
             if ((e.ColumnIndex == dgvAlumnoBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
                 frmAlumnoNuevo alumnoModificar = new frmAlumnoNuevo();

@@ -26,6 +26,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         public string NombreUsuario
         {
             get { return nombreUsuario; }
+
             set { nombreUsuario = value; }
         }
 

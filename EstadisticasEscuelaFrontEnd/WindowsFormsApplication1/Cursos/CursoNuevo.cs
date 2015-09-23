@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd.Dominio;
 using EstadisticasEscuelaFrontEnd.Materias;
 using EstadisticasEscuelaFrontEnd.Modelo;
+using EstadisticasEscuelaFrontEnd.Alumnos;
 
 namespace EstadisticasEscuelaFrontEnd.Cursos
 {
@@ -160,6 +161,14 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
         {
             frmMateriaNuevo unfrmMateriaNuevo = new frmMateriaNuevo();
             unfrmMateriaNuevo.Show();
+        }
+
+        private void btnCursoNuevoAgregarAlumno_Click(object sender, EventArgs e)
+        {
+
+            frmAlumnoBuscar unfrmAlumnoBuscar = new frmAlumnoBuscar();
+            unfrmAlumnoBuscar.Show();
+
         }
     }
 }
