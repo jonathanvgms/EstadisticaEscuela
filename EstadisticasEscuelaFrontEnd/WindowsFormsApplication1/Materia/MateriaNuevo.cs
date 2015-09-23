@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd;
 using EstadisticasEscuelaFrontEnd.Database;
-using EstadisticasEscuelaFrontEnd.Dominio;
 using EstadisticasEscuelaFrontEnd.Modelo;
 
 namespace EstadisticasEscuelaFrontEnd.Materias
@@ -19,9 +18,9 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
         public bool estado = true;
 
-        private Materia materiaModificada;
+        private materia materiaModificada;
 
-        internal Materia MateriaModificada
+        internal materia MateriaModificada
         {
             get { return materiaModificada; }
             set { materiaModificada = value; }

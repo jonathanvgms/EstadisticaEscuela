@@ -72,18 +72,17 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
         private void loadMateriaBuscar()
         {
-            dgvMateriaBuscar.DataSource = null;
-
-            dgvMateriaBuscar.Columns.Clear();
-
-            string query = String.Format("where materia LIKE '%{0}%'", txtMateriaBuscarMateria.Text);
-
-            dgvMateriaBuscar.DataSource = Dominio.Materia.Select();
-
+            dgvMateriaBuscar.DataSource = context.materia.ToList();
+            /*try
+            {
+                dgvMateriaBuscar.DataSource = context.materia.ToList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }*/
             dgvMateriaBuscar.Columns["Id"].Visible = false;
-
-            dgvMateriaBuscar.Columns["Tipo"].Visible = false;
-
+            
             DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
 
             columnaModificar.Name = "Modificar";
@@ -114,26 +113,60 @@ namespace EstadisticasEscuelaFrontEnd.Materias
             if ((e.ColumnIndex == dgvMateriaBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
                 frmMateriaNuevo materiaModificar = new frmMateriaNuevo();
-                
-                materiaModificar.MateriaModificada = new Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString(),
+
+                int idMateria = Convert.ToInt32(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString());
+
+               // string nombreMateria = context.materia.Where(x => x.Id == idMateria).FirstOrDefault().m;
+
+                materia materiaModificada = context.materia.Where(x => x.Id == idMateria).ToList().FirstOrDefault();
+
+                materiaModificar.MateriaModificada = materiaModificada;
+
+                materiaModificar.estado = false;
+
+                materiaModificar.ShowDialog(this);
+
+                lblMateriaBuscarMateriaError.Text = "MATERIA MODIFICADA CON EXITO";
+
+                loadMateriaBuscar();
+
+
+               /* materiaModificar.MateriaModificada = new Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString(),
                                                                  dgvMateriaBuscar.CurrentRow.Cells[1].Value.ToString());
                 
-
 
                 materiaModificar.ShowDialog(this);
 
                 lblMateriaBuscarMateriaError.Text = "MATERIA MODIFICADA CON EXITO";
               
-                loadMateriaBuscar();
+                loadMateriaBuscar();*/
             }
 
             if ((e.ColumnIndex == dgvMateriaBuscar.Columns["Eliminar"].Index) && (e.ColumnIndex >= -1))
             {
-                Materia.Delete(new Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString()));
+                int idMateria = Convert.ToInt32(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString());
+
+                try
+                {
+                    materia materiaEliminada = context.materia.Where(x => x.Id == idMateria).ToList().FirstOrDefault();
+
+                    context.materia.Remove(materiaEliminada);
+
+                    context.SaveChanges();
+
+                    lblMateriaBuscarMateriaError.Text = "MATERIA ELIMINADA CON EXITO";
+                }
+                catch(Exception exc)
+                {
+                    MessageBox.Show(exc.ToString());
+                }
+
+                loadMateriaBuscar();
+                /*Materia.Delete(new Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString()));
 
                 lblMateriaBuscarMateriaError.Text = "MATERIA ELIMINADA CON EXITO";
 
-                loadMateriaBuscar();
+                loadMateriaBuscar();*/
             }
         }
     }

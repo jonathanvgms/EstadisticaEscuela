@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMateriaBuscar));
             this.FiltroDeBusqueda = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblMateriaBuscarMateriaError = new System.Windows.Forms.Label();
             this.txtMateriaBuscarMateria = new System.Windows.Forms.TextBox();
             this.lblMateriaBucarMateria = new System.Windows.Forms.Label();
@@ -37,8 +39,6 @@
             this.btnMateriaBuscarBuscar = new System.Windows.Forms.Button();
             this.btnMateriaBucarCancelar = new System.Windows.Forms.Button();
             this.dgvMateriaBuscar = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.FiltroDeBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateriaBuscar)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +47,6 @@
             // 
             this.FiltroDeBusqueda.Controls.Add(this.textBox1);
             this.FiltroDeBusqueda.Controls.Add(this.label1);
-            this.FiltroDeBusqueda.Controls.Add(this.lblMateriaBuscarMateriaError);
             this.FiltroDeBusqueda.Controls.Add(this.txtMateriaBuscarMateria);
             this.FiltroDeBusqueda.Controls.Add(this.lblMateriaBucarMateria);
             this.FiltroDeBusqueda.Location = new System.Drawing.Point(12, 12);
@@ -57,10 +56,26 @@
             this.FiltroDeBusqueda.TabStop = false;
             this.FiltroDeBusqueda.Text = "Filtro de Busqueda";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(107, 33);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(169, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Código";
+            // 
             // lblMateriaBuscarMateriaError
             // 
             this.lblMateriaBuscarMateriaError.AutoSize = true;
-            this.lblMateriaBuscarMateriaError.Location = new System.Drawing.Point(303, 80);
+            this.lblMateriaBuscarMateriaError.Location = new System.Drawing.Point(116, 134);
             this.lblMateriaBuscarMateriaError.Name = "lblMateriaBuscarMateriaError";
             this.lblMateriaBuscarMateriaError.Size = new System.Drawing.Size(0, 13);
             this.lblMateriaBuscarMateriaError.TabIndex = 2;
@@ -126,22 +141,6 @@
             this.dgvMateriaBuscar.TabIndex = 4;
             this.dgvMateriaBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionMateria);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(107, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Código";
-            // 
             // frmMateriaBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,6 +148,7 @@
             this.ClientSize = new System.Drawing.Size(472, 579);
             this.Controls.Add(this.dgvMateriaBuscar);
             this.Controls.Add(this.btnMateriaBucarCancelar);
+            this.Controls.Add(this.lblMateriaBuscarMateriaError);
             this.Controls.Add(this.btnMateriaBuscarBuscar);
             this.Controls.Add(this.btnMateriaBuscarLimpiar);
             this.Controls.Add(this.FiltroDeBusqueda);
@@ -159,6 +159,7 @@
             this.FiltroDeBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateriaBuscar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
