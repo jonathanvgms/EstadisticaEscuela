@@ -177,18 +177,6 @@
     <Compile Include="Modelo\usuario.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Notas\NotaBuscar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Notas\NotaBuscar.Designer.cs">
-      <DependentUpon>NotaBuscar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Notas\NotaNuevo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Notas\NotaNuevo.Designer.cs">
-      <DependentUpon>NotaNuevo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rol\RolBuscar.cs">
@@ -252,12 +240,6 @@
     <EmbeddedResource Include="Materia\MateriaNuevo.resx">
       <DependentUpon>MateriaNuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Notas\NotaBuscar.resx">
-      <DependentUpon>NotaBuscar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Notas\NotaNuevo.resx">
-      <DependentUpon>NotaNuevo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -282,7 +264,6 @@
       <LastGenOutput>Modelo.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.Config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Modelo\Modelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Modelo.edmx</DependentUpon>
