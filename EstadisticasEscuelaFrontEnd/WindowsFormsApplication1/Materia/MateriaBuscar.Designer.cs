@@ -32,9 +32,9 @@
             this.FiltroDeBusqueda = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblMateriaBuscarMateriaError = new System.Windows.Forms.Label();
             this.txtMateriaBuscarMateria = new System.Windows.Forms.TextBox();
             this.lblMateriaBucarMateria = new System.Windows.Forms.Label();
+            this.lblMateriaBuscarMateriaError = new System.Windows.Forms.Label();
             this.btnMateriaBuscarLimpiar = new System.Windows.Forms.Button();
             this.btnMateriaBuscarBuscar = new System.Windows.Forms.Button();
             this.btnMateriaBucarCancelar = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             this.FiltroDeBusqueda.Controls.Add(this.lblMateriaBucarMateria);
             this.FiltroDeBusqueda.Location = new System.Drawing.Point(12, 12);
             this.FiltroDeBusqueda.Name = "FiltroDeBusqueda";
-            this.FiltroDeBusqueda.Size = new System.Drawing.Size(454, 111);
+            this.FiltroDeBusqueda.Size = new System.Drawing.Size(470, 111);
             this.FiltroDeBusqueda.TabIndex = 0;
             this.FiltroDeBusqueda.TabStop = false;
             this.FiltroDeBusqueda.Text = "Filtro de Busqueda";
@@ -72,14 +72,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Código";
             // 
-            // lblMateriaBuscarMateriaError
-            // 
-            this.lblMateriaBuscarMateriaError.AutoSize = true;
-            this.lblMateriaBuscarMateriaError.Location = new System.Drawing.Point(116, 134);
-            this.lblMateriaBuscarMateriaError.Name = "lblMateriaBuscarMateriaError";
-            this.lblMateriaBuscarMateriaError.Size = new System.Drawing.Size(0, 13);
-            this.lblMateriaBuscarMateriaError.TabIndex = 2;
-            // 
             // txtMateriaBuscarMateria
             // 
             this.txtMateriaBuscarMateria.Location = new System.Drawing.Point(107, 73);
@@ -96,6 +88,14 @@
             this.lblMateriaBucarMateria.TabIndex = 0;
             this.lblMateriaBucarMateria.Text = "Materia";
             // 
+            // lblMateriaBuscarMateriaError
+            // 
+            this.lblMateriaBuscarMateriaError.AutoSize = true;
+            this.lblMateriaBuscarMateriaError.Location = new System.Drawing.Point(116, 134);
+            this.lblMateriaBuscarMateriaError.Name = "lblMateriaBuscarMateriaError";
+            this.lblMateriaBuscarMateriaError.Size = new System.Drawing.Size(0, 13);
+            this.lblMateriaBuscarMateriaError.TabIndex = 2;
+            // 
             // btnMateriaBuscarLimpiar
             // 
             this.btnMateriaBuscarLimpiar.Location = new System.Drawing.Point(12, 129);
@@ -108,7 +108,7 @@
             // 
             // btnMateriaBuscarBuscar
             // 
-            this.btnMateriaBuscarBuscar.Location = new System.Drawing.Point(391, 129);
+            this.btnMateriaBuscarBuscar.Location = new System.Drawing.Point(407, 129);
             this.btnMateriaBuscarBuscar.Name = "btnMateriaBuscarBuscar";
             this.btnMateriaBuscarBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnMateriaBuscarBuscar.TabIndex = 2;
@@ -118,7 +118,7 @@
             // 
             // btnMateriaBucarCancelar
             // 
-            this.btnMateriaBucarCancelar.Location = new System.Drawing.Point(391, 551);
+            this.btnMateriaBucarCancelar.Location = new System.Drawing.Point(407, 551);
             this.btnMateriaBucarCancelar.Name = "btnMateriaBucarCancelar";
             this.btnMateriaBucarCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnMateriaBucarCancelar.TabIndex = 3;
@@ -137,7 +137,7 @@
             this.dgvMateriaBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMateriaBuscar.Location = new System.Drawing.Point(12, 158);
             this.dgvMateriaBuscar.Name = "dgvMateriaBuscar";
-            this.dgvMateriaBuscar.Size = new System.Drawing.Size(454, 387);
+            this.dgvMateriaBuscar.Size = new System.Drawing.Size(470, 387);
             this.dgvMateriaBuscar.TabIndex = 4;
             this.dgvMateriaBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionMateria);
             // 
@@ -145,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 579);
+            this.ClientSize = new System.Drawing.Size(498, 586);
             this.Controls.Add(this.dgvMateriaBuscar);
             this.Controls.Add(this.btnMateriaBucarCancelar);
             this.Controls.Add(this.lblMateriaBuscarMateriaError);

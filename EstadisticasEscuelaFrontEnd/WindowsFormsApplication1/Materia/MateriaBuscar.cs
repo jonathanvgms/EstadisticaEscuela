@@ -72,6 +72,10 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
         private void loadMateriaBuscar()
         {
+            dgvMateriaBuscar.DataSource = null;
+
+            dgvMateriaBuscar.Columns.Clear();
+
             dgvMateriaBuscar.DataSource = context.materia.ToList();
             /*try
             {
@@ -82,6 +86,8 @@ namespace EstadisticasEscuelaFrontEnd.Materias
                 MessageBox.Show(ex.ToString());
             }*/
             dgvMateriaBuscar.Columns["Id"].Visible = false;
+
+            dgvMateriaBuscar.Columns["Materia_x_Curso"].Visible = false;
             
             DataGridViewButtonColumn columnaModificar = new DataGridViewButtonColumn();
 
@@ -116,8 +122,6 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 
                 int idMateria = Convert.ToInt32(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString());
 
-               // string nombreMateria = context.materia.Where(x => x.Id == idMateria).FirstOrDefault().m;
-
                 materia materiaModificada = context.materia.Where(x => x.Id == idMateria).ToList().FirstOrDefault();
 
                 materiaModificar.MateriaModificada = materiaModificada;
@@ -129,17 +133,6 @@ namespace EstadisticasEscuelaFrontEnd.Materias
                 lblMateriaBuscarMateriaError.Text = "MATERIA MODIFICADA CON EXITO";
 
                 loadMateriaBuscar();
-
-
-               /* materiaModificar.MateriaModificada = new Materia(dgvMateriaBuscar.CurrentRow.Cells[0].Value.ToString(),
-                                                                 dgvMateriaBuscar.CurrentRow.Cells[1].Value.ToString());
-                
-
-                materiaModificar.ShowDialog(this);
-
-                lblMateriaBuscarMateriaError.Text = "MATERIA MODIFICADA CON EXITO";
-              
-                loadMateriaBuscar();*/
             }
 
             if ((e.ColumnIndex == dgvMateriaBuscar.Columns["Eliminar"].Index) && (e.ColumnIndex >= -1))

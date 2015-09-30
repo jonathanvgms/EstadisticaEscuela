@@ -35,11 +35,11 @@
             this.lblMateriaNuevoMateria = new System.Windows.Forms.Label();
             this.txtMateriaNuevoMateria = new System.Windows.Forms.TextBox();
             this.Datos = new System.Windows.Forms.GroupBox();
+            this.lblMateriaNuevaMateriaVacio = new System.Windows.Forms.Label();
             this.lblMateriaNuevaCodigo = new System.Windows.Forms.Label();
             this.txtMateriaNuevoCodigo = new System.Windows.Forms.TextBox();
             this.lblMateriaNuevoCodigoVacio = new System.Windows.Forms.Label();
             this.lblMateriaNuevoError = new System.Windows.Forms.Label();
-            this.lblMateriaNuevaMateriaVacio = new System.Windows.Forms.Label();
             this.Datos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +104,14 @@
             this.Datos.TabStop = false;
             this.Datos.Text = "Datos";
             // 
+            // lblMateriaNuevaMateriaVacio
+            // 
+            this.lblMateriaNuevaMateriaVacio.AutoSize = true;
+            this.lblMateriaNuevaMateriaVacio.Location = new System.Drawing.Point(274, 79);
+            this.lblMateriaNuevaMateriaVacio.Name = "lblMateriaNuevaMateriaVacio";
+            this.lblMateriaNuevaMateriaVacio.Size = new System.Drawing.Size(0, 13);
+            this.lblMateriaNuevaMateriaVacio.TabIndex = 8;
+            // 
             // lblMateriaNuevaCodigo
             // 
             this.lblMateriaNuevaCodigo.AutoSize = true;
@@ -136,19 +144,11 @@
             this.lblMateriaNuevoError.Size = new System.Drawing.Size(0, 13);
             this.lblMateriaNuevoError.TabIndex = 6;
             // 
-            // lblMateriaNuevaMateriaVacio
-            // 
-            this.lblMateriaNuevaMateriaVacio.AutoSize = true;
-            this.lblMateriaNuevaMateriaVacio.Location = new System.Drawing.Point(274, 79);
-            this.lblMateriaNuevaMateriaVacio.Name = "lblMateriaNuevaMateriaVacio";
-            this.lblMateriaNuevaMateriaVacio.Size = new System.Drawing.Size(0, 13);
-            this.lblMateriaNuevaMateriaVacio.TabIndex = 8;
-            // 
             // frmMateriaNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 235);
+            this.ClientSize = new System.Drawing.Size(480, 235);
             this.Controls.Add(this.lblMateriaNuevoError);
             this.Controls.Add(this.Datos);
             this.Controls.Add(this.btnMateriaBuscarLimpiar);
@@ -157,6 +157,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMateriaNuevo";
             this.Text = "Materia Nuevo";
+            this.Load += new System.EventHandler(this.frmMateriaNuevo_Load);
             this.Datos.ResumeLayout(false);
             this.Datos.PerformLayout();
             this.ResumeLayout(false);

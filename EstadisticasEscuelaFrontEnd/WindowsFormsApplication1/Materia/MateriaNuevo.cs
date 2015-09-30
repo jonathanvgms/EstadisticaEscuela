@@ -54,7 +54,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
         {
             bool error = true;
 
-            //materia mat;
+            materia mat;
 
             if (!checkData(txtMateriaNuevoMateria, lblMateriaNuevaMateriaVacio)) error = false;
 
@@ -91,7 +91,25 @@ namespace EstadisticasEscuelaFrontEnd.Materias
                 }
                 else
                 {
-                   
+                    try
+                    {
+
+                        int idMater = Convert.ToInt32(materiaModificada.Id);
+
+                        mat = context.materia.Where(x => x.Id == idMater).FirstOrDefault();
+
+                        mat.Nombre = txtMateriaNuevoMateria.Text;
+
+                        mat.Codigo = txtMateriaNuevoCodigo.Text;
+
+                        context.SaveChanges();
+
+                        lblMateriaNuevoError.Text = "MATERIA GUARDADA CON EXITO";
+                    }
+                    catch(Exception exc)
+                    {
+                        MessageBox.Show(exc.ToString());
+                    }
                 }
             }
         }
@@ -129,6 +147,18 @@ namespace EstadisticasEscuelaFrontEnd.Materias
                 return false;
             }
             return true;
+        }
+
+        private void frmMateriaNuevo_Load(object sender, EventArgs e)
+        {
+            if(!estado)
+            {
+                txtMateriaNuevoMateria.Text = materiaModificada.Nombre;
+
+                txtMateriaNuevoCodigo.Text = materiaModificada.Codigo;
+
+                this.Text = "Modificar Materia";
+            }
         }
 
         
