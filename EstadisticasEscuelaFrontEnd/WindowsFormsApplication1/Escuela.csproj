@@ -203,12 +203,6 @@
     <Compile Include="Usuarios\UsuarioBuscar.Designer.cs">
       <DependentUpon>UsuarioBuscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\UsuarioModificar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios\UsuarioModificar.Designer.cs">
-      <DependentUpon>UsuarioModificar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Usuarios\UsuarioNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,9 +255,6 @@
     </Compile>
     <EmbeddedResource Include="Usuarios\UsuarioBuscar.resx">
       <DependentUpon>UsuarioBuscar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\UsuarioModificar.resx">
-      <DependentUpon>UsuarioModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\UsuarioNuevo.resx">
       <DependentUpon>UsuarioNuevo.cs</DependentUpon>

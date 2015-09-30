@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd.Database;
-using EstadisticasEscuelaFrontEnd.Dominio;
+using EstadisticasEscuelaFrontEnd.Modelo;
 
 namespace EstadisticasEscuelaFrontEnd.Usuarios
 {
@@ -15,9 +15,11 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
     {
         public string nombreUsuario;
 
-        Usuario usuarioBuscado;
+        usuario usuarioBuscado;
 
-        internal Usuario UsuarioBuscado
+        EstadisticasEscuelaEntities context;
+
+        internal usuario UsuarioBuscado
         {
             get { return usuarioBuscado; }
             set { usuarioBuscado = value; }
@@ -26,6 +28,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
         public frmUsuarioBuscar()
         {
             InitializeComponent();
+            context = new EstadisticasEscuelaEntities();
         }
 
         private void btnBuscarUsuarioBuscar_Click(object sender, EventArgs e)
@@ -77,9 +80,16 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
             dgvUsuarioBuscar.Columns.Clear();
 
-            string query = string.Format("where nombre LIKE '%{0}%'", txtBuscarUsuarioNombre.Text);
-
-            dgvUsuarioBuscar.DataSource = Usuario.Select();
+            //dgvUsuarioBuscar.DataSource = Usuario.Select();
+            try
+            {
+                dgvUsuarioBuscar.DataSource = context.usuario.Where(x => x.Habilitado == true).ToList();
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show(exc.ToString());
+            }
+            
 
             DataGridViewButtonColumn columnaSeleccionar = new DataGridViewButtonColumn();
 
@@ -88,8 +98,15 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             dgvUsuarioBuscar.Columns.Add(columnaSeleccionar);
 
             dgvUsuarioBuscar.Columns["Id"].Visible = false;
+
+            dgvUsuarioBuscar.Columns["Contrasenia"].Visible = false;
+
+            dgvUsuarioBuscar.Columns["Rol"].Visible = false;
+
+            dgvUsuarioBuscar.Columns["Alumno"].Visible = false;
+
+            dgvUsuarioBuscar.Columns["docente"].Visible = false;
                        
-            dgvUsuarioBuscar.Columns["Tipo"].Visible = false;
 
             dgvUsuarioBuscar.Columns["IdRol"].Visible = false;
 
@@ -119,12 +136,33 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             if ((e.ColumnIndex == dgvUsuarioBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
 
-                frmUsuarioModificar usuarioModificar = new frmUsuarioModificar();
-
-                usuarioModificar.UsuarioModificado = new Usuario(dgvUsuarioBuscar.CurrentRow.Cells[0].Value.ToString(),
+                frmUsuarioNuevo usuarioModificar = new frmUsuarioNuevo();
+                /*
+                usuarioModificar.UsuarioModificado = new usuario(dgvUsuarioBuscar.CurrentRow.Cells[0].Value.ToString(),
                                                               dgvUsuarioBuscar.CurrentRow.Cells[1].Value.ToString(),
                                                               dgvUsuarioBuscar.CurrentRow.Cells[2].Value.ToString(),
                                                               dgvUsuarioBuscar.CurrentRow.Cells[3].Value.ToString());
+
+                usuarioModificar.ShowDialog(this);
+
+                lblUsuarioBuscarError.Text = "USUARIO MODIFICADO CON EXITO";
+
+                loadUsuarioBuscar();
+                 * */
+
+
+
+                //convierto el idAlumno a int
+                int idUsuario = Convert.ToInt32(dgvUsuarioBuscar.CurrentRow.Cells[0].Value.ToString());
+                
+                //traigo el objeto alumno de la base de datos
+                usuario usuarioModificado = context.usuario.Where(x => x.Id == idUsuario).ToList().FirstOrDefault();
+
+                //le asigno el objeto al form AlumnoNuevo
+                usuarioModificar.UsuarioModificado = usuarioModificado;
+                
+                //con este campo avisa al AlumnoNuevo que el formulario es para modificar
+                usuarioModificar.estado = false;
 
                 usuarioModificar.ShowDialog(this);
 
@@ -135,11 +173,25 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
             if ((e.ColumnIndex == dgvUsuarioBuscar.Columns["Eliminar"].Index) && (e.ColumnIndex >= -1))
             {
-                Usuario.Delete(new Usuario(dgvUsuarioBuscar.CurrentRow.Cells[0].Value.ToString()));
-                
-                lblUsuarioBuscarError.Text = "USUARIO ELIMINADO CON EXITO";
+                int idUsuario = Convert.ToInt32(dgvUsuarioBuscar.CurrentRow.Cells[0].Value.ToString());
 
-                loadUsuarioBuscar();
+                try
+                {
+                    usuario usuarioEliminado = context.usuario.Where(x => x.Id == idUsuario).ToList().FirstOrDefault();
+
+                    usuarioEliminado.Habilitado = false;
+
+                    context.SaveChanges();
+
+                    lblUsuarioBuscarError.Text = "USUARIO ELIMINADO CON EXITO";
+
+                    loadUsuarioBuscar();
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.ToString());
+                }
+
             }
             /*
             if ((e.ColumnIndex == dgvUsuarioBuscar.Columns["Nombre"].Index) && (e.ColumnIndex >= -1))

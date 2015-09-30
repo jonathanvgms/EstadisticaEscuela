@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using EstadisticasEscuelaFrontEnd.Dominio;
 using EstadisticasEscuelaFrontEnd.Cursos;
 using EstadisticasEscuelaFrontEnd.Usuarios;
 using EstadisticasEscuelaFrontEnd.Modelo;
@@ -16,17 +15,26 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 {
     public partial class frmUsuarioNuevo : Form
     {
-        Usuario usuarioNuevo;
+        usuario usuarioNuevo;
 
         EstadisticasEscuelaEntities context;
 
         public bool estado = true;
 
-        internal Usuario UsuarioNuevo
+        internal usuario UsuarioNuevo
         {
             get { return usuarioNuevo; }
             set { usuarioNuevo = value; }
         }
+
+        private usuario usuarioModificado;
+
+        internal usuario UsuarioModificado
+        {
+            get { return usuarioModificado; }
+            set { usuarioModificado = value; }
+        }
+
 
         public frmUsuarioNuevo()
         {
@@ -80,7 +88,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
         {
             bool error = true;
 
-            Usuario usuar;
+            usuario usuar;
 
             if (!checkData(txtUsuarioNuevoUsuario, lblUsuarioNuevoUsuarioError)) error = false;
             if (!checkData(txtUsuarioNuevoContrasenia, lblUsuarioNuevoContraseniaError)) error = false;
@@ -112,6 +120,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
                         }
                     }
                 }
+                
                 //antes de realizar el insert en la base de datos, falta verificar que no existe el usuario
                 /*
                 Usuario.Add(new Usuario(txtUsuarioNuevoUsuario.Text, txtUsuarioNuevoContrasenia.Text, "1", (lsbUsuarioNuevoTipo.SelectedIndex + 1).ToString()));
@@ -120,6 +129,29 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
                 lblUsuarioNuevoError.Text = "USUARIO GUARDADO CON EXITO";
                  * */
+            }
+            else
+            {
+                try
+                {
+                    int idUsuar = Convert.ToInt32(usuarioModificado.Id);
+
+                    usuar = context.usuario.Where(x => x.Id == idUsuar).FirstOrDefault();
+
+                    usuar.Nombre = txtUsuarioNuevoUsuario.Text;
+
+                    usuar.Contrasenia = txtUsuarioNuevoContrasenia.Text;
+
+                    usuar.IdRol = lsbUsuarioNuevoTipo.SelectedIndex + 1;
+
+                    context.SaveChanges();
+
+                    lblUsuarioNuevoError.Text = "USUARIO GUARDADO CON EXITO";
+                }
+                catch(Exception exc)
+                {
+                    MessageBox.Show(exc.Message .ToString());
+                }
             }
         }
 
@@ -158,6 +190,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
             return true;
         }
+
         /*
         private bool checkdata(ComboBox comboTipoUsuario, ComboBox comboTipoRol, Label label)
         {
