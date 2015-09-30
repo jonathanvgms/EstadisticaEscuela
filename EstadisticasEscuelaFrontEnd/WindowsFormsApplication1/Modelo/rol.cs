@@ -20,6 +20,7 @@ namespace EstadisticasEscuelaFrontEnd.Modelo
         }
     
         public int Id { get; set; }
+        public string Nombre { get; set; }
         public bool Usuario { get; set; }
         public bool Rol1 { get; set; }
         public bool Cursos { get; set; }

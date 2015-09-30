@@ -15,7 +15,7 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 {
     public partial class frmCursoNuevo : Form
     {
-        EestadisticasEscuelaEntities context;
+        EstadisticasEscuelaEntities context;
 
         private Curso _cursoModificado;
 

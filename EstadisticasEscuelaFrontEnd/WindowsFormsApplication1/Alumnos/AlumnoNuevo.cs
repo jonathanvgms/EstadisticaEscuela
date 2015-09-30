@@ -17,7 +17,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 {
     public partial class frmAlumnoNuevo : Form
     {
-        EestadisticasEscuelaEntities context;
+        EstadisticasEscuelaEntities context;
 
         public bool estado = true;
 
@@ -42,7 +42,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         {
             InitializeComponent();
 
-            context = new EestadisticasEscuelaEntities(); 
+            context = new EstadisticasEscuelaEntities(); 
         }
 
         private void btnAlumnoNuevo_Click(object sender, EventArgs e)

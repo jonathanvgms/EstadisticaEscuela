@@ -13,6 +13,7 @@ using EstadisticasEscuelaFrontEnd.Cursos;
 using EstadisticasEscuelaFrontEnd.Database;
 using EstadisticasEscuelaFrontEnd.Materias;
 using EstadisticasEscuelaFrontEnd.Asistencia;
+using EstadisticasEscuelaFrontEnd.Notas;
 
 
 namespace EstadisticasEscuelaFrontEnd
@@ -98,6 +99,11 @@ namespace EstadisticasEscuelaFrontEnd
             unfrmAsistenciaBuscar.ShowDialog(this);
         }
 
-       
+        private void modificarNotaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAsignarNotas frmNotas = new frmAsignarNotas();
+
+            frmNotas.ShowDialog(this);
+        }       
     }
 }

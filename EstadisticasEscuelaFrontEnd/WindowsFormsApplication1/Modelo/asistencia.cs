@@ -14,15 +14,11 @@ namespace EstadisticasEscuelaFrontEnd.Modelo
     
     public partial class asistencia
     {
-        public asistencia()
-        {
-            this.alumno_x_curso = new HashSet<alumno_x_curso>();
-        }
-    
         public int Id { get; set; }
         public System.DateTime Fecha { get; set; }
         public bool Presente { get; set; }
+        public int idAlumnoCurso { get; set; }
     
-        public virtual ICollection<alumno_x_curso> alumno_x_curso { get; set; }
+        public virtual alumno_x_curso alumno_x_curso { get; set; }
     }
 }

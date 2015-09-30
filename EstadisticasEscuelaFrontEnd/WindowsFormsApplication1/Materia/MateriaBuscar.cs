@@ -14,12 +14,12 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 {
     public partial class frmMateriaBuscar : Form
     {
-        EestadisticasEscuelaEntities context;
+        EstadisticasEscuelaEntities context;
         public frmMateriaBuscar()
         {
             InitializeComponent();
 
-            context = new EestadisticasEscuelaEntities();
+            context = new EstadisticasEscuelaEntities();
         }
 
         private void btnMateriaBuscarBuscar_Click(object sender, EventArgs e)

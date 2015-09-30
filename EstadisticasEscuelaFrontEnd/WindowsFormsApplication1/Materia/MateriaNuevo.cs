@@ -14,7 +14,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
 {
     public partial class frmMateriaNuevo : Form
     {
-        EestadisticasEscuelaEntities context;
+        EstadisticasEscuelaEntities context;
 
         public bool estado = true;
 
@@ -29,7 +29,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
         {
             InitializeComponent();
 
-            context = new EestadisticasEscuelaEntities();
+            context = new EstadisticasEscuelaEntities();
         }
 
         private void btnMateriaNuevoCancelar_Click(object sender, EventArgs e)

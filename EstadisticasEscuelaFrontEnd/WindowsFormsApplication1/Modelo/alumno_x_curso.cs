@@ -14,15 +14,19 @@ namespace EstadisticasEscuelaFrontEnd.Modelo
     
     public partial class alumno_x_curso
     {
+        public alumno_x_curso()
+        {
+            this.asistencia = new HashSet<asistencia>();
+        }
+    
         public int Id { get; set; }
         public int AnioLectivo { get; set; }
         public bool Habilitado { get; set; }
         public int IdCurso { get; set; }
         public int IdAlumno { get; set; }
-        public int IdAsistencia { get; set; }
     
         public virtual alumno alumno { get; set; }
-        public virtual asistencia asistencia { get; set; }
         public virtual curso curso { get; set; }
+        public virtual ICollection<asistencia> asistencia { get; set; }
     }
 }

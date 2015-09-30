@@ -14,7 +14,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 {
     public partial class frmAlumnoBuscar : Form
     {
-        EestadisticasEscuelaEntities context;
+        EstadisticasEscuelaEntities context;
         
         private alumno alumnoseleccionado;
 
@@ -27,7 +27,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         {
             InitializeComponent();
 
-            context = new EestadisticasEscuelaEntities();
+            context = new EstadisticasEscuelaEntities();
         }
 
         private void btnBuscarAlumnoBuscar_Click(object sender, EventArgs e)

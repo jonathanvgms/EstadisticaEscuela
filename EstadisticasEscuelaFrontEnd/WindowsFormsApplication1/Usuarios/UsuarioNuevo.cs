@@ -18,7 +18,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
     {
         Usuario usuarioNuevo;
 
-        EestadisticasEscuelaEntities context;
+        EstadisticasEscuelaEntities context;
 
         public bool estado = true;
 
@@ -32,7 +32,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
         {
             InitializeComponent();
 
-            context = new EestadisticasEscuelaEntities();
+            context = new EstadisticasEscuelaEntities();
 
         }
 
@@ -190,7 +190,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
          * */
         public void loadUsuarioNuevo()
         {
-            context.rol.Select(x => lsbUsuarioNuevoTipo.Items.Add(x.Nombre));
+            //context.rol.Select(x => lsbUsuarioNuevoTipo.Items.Add(x.));
         }
 
         private void frmUsuarioNuevo_Load(object sender, EventArgs e)
@@ -198,7 +198,7 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
             //context.rol.Select(x => lsbUsuarioNuevoTipo.Items.Add(x.Nombre));
             try
             {
-                context.rol.ToList().ForEach(x => Console.WriteLine(x.Nombre));
+                //context.rol.ToList().ForEach(x => Console.WriteLine(x.Rol1));
             }
             catch(Exception exc)
             {
