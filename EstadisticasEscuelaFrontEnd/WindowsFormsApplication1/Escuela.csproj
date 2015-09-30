@@ -246,6 +246,9 @@
     <EmbeddedResource Include="Materia\MateriaNuevo.resx">
       <DependentUpon>MateriaNuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Notas\frmAsignarNotas.resx">
+      <DependentUpon>frmAsignarNotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
