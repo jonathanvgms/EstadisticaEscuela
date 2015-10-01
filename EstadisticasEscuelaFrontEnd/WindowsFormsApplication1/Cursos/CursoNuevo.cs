@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using EstadisticasEscuelaFrontEnd.Dominio;
 using EstadisticasEscuelaFrontEnd.Materias;
 using EstadisticasEscuelaFrontEnd.Modelo;
 using EstadisticasEscuelaFrontEnd.Alumnos;
@@ -17,9 +16,9 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
     {
         EstadisticasEscuelaEntities context;
 
-        private Curso _cursoModificado;
+        private curso _cursoModificado;
 
-        internal Curso CursoModificado
+        internal curso CursoModificado
         {
             get { return _cursoModificado; }
             set { _cursoModificado = value; }
@@ -34,12 +33,6 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
         {
 
             bool error = true;
-
-            if (!checkdata(cmbCursoNuevoTurno,cmbCursoNuevoEspecialidad,lblCursoNuevoTurnoError,lblCursoNuevoEspecialidadError)) error = false;
-
-            if (!checkData(txtCursoNuevoAnio, lblCusoNuevoAnioError)) error = false;
-
-            if (!checkData(txtCursoNuevoDivision, lblCursoNuevoDivisionError)) error = false;
 
             //Falta Verificar que el Curso existe en la Base de Datos
 
@@ -86,77 +79,7 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
             this.cmbCursoNuevoEspecialidad.Items.Add("Electrica");
             this.cmbCursoNuevoEspecialidad.Items.Add("Ciclo Basico");
         }
-
-
-        private bool checkdata(ComboBox comboTurno, ComboBox ComboEspecialidad, Label label, Label label2)
-        {
-            label.Text = "";
-
-            if (ComboEspecialidad.SelectedIndex < 0 && comboTurno.SelectedIndex < 0)
-            {
-                label.Text = "Seleccione Turno";
-
-                label2.Text = "Seleccione Especialidad";
-                return false;
-            }
-            else
-            {
-                if (ComboEspecialidad.SelectedIndex < 0)
-                {
-                    label.Text = "Seleccione Especialidad";
-
-                    return false;
-
-                }
-                if (comboTurno.SelectedIndex < 0)
-                {
-                    label2.Text = "Seleccione Turno";
-
-                    return false;
-
-                }
-            }
-            return true;
-        }
-    
-         
-
-        private bool checkData(TextBox textBox, Label label)
-        {
-            label.Text = "";
-
-            if (!textBox.Text.Equals(""))
-            {
-                if (textBox.Name.Equals("txtCursoNuevoAnio") || textBox.Name.Equals("txtCursoNuevoDivision"))
-                {
-                    if (!Util.todasNumeros(textBox.Text))
-                    {
-                        label.Text = "Valor Incorrecto";
-
-                        return false;
-                    }
-                }
-
-                if (textBox.Name.Equals("txtCursoNuevoAnio") || textBox.Name.Equals("txtCursoNuevoDivision"))
-                {
-                    if (!Util.todasNumeros(textBox.Text))
-                    {
-                        label.Text = "Valor Incorrecto";
-
-                        return false;
-                    }
-                }
-            }
-            else
-            {
-                label.Text = "Vacio";
-
-                return false;
-            }
-
-            return true;
-        }
-
+        
         private void btnCursoNuevoAgregarMateria_Click(object sender, EventArgs e)
         {
             frmMateriaNuevo unfrmMateriaNuevo = new frmMateriaNuevo();

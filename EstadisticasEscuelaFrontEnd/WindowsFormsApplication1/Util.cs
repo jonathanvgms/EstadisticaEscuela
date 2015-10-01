@@ -2,44 +2,67 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace EstadisticasEscuelaFrontEnd
 {
     static class Util
     {
-        //El metodo recibe un string y devuelve un bool verdadero mientras que la cadena este entre A y Z
-        public static bool todasLetras(string buffer)
+        static public bool EsAlfabetico(string buffer)
         {
-            string aux = buffer.ToUpper();
-
-            for (int i = 0; i < buffer.Length; i++)
+            if (buffer.Length == 0)
             {
-                if (aux[i] < 65 || aux[i] > 90)
-                {
-                    /*  int auxi = (int)aux[i];
-                      if (auxi!= 165)
-                     * */
-                    return false;
-                }
+                return false;
             }
 
-            return true;
-        }
+            Regex reg = new Regex(@"[ A-Za-zñÑáéíóúÁÉÓÚÍ]*");
 
-        //Este metodo recibe un string y devuelve bool verdadero mientras que la cadena este entre 0 y 9 
-        public static bool todasNumeros(string buffer)
-        {
+            Match match = reg.Match(buffer);
 
-            for (int i = 0; i < buffer.Length; i++)
+            if (match.Value.Equals(buffer))
             {
-                if (buffer[i] < 48 || buffer[i] > 57)
-                {
-                    return false;
-                }
+                return true;
             }
 
-            return true;
+            return false;
         }
-        
+
+        static public bool EsNumerico(string buffer)
+        {
+            if (buffer.Length == 0)
+            {
+                return false;
+            }
+
+            Regex reg = new Regex(@"[0-9]*");
+
+            Match match = reg.Match(buffer);
+
+            if (match.Value.Equals(buffer))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        static public bool EsAlfaNumerico(string buffer)
+        {
+            if (buffer.Length == 0)
+            {
+                return false;
+            }
+
+            Regex reg = new Regex(@"[ A-Za-zñÑ0-9áéíóúÁÉÓÚÍ]*");
+
+            Match match = reg.Match(buffer);
+
+            if (match.Value.Equals(buffer))
+            {
+                return true;
+            }
+
+            return false;
+        }        
     }
 }

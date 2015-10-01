@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd.Cursos;
 using EstadisticasEscuelaFrontEnd.Usuarios;
 using EstadisticasEscuelaFrontEnd.Modelo;
-using EstadisticasEscuelaFrontEnd.Database;
 
 namespace EstadisticasEscuelaFrontEnd.Usuarios
 {
@@ -44,55 +43,11 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
 
         }
 
-        private bool checkData(ComboBox comboA, Label label)
-        {
-            label.Text = "";
-
-            if (comboA.SelectedIndex < 0)
-            {
-                label.Text = "Seleccione Tipo de Usuario";
-
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool checkData(TextBox textBox, Label label)
-        {
-            label.Text = "";
-
-            if (!textBox.Text.Equals(""))
-            {
-                if (textBox.Name.Equals("txtUsuarioNuevoUsuario") || textBox.Name.Equals("txtUsuarioNuevoContrasenia"))
-                {
-                    if (!Util.todasLetras(textBox.Text))
-                    {
-                        label.Text = "Valor Incorrecto";
-
-                        return false;
-                    }
-                }
-            }
-            else
-            {
-                label.Text = "Vacio";
-
-                return false;
-            }
-
-            return true;
-        }
-
         private void btnUsuarioNuevoAceptar_Click(object sender, EventArgs e)
         {
             bool error = true;
 
             usuario usuar;
-
-            if (!checkData(txtUsuarioNuevoUsuario, lblUsuarioNuevoUsuarioError)) error = false;
-            if (!checkData(txtUsuarioNuevoContrasenia, lblUsuarioNuevoContraseniaError)) error = false;
-            
 
             if (error)
             {                

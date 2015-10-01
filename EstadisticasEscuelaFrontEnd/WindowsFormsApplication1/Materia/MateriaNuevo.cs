@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd;
-using EstadisticasEscuelaFrontEnd.Database;
 using EstadisticasEscuelaFrontEnd.Modelo;
 
 namespace EstadisticasEscuelaFrontEnd.Materias
@@ -55,11 +54,7 @@ namespace EstadisticasEscuelaFrontEnd.Materias
             bool error = true;
 
             materia mat;
-
-            if (!checkData(txtMateriaNuevoMateria, lblMateriaNuevaMateriaVacio)) error = false;
-
-            if (!checkData(txtMateriaNuevoCodigo, lblMateriaNuevoCodigoVacio)) error = false;
-
+            
             //falta verificar que el alumno existe en la base de datos
 
             if (error)
@@ -112,41 +107,6 @@ namespace EstadisticasEscuelaFrontEnd.Materias
                     }
                 }
             }
-        }
-
-        private bool checkData(TextBox texBox, Label label)
-        {
-            label.Text = "";
-
-            if (!texBox.Text.Equals(""))
-            {
-                if (texBox.Name.Equals("txtMateriaNuevoCodigo"))
-                {
-                    if (!Util.todasNumeros(texBox.Text))
-                    {
-                        label.Text = "Valor incorrecto";
-
-                        return false;
-                    }
-                }
-
-                if (texBox.Name.Equals("txtMateriaNuevoMateria"))
-                {
-                    if (!Util.todasLetras(texBox.Text))
-                    {
-                        label.Text = "Valor Incorrecto";
-
-                        return false;
-                    }
-                }
-            }
-            else
-            {
-                label.Text = "Vacio";
-
-                return false;
-            }
-            return true;
         }
 
         private void frmMateriaNuevo_Load(object sender, EventArgs e)

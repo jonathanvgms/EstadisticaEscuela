@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd;
-using EstadisticasEscuelaFrontEnd.Database;
-using EstadisticasEscuelaFrontEnd.Dominio;
 using EstadisticasEscuelaFrontEnd.Cursos;
 using EstadisticasEscuelaFrontEnd.Alumnos;
 
@@ -21,34 +19,6 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
         {
             InitializeComponent();
         }
-
-        private bool checkData(TextBox textBox, Label label)
-        {
-            label.Text = "";
-
-            if (!textBox.Text.Equals(""))
-            {
-                if (!textBox.Name.Equals("txtAsistenciaNuevoPresente") || textBox.Name.Equals("txtAsistenciaNuevoFecha"))
-                {
-                    if (!Util.todasLetras(textBox.Text))
-                    {
-                        label.Text = "VALOR INCORRECTO";
-
-                        return false;
-                    }
-                }
-            }
-                else
-                {
-                    label.Text = "VACIO";
-
-                    return false;
-                }
-
-                return true;
-        }
-
-        
 
         private void lblAsistenciaBuscarLimpiar_Click(object sender, EventArgs e)
         {
@@ -65,16 +35,6 @@ namespace EstadisticasEscuelaFrontEnd.Asistencia
         private void btnAsistenciaBuscarAceptar_Click(object sender, EventArgs e)
         {
             bool error = true;
-
-            if (!checkData(txtAsistenciaNuevoFecha, lblAsistenciaNuevoFechaError)) error = false;
-
-            //if (!checkData(txtAsistenciaNuevoPresentismo, lblAsistenciaNuevoPresentismo)) error = false;
-
-            //if (!checkData(txtAsisnteciaNuevoAlumno, lblAsistenicaNuevoError)) error = false;
-
-            //if (!checkData(txtAsistneciaNuevoCurso, lblAsistenciaNuevoCursoError)) error = false;
-
-            //Falta verificar que Asistencia exista en la Base de Datos.
 
             if (error)
             {

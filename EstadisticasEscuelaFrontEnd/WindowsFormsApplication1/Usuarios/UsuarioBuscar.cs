@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using EstadisticasEscuelaFrontEnd.Database;
 using EstadisticasEscuelaFrontEnd.Modelo;
 
 namespace EstadisticasEscuelaFrontEnd.Usuarios
@@ -35,33 +34,11 @@ namespace EstadisticasEscuelaFrontEnd.Usuarios
         {
             bool error = true;
 
-            if (!checkData(txtBuscarUsuarioNombre, lblUsuarioBuscarNombreError)) error = false;
-
             if (error)
             {
                 loadUsuarioBuscar();
             }
 
-        }
-
-        private bool checkData(TextBox textBox, Label label)
-        {
-            label.Text = "";
-
-            if (!textBox.Text.Equals(""))
-            {
-                if (textBox.Name.Equals("txtUsuarioBuscarNombre"))
-                {
-                    if (!Util.todasLetras(textBox.Text))
-                    {
-                        label.Text = "Valores Incorrectos";
-
-                        return false;
-                    }
-                }
-            }
-
-            return true;
         }
 
         private void btnBuscarUsuarioSalir_Click(object sender, EventArgs e)

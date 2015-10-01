@@ -6,8 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using EstadisticasEscuelaFrontEnd.Database;
-using EstadisticasEscuelaFrontEnd.Dominio;
 
 namespace EstadisticasEscuelaFrontEnd.Cursos
 {
@@ -26,7 +24,7 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 
             string query = String.Format("where curso = {0} and division = {1}", txtCursoBuscarAnio.Text, txtCursoBuscarDivision.Text);
 
-            dgvCursoBuscar.DataSource = Curso.Select();
+            //dgvCursoBuscar.DataSource = Curso.Select();
 
             dgvCursoBuscar.Columns["Id"].Visible = false;
 
@@ -57,36 +55,6 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
             txtCursoBuscarDivision.Clear();
         }
 
-        private bool checkData(TextBox textBox, Label label)
-        {
-            label.Text = "";
-
-            if (!textBox.Text.Equals(""))
-            {
-                if (textBox.Name.Equals("txtAlumnoNuevoNombre") || textBox.Name.Equals("txtAlumnoNuevoApellido"))
-                {
-                    if (!Util.todasLetras(textBox.Text))
-                    {
-                        label.Text = "Valores Incorrectos";
-
-                        return false;
-                    }
-                }
-
-                if (textBox.Name.Equals("txtAlumnoNuevoDNI") || textBox.Name.Equals("txtAlumnoNuevoLegajo"))
-                {
-                    if (!Util.todasNumeros(textBox.Text))
-                    {
-                        label.Text = "Valores Incorrectos";
-
-                        return false;
-                    }
-                }
-            }
-            
-            return true;
-        }
-
         private void seleccionCurso(object sender, DataGridViewCellEventArgs e)
         {
             if ((e.ColumnIndex == dgvCursoBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
@@ -95,11 +63,11 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 
                 frmCursoNuevo cursoModificar = new frmCursoNuevo();
                                 
-                cursoModificar.CursoModificado = new Curso(dgvCursoBuscar.CurrentRow.Cells[0].Value.ToString(),
-                                                              dgvCursoBuscar.CurrentRow.Cells[1].Value.ToString(),
-                                                              dgvCursoBuscar.CurrentRow.Cells[2].Value.ToString(),
-                                                              dgvCursoBuscar.CurrentRow.Cells[3].Value.ToString(),
-                                                              dgvCursoBuscar.CurrentRow.Cells[4].Value.ToString());
+                //cursoModificar.CursoModificado = new Curso(dgvCursoBuscar.CurrentRow.Cells[0].Value.ToString(),
+                //                                              dgvCursoBuscar.CurrentRow.Cells[1].Value.ToString(),
+                //                                              dgvCursoBuscar.CurrentRow.Cells[2].Value.ToString(),
+                //                                              dgvCursoBuscar.CurrentRow.Cells[3].Value.ToString(),
+                //                                              dgvCursoBuscar.CurrentRow.Cells[4].Value.ToString());
 
                 cursoModificar.ShowDialog(this);
 
@@ -108,7 +76,7 @@ namespace EstadisticasEscuelaFrontEnd.Cursos
 
             if ((e.ColumnIndex == dgvCursoBuscar.Columns["Eliminar"].Index) && (e.ColumnIndex >= -1))
             {
-                Curso.Delete(new Curso(dgvCursoBuscar.CurrentRow.Cells[0].Value.ToString()));
+                //Curso.Delete(new Curso(dgvCursoBuscar.CurrentRow.Cells[0].Value.ToString()));
 
                 lblCursoBuscarError.Text = "CURSO ELIMINADO CON EXITO";
             }

@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using EstadisticasEscuelaFrontEnd;
-using EstadisticasEscuelaFrontEnd.Database;
-using EstadisticasEscuelaFrontEnd.Dominio;
 using EstadisticasEscuelaFrontEnd.Cursos;
 using EstadisticasEscuelaFrontEnd.Usuarios;
 using EstadisticasEscuelaFrontEnd.Modelo;
@@ -19,23 +17,15 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
     {
         EstadisticasEscuelaEntities context;
 
+        //si el estado es true es modo Alumno Nuevo, sino es Modificar Alumno
         public bool estado = true;
 
-        private string nombreUsuario;
+        private AlumnoModificado alum;
 
-        public string NombreUsuario
+        internal AlumnoModificado Alum
         {
-            get { return nombreUsuario; }
-
-            set { nombreUsuario = value; }
-        }
-
-        private alumno alumnoModificado;
-
-        internal alumno AlumnoModificado
-        {
-            get { return alumnoModificado; }
-            set { alumnoModificado = value; }
+            get { return alum; }
+            set { alum = value; }
         }
 
         public frmAlumnoNuevo()
@@ -47,29 +37,34 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
         private void btnAlumnoNuevo_Click(object sender, EventArgs e)
         {
-            bool error = true;
-            
-            alumno alum;
+            string msjError = "";
 
-            if (!checkData(txtAlumnoNuevoNombre, lblAlumnoNuevoNombreError)) error = false;
-
-            if (!checkData(txtAlumnoNuevoApellido, lblAlumnoNuevoApellidoError)) error = false;
-
-            if (!checkData(txtAlumnoNuevoDNI, lblAlumnoNuevoDniError)) error = false;
-
-            if (!checkData(txtAlumnoNuevoLegajo, lblAlumnoNuevoLegajoError)) error = false;
-
-            if (txtAlumnoNuevoUsuario.Text.Length == 0)
+            if (!Util.EsAlfabetico(txtAlumnoNuevoNombre.Text))
             {
-
-                error = false;
-
-                lblAlumnoNuevoUsuarioError.Text = "Seleccionar Usuario";
+                msjError += "Nombre: Incorrecto/Incompleto\n";
             }
 
+            if (!Util.EsAlfabetico(txtAlumnoNuevoApellido.Text))
+            {
+                msjError += "Apellido: Incorrecto/Incompleto\n";
+            }
             
+            if (!Util.EsNumerico(txtAlumnoNuevoDNI.Text))
+            {
+                msjError += "DNI: Incorrecto/Incompleto\n";
+            }
+            
+            if (!Util.EsNumerico(txtAlumnoNuevoLegajo.Text))
+            {
+                msjError += "Legajo: Incorrecto/Incompleto\n";
+            }
 
-            if (error)
+            if (txtAlumnoNuevoUsuario.Text.Equals(""))
+            {
+                msjError += "Usuario: Seleccionar\n";
+            }
+                        
+            if (msjError.Length == 0)
             {
                 /*
                  * si estado es true, el alumno no existe en la base de datos, por lo tanto lo agrego
@@ -80,7 +75,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                     if (context.alumno.Any(x => x.Dni == txtAlumnoNuevoDNI.Text))
                     {
                         //mostrar error el dni del alumno existente
-                        lblAlumnoNuevoError.Text = "El DNI DEL ALUMNO YA EXISTE";
+                        MessageBox.Show("El DNI DEL ALUMNO YA EXISTE");
                     }
                     else
                     {
@@ -94,7 +89,9 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
                             context.SaveChanges();
 
-                            lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO";
+                            MessageBox.Show("ALUMNO GUARDADO CON EXITO");
+
+                            limpiarFormulario();
                         }
                         catch (Exception exc)
                         {
@@ -104,116 +101,45 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
                 }
                 else
                 {
-                    //traigo al alumno existente, lo modifico y persisto los cambios
                     try
                     {                    
-                        int idAlum = Convert.ToInt32(alumnoModificado.Id);
+                        alum.AlumnoMod.Nombre = txtAlumnoNuevoNombre.Text;
 
-                        alum = context.alumno.Where(x => x.Id == idAlum).FirstOrDefault();
+                        alum.AlumnoMod.Apellido = txtAlumnoNuevoApellido.Text;
 
-                        alum.Nombre = txtAlumnoNuevoNombre.Text;
+                        alum.AlumnoMod.Dni = txtAlumnoNuevoDNI.Text;
 
-                        alum.Apellido = txtAlumnoNuevoApellido.Text;
+                        alum.AlumnoMod.Legajo = txtAlumnoNuevoLegajo.Text;
 
-                        alum.Dni = txtAlumnoNuevoDNI.Text;
+                        alum.AlumnoMod.Descripcion = txtAlumnoNuevoDescripcion.Text;
 
-                        alum.Legajo = txtAlumnoNuevoLegajo.Text;
+                        alum.AlumnoMod.IdUsuario = context.usuario.Where(x => x.Nombre == txtAlumnoNuevoUsuario.Text).FirstOrDefault().Id;
 
-                        alum.Descripcion = txtAlumnoNuevoDescripcion.Text;
+                        //context.SaveChanges();
+                        alum.Context.SaveChanges();
 
-                        alum.IdUsuario = context.usuario.Where(x => x.Nombre == txtAlumnoNuevoUsuario.Text).FirstOrDefault().Id;
+                        MessageBox.Show("ALUMNO GUARDADO CON EXITO");
 
-                        context.SaveChanges();
-
-                        lblAlumnoNuevoError.Text = "ALUMNO GUARDADO CON EXITO";
+                        limpiarFormulario();
                     }
                     catch (Exception exc)
                     {
-                        MessageBox.Show(exc.ToString());
+                        MessageBox.Show(exc.Message);
                     }
                 }      
             }
-        }
-
-        private bool checkData(ComboBox comboA, ComboBox comboB, Label label)
-        {
-            label.Text = "";
-
-            if (comboA.SelectedIndex < 0 && comboB.SelectedIndex < 0)
-            {
-                label.Text = "Seleccione Curso y División";
-            }
             else
             {
-                if (comboA.SelectedIndex < 0)
-                {
-                    label.Text = "Seleccione Curso";
-
-                    return false;
-                }
-
-                if (comboB.SelectedIndex < 0)
-                {
-                    label.Text += "Seleccione División";
-
-                    return false;
-                }
+                MessageBox.Show(msjError);
             }
-
-            return true;
-        }
-
-        private bool checkData(ComboBox combo, Label label)
-        {
-            label.Text = "";
-
-            if (combo.SelectedIndex < 0)
-            {
-                label.Text = "Seleccione Especialidad";
-
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool checkData(TextBox textBox, Label label)
-        {
-            label.Text = "";
-
-            if (!textBox.Text.Equals(""))
-            {
-                if (textBox.Name.Equals("txtAlumnoNuevoNombre") || textBox.Name.Equals("txtAlumnoNuevoApellido") || textBox.Name.Equals("txtAlumnoNuevoDescripcion"))
-                {
-                    if (!Util.todasLetras(textBox.Text))
-                    {
-                        label.Text = "Valor Incorrecto";
-
-                        return false;
-                    }
-                }
-
-                if (textBox.Name.Equals("txtAlumnoNuevoDNI") || textBox.Name.Equals("txtAlumnoNuevoLegajo"))
-                {
-                    if (!Util.todasNumeros(textBox.Text))
-                    {
-                        label.Text = "Valor Incorrecto";
-
-                        return false;
-                    }
-                }
-            }
-            else
-            {
-                label.Text = "Vacio";
-
-                return false;
-            }
-
-            return true;
         }
 
         private void btnAlumnoNuevoLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarFormulario();
+        }
+
+        private void limpiarFormulario()
         {
             txtAlumnoNuevoNombre.Clear();
 
@@ -225,16 +151,7 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
             txtAlumnoNuevoDescripcion.Clear();
 
-            lblAlumnoNuevoNombreError.Text = "";
-
-            lblAlumnoNuevoApellidoError.Text = "";
-
-            lblAlumnoNuevoLegajoError.Text = "";
-
-            lblAlumnoNuevoDniError.Text = "";
-
-            lblAlumnoNuevoDescripcionError.Text = "";
-
+            txtAlumnoNuevoUsuario.Clear();
         }
 
         private void btnAlumnoNuevoCancelar_Click(object sender, EventArgs e)
@@ -255,17 +172,17 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         {
             if (!estado)
             {
-                txtAlumnoNuevoNombre.Text = alumnoModificado.Nombre;
+                txtAlumnoNuevoNombre.Text = alum.AlumnoMod.Nombre;
 
-                txtAlumnoNuevoApellido.Text = alumnoModificado.Apellido;
+                txtAlumnoNuevoApellido.Text = alum.AlumnoMod.Apellido;
 
-                txtAlumnoNuevoDNI.Text = alumnoModificado.Dni;
+                txtAlumnoNuevoDNI.Text = alum.AlumnoMod.Dni;
 
-                txtAlumnoNuevoLegajo.Text = alumnoModificado.Legajo;
+                txtAlumnoNuevoLegajo.Text = alum.AlumnoMod.Legajo;
 
-                txtAlumnoNuevoDescripcion.Text = alumnoModificado.Descripcion;
+                txtAlumnoNuevoDescripcion.Text = alum.AlumnoMod.Descripcion;
 
-                txtAlumnoNuevoUsuario.Text = nombreUsuario;
+                txtAlumnoNuevoUsuario.Text = alum.NombreUsuario;
 
                 this.Text = "Modificar Alumno";
             }         

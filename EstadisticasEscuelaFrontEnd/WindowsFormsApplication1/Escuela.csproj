@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumnos\AlumnoModificado.cs" />
     <Compile Include="Alumnos\AlumnoNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,15 +94,6 @@
     <Compile Include="Cursos\CursoNuevo.Designer.cs">
       <DependentUpon>CursoNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database\IObjeto.cs" />
-    <Compile Include="Dominio\Alumno.cs" />
-    <Compile Include="Dominio\Asistencia.cs" />
-    <Compile Include="Dominio\Curso.cs" />
-    <Compile Include="Dominio\Materia.cs" />
-    <Compile Include="Dominio\Nota.cs" />
-    <Compile Include="Database\Objeto.cs" />
-    <Compile Include="Database\Parametro.cs" />
-    <Compile Include="Dominio\Usuario.cs" />
     <Compile Include="Escritorio.cs">
       <SubType>Form</SubType>
     </Compile>

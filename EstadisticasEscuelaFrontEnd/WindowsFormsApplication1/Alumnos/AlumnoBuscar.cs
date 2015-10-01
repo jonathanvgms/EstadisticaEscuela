@@ -6,8 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using EstadisticasEscuelaFrontEnd.Database;
-using EstadisticasEscuelaFrontEnd.Dominio;
 using EstadisticasEscuelaFrontEnd.Modelo;
 
 namespace EstadisticasEscuelaFrontEnd.Alumnos
@@ -33,11 +31,9 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
         private void btnBuscarAlumnoBuscar_Click(object sender, EventArgs e)
         {
             bool error = true;
-
-            if (!checkData(txtAlumnoBuscarNombre, lblAlumnoBuscarNombreError)) error = false;
-
-            if (!checkData(txtAlumnoBuscarApellido, lblAlumnoBuscarApellidoError)) error = false;
-
+            /*
+             * falta validar los campos del filtro de busqueda
+             */ 
             if (error)
             {
                 loadAlumnoBuscar();
@@ -54,112 +50,46 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             txtAlumnoBuscarNombre.Clear();
 
             txtAlumnoBuscarApellido.Clear();
-        }
 
-        private bool checkData(ComboBox comboA, ComboBox comboB, Label label)
-        {
-            label.Text = "";
+            txtAlumnoBuscarDni.Clear();
 
-            if (comboA.SelectedIndex < 0 && comboB.SelectedIndex < 0)
-            {
-                label.Text = "Seleccione Curso y División";
-            }
-            else
-            {
-                if (comboA.SelectedIndex < 0)
-                {
-                    label.Text = "Seleccione Curso";
-
-                    return false;
-                }
-
-                if (comboB.SelectedIndex < 0)
-                {
-                    label.Text += "Seleccione División";
-
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        private bool checkData(ComboBox combo, Label label)
-        {
-            label.Text = "";
-
-            if (combo.SelectedIndex < 0)
-            {
-                label.Text = "Seleccione Especialidad";
-
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool checkData(TextBox textBox, Label label)
-        {
-            label.Text = "";
-
-            if (!textBox.Text.Equals(""))
-            {
-                if (textBox.Name.Equals("txtAlumnoBuscarNombre") || textBox.Name.Equals("txtAlumnoBuscarApellido"))
-                {
-                    if (!Util.todasLetras(textBox.Text))
-                    {
-                        label.Text = "Valores Incorrectos";
-
-                        return false;
-                    }
-                }
-            }
-            
-            return true;
+            txtAlumnoBuscarLegajo.Clear();
         }
         
         private void seleccionAlumno(object sender, DataGridViewCellEventArgs e)
         {
-            if ((e.ColumnIndex == dgvAlumnoBuscar.Columns["Seleccionar"].Index) && (e.ColumnIndex >= -1))
-            {
-                //"" = dgvAlumnoBuscar.CurrentRow.Cells[1].Value.ToString();
-
-                MessageBox.Show("Alumno Seleccionado");
-            }
-            
             if ((e.ColumnIndex == dgvAlumnoBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
             {
                 frmAlumnoNuevo alumnoModificar = new frmAlumnoNuevo();
+
+                //creo un alumnoModificado
+                AlumnoModificado alumno = new AlumnoModificado();
 
                 //convierto el idAlumno a int
                 int idAlumno = Convert.ToInt32(dgvAlumnoBuscar.CurrentRow.Cells[0].Value.ToString());
 
                 //traigo el nombre de usuario del alumno
-                string nombreUsuario = context.alumno.Where(x => x.Id == idAlumno).FirstOrDefault().usuario.Nombre;
+                alumno.NombreUsuario = context.alumno.Where(x => x.Id == idAlumno).FirstOrDefault().usuario.Nombre;
 
                 //traigo el objeto alumno de la base de datos
-                alumno alumnoModificado = context.alumno.Where(x => x.Id == idAlumno).ToList().FirstOrDefault();
+                alumno.AlumnoMod = context.alumno.Where(x => x.Id == idAlumno).ToList().FirstOrDefault();
 
                 //le asigno el objeto al form AlumnoNuevo
-                alumnoModificar.AlumnoModificado = alumnoModificado;
-
-                //le asigno el nombre de usuario del alumno al form AlumnoNuevo
-                alumnoModificar.NombreUsuario = nombreUsuario;
+                alumnoModificar.Alum = alumno;
+                
+                //le paso el contexto actual a "Alumno Modificar"
+                alumno.Context = context;
 
                 //con este campo avisa al AlumnoNuevo que el formulario es para modificar
                 alumnoModificar.estado = false;
 
                 alumnoModificar.ShowDialog(this);
-
-                lblBuscarAlumnoError.Text = "ALUMNO MODIFICADO CON EXITO";
                 
                 loadAlumnoBuscar();
             }
 
             if ((e.ColumnIndex == dgvAlumnoBuscar.Columns["Eliminar"].Index) && (e.ColumnIndex >= -1))
             {
-                //Alumno.Delete(new Alumno(dgvAlumnoBuscar.CurrentRow.Cells[0].Value.ToString()));
-
                 int idAlumno = Convert.ToInt32(dgvAlumnoBuscar.CurrentRow.Cells[0].Value.ToString());
 
                 try
@@ -170,14 +100,14 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
 
                     context.SaveChanges();
 
-                    lblBuscarAlumnoError.Text = "ALUMNO ELIMINADO CON EXITO";
+                    MessageBox.Show("ALUMNO ELIMINADO CON EXITO");
+
+                    loadAlumnoBuscar();
                 }
                 catch (Exception exc)
                 {
-                    MessageBox.Show(exc.ToString());
+                    MessageBox.Show(exc.Message);
                 }
-                
-                loadAlumnoBuscar();
             }
         }
 
@@ -190,8 +120,6 @@ namespace EstadisticasEscuelaFrontEnd.Alumnos
             /*
              * falta resolver la consulta dinamica incluyendo todos los textbox
              */
-
-            //string query = String.Format("where nombre LIKE '%{0}%' and apellido LIKE '%{1}%'", txtAlumnoBuscarNombre.Text, txtAlumnoBuscarApellido.Text);
 
             dgvAlumnoBuscar.DataSource = context.alumno.Where(x => x.Habilitado == true).ToList();
 

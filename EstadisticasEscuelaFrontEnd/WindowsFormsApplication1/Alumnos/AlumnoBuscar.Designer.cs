@@ -84,7 +84,7 @@
             // btnAlumnoBuscarSalir
             // 
             this.btnAlumnoBuscarSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAlumnoBuscarSalir.Location = new System.Drawing.Point(646, 605);
+            this.btnAlumnoBuscarSalir.Location = new System.Drawing.Point(643, 590);
             this.btnAlumnoBuscarSalir.Name = "btnAlumnoBuscarSalir";
             this.btnAlumnoBuscarSalir.Size = new System.Drawing.Size(75, 23);
             this.btnAlumnoBuscarSalir.TabIndex = 4;
@@ -94,7 +94,7 @@
             // 
             // btnAlumnoBuscarBuscar
             // 
-            this.btnAlumnoBuscarBuscar.Location = new System.Drawing.Point(646, 142);
+            this.btnAlumnoBuscarBuscar.Location = new System.Drawing.Point(643, 128);
             this.btnAlumnoBuscarBuscar.Name = "btnAlumnoBuscarBuscar";
             this.btnAlumnoBuscarBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnAlumnoBuscarBuscar.TabIndex = 5;
@@ -111,20 +111,20 @@
             this.dgvAlumnoBuscar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvAlumnoBuscar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvAlumnoBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlumnoBuscar.Location = new System.Drawing.Point(15, 183);
+            this.dgvAlumnoBuscar.Location = new System.Drawing.Point(12, 157);
             this.dgvAlumnoBuscar.MultiSelect = false;
             this.dgvAlumnoBuscar.Name = "dgvAlumnoBuscar";
             this.dgvAlumnoBuscar.ReadOnly = true;
             this.dgvAlumnoBuscar.RowHeadersVisible = false;
             this.dgvAlumnoBuscar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvAlumnoBuscar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvAlumnoBuscar.Size = new System.Drawing.Size(706, 401);
+            this.dgvAlumnoBuscar.Size = new System.Drawing.Size(706, 427);
             this.dgvAlumnoBuscar.TabIndex = 6;
             this.dgvAlumnoBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionAlumno);
             // 
             // btnBuscarAlumnoLimpiar
             // 
-            this.btnBuscarAlumnoLimpiar.Location = new System.Drawing.Point(15, 142);
+            this.btnBuscarAlumnoLimpiar.Location = new System.Drawing.Point(12, 128);
             this.btnBuscarAlumnoLimpiar.Name = "btnBuscarAlumnoLimpiar";
             this.btnBuscarAlumnoLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarAlumnoLimpiar.TabIndex = 7;
@@ -178,7 +178,7 @@
             this.groupBox1.Controls.Add(this.txtAlumnoBuscarApellido);
             this.groupBox1.Controls.Add(this.lblAlumnoBuscarNombreError);
             this.groupBox1.Controls.Add(this.lblAlumnoBuscarApellidoError);
-            this.groupBox1.Location = new System.Drawing.Point(15, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(706, 110);
             this.groupBox1.TabIndex = 18;
@@ -202,7 +202,7 @@
             // lblBuscarAlumnoError
             // 
             this.lblBuscarAlumnoError.AutoSize = true;
-            this.lblBuscarAlumnoError.Location = new System.Drawing.Point(12, 610);
+            this.lblBuscarAlumnoError.Location = new System.Drawing.Point(9, 610);
             this.lblBuscarAlumnoError.Name = "lblBuscarAlumnoError";
             this.lblBuscarAlumnoError.Size = new System.Drawing.Size(0, 13);
             this.lblBuscarAlumnoError.TabIndex = 19;
@@ -212,7 +212,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAlumnoBuscarSalir;
-            this.ClientSize = new System.Drawing.Size(737, 640);
+            this.ClientSize = new System.Drawing.Size(727, 620);
             this.Controls.Add(this.lblBuscarAlumnoError);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBuscarAlumnoLimpiar);

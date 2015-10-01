@@ -45,7 +45,7 @@
             // 
             // btnMateriaNuevoCancelar
             // 
-            this.btnMateriaNuevoCancelar.Location = new System.Drawing.Point(394, 188);
+            this.btnMateriaNuevoCancelar.Location = new System.Drawing.Point(231, 150);
             this.btnMateriaNuevoCancelar.Name = "btnMateriaNuevoCancelar";
             this.btnMateriaNuevoCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnMateriaNuevoCancelar.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             // btnMateriaNuevoAceptar
             // 
-            this.btnMateriaNuevoAceptar.Location = new System.Drawing.Point(313, 188);
+            this.btnMateriaNuevoAceptar.Location = new System.Drawing.Point(150, 150);
             this.btnMateriaNuevoAceptar.Name = "btnMateriaNuevoAceptar";
             this.btnMateriaNuevoAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnMateriaNuevoAceptar.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             // btnMateriaBuscarLimpiar
             // 
-            this.btnMateriaBuscarLimpiar.Location = new System.Drawing.Point(10, 187);
+            this.btnMateriaBuscarLimpiar.Location = new System.Drawing.Point(10, 150);
             this.btnMateriaBuscarLimpiar.Name = "btnMateriaBuscarLimpiar";
             this.btnMateriaBuscarLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnMateriaBuscarLimpiar.TabIndex = 2;
@@ -97,9 +97,9 @@
             this.Datos.Controls.Add(this.lblMateriaNuevoCodigoVacio);
             this.Datos.Controls.Add(this.lblMateriaNuevoMateria);
             this.Datos.Controls.Add(this.txtMateriaNuevoMateria);
-            this.Datos.Location = new System.Drawing.Point(12, 18);
+            this.Datos.Location = new System.Drawing.Point(10, 12);
             this.Datos.Name = "Datos";
-            this.Datos.Size = new System.Drawing.Size(448, 129);
+            this.Datos.Size = new System.Drawing.Size(296, 129);
             this.Datos.TabIndex = 5;
             this.Datos.TabStop = false;
             this.Datos.Text = "Datos";
@@ -148,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 235);
+            this.ClientSize = new System.Drawing.Size(315, 183);
             this.Controls.Add(this.lblMateriaNuevoError);
             this.Controls.Add(this.Datos);
             this.Controls.Add(this.btnMateriaBuscarLimpiar);
@@ -156,6 +156,7 @@
             this.Controls.Add(this.btnMateriaNuevoCancelar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMateriaNuevo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Materia Nuevo";
             this.Load += new System.EventHandler(this.frmMateriaNuevo_Load);
             this.Datos.ResumeLayout(false);

@@ -6,8 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using EstadisticasEscuelaFrontEnd.Database;
-using EstadisticasEscuelaFrontEnd.Dominio;
 using EstadisticasEscuelaFrontEnd.Modelo;
 
 namespace EstadisticasEscuelaFrontEnd.Materias
@@ -26,48 +24,10 @@ namespace EstadisticasEscuelaFrontEnd.Materias
         {
             bool error = true;
 
-            if (!checkData(txtMateriaBuscarMateria, lblMateriaBucarMateria)) error = false;
-
             if (error)
             {
                 loadMateriaBuscar();
             }
-        }
-        
-        /*private bool checkData(ComboBox comboA, Label label)
-        {
-            label.Text = "";
-
-            if (comboA.SelectedIndex < 0 )
-            {
-                label.Text = "Seleccione Turno";
-
-                return false;
-            }
-
-            return true;
-        }
-         */
-
-        private bool checkData(TextBox textbox, Label label)
-        {
-            //label.Text = "";
-
-            if (!textbox.Text.Equals(""))
-            {
-                if (textbox.Name.Equals("txtMateriaBuscarMateria"))
-                {
-                    if (!Util.todasLetras(textbox.Text))
-                    {
-                        label.Text = "Valor Incorrecto";
-
-                        return false;
-
-                    }
-                }
-            }
-
-            return true;
         }
 
         private void loadMateriaBuscar()
