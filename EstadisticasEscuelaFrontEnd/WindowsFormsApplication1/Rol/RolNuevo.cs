@@ -42,12 +42,12 @@ namespace EstadisticasEscuelaFrontEnd.Rol
             {
                 if (textbox.Name.Equals("txtRolNuevoNombre"))
                 {
-                    if (!Util.todasLetras(textbox.Text)
-                    {
-                        label.Text = "Valor Incorrecto";
+                    //if (!Util.todasLetras(textbox.Text)
+                    //{
+                    //    label.Text = "Valor Incorrecto";
 
-                        return false;
-                    }
+                    //    return false;
+                    //}
                     
                 }
             }

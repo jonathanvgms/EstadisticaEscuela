@@ -80,12 +80,12 @@ namespace EstadisticasEscuelaFrontEnd.Rol
                 MessageBox.Show("Rol Seleccionado");
             }
 
-            if (e.ColumnIndex == dgvRolBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
-            {
-                frmRolBuscar rolBuscar = new frmRolBuscar();
+            //if (e.ColumnIndex == dgvRolBuscar.Columns["Modificar"].Index) && (e.ColumnIndex >= -1))
+            //{
+            //    frmRolBuscar rolBuscar = new frmRolBuscar();
    
-                int 
-            }
+            //    int 
+            //}
         }
 
         
